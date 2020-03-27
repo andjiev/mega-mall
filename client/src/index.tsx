@@ -1,6 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import ApplicationState from "./store/aplication-store";
+import { ThunkDispatch } from "redux-thunk";
+import { Action } from "redux";
+
 import App from "./app";
 import { createBrowserHistory } from "history";
 import { AppContainer } from "react-hot-loader";
@@ -11,10 +15,10 @@ import { webGlobal, CURRENT_ENVIRONMENT } from "./consts";
 import * as serviceWorker from "./serviceWorker";
 
 // basename: webGlobal.url.root
-const history = createBrowserHistory({ basename: 'http://localhost:3000' });
+const history = createBrowserHistory({ basename: "http://localhost:4000" });
 const store = configureEasyFindStore(history);
 
-export type AppDispatch = typeof store.dispatch;
+export type AppDispatch = ThunkDispatch<ApplicationState, null, Action<string>>;
 const render = (Component: any) => {
   ReactDOM.render(
     <AppContainer>

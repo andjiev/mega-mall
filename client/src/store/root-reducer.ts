@@ -1,7 +1,7 @@
-import * as DashboardStore from './dashboard-store';
+import * as SharedStore from './shared-store';
 
 const reducers = {
-    dashboardStore: DashboardStore.reducer
+    sharedStore: SharedStore.reducer
 };
 
 export { reducers };

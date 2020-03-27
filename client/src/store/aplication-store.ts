@@ -1,9 +1,8 @@
 import { RouterState } from 'connected-react-router';
 
-import * as DashboardStore from './dashboard-store';
+import * as SharedStore from './shared-store';
 
 export default interface ApplicationState {
-    router?: RouterState;
-
-    dashboardStore: DashboardStore.DashboardStore;
+  router?: RouterState;
+  sharedStore: SharedStore.SharedStore;
 }

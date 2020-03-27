@@ -1,0 +1,1 @@
+export { default as GiftCardGrid } from './gift-card-grid';

@@ -1,0 +1,1 @@
+export { default as CategoryGrid } from './category-grid';
