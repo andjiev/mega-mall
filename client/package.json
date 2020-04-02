@@ -19,6 +19,8 @@
     "es6-map": "0.1.5",
     "es6-promise": "4.2.8",
     "history": "4.10.1",
+    "i18next": "19.0.2",
+    "moment": "2.24.0",
     "react": "16.13.0",
     "react-dom": "16.13.0",
     "react-hot-loader": "4.12.20",
