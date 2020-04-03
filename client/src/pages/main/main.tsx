@@ -1,16 +1,16 @@
-import React from "react";
-import { connect } from "react-redux";
-import { RouteComponentProps } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { RouteComponentProps } from 'react-router-dom';
 
-import { AppDispatch } from "../..";
-import ApplicationState from "../../store/aplication-store";
+import { AppDispatch } from '../..';
+import ApplicationState from '../../store/application-store';
 
-import { MainSlider } from "./components/main-slider";
-import { CategoryGrid } from "./components/category-grid";
-import { CardSlider } from "./components/card-slider";
-import { MainBanner } from "./components/main-banner";
-import { ProductGrid } from "./components/product-grid";
-import { GiftCardGrid } from "./components/gift-card-grid";
+import { MainSlider } from './components/main-slider';
+import { CategoryGrid } from './components/category-grid';
+import { CardSlider } from './components/card-slider';
+import { MainBanner } from './components/main-banner';
+import { ProductGrid } from './components/product-grid';
+import { GiftCardGrid } from './components/gift-card-grid';
 
 interface MainPageProps extends RouteComponentProps {}
 
