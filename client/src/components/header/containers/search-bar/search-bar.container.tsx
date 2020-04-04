@@ -1,11 +1,11 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
-import { AppDispatch } from "../../../..";
-import ApplicationState from "../../../../store/aplication-store";
-import * as SharedStore from "../../../../store/shared-store";
+import { AppDispatch } from '../../../..';
+import ApplicationState from '../../../../store/application-store';
+import * as SharedStore from '../../../../store/shared-store';
 
-import { StyledInput } from "./search-bar.styles";
+import { StyledInput } from './search-bar.styles';
 
 interface IProps {
   searchText: string;
@@ -16,13 +16,7 @@ interface IProps {
 const SearchBar = (props: IProps) => {
   return (
     <>
-      <StyledInput
-        aria-label="search-bar"
-        value={props.searchText}
-        onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-          props.onSearchTextChange(event.target.value)
-        }
-      />
+      <StyledInput aria-label="search-bar" value={props.searchText} onChange={(event: React.ChangeEvent<HTMLInputElement>) => props.onSearchTextChange(event.target.value)} />
     </>
   );
 };
@@ -39,9 +33,6 @@ const mapStateToProps = (state: ApplicationState) => {
   };
 };
 
-const SearchBarContainer = connect(
-  () => mapStateToProps,
-  mapDispatchToProps
-)(SearchBar);
+const SearchBarContainer = connect(() => mapStateToProps, mapDispatchToProps)(SearchBar);
 
 export default SearchBarContainer;
