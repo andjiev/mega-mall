@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EasyFind.Downloader
+﻿namespace EasyFind.Downloader
 {
+    using System.Threading.Tasks;
+    using HtmlAgilityPack;
+
     public interface IEasyFindDownloader
     {
+        Task<HtmlDocument> Download(string crawlUrl);
     }
 }

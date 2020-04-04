@@ -1,17 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyFind.API", "EasyFind.API\EasyFind.API.csproj", "{C0530F54-293C-4230-AD5B-87DD3201704E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyFind.Core", "EasyFind.Core\EasyFind.Core.csproj", "{A371CA5A-713B-4220-A41F-05A715EF5EE2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyFind.DataContext", "EasyFind.DataContext\EasyFind.DataContext.csproj", "{6607EFCB-236B-4690-8AE8-6AAAD102C430}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyFind.Downloader", "EasyFind.Downloader\EasyFind.Downloader.csproj", "{320AF7A8-9A16-4336-B381-AA28A0180FF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyFind.Downloader", "EasyFind.Downloader\EasyFind.Downloader.csproj", "{320AF7A8-9A16-4336-B381-AA28A0180FF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyFind.Scheduler", "EasyFind.Scheduler\EasyFind.Scheduler.csproj", "{8EAE28A1-F15B-4D91-8129-E3768EE78283}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyFind.Scheduler", "EasyFind.Scheduler\EasyFind.Scheduler.csproj", "{8EAE28A1-F15B-4D91-8129-E3768EE78283}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyFind.Request", "EasyFind.Request\EasyFind.Request.csproj", "{BA00B0FA-7CC7-4DD5-85D4-668E741ACC70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyFind.API", "EasyFind.API\EasyFind.API.csproj", "{A03F5664-5F4E-40E3-B456-9D48526FA250}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyFind.Sample", "EasyFind.Sample\EasyFind.Sample.csproj", "{4F8EFF2A-B5C0-429B-A58B-A6F9FAD0DD0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyFind.Pipeline", "EasyFind.Pipeline\EasyFind.Pipeline.csproj", "{206BA990-7E78-46B2-8142-E7416A17A19A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyFind.Processor", "EasyFind.Processor\EasyFind.Processor.csproj", "{1094A66D-FEA6-422B-8055-05F879B6A0DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +27,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C0530F54-293C-4230-AD5B-87DD3201704E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0530F54-293C-4230-AD5B-87DD3201704E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0530F54-293C-4230-AD5B-87DD3201704E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0530F54-293C-4230-AD5B-87DD3201704E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A371CA5A-713B-4220-A41F-05A715EF5EE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A371CA5A-713B-4220-A41F-05A715EF5EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A371CA5A-713B-4220-A41F-05A715EF5EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +43,26 @@ Global
 		{8EAE28A1-F15B-4D91-8129-E3768EE78283}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EAE28A1-F15B-4D91-8129-E3768EE78283}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EAE28A1-F15B-4D91-8129-E3768EE78283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA00B0FA-7CC7-4DD5-85D4-668E741ACC70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA00B0FA-7CC7-4DD5-85D4-668E741ACC70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA00B0FA-7CC7-4DD5-85D4-668E741ACC70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA00B0FA-7CC7-4DD5-85D4-668E741ACC70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A03F5664-5F4E-40E3-B456-9D48526FA250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A03F5664-5F4E-40E3-B456-9D48526FA250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A03F5664-5F4E-40E3-B456-9D48526FA250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A03F5664-5F4E-40E3-B456-9D48526FA250}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F8EFF2A-B5C0-429B-A58B-A6F9FAD0DD0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F8EFF2A-B5C0-429B-A58B-A6F9FAD0DD0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F8EFF2A-B5C0-429B-A58B-A6F9FAD0DD0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F8EFF2A-B5C0-429B-A58B-A6F9FAD0DD0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{206BA990-7E78-46B2-8142-E7416A17A19A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{206BA990-7E78-46B2-8142-E7416A17A19A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{206BA990-7E78-46B2-8142-E7416A17A19A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{206BA990-7E78-46B2-8142-E7416A17A19A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1094A66D-FEA6-422B-8055-05F879B6A0DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1094A66D-FEA6-422B-8055-05F879B6A0DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1094A66D-FEA6-422B-8055-05F879B6A0DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1094A66D-FEA6-422B-8055-05F879B6A0DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

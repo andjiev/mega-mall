@@ -6,9 +6,14 @@
     public class EasyFindDownloader
         : IEasyFindDownloader
     {
-        private async Task<HtmlDocument> DownloadInternal(string url)
+        public string DownloadPath { get; set; }
+
+        public EasyFindDownloader() { }
+
+        public async Task<HtmlDocument> Download(string crawlUrl)
         {
-            return await Task.;
+            HtmlWeb web = new HtmlWeb();
+            return await web.LoadFromWebAsync(crawlUrl);
         }
     }
 }
