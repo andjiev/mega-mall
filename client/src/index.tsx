@@ -5,6 +5,8 @@ import ApplicationState from './store/application-store';
 import { ThunkDispatch } from 'redux-thunk';
 import { Action } from 'redux';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import App from './app';
 import { createBrowserHistory } from 'history';
 import { AppContainer } from 'react-hot-loader';

@@ -20,7 +20,10 @@ const baseConfig = {
   devtool: 'source-map',
   entry: entryConfig,
   module: {
-    rules: [{ test: /\.ts(x?)$/, exclude: /node_modules/, loader: 'babel-loader' }]
+    rules: [
+      { test: /\.ts(x?)$/, exclude: /node_modules/, loader: 'babel-loader' },
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] }
+    ]
   },
   output: {
     path: outPath,
