@@ -1,19 +1,32 @@
-import React from "react";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { CategoryStyle, HeadingStyle, ParagraphStyle, ColStyle, LinkStyle, UbavinaStyle } from '../../pages/main/components/category-grid/category-grid.style';
 
 interface CardProps {
-  size: "small" | "medium" | "large";
+  size: 'small' | 'medium' | 'large';
+  children: React.ReactNode;
+  title: string;
+  img: string;
 }
 
 const Card = (props: CardProps) => {
   return (
     <>
-      <span>Card component</span>
+      <CategoryStyle>
+        <ColStyle img={props.img}>
+          <Col>
+            <HeadingStyle>
+              <h1>{props.title}</h1>
+            </HeadingStyle>
+            <ParagraphStyle>{props.children}</ParagraphStyle>
+          </Col>
+        </ColStyle>
+      </CategoryStyle>
     </>
   );
-};
-
-Card.defaultProps = {
-  size: "small"
 };
 
 export default Card;
