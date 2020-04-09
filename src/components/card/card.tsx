@@ -1,19 +1,29 @@
-import React from "react";
+import React from 'react';
+import Col from 'react-bootstrap/Col';
+import { CategoryStyle, HeadingStyle, ParagraphStyle, ColStyle } from '../../pages/main/components/category-grid/category-grid.style';
 
 interface CardProps {
-  size: "small" | "medium" | "large";
+  size: 'small' | 'medium' | 'large';
+  children: React.ReactNode;
+  title: string;
+  img: string;
 }
 
 const Card = (props: CardProps) => {
   return (
     <>
-      <span>Card component</span>
+      <CategoryStyle>
+        <ColStyle img={props.img}>
+          <Col>
+            <HeadingStyle>
+              <h1>{props.title}</h1>
+            </HeadingStyle>
+            <ParagraphStyle>{props.children}</ParagraphStyle>
+          </Col>
+        </ColStyle>
+      </CategoryStyle>
     </>
   );
-};
-
-Card.defaultProps = {
-  size: "small"
 };
 
 export default Card;

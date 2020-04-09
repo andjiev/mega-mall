@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import myImage from '../../../../assets/images/Hero-image-.jpg';
+import HeroImage from '../../../../assets/images/Hero-image-.jpg';
 
 const StyleBanner = styled.div`
   width: 1366px;
@@ -25,7 +25,7 @@ const HeadingStyle = styled.h1`
 `;
 
 const StyleImage = styled.img`
-  background-image: url(${myImage});
+  background-image: url(${HeroImage});
   width: 1366px;
   height: 600px;
 `;
