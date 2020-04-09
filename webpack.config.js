@@ -5,7 +5,7 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 
 // variables
-const outPath = path.join(__dirname, 'build');
+const outPath = path.join(__dirname, 'dist');
 
 //plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');
