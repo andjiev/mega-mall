@@ -24,6 +24,7 @@
     "i18next": "19.0.2",
     "moment": "2.24.0",
     "react": "16.13.0",
+    "react-bootstrap": "1.0.0",
     "react-dom": "16.13.0",
     "react-hot-loader": "4.12.20",
     "react-redux": "7.2.0",
@@ -69,7 +70,9 @@
     "webpack": "4.41.2",
     "webpack-cli": "3.3.10",
     "webpack-dev-server": "3.9.0",
-    "webpack-merge": "4.2.2"
+    "webpack-merge": "4.2.2",
+    "url-loader": "4.1.0",
+    "file-loader": "6.0.0"
   },
   "babel": {
     "presets": [
