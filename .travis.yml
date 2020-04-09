@@ -1,9 +1,14 @@
 language: node_js
 node_js:
-  - "stable"
+  - stable
 cache:
   directories:
-  - node_modules
+    - node_modules
 script:
   - yarn run compile
   - yarn run build
+deploy:
+  provider: heroku
+  app: easy-find-mk
+  api_key:
+    secure: 2R7zBKFueQRonMkSC3KqtgyR8tdbBgp713TTqS36Jg7df/Jq2fIb/BA5E2RecxB46pP2JJiOgcCQx3donr55EpBR+n9p5oOh+hMknTCd6Y2j3uokt9R2u8UwA1aeDr04tTFuWufRVEWmOxZ+40FrOZOAy4XiazppnVszZq4qCvBB9phqsUz2cu63E5Dmf69t6KX38ae1EeTgjTbsQq1kJkfqvDGwbA3zfxSJYTM9qEXfY6SSyMObtz+YbIxOWDFnjSTzww5NiPSEvypE74hAGEtSKl8VMBMpYrQcYDJGtOY/geTNhl2dRCwfduXpwRhhASBwH6TYEmbA6si1juBvh4WHxq6anO85OCDGYZOTx75A3l10/+PMElaV40OBpae66HMBJJYYPIGdNHkkgXMUD82wfGWdNKv0xpPD0aqr+1QOKMKPl12vlhdZZCE+xPdW9EH0ZnV/+OJtaM+1FyhiiwrfEQaf08LtdvBLYqd8A1Er5MyvKJBd+YGBDxyTyV15aV5VYSPSCslX/SX8IWmlnNn8IzxuOLcbXj+i5gvhpnFNi/zVnOIz7isv2e3ejhm5f8q6bGDL00DbdwHYOcpUTFY94R9okpR9N7KY/KP87/A89f4Xk1eIL5mAV/ZxQbEEWAr5aB8HqEA6eON9RBCZdKGIKEnVscpV5iMHuQpVlLM=
