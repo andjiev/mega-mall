@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import myImage from '../../../../assets/Hero-image-.jpg';
+import myImage from '../../../../assets/images/Hero-image-.jpg';
 
 const StyleBanner = styled.div`
   width: 1366px;

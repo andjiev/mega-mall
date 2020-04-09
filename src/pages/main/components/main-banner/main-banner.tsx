@@ -1,7 +1,5 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import styled from 'styled-components';
-import { Button } from '@material-ui/core';
 import { StyleBanner, StyleImage, ButtonStyle, CaptionStyle, HeadingStyle } from './main-banner.style';
 
 const MainBanner = () => {

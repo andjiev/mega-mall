@@ -9,7 +9,6 @@ const CenterMenuWrapper = styled.div`
 `;
 
 const CenterMenuContainer = styled.div`
-  max-width: 1366px;
   width: 100%;
   top: 0;
   background-color: #0a1033;
