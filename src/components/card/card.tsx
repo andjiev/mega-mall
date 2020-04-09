@@ -1,9 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
+import React from 'react';
 import Col from 'react-bootstrap/Col';
-import { CategoryStyle, HeadingStyle, ParagraphStyle, ColStyle, LinkStyle, UbavinaStyle } from '../../pages/main/components/category-grid/category-grid.style';
+import { CategoryStyle, HeadingStyle, ParagraphStyle, ColStyle } from '../../pages/main/components/category-grid/category-grid.style';
 
 interface CardProps {
   size: 'small' | 'medium' | 'large';
