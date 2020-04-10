@@ -5,7 +5,7 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 
 // variables
-const outPath = path.join(__dirname, 'build');
+const outPath = path.join(__dirname, 'dist');
 
 //plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -22,7 +22,8 @@ const baseConfig = {
   module: {
     rules: [
       { test: /\.ts(x?)$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.css$/, use: ['style-loader', 'css-loader'] }
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
     ]
   },
   output: {
@@ -74,10 +75,9 @@ const baseConfig = {
 };
 
 module.exports = (env, argv) => {
-  argv = argv || {};
   env = env || {};
 
-  let environment = (argv.environment || 'development').toLowerCase();
+  let environment = (process.env.NODE_ENV || 'development').toLowerCase();
 
   if (environment === 'production') {
     return merge.smart(baseConfig, require('./webpack.config.production.js').apply(this, [env, argv]));

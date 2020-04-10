@@ -3,6 +3,7 @@ import { CenterMenuContainer, CenterMenuWrapper, StyledNav, StyledLink } from '.
 import { NavItem } from 'reactstrap';
 import { HomeCenterSubmenu } from '../home-center-submenu';
 
+
 interface HomeMenuProps {}
 
 const HomeCenterMenu = (props: HomeMenuProps) => {
@@ -31,7 +32,6 @@ const HomeCenterMenu = (props: HomeMenuProps) => {
         </StyledNav>
       </CenterMenuWrapper>
       <HomeCenterSubmenu />
-    </CenterMenuContainer>
   );
 };
 
