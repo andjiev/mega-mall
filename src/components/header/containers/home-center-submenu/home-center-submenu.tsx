@@ -3,7 +3,7 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
-import { StyledContainer, StyledListItemText, StyledBannerDiv } from './home-center-submenu.styles';
+import { StyledContainer, StyledListItemText, StyledBannerDiv, StyledListItem, StyledLink } from './home-center-submenu.styles';
 import { CenterMenuWrapper } from '../home-center-menu/home-center-menu.styles';
 import { Link, List, ListItem, ListItemText } from '@material-ui/core';
 
@@ -31,24 +31,24 @@ const HomeCenterSubmenu = (props: HomeSubmenuProps) => {
           <Grid container spacing={3}>
             <Grid item xs={3}>
               <List>
-                <ListItem>
+                <StyledListItem>
                   <StyledListItemText primary="Компјутери и опрема"></StyledListItemText>
-                </ListItem>
-                <ListItem>
-                  <Link href="#">Персонални компјутери</Link>
-                </ListItem>
-                <ListItem>
-                  <Link href="#">Опрема за лаптоп</Link>
-                </ListItem>
-                <ListItem>
-                  <Link href="#">Глувчиња</Link>
-                </ListItem>
-                <ListItem>
-                  <Link href="#">Тастатури</Link>
-                </ListItem>
-                <ListItem>
-                  <Link href="#">Компјутерски звучници</Link>
-                </ListItem>
+                </StyledListItem>
+                <StyledListItem>
+                  <StyledLink href="#">Персонални компјутери</StyledLink>
+                </StyledListItem>
+                <StyledListItem>
+                  <StyledLink href="#">Опрема за лаптоп</StyledLink>
+                </StyledListItem>
+                <StyledListItem>
+                  <StyledLink href="#">Глувчиња</StyledLink>
+                </StyledListItem>
+                <StyledListItem>
+                  <StyledLink href="#">Тастатури</StyledLink>
+                </StyledListItem>
+                <StyledListItem>
+                  <StyledLink href="#">Компјутерски звучници</StyledLink>
+                </StyledListItem>
               </List>
             </Grid>
             <Grid item xs={3}>
@@ -57,19 +57,19 @@ const HomeCenterSubmenu = (props: HomeSubmenuProps) => {
                   <StyledListItemText primary="Компјутери и опрема"></StyledListItemText>
                 </ListItem>
                 <ListItem>
-                  <Link href="#">Персонални компјутери</Link>
+                  <StyledLink href="#">Персонални компјутери</StyledLink>
                 </ListItem>
                 <ListItem>
-                  <Link href="#">Опрема за лаптоп</Link>
+                  <StyledLink href="#">Опрема за лаптоп</StyledLink>
                 </ListItem>
                 <ListItem>
-                  <Link href="#">Глувчиња</Link>
+                  <StyledLink href="#">Глувчиња</StyledLink>
                 </ListItem>
                 <ListItem>
-                  <Link href="#">Тастатури</Link>
+                  <StyledLink href="#">Тастатури</StyledLink>
                 </ListItem>
                 <ListItem>
-                  <Link href="#">Компјутерски звучници</Link>
+                  <StyledLink href="#">Компјутерски звучници</StyledLink>
                 </ListItem>
               </List>
             </Grid>

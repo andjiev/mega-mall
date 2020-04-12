@@ -1,6 +1,7 @@
+import React from 'react';
 import styled from 'styled-components';
 import Container from '@material-ui/core/Container';
-import { ListItemText, ListItem } from '@material-ui/core';
+import { ListItemText, ListItem, Link } from '@material-ui/core';
 
 const StyledContainer = styled(Container)`
   padding: 0;
@@ -13,8 +14,13 @@ const StyledContainer = styled(Container)`
   background-color: #0a1033;
   margin: 0px;
 `;
+const StyledListItem = styled(props => {
+  return <ListItem {...props} />;
+})`
+  color: #ffffff;
+`;
 
-const StyledListItem = styled(ListItem)`
+const StyledLink = styled(Link)`
   color: #ffffff;
 `;
 
@@ -31,4 +37,4 @@ const StyledBannerDiv = styled.div`
   border: 1px solid #ffffff;
 `;
 
-export { StyledContainer, StyledListItemText, StyledListItem, StyledBannerDiv };
+export { StyledContainer, StyledListItemText, StyledListItem, StyledBannerDiv, StyledLink };
