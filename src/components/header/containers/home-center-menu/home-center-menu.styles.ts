@@ -11,7 +11,7 @@ const CenterMenuWrapper = styled.div`
 const CenterMenuContainer = styled.div`
   width: 100%;
   top: 0;
-  background-color: #0a1033;
+  background-color: #0d1440;
   box-shadow: rgba(0, 0, 0, 0.46);
   font-family: 'Oswald', sans-serif;
   font-weight: 700;

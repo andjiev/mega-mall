@@ -1,6 +1,7 @@
 import React from 'react';
 import { CenterMenuContainer, CenterMenuWrapper, StyledNav, StyledLink } from './home-center-menu.styles';
 import { NavItem } from 'reactstrap';
+import { HomeCenterSubmenu } from '../home-center-submenu';
 
 interface HomeMenuProps {}
 
@@ -29,6 +30,7 @@ const HomeCenterMenu = (props: HomeMenuProps) => {
           </NavItem>
         </StyledNav>
       </CenterMenuWrapper>
+      <HomeCenterSubmenu />
     </CenterMenuContainer>
   );
 };
