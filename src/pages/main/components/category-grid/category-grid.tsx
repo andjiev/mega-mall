@@ -1,107 +1,50 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import Grid, { GridSpacing } from '@material-ui/core/Grid';
+import FormLabel from '@material-ui/core/FormLabel';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import Radio from '@material-ui/core/Radio';
+import Paper from '@material-ui/core/Paper';
 
-import { LinkStyle } from './category-grid.style';
-import Card from '../../../../components/card/card';
-
-import TehnologijaImg from '../../../../assets/images/Tehnologija.jpg';
-import ModaImg from '../../../../assets/images/Moda.jpg';
-import UbavinaImg from '../../../../assets/images/Ubavina-i-zdravje.jpg';
-import SportImg from '../../../../assets/images/Sport.jpg';
-import DomakinstvoImg from '../../../../assets/images/Domakinstvo.jpg';
-import UslugiImg from '../../../../assets/images/Uslugi.jpg';
-
-const CategoryGrid = () => {
-  const cards = [
-    {
-      id: 1,
-      title: 'Технологија',
-      link1: 'КОМПЈУТЕРИ',
-      link2: 'КОМПЈУТЕРСКА ОПРЕМА',
-      link3: 'МОБИЛНИ ТЕЛЕФОНИ',
-      link4: 'Прикажи ги сите >',
-      img: TehnologijaImg
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1
     },
-    {
-      id: 2,
-      title: 'Мода',
-      link1: 'МАШКА ОБЛЕКА',
-      link2: 'ЖЕНСКА ОБЛЕКА',
-      link3: 'ОБУВКИ',
-      link4: 'Прикажи ги сите >',
-      img: ModaImg
+    paper: {
+      height: 460,
+      width: 300
     },
-    {
-      id: 3,
-      title: 'Убавина и здравје',
-      link1: 'КОЗМЕТИКА',
-      link2: 'ПАРФЕМИ',
-      link3: 'НЕГА',
-      link4: 'Прикажи ги сите >',
-      img: UbavinaImg
-    },
-    {
-      id: 4,
-      title: 'Спорт',
-      link1: 'СПОРТСКА ОПРЕМА',
-      link2: 'СПОРТСКА ОБЛЕКА',
-      link3: 'ФИТНЕС',
-      link4: 'Прикажи ги сите >',
-      img: SportImg
-    },
-    {
-      id: 5,
-      title: 'Домаќинство',
-      link1: 'АПАРАТИ ЗА ДОМАЌИНСТВО',
-      link2: 'БЕЛА ТЕХНИКА',
-      link3: 'ДОМ И ГРАДИНА',
-      link4: 'Прикажи ги сите >',
-      img: DomakinstvoImg
-    },
-    {
-      id: 6,
-      title: 'Услуги',
-      link1: 'ХРАНА И ПИЈАЛОЦИ',
-      link2: 'ЕДУКАЦИЈА',
-      link3: 'КУЛТУРА И НАСТАНИ',
-      link4: 'Прикажи ги сите >',
-      img: UslugiImg
+    control: {
+      padding: theme.spacing(2)
     }
-  ];
+  })
+);
+
+export default function SpacingGrid() {
+  const [spacing, setSpacing] = React.useState<GridSpacing>(2);
+  const classes = useStyles();
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSpacing(Number((event.target as HTMLInputElement).value) as GridSpacing);
+  };
 
   return (
-    <>
-      <Container>
-        <p>
-          <h4>Пребарај по категорија</h4>
-          <p>Прикажи ги сите</p>
-        </p>
-        <Row>
-          {cards.map(card => (
-            <Card key={card.id} title={card.title} size="medium" img={card.img}>
-              <>
-                <p>
-                  <a href={'/'}>{card.link1}</a>
-                </p>
-                <p>
-                  <a href={'/'}>{card.link2}</a>
-                </p>
-                <p>
-                  <a href={'/'}>{card.link3}</a>
-                </p>
-                <LinkStyle>
-                  <p>
-                    <a href={'/'}>{card.link4}</a>
-                  </p>
-                </LinkStyle>
-              </>
-            </Card>
-          ))}
-        </Row>
-      </Container>
-    </>
-  );
-};
+    <Grid container className={classes.root} spacing={2}>
+      <Grid item xs={12}>
+        <h3>Пребарај по категорија</h3>
+      </Grid>
 
-export default CategoryGrid;
+      <Grid item xs={12}>
+        <Grid container justify="center" spacing={spacing}>
+          {[0, 1, 2].map(value => (
+            <Grid key={value} item>
+              <Paper className={classes.paper} />
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
+    </Grid>
+  );
+}
