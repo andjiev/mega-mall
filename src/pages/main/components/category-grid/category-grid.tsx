@@ -3,9 +3,9 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Grid, { GridSpacing } from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Card from './../../../../components/card/card';
-import LinkStyle from './category-grid.styles';
+import { LinkStyle } from './category-grid.styles';
 
-export default function SpacingGrid() {
+const CategoryGrid = () => {
   const state = {
     users: [
       {
@@ -71,7 +71,7 @@ export default function SpacingGrid() {
         <h3>Пребарај по категорија</h3>
       </Grid>
       <Grid container direction="row" xs={12} spacing={5} justify="center" alignContent="space-around">
-        {[0, 1, 2, 3, 4, 5].map(value => (
+        {users.map(value => (
           <Grid item key={value} xs={12} md={6} lg={4}>
             <Card key={value.id} title={value.title} size={'medium'} img={value.img}>
               <p>
@@ -94,4 +94,6 @@ export default function SpacingGrid() {
       </Grid>
     </Grid>
   );
-}
+};
+
+export default CategoryGrid;
