@@ -3,6 +3,7 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Grid, { GridSpacing } from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Card from './../../../../components/card/card';
+import LinkStyle from './category-grid.styles';
 
 export default function SpacingGrid() {
   const state = {
@@ -74,8 +75,19 @@ export default function SpacingGrid() {
           <Grid item key={value} xs={12} md={6} lg={4}>
             <Card key={value.id} title={value.title} size={'medium'} img={value.img}>
               <p>
-                <a href="#"></a>
+                <a href={'/'}>{value.link1}</a>
               </p>
+              <p>
+                <a href={'/'}>{value.link2}</a>
+              </p>
+              <p>
+                <a href={'/'}>{value.link3}</a>
+              </p>
+              <LinkStyle>
+                <p>
+                  <a href={'/'}>{value.link4}</a>
+                </p>
+              </LinkStyle>
             </Card>
           </Grid>
         ))}
