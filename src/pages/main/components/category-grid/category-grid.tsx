@@ -71,24 +71,9 @@ const CategoryGrid = () => {
         <h3>Пребарај по категорија</h3>
       </Grid>
       <Grid container direction="row" xs={12} spacing={5} justify="center" alignContent="space-around">
-        {users.map(value => (
-          <Grid item key={value} xs={12} md={6} lg={4}>
-            <Card key={value.id} title={value.title} size={'medium'} img={value.img}>
-              <p>
-                <a href={'/'}>{value.link1}</a>
-              </p>
-              <p>
-                <a href={'/'}>{value.link2}</a>
-              </p>
-              <p>
-                <a href={'/'}>{value.link3}</a>
-              </p>
-              <LinkStyle>
-                <p>
-                  <a href={'/'}>{value.link4}</a>
-                </p>
-              </LinkStyle>
-            </Card>
+        {state.users.map(value => (
+          <Grid item key={value.id} xs={12} md={6} lg={4}>
+            <Card key={value.id} title={value.title} size={'medium'} img={value.img}></Card>
           </Grid>
         ))}
       </Grid>
