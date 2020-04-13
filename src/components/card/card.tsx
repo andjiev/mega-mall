@@ -5,6 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
+import { ColStyle } from 'pages/main/components/category-grid/category-grid.styles';
 
 interface CardProps {
   size: 'small' | 'medium' | 'large';
@@ -16,28 +17,12 @@ interface CardProps {
 const Card = (props: CardProps) => {
   return (
     <>
-      <CardBody variant="outlined">
-        <CardHeader title="Технологија">
-          <Typography>{props.title}</Typography>
+      <CardBody variant="outlined" img={props.img}>
+        <CardHeader title={props.title}>
+          <Typography></Typography>
         </CardHeader>
-
         <CardContent>
-          <Typography>
-            <div>
-              <Link>КОМПЈУТЕРИ</Link>
-            </div>
-            <div>
-              <Link>КОМПЈУТЕРСКА ОПРЕМА</Link>
-            </div>
-            <div>
-              <Link>МОБИЛНИ ТЕЛЕФОНИ</Link>
-            </div>
-          </Typography>
-          <Typography>
-            <div>
-              <Link>Прикажи ги сите</Link>
-            </div>
-          </Typography>
+          <Typography>{props.children}</Typography>
         </CardContent>
       </CardBody>
     </>
