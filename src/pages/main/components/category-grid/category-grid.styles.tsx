@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-const StyleBanner = styled.div`
+const StyledCard = styled.CardBody`
   width: 1366px;
   height: 600px;
 `;
 
-export { StyleBanner };
+export { StyledCard };
