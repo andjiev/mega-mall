@@ -2,11 +2,16 @@ import styled from 'styled-components';
 import HeroImage from '../../../../assets/images/Hero-image-.jpg';
 
 const StyleBanner = styled.div`
-  width: 1366px;
-  height: 600px;
+  max-width: 1366px;
+  width: 100%;
+  max-height: 600px;
+  height: 100%;
+  margin: 0 auto;
+  display: block;
 `;
 const ButtonStyle = styled.button`
-  width: 133px;
+  max-width: 133px;
+  width: 100%;
   height: 54px;
   background: #bf1736;
   variant: contained;
@@ -26,7 +31,8 @@ const HeadingStyle = styled.h1`
 
 const StyleImage = styled.img`
   background-image: url(${HeroImage});
-  width: 1366px;
+  max-width: 1366px;
+  width: 100%;
   height: 600px;
 `;
 
