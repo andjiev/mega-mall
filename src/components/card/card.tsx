@@ -5,7 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
-import { ColStyle } from 'pages/main/components/category-grid/category-grid.styles';
+import { ColStyle, StyledCardBody, StyledCardContent } from 'components/card/card.styles';
 
 interface CardProps {
   size: 'small' | 'medium' | 'large';
@@ -17,14 +17,20 @@ interface CardProps {
 const Card = (props: CardProps) => {
   return (
     <>
-      <ColStyle img={props.img}>
-        <CardBody variant="outlined">
-          <CardContent>
-            <Typography>{props.title}</Typography>
-            <Typography>{props.children}</Typography>
-          </CardContent>
-        </CardBody>
-      </ColStyle>
+      {props.size == 'small' ? (
+        <div></div>
+      ) : props.size == 'medium' ? (
+        <div></div>
+      ) : (
+        <ColStyle img={props.img}>
+          <StyledCardBody>
+            <StyledCardContent>
+              <h3>{props.title}</h3>
+              <p>{props.children}</p>
+            </StyledCardContent>
+          </StyledCardBody>
+        </ColStyle>
+      )}
     </>
   );
 };

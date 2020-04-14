@@ -4,7 +4,6 @@ import Grid, { GridSpacing } from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Card from './../../../../components/card/card';
 import { Link } from '@material-ui/core';
-import { ColStyle } from './category-grid.styles';
 
 const CategoryGrid = () => {
   const state = {
@@ -74,10 +73,10 @@ const CategoryGrid = () => {
         </Grid>
       </Grid>
       <Grid item>
-        <Grid container direction="row" xs={12} spacing={5} justify="center" alignContent="space-around">
+        <Grid container xs={12} spacing={5}>
           {state.users.map(value => (
             <Grid item key={value.id} xs={12} md={6} lg={4}>
-              <Card key={value.id} title={value.title} size={'medium'} img={value.img}>
+              <Card key={value.id} title={value.title} size={'large'} img={value.img}>
                 <p>
                   <Link href={'/'}>{value.link1}</Link>
                 </p>
