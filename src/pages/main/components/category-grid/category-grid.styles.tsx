@@ -6,7 +6,8 @@ interface IStyledColProps {
 }
 const ColStyle = styled.div`
   background-image: url(${(props: IStyledColProps) => props.img});
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 460px;
 `;
 

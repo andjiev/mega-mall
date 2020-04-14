@@ -17,14 +17,14 @@ interface CardProps {
 const Card = (props: CardProps) => {
   return (
     <>
-      <CardBody variant="outlined" img={props.img}>
-        <CardHeader title={props.title}>
-          <Typography></Typography>
-        </CardHeader>
-        <CardContent>
-          <Typography>{props.children}</Typography>
-        </CardContent>
-      </CardBody>
+      <ColStyle img={props.img}>
+        <CardBody variant="outlined">
+          <CardContent>
+            <Typography>{props.title}</Typography>
+            <Typography>{props.children}</Typography>
+          </CardContent>
+        </CardBody>
+      </ColStyle>
     </>
   );
 };

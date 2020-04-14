@@ -16,7 +16,7 @@ const CategoryGrid = () => {
         link2: 'КОМПЈУТЕРСКА ОПРЕМА',
         link3: 'МОБИЛНИ ТЕЛЕФОНИ',
         link4: 'Прикажи ги сите >',
-        img: 'assets/images/Tehnologija.jpg'
+        img: 'src/assets/images/Tehnologija.jpg'
       },
       {
         id: 2,
@@ -25,7 +25,7 @@ const CategoryGrid = () => {
         link2: 'ЖЕНСКА ОБЛЕКА',
         link3: 'ОБУВКИ',
         link4: 'Прикажи ги сите >',
-        img: 'assets/images/Moda.jpg'
+        img: 'src/assets/images/Moda.jpg'
       },
       {
         id: 3,
@@ -34,7 +34,7 @@ const CategoryGrid = () => {
         link2: 'ПАРФЕМИ',
         link3: 'НЕГА',
         link4: 'Прикажи ги сите >',
-        img: 'assets/images/Ubavina-i-zdravje.jpg'
+        img: 'src/assets/images/Ubavina-i-zdravje.jpg'
       },
       {
         id: 4,
@@ -43,7 +43,7 @@ const CategoryGrid = () => {
         link2: 'СПОРТСКА ОБЛЕКА',
         link3: 'ФИТНЕС',
         link4: 'Прикажи ги сите >',
-        img: 'assets/images/Sport.jpg'
+        img: 'src/assets/images/Sport.jpg'
       },
       {
         id: 5,
@@ -52,7 +52,7 @@ const CategoryGrid = () => {
         link2: 'БЕЛА ТЕХНИКА',
         link3: 'ДОМ И ГРАДИНА',
         link4: 'Прикажи ги сите >',
-        img: 'assets/images/Domakinstvo.jpg'
+        img: 'src/assets/images/Domakinstvo.jpg'
       },
       {
         id: 6,
@@ -61,38 +61,42 @@ const CategoryGrid = () => {
         link2: 'ЕДУКАЦИЈА',
         link3: 'КУЛТУРА И НАСТАНИ',
         link4: 'Прикажи ги сите >',
-        img: 'assets/images/Uslugi.jpg'
+        img: 'src/assets/images/Uslugi.jpg'
       }
     ]
   };
 
   return (
     <Grid container>
-      <Grid container direction="row" xs={12}>
-        <h3>Пребарај по категорија</h3>
+      <Grid item direction="row" xs={12}>
+        <Grid container direction="row" xs={12}>
+          <h3>Пребарај по категорија</h3>
+        </Grid>
       </Grid>
-      <Grid container direction="row" xs={12} spacing={5} justify="center" alignContent="space-around">
-        {state.users.map(value => (
-          <Grid item key={value.id} xs={12} md={6} lg={4}>
-            <Card key={value.id} title={value.title} size={'medium'} img={value.img}>
-              <p>
-                <Link href={'/'}>{value.link1}</Link>
-              </p>
+      <Grid item>
+        <Grid container direction="row" xs={12} spacing={5} justify="center" alignContent="space-around">
+          {state.users.map(value => (
+            <Grid item key={value.id} xs={12} md={6} lg={4}>
+              <Card key={value.id} title={value.title} size={'medium'} img={value.img}>
+                <p>
+                  <Link href={'/'}>{value.link1}</Link>
+                </p>
 
-              <p>
-                <Link href={'/'}>{value.link2}</Link>
-              </p>
+                <p>
+                  <Link href={'/'}>{value.link2}</Link>
+                </p>
 
-              <p>
-                <Link href={'/'}>{value.link3}</Link>
-              </p>
+                <p>
+                  <Link href={'/'}>{value.link3}</Link>
+                </p>
 
-              <p>
-                <Link href={'/'}>{value.link4}</Link>
-              </p>
-            </Card>
-          </Grid>
-        ))}
+                <p>
+                  <Link href={'/'}>{value.link4}</Link>
+                </p>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
       </Grid>
     </Grid>
   );
