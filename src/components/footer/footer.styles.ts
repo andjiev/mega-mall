@@ -29,3 +29,7 @@ const RowStyle = styled.div`
 `;
 
 export { ListStyle, TextStyle, FooterStyle, WrapperStyle, RowStyle };
+  width: 1369px;
+  height: 428px;
+`;
+
