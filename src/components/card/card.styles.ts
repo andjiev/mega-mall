@@ -25,7 +25,7 @@ const TitlesStyle = styled.h2`
   padding-left: 4%;
 `;
 const CategoryLinkStyle = styled.p`
-  margin-top: 55%;
+  margin-top: 75%;
   margin-left: 4%;
 `;
 

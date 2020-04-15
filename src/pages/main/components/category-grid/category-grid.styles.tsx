@@ -16,7 +16,6 @@ const HeaderStyle = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 76%;
-  margin-left: 7%;
 `;
 const BigStyle = styled.h1`
   float: left;
@@ -25,5 +24,9 @@ const SmallStyle = styled.h4`
   overflow: hidden;
   float: right;
 `;
+const GridStyle = styled.div`
+  max-width: 58%;
+  margin: 0 auto;
+`;
 
-export { StyledItem, TextStyle, HeaderStyle, BigStyle, SmallStyle };
+export { StyledItem, TextStyle, HeaderStyle, BigStyle, SmallStyle, GridStyle };
