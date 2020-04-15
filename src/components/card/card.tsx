@@ -1,10 +1,4 @@
 import React from 'react';
-import CardBody from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardHeader from '@material-ui/core/CardHeader';
-import Link from '@material-ui/core/Link';
-import Typography from '@material-ui/core/Typography';
 import { ColStyle, StyledCardBody, StyledCardContent } from 'components/card/card.styles';
 
 interface CardProps {
