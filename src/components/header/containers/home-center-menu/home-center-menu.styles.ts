@@ -1,5 +1,9 @@
 import styled from 'styled-components';
-import { Nav, NavLink } from 'reactstrap';
+import { Nav, NavLink, NavItem } from 'reactstrap';
+import HomeCenterSubmenu from '../home-center-submenu/home-center-submenu';
+import { StyledContainer } from '../home-center-submenu/home-center-submenu.styles';
+
+const themePink = '#BF1736';
 
 const CenterMenuWrapper = styled.div`
   max-width: 1029px;
@@ -24,7 +28,27 @@ const StyledNav = styled(Nav)`
 
 const StyledLink = styled(NavLink)`
   color: #ffffff;
-  padding: 25px 0px;
+  padding: 20px 0px;
+  width: 100%;
+  transition: 0.3s;
+
+  &:hover {
+    color: ${themePink};
+  }
 `;
 
-export { CenterMenuContainer, CenterMenuWrapper, StyledNav, StyledLink };
+const StyledNavItem = styled(NavItem)`
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+  &:hover {
+    border-bottom: 2px solid ${themePink};
+  }
+  &:hover ${StyledContainer} {
+    display: inline-block;
+  }
+  &:active {
+    border-bottom: 2px solid ${themePink};
+  }
+`;
+
+export { CenterMenuContainer, CenterMenuWrapper, StyledNav, StyledLink, StyledNavItem };
