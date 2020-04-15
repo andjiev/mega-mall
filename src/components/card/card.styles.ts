@@ -11,12 +11,22 @@ const ColStyle = styled.div`
   background-repeat: no-repeat;
   min-height: 460px;
 `;
-const StyledCardBody = styled(CardBody)`
-  background-color: transparent;
+const StyledCardBody = styled.div`
+  align-items: center;
+  margin: 0 auto;
+`;
+const StyledCardContent = styled.div`
   border: 0;
 `;
-const StyledCardContent = styled(CardContent)`
-  border: 0;
+const TitlesStyle = styled.h2`
+  color: white;
+  margin-top: 10%;
+  padding-top: 4%;
+  padding-left: 4%;
+`;
+const CategoryLinkStyle = styled.p`
+  margin-top: 55%;
+  margin-left: 4%;
 `;
 
-export { ColStyle, StyledCardBody, StyledCardContent };
+export { ColStyle, StyledCardBody, StyledCardContent, TitlesStyle, CategoryLinkStyle };

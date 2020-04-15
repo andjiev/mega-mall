@@ -1,8 +1,8 @@
 import React from 'react';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Grid, { GridSpacing } from '@material-ui/core/Grid';
 import Card from './../../../../components/card/card';
 import { Link } from '@material-ui/core';
+import { StyledItem, TextStyle, HeaderStyle, BigStyle, SmallStyle } from './category-grid.styles';
 
 const CategoryGrid = () => {
   const state = {
@@ -68,34 +68,53 @@ const CategoryGrid = () => {
     <Grid container>
       <Grid item direction="row" xs={12}>
         <Grid container direction="row" xs={12}>
-          <h3>Пребарај по категорија</h3>
+          <HeaderStyle>
+            <BigStyle>
+              <h1>Пребарај по категорија</h1>
+            </BigStyle>
+
+            <SmallStyle>
+              <h4>прикажи ги сите></h4>
+            </SmallStyle>
+          </HeaderStyle>
         </Grid>
       </Grid>
-      <Grid item>
-        <Grid container xs={12} spacing={5}>
-          {state.users.map(value => (
-            <Grid item key={value.id} xs={12} md={6} lg={4}>
-              <Card key={value.id} title={value.title} size={'large'} img={value.img}>
-                <p>
-                  <Link href={'/'}>{value.link1}</Link>
-                </p>
 
-                <p>
-                  <Link href={'/'}>{value.link2}</Link>
-                </p>
+      <StyledItem>
+        <Grid item>
+          <Grid container xs={12} spacing={5}>
+            {state.users.map(value => (
+              <Grid item key={value.id} xs={12} md={6} lg={4}>
+                <Card key={value.id} title={value.title} size={'large'} img={value.img}>
+                  <p>
+                    <TextStyle>
+                      <Link href={'/'}>{value.link1}</Link>
+                    </TextStyle>
+                  </p>
 
-                <p>
-                  <Link href={'/'}>{value.link3}</Link>
-                </p>
+                  <p>
+                    <TextStyle>
+                      <Link href={'/'}>{value.link2}</Link>
+                    </TextStyle>
+                  </p>
 
-                <p>
-                  <Link href={'/'}>{value.link4}</Link>
-                </p>
-              </Card>
-            </Grid>
-          ))}
+                  <p>
+                    <TextStyle>
+                      <Link href={'/'}>{value.link3}</Link>
+                    </TextStyle>
+                  </p>
+
+                  <p>
+                    <TextStyle>
+                      <Link href={'/'}>{value.link4}</Link>
+                    </TextStyle>
+                  </p>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
         </Grid>
-      </Grid>
+      </StyledItem>
     </Grid>
   );
 };
