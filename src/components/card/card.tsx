@@ -1,6 +1,5 @@
 import React from 'react';
-import Col from 'react-bootstrap/Col';
-import { CategoryStyle, HeadingStyle, ParagraphStyle, ColStyle } from '../../pages/main/components/category-grid/category-grid.style';
+import { ColStyle, StyledCardBody, StyledCardContent } from 'components/card/card.styles';
 
 interface CardProps {
   size: 'small' | 'medium' | 'large';
@@ -12,16 +11,20 @@ interface CardProps {
 const Card = (props: CardProps) => {
   return (
     <>
-      <CategoryStyle>
+      {props.size == 'small' ? (
+        <div></div>
+      ) : props.size == 'medium' ? (
+        <div></div>
+      ) : (
         <ColStyle img={props.img}>
-          <Col>
-            <HeadingStyle>
-              <h1>{props.title}</h1>
-            </HeadingStyle>
-            <ParagraphStyle>{props.children}</ParagraphStyle>
-          </Col>
+          <StyledCardBody>
+            <StyledCardContent>
+              <h3>{props.title}</h3>
+              <p>{props.children}</p>
+            </StyledCardContent>
+          </StyledCardBody>
         </ColStyle>
-      </CategoryStyle>
+      )}
     </>
   );
 };
