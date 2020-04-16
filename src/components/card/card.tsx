@@ -1,6 +1,5 @@
 import React from 'react';
-import { ColStyle, StyledCardBody, StyledCardContent, TitlesStyle, CategoryLinkStyle } from 'components/card/card.styles';
-import { HeadingStyle } from 'pages/main/components/main-slider/main-slider.style';
+import { ColStyle, StyledCardBody, TitlesStyle, CategoryLinkStyle } from 'components/card/card.styles';
 
 interface CardProps {
   size: 'small' | 'medium' | 'large';

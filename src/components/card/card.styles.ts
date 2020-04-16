@@ -15,9 +15,6 @@ const StyledCardBody = styled.div`
   align-items: center;
   margin: 0 auto;
 `;
-const StyledCardContent = styled.div`
-  border: 0;
-`;
 const TitlesStyle = styled.h2`
   color: white;
   padding-top: 4%;
@@ -28,4 +25,4 @@ const CategoryLinkStyle = styled.p`
   margin-left: 7%;
 `;
 
-export { ColStyle, StyledCardBody, StyledCardContent, TitlesStyle, CategoryLinkStyle };
+export { ColStyle, StyledCardBody, TitlesStyle, CategoryLinkStyle };
