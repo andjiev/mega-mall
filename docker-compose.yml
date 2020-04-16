@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+  mongo-db:
+    container_name: easy-find-mongodb
+    image: docker.pkg.github.com/andjiev/easy-find-server/easy-find-mongodb:dev
+    restart: always
+    ports:
+      - 27017:27017
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: easyFind
+      ME_CONFIG_MONGODB_ADMINPASSWORD: 7bMY2EgV<nb?U3[z
+      ME_CONFIG_MONGODB_SERVER: easy-find-mongodb
+    depends_on:
+      - mongo-db
+
+  easy-find-api:
+    container_name: easy-find-api
+    image: docker.pkg.github.com/andjiev/easy-find-server/easy-find-api:dev
+    restart: always
+    environment:
+      - 'ASPNETCORE_ENVIRONMENT=development'
+      - 'ASPNETCORE_URLS=http://+:5401'
+    ports:
+      - 5401:80
