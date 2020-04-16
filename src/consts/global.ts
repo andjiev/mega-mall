@@ -1,1 +1,1 @@
-export const webGlobal: any = window.global;
+export const webGlobal: WebGlobal = window.global;
