@@ -11,16 +11,18 @@ const TextStyle = styled(Link)`
   color: white;
   font-weight: bold;
   text-decoration: underline;
+  color: #ffff;
 `;
 const HeaderStyle = styled.div`
   justify-content: space-between;
   align-items: center;
-  width: 76%;
+  width: 95%;
+  margin-top: 10%;
 `;
-const BigStyle = styled.h1`
+const BigStyle = styled.h4`
   float: left;
 `;
-const SmallStyle = styled.h4`
+const SmallStyle = styled.p`
   overflow: hidden;
   float: right;
 `;

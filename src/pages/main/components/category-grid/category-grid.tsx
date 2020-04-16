@@ -71,11 +71,11 @@ const CategoryGrid = () => {
           <Grid container direction="row" xs={12}>
             <HeaderStyle>
               <BigStyle>
-                <h1>Пребарај по категорија</h1>
+                <h4>Пребарај по категорија</h4>
               </BigStyle>
 
               <SmallStyle>
-                <h4>прикажи ги сите</h4>
+                <p>прикажи ги сите</p>
               </SmallStyle>
             </HeaderStyle>
           </Grid>
@@ -89,26 +89,32 @@ const CategoryGrid = () => {
                   <Card key={value.id} title={value.title} size={'large'} img={value.img}>
                     <p>
                       <TextStyle>
-                        <Link href={'/'}>{value.link1}</Link>
+                        <Link href={'/'} style={{ color: 'white', textDecoration: 'underline' }}>
+                          {value.link1}
+                        </Link>
                       </TextStyle>
                     </p>
 
                     <p>
                       <TextStyle>
-                        <Link href={'/'}>{value.link2}</Link>
+                        <Link href={'/'} style={{ color: 'white', textDecoration: 'underline' }}>
+                          {value.link2}
+                        </Link>
                       </TextStyle>
                     </p>
 
                     <p>
                       <TextStyle>
-                        <Link href={'/'}>{value.link3}</Link>
+                        <Link href={'/'} style={{ color: 'white', textDecoration: 'underline' }}>
+                          {value.link3}
+                        </Link>
                       </TextStyle>
                     </p>
 
                     <p>
-                      <TextStyle>
-                        <Link href={'/'}>{value.link4}</Link>
-                      </TextStyle>
+                      <Link href={'/'} style={{ color: 'white' }}>
+                        {value.link4}
+                      </Link>
                     </p>
                   </Card>
                 </Grid>

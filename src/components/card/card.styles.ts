@@ -20,13 +20,12 @@ const StyledCardContent = styled.div`
 `;
 const TitlesStyle = styled.h2`
   color: white;
-  margin-top: 10%;
   padding-top: 4%;
-  padding-left: 4%;
+  padding-left: 7%;
 `;
 const CategoryLinkStyle = styled.p`
   margin-top: 75%;
-  margin-left: 4%;
+  margin-left: 7%;
 `;
 
 export { ColStyle, StyledCardBody, StyledCardContent, TitlesStyle, CategoryLinkStyle };
