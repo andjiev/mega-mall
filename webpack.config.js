@@ -2,13 +2,14 @@
 
 const path = require('path');
 const merge = require('webpack-merge');
-const webpack = require('webpack');
 
 // variables
 const outPath = path.join(__dirname, 'dist');
 
 //plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MergeJsonWebpackPlugin = require('merge-jsons-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const entryConfig = {
@@ -44,6 +45,19 @@ const baseConfig = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
       favicon: './public/favicon.ico'
+    }),
+    new CopyWebpackPlugin([{ from: 'public/manifest.json', to: '' }]),
+    new MergeJsonWebpackPlugin({
+      debug: false,
+      encoding: 'utf8',
+      output: {
+        groupBy: [
+          {
+            pattern: '**/translations.json',
+            fileName: 'static/translations.json'
+          }
+        ]
+      }
     })
   ],
   devServer: {

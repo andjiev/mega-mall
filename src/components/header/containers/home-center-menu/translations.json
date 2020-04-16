@@ -1,0 +1,12 @@
+{
+  "mk-MK": {
+    "translation": {
+      "EasyFind_Header_Services": "УСЛУГИ"
+    }
+  },
+  "en-GB": {
+    "translation": {
+      "EasyFind_Header_Services": "SERVICES"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { CenterMenuContainer, CenterMenuWrapper, StyledNav, StyledLink, StyledNavItem } from './home-center-menu.styles';
-import { NavItem } from 'reactstrap';
 import { HomeCenterSubmenu } from '../home-center-submenu';
+import { translate } from 'lib/translate';
 
 interface HomeMenuProps {}
 
@@ -29,7 +29,7 @@ const HomeCenterMenu = (props: HomeMenuProps) => {
     },
     {
       id: 6,
-      title: 'УСЛУГИ'
+      title: translate('EasyFind_Header_Services', 'УСЛУГИ')
     }
   ];
   return (
