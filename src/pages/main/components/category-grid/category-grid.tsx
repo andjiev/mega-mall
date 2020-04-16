@@ -89,7 +89,7 @@ const CategoryGrid = () => {
         <StyledItem>
           <Grid item>
             <Grid container xs={12} spacing={5}>
-              {users.map(value => (
+              {cards.map(value => (
                 <Grid item key={value.id} xs={12} md={6} lg={4}>
                   <Card key={value.id} title={value.title} size={'large'} img={value.img}>
                     <p>
