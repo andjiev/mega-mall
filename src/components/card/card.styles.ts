@@ -11,12 +11,18 @@ const ColStyle = styled.div`
   background-repeat: no-repeat;
   min-height: 460px;
 `;
-const StyledCardBody = styled(CardBody)`
-  background-color: transparent;
-  border: 0;
+const StyledCardBody = styled.div`
+  align-items: center;
+  margin: 0 auto;
 `;
-const StyledCardContent = styled(CardContent)`
-  border: 0;
+const TitlesStyle = styled.h2`
+  color: white;
+  padding-top: 4%;
+  padding-left: 7%;
+`;
+const CategoryLinkStyle = styled.p`
+  margin-top: 75%;
+  margin-left: 7%;
 `;
 
-export { ColStyle, StyledCardBody, StyledCardContent };
+export { ColStyle, StyledCardBody, TitlesStyle, CategoryLinkStyle };
