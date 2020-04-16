@@ -75,7 +75,7 @@ const CategoryGrid = () => {
               </BigStyle>
 
               <SmallStyle>
-                <p>прикажи ги сите</p>
+                <p>прикажи ги сите > </p>
               </SmallStyle>
             </HeaderStyle>
           </Grid>

@@ -8,10 +8,7 @@ const StyledItem = styled.div`
   margin: 0 auto;
 `;
 const TextStyle = styled(Link)`
-  color: white;
   font-weight: bold;
-  text-decoration: underline;
-  color: #ffff;
 `;
 const HeaderStyle = styled.div`
   justify-content: space-between;
