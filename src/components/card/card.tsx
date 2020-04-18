@@ -3,7 +3,7 @@ import { ColStyle, StyledCardBody, TitlesStyle, CategoryLinkStyle } from 'compon
 
 interface CardProps {
   size: 'small' | 'medium' | 'large';
-  children: React.ReactNode;
+  children?: React.ReactNode;
   title: string;
   img: string;
 }
