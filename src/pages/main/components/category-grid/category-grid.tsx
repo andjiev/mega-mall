@@ -2,7 +2,7 @@ import React from 'react';
 import Grid, { GridSpacing } from '@material-ui/core/Grid';
 import Card from './../../../../components/card/card';
 import { Link } from '@material-ui/core';
-import { StyledItem, TextStyle, HeaderStyle, BigStyle, SmallStyle, GridStyle } from './category-grid.styles';
+import { StyledItem, GridStyle, StyledLink, StyledHeader, StyledHeading, StyledParagraph } from './category-grid.styles';
 
 import TehnologijaImg from '../../../../assets/images/Tehnologija.jpg';
 import ModaImg from '../../../../assets/images/Moda.jpg';
@@ -74,15 +74,15 @@ const CategoryGrid = () => {
       <Grid container>
         <Grid item direction="row" xs={12}>
           <Grid container direction="row" xs={12}>
-            <HeaderStyle>
-              <BigStyle>
+            <StyledHeader>
+              <StyledHeading>
                 <h4>Пребарај по категорија</h4>
-              </BigStyle>
+              </StyledHeading>
 
-              <SmallStyle>
+              <StyledParagraph>
                 <p>прикажи ги сите</p>
-              </SmallStyle>
-            </HeaderStyle>
+              </StyledParagraph>
+            </StyledHeader>
           </Grid>
         </Grid>
 
@@ -93,33 +93,19 @@ const CategoryGrid = () => {
                 <Grid item key={value.id} xs={12} md={6} lg={4}>
                   <Card key={value.id} title={value.title} size={'large'} img={value.img}>
                     <p>
-                      <TextStyle>
-                        <Link href={'/'} style={{ color: 'white', textDecoration: 'underline' }}>
-                          {value.link1}
-                        </Link>
-                      </TextStyle>
+                      <StyledLink href={'/'}>{value.link1}</StyledLink>
                     </p>
 
                     <p>
-                      <TextStyle>
-                        <Link href={'/'} style={{ color: 'white', textDecoration: 'underline' }}>
-                          {value.link2}
-                        </Link>
-                      </TextStyle>
+                      <StyledLink href={'/'}>{value.link2}</StyledLink>
                     </p>
 
                     <p>
-                      <TextStyle>
-                        <Link href={'/'} style={{ color: 'white', textDecoration: 'underline' }}>
-                          {value.link3}
-                        </Link>
-                      </TextStyle>
+                      <StyledLink href={'/'}>{value.link3}</StyledLink>
                     </p>
 
                     <p>
-                      <Link href={'/'} style={{ color: 'white' }}>
-                        {value.link4}
-                      </Link>
+                      <StyledLink href={'/'}>{value.link4}</StyledLink>
                     </p>
                   </Card>
                 </Grid>

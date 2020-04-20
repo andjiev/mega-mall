@@ -1,5 +1,5 @@
 import React from 'react';
-import { ColStyle, StyledCardBody, TitlesStyle, CategoryLinkStyle } from 'components/card/card.styles';
+import { StyledCardBody, StyledTitles, StyledCategoryLink, StyledCol } from 'components/card/card.styles';
 
 interface CardProps {
   size: 'small' | 'medium' | 'large';
@@ -16,14 +16,14 @@ const Card = (props: CardProps) => {
       ) : props.size == 'medium' ? (
         <div></div>
       ) : (
-        <ColStyle img={props.img}>
+        <StyledCol img={props.img}>
           <StyledCardBody>
             <StyledCardBody>
-              <TitlesStyle>{props.title}</TitlesStyle>
-              <CategoryLinkStyle>{props.children}</CategoryLinkStyle>
+              <StyledTitles>{props.title}</StyledTitles>
+              <StyledCategoryLink>{props.children}</StyledCategoryLink>
             </StyledCardBody>
           </StyledCardBody>
-        </ColStyle>
+        </StyledCol>
       )}
     </>
   );

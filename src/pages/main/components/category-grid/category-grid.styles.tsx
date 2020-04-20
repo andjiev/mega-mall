@@ -7,19 +7,22 @@ const StyledItem = styled.div`
   align-items: center;
   margin: 0 auto;
 `;
-const TextStyle = styled(Link)`
+const StyledLink = styled(Link)`
   font-weight: bold;
+  color: white;
+  text-decoration: underline;
 `;
-const HeaderStyle = styled.div`
+
+const StyledHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 95%;
   margin-top: 10%;
 `;
-const BigStyle = styled.h4`
+const StyledHeading = styled.h4`
   float: left;
 `;
-const SmallStyle = styled.p`
+const StyledParagraph = styled.p`
   overflow: hidden;
   float: right;
 `;
@@ -28,4 +31,4 @@ const GridStyle = styled.div`
   margin: 0 auto;
 `;
 
-export { StyledItem, TextStyle, HeaderStyle, BigStyle, SmallStyle, GridStyle };
+export { StyledItem, StyledLink, StyledHeader, StyledHeading, StyledParagraph, GridStyle };
