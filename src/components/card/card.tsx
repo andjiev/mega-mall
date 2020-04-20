@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledCardBody, StyledTitles, StyledCategoryLink, StyledCol } from 'components/card/card.styles';
+import { StyledTitles, StyledCategoryLink, StyledCol } from 'components/card/card.styles';
 
 interface CardProps {
   size: 'small' | 'medium' | 'large';
@@ -17,10 +17,8 @@ const Card = (props: CardProps) => {
         <div></div>
       ) : (
         <StyledCol img={props.img}>
-          <StyledCardBody>
-            <StyledTitles>{props.title}</StyledTitles>
-            <StyledCategoryLink>{props.children}</StyledCategoryLink>
-          </StyledCardBody>
+          <StyledTitles>{props.title}</StyledTitles>
+          <StyledCategoryLink>{props.children}</StyledCategoryLink>
         </StyledCol>
       )}
     </>

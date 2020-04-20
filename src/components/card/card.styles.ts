@@ -13,7 +13,7 @@ const StyledCol = styled.div`
   max-width: 300px;
   width: 100%;
 `;
-const StyledCardBody = styled.div``;
+
 const StyledTitles = styled.h2`
   color: white;
   font-family: 'OswaldBold', sans-serif;
@@ -25,4 +25,4 @@ const StyledCategoryLink = styled.div`
   margin-left: 7%;
 `;
 
-export { StyledCol, StyledCardBody, StyledTitles, StyledCategoryLink };
+export { StyledCol, StyledTitles, StyledCategoryLink };

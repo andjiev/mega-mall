@@ -2,7 +2,7 @@ import React from 'react';
 import Grid, { GridSpacing } from '@material-ui/core/Grid';
 import Card from './../../../../components/card/card';
 import { Link } from '@material-ui/core';
-import { StyledItem, StyledLink, StyledHeader, StyledHeading, StyledParagraph } from './category-grid.styles';
+import { StyledLink, StyledHeading, StyledParagraph } from './category-grid.styles';
 
 import TehnologijaImg from '../../../../assets/images/Tehnologija.jpg';
 import ModaImg from '../../../../assets/images/Moda.jpg';
