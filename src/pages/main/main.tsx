@@ -18,11 +18,14 @@ const _MainPage = (props: MainPageProps) => {
   return (
     <>
       <MainSlider />
-      <CategoryGrid />
-      <CardSlider />
-      <MainBanner />
-      <ProductGrid />
-      <GiftCardGrid />
+
+      <div className="container">
+        <CategoryGrid />
+        <CardSlider />
+        <MainBanner />
+        <ProductGrid />
+        <GiftCardGrid />
+      </div>
     </>
   );
 };

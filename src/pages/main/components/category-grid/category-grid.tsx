@@ -2,7 +2,7 @@ import React from 'react';
 import Grid, { GridSpacing } from '@material-ui/core/Grid';
 import Card from './../../../../components/card/card';
 import { Link } from '@material-ui/core';
-import { StyledItem, GridStyle, StyledLink, StyledHeader, StyledHeading, StyledParagraph } from './category-grid.styles';
+import { StyledItem, StyledLink, StyledHeader, StyledHeading, StyledParagraph } from './category-grid.styles';
 
 import TehnologijaImg from '../../../../assets/images/Tehnologija.jpg';
 import ModaImg from '../../../../assets/images/Moda.jpg';
@@ -70,51 +70,49 @@ const CategoryGrid = () => {
   ];
 
   return (
-    <GridStyle>
-      <Grid container>
-        <Grid item direction="row" xs={12}>
-          <Grid container direction="row" xs={12}>
-            <StyledHeader>
-              <StyledHeading>
-                <h4>Пребарај по категорија</h4>
-              </StyledHeading>
+    <Grid container>
+      <Grid item direction="row" xs={12}>
+        <Grid container direction="row" xs={12}>
+          <StyledHeader>
+            <StyledHeading>
+              <h4>Пребарај по категорија</h4>
+            </StyledHeading>
 
-              <StyledParagraph>
-                <p>прикажи ги сите</p>
-              </StyledParagraph>
-            </StyledHeader>
+            <StyledParagraph>
+              <p>прикажи ги сите</p>
+            </StyledParagraph>
+          </StyledHeader>
+        </Grid>
+      </Grid>
+
+      <StyledItem>
+        <Grid item>
+          <Grid container xs={12} spacing={3}>
+            {cards.map(value => (
+              <Grid item key={value.id} xs={12} md={6} lg={4}>
+                <Card key={value.id} title={value.title} size={'large'} img={value.img}>
+                  <p>
+                    <StyledLink href={'/'}>{value.link1}</StyledLink>
+                  </p>
+
+                  <p>
+                    <StyledLink href={'/'}>{value.link2}</StyledLink>
+                  </p>
+
+                  <p>
+                    <StyledLink href={'/'}>{value.link3}</StyledLink>
+                  </p>
+
+                  <p>
+                    <StyledLink href={'/'}>{value.link4}</StyledLink>
+                  </p>
+                </Card>
+              </Grid>
+            ))}
           </Grid>
         </Grid>
-
-        <StyledItem>
-          <Grid item>
-            <Grid container xs={12} spacing={5}>
-              {cards.map(value => (
-                <Grid item key={value.id} xs={12} md={6} lg={4}>
-                  <Card key={value.id} title={value.title} size={'large'} img={value.img}>
-                    <p>
-                      <StyledLink href={'/'}>{value.link1}</StyledLink>
-                    </p>
-
-                    <p>
-                      <StyledLink href={'/'}>{value.link2}</StyledLink>
-                    </p>
-
-                    <p>
-                      <StyledLink href={'/'}>{value.link3}</StyledLink>
-                    </p>
-
-                    <p>
-                      <StyledLink href={'/'}>{value.link4}</StyledLink>
-                    </p>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
-          </Grid>
-        </StyledItem>
-      </Grid>
-    </GridStyle>
+      </StyledItem>
+    </Grid>
   );
 };
 

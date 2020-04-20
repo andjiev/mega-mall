@@ -1,6 +1,8 @@
 @font-face {
   font-family: 'OswaldBold';
-  src: url('assets/fonts/Oswald-Bold.ttf');
+  src: url('assets/fonts/Oswald-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
 }
 @font-face {
   font-family: 'OswaldRegular';

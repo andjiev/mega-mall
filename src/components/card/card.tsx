@@ -18,10 +18,8 @@ const Card = (props: CardProps) => {
       ) : (
         <StyledCol img={props.img}>
           <StyledCardBody>
-            <StyledCardBody>
-              <StyledTitles>{props.title}</StyledTitles>
-              <StyledCategoryLink>{props.children}</StyledCategoryLink>
-            </StyledCardBody>
+            <StyledTitles>{props.title}</StyledTitles>
+            <StyledCategoryLink>{props.children}</StyledCategoryLink>
           </StyledCardBody>
         </StyledCol>
       )}

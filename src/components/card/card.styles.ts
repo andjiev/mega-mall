@@ -10,20 +10,15 @@ const StyledCol = styled.div`
   background-image: url(${(props: IStyledColProps) => props.img});
   background-repeat: no-repeat;
   min-height: 460px;
+  max-width: 300px;
+  width: 100%;
 `;
-const StyledCardBody = styled.div`
-  align-items: center;
-  margin: 0 auto;
-`;
+const StyledCardBody = styled.div``;
 const StyledTitles = styled.h2`
   color: white;
-  padding-top: 4%;
-  padding-left: 7%;
-  font-family: OswaldBold;
+  font-family: 'OswaldBold', sans-serif;
+  font-weight: 700;
 `;
-const StyledCategoryLink = styled.p`
-  margin-top: 75%;
-  margin-left: 7%;
-`;
+const StyledCategoryLink = styled.p``;
 
 export { StyledCol, StyledCardBody, StyledTitles, StyledCategoryLink };
