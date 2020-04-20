@@ -19,6 +19,7 @@ const StyledTitles = styled.h2`
   color: white;
   padding-top: 4%;
   padding-left: 7%;
+  font-family: OswaldBold;
 `;
 const StyledCategoryLink = styled.p`
   margin-top: 75%;
