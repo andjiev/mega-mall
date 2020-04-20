@@ -11,7 +11,11 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledHeader = styled.div``;
-const StyledHeading = styled.h4``;
-const StyledParagraph = styled.p``;
+const StyledHeading = styled.h4`
+  float: left;
+`;
+const StyledParagraph = styled.p`
+  float: right;
+`;
 
 export { StyledItem, StyledLink, StyledHeader, StyledHeading, StyledParagraph };

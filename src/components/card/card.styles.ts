@@ -18,7 +18,11 @@ const StyledTitles = styled.h2`
   color: white;
   font-family: 'OswaldBold', sans-serif;
   font-weight: 700;
+  margin-left: 7%;
 `;
-const StyledCategoryLink = styled.p``;
+const StyledCategoryLink = styled.div`
+  margin-top: 85%;
+  margin-left: 7%;
+`;
 
 export { StyledCol, StyledCardBody, StyledTitles, StyledCategoryLink };
