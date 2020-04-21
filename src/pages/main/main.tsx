@@ -11,6 +11,7 @@ import { CardSlider } from './components/card-slider';
 import { MainBanner } from './components/main-banner';
 import { ProductGrid } from './components/product-grid';
 import { GiftCardGrid } from './components/gift-card-grid';
+import { Container } from '@material-ui/core';
 
 interface MainPageProps extends RouteComponentProps {}
 
@@ -18,11 +19,14 @@ const _MainPage = (props: MainPageProps) => {
   return (
     <>
       <MainSlider />
-      <CategoryGrid />
-      <CardSlider />
-      <MainBanner />
-      <ProductGrid />
-      <GiftCardGrid />
+
+      <Container>
+        <CategoryGrid />
+        <CardSlider />
+        <MainBanner />
+        <ProductGrid />
+        <GiftCardGrid />
+      </Container>
     </>
   );
 };

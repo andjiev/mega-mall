@@ -6,6 +6,7 @@ import { ThunkDispatch } from 'redux-thunk';
 import { Action } from 'redux';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 
 import App from './app';
 import { createBrowserHistory } from 'history';
@@ -13,6 +14,13 @@ import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import configureEasyFindStore from './store/configure-store';
+
+import './assets/fonts/Oswald-Regular.ttf';
+import './assets/fonts/Oswald-Medium.ttf';
+import './assets/fonts/Roboto-Bold.ttf';
+import './assets/fonts/Roboto-Thin.ttf';
+import './assets/fonts/Roboto-Regular.ttf';
+import './assets/fonts/Roboto-Medium.ttf';
 
 // basename: webGlobal.url.root
 const history = createBrowserHistory({ basename: 'http://localhost:4100' });

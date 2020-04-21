@@ -24,7 +24,7 @@ const CaptionStyle = styled.div`
 `;
 const HeadingStyle = styled.h1`
   text-align: initial;
-  font-family: Oswald Bold;
+  font-family: 'OswaldBold', sans-serif;
   font-weight: bold;
   font-size: 50px;
 `;

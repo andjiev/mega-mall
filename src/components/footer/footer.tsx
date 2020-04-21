@@ -1,7 +1,8 @@
 import React from 'react';
-import { ListStyle, TextStyle, FooterStyle, WrapperStyle, RowStyle } from './footer.styles';
+import { ListStyle, TextStyle, FooterStyle } from './footer.styles';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { Container } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -21,7 +22,7 @@ const Footer = () => {
     <>
       <FooterStyle>
         <section className="footer">
-          <WrapperStyle>
+          <Container>
             <Grid container spacing={3}>
               <Grid item xs={12} md={3}>
                 <ListStyle>
@@ -97,7 +98,7 @@ const Footer = () => {
                 <div className="col-12">&copy;2020-2020 E-commerce Сите права задржани.</div>
               </div>
             </TextStyle>
-          </WrapperStyle>
+          </Container>
         </section>
       </FooterStyle>
     </>

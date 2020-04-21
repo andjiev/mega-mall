@@ -24,7 +24,8 @@ const baseConfig = {
     rules: [
       { test: /\.ts(x?)$/, exclude: /node_modules/, loader: 'babel-loader' },
       { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
+      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
+      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
     ]
   },
   output: {
