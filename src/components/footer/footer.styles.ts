@@ -13,19 +13,9 @@ const TextStyle = styled.div`
 `;
 const FooterStyle = styled.section`
   background: #252525;
-  padding-top: 56px;
+  padding-top: 3%;
   width: 100%;
   height: 428px;
 `;
-const WrapperStyle = styled.div`
-  max-width: 1366px;
-  height: auto;
-  width: 100%;
-  margin: 0 auto;
-  display: block;
-`;
-const RowStyle = styled.div`
-  padding-bottom: 50px;
-`;
 
-export { ListStyle, TextStyle, FooterStyle, WrapperStyle, RowStyle };
+export { ListStyle, TextStyle, FooterStyle };

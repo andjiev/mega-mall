@@ -2,7 +2,7 @@ import React from 'react';
 import Grid, { GridSpacing } from '@material-ui/core/Grid';
 import Card from './../../../../components/card/card';
 import { Link } from '@material-ui/core';
-import { StyledLink, StyledHeading, StyledParagraph } from './category-grid.styles';
+import { StyledLink, StyledHeading, StyledParagraph, StyledLink2 } from './category-grid.styles';
 
 import TehnologijaImg from '../../../../assets/images/Tehnologija.jpg';
 import ModaImg from '../../../../assets/images/Moda.jpg';
@@ -96,7 +96,7 @@ const CategoryGrid = () => {
                   <StyledLink href={'/'}>{value.link3}</StyledLink>
                 </p>
                 <p>
-                  <StyledLink href={'/'}>{value.link4}</StyledLink>
+                  <StyledLink2 href={'/'}>{value.link4}</StyledLink2>
                 </p>
               </Card>
             </Grid>
