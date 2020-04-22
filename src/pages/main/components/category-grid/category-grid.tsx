@@ -67,10 +67,10 @@ const CategoryGrid = () => {
     <>
       <Box>
         <Grid container justify="space-between">
-          <Grid item md={6} xs={6}>
+          <Grid item md={6} xs={7}>
             <Typography variant="h5">Пребарај по категорија</Typography>
           </Grid>
-          <Grid container item md={6} xs={6} justify="flex-end" alignItems="flex-end">
+          <Grid container item md={6} xs={5} justify="flex-end" alignItems="flex-end">
             <Box component="span">прикажи ги сите {' >'}</Box>
           </Grid>
         </Grid>
@@ -81,17 +81,17 @@ const CategoryGrid = () => {
             <Grid item key={value.id} xs={12} md={6} lg={4}>
               <Card key={value.id} title={value.title} img={value.img} size="large">
                 <Box>
-                  <Typography variant="h5">
+                  <Typography variant="h6">
                     <StyledLink href={'/'}>{value.link1}</StyledLink>
                   </Typography>
                 </Box>
                 <Box mt={2}>
-                  <Typography variant="h5">
+                  <Typography variant="h6">
                     <StyledLink href={'/'}>{value.link2}</StyledLink>
                   </Typography>
                 </Box>
                 <Box mt={2}>
-                  <Typography variant="h5">
+                  <Typography variant="h6">
                     <StyledLink href={'/'}>{value.link3}</StyledLink>
                   </Typography>
                 </Box>
