@@ -5,12 +5,15 @@ import { AppDispatch } from 'index';
 import ApplicationState from 'store/application-store';
 import { bootstrapApp } from 'store/shared-store';
 
+// temporary loader (this one does not have typings)
+// @ts-ignore
+import LoadingScreen from 'react-loading-screen';
+
 import { ROUTES } from './consts';
 import { Header } from './components/header';
 import { Footer } from './components/footer';
 
 import MainPage from './pages/main/main';
-import { CircularProgress } from '@material-ui/core';
 
 interface IApp {
   applicationBootstraped: boolean;
@@ -31,7 +34,7 @@ const _App: React.FC<IApp> = (props: IApp) => {
           <Footer />
         </>
       ) : (
-        <CircularProgress />
+        <LoadingScreen loading bgColor="#0d1440" spinnerColor="#BF1736" />
       )}
     </>
   );

@@ -1,39 +1,31 @@
 import styled from 'styled-components';
-import HeroImage from '../../../../assets/images/Hero-image-.jpg';
 
-const StyleBanner = styled.div`
-  max-width: 1366px;
-  width: 100%;
-  max-height: 600px;
-  height: 100%;
-  margin: 0 auto;
-  display: block;
+import HeroImage from '../../../../assets/images/Hero-image-.jpg';
+import { Box } from '@material-ui/core';
+
+const StyledBanner = styled(Box)`
+  background-size: 100% auto;
 `;
-const ButtonStyle = styled.button`
-  max-width: 133px;
-  width: 100%;
-  height: 54px;
-  background: #bf1736;
-  variant: contained;
-`;
-const CaptionStyle = styled.div`
+
+const StyledCaption = styled(Box)`
   text-align: initial;
   font-family: Oswald Bold;
   font-weight: bold;
   padding-bottom: 178px;
 `;
-const HeadingStyle = styled.h1`
+
+const StyledHeading = styled.h1`
   text-align: initial;
   font-family: 'OswaldBold', sans-serif;
   font-weight: bold;
   font-size: 50px;
 `;
 
-const StyleImage = styled.img`
+const StyledImage = styled.img`
   background-image: url(${HeroImage});
-  max-width: 1366px;
+  background-size: cover;
   width: 100%;
-  height: 600px;
+  height: 700px;
 `;
 
-export { StyleBanner, StyleImage, ButtonStyle, CaptionStyle, HeadingStyle };
+export { StyledBanner, StyledImage, StyledCaption, StyledHeading };

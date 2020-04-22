@@ -28,13 +28,3 @@
   font-family: 'RobotoMedium';
   src: url('assets/fonts/Roboto-Medium.ttf');
 }
-
-li {
-  font-family: 'RobotoThin', sans-serif;
-}
-h5 {
-  font-family: 'OswaldRegular', sans-serif;
-}
-p {
-  font-family: 'RobotoRegular', sans-serif;
-}

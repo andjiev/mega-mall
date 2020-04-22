@@ -4,6 +4,7 @@ import { RouteComponentProps } from 'react-router-dom';
 
 import { AppDispatch } from '../..';
 import ApplicationState from '../../store/application-store';
+import { Container, Box } from '@material-ui/core';
 
 import { MainSlider } from './components/main-slider';
 import { CategoryGrid } from './components/category-grid';
@@ -11,7 +12,6 @@ import { CardSlider } from './components/card-slider';
 import { MainBanner } from './components/main-banner';
 import { ProductGrid } from './components/product-grid';
 import { GiftCardGrid } from './components/gift-card-grid';
-import { Container } from '@material-ui/core';
 
 interface MainPageProps extends RouteComponentProps {}
 
@@ -21,8 +21,12 @@ const _MainPage = (props: MainPageProps) => {
       <MainSlider />
 
       <Container>
-        <CategoryGrid />
-        <CardSlider />
+        <Box mt={5}>
+          <CategoryGrid />
+        </Box>
+        <Box mt={5}>
+          <CardSlider />
+        </Box>
         <MainBanner />
         <ProductGrid />
         <GiftCardGrid />

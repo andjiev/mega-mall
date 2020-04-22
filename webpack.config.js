@@ -24,8 +24,7 @@ const baseConfig = {
     rules: [
       { test: /\.ts(x?)$/, exclude: /node_modules/, loader: 'babel-loader' },
       { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
-      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
+      { test: /\.(png|jpg|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
     ]
   },
   output: {
@@ -47,19 +46,19 @@ const baseConfig = {
       template: './public/index.html',
       favicon: './public/favicon.ico'
     }),
-    new CopyWebpackPlugin([{ from: 'public/manifest.json', to: '' }]),
-    new MergeJsonWebpackPlugin({
-      debug: false,
-      encoding: 'utf8',
-      output: {
-        groupBy: [
-          {
-            pattern: '**/translations.json',
-            fileName: 'static/translations.json'
-          }
-        ]
-      }
-    })
+    new CopyWebpackPlugin([{ from: 'public/manifest.json', to: '' }])
+    // new MergeJsonWebpackPlugin({
+    //   debug: false,
+    //   encoding: 'utf8',
+    //   output: {
+    //     groupBy: [
+    //       {
+    //         pattern: '**/translations.json',
+    //         fileName: 'static/translations.json'
+    //       }
+    //     ]
+    //   }
+    // })
   ],
   devServer: {
     headers: {

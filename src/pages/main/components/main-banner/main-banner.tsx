@@ -1,11 +1,7 @@
 import React from 'react';
 
 const MainBanner = () => {
-  return (
-    <>
-      <span>Main banner</span>
-    </>
-  );
+  return <></>;
 };
 
 export default MainBanner;
