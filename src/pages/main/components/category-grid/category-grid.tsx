@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grid, Box, Typography, Link } from '@material-ui/core';
+import { Grid, Box, Typography } from '@material-ui/core';
 import Card from './../../../../components/card/card';
 import { StyledLink } from './category-grid.styles';
 
@@ -71,7 +71,7 @@ const CategoryGrid = () => {
             <Typography variant="h5">Пребарај по категорија</Typography>
           </Grid>
           <Grid container item md={6} xs={6} justify="flex-end" alignItems="flex-end">
-            <Box component="span">прикажи ги сите &nbsp; ></Box>
+            <Box component="span">прикажи ги сите {' >'}</Box>
           </Grid>
         </Grid>
       </Box>

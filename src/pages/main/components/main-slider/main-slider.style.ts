@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import HeroImage from '../../../../assets/images/slider-image.jpg';
+import HeroImage from '../../../../assets/images/Hero-image-.jpg';
 import { Box } from '@material-ui/core';
 
 const StyledBanner = styled(Box)`

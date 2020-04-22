@@ -9,7 +9,7 @@ const MainSlider = () => {
     <StyledBanner>
       <Carousel controls={false}>
         <Carousel.Item>
-          <StyledImage></StyledImage>
+          <StyledImage />
           <Carousel.Caption>
             <StyledCaption>
               <StyledHeading>
@@ -24,7 +24,7 @@ const MainSlider = () => {
         </Carousel.Item>
 
         <Carousel.Item>
-          <StyledImage></StyledImage>
+          <StyledImage />
           <Carousel.Caption>
             <StyledCaption>
               <StyledHeading>
@@ -39,7 +39,7 @@ const MainSlider = () => {
         </Carousel.Item>
 
         <Carousel.Item>
-          <StyledImage></StyledImage>
+          <StyledImage />
           <Carousel.Caption>
             <StyledCaption>
               <StyledHeading>
