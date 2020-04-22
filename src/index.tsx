@@ -7,6 +7,7 @@ import { Action } from 'redux';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+import './theme';
 
 import App from './app';
 import { createBrowserHistory } from 'history';
@@ -14,13 +15,8 @@ import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import configureEasyFindStore from './store/configure-store';
-
-import './assets/fonts/Oswald-Regular.ttf';
-import './assets/fonts/Oswald-Medium.ttf';
-import './assets/fonts/Roboto-Bold.ttf';
-import './assets/fonts/Roboto-Thin.ttf';
-import './assets/fonts/Roboto-Regular.ttf';
-import './assets/fonts/Roboto-Medium.ttf';
+import { MuiThemeProvider } from '@material-ui/core';
+import { theme } from './theme';
 
 // basename: webGlobal.url.root
 const history = createBrowserHistory({ basename: 'http://localhost:4100' });
@@ -30,11 +26,13 @@ export type AppDispatch = ThunkDispatch<ApplicationState, null, Action<string>>;
 const render = (Component: any) => {
   ReactDOM.render(
     <AppContainer>
-      <Provider store={store}>
-        <ConnectedRouter history={history}>
-          <Component />
-        </ConnectedRouter>
-      </Provider>
+      <MuiThemeProvider theme={theme}>
+        <Provider store={store}>
+          <ConnectedRouter history={history}>
+            <Component />
+          </ConnectedRouter>
+        </Provider>
+      </MuiThemeProvider>
     </AppContainer>,
     document.getElementById('root')
   );

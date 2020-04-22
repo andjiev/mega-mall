@@ -1,53 +1,59 @@
 import React from 'react';
+
 import Carousel from 'react-bootstrap/Carousel';
-import { StyleBanner, StyleImage, ButtonStyle, CaptionStyle, HeadingStyle } from './main-slider.style';
+import { StyledBanner, StyledImage, StyledCaption, StyledHeading } from './main-slider.style';
+import { Button, Box } from '@material-ui/core';
 
 const MainSlider = () => {
   return (
-    <StyleBanner>
+    <StyledBanner>
       <Carousel controls={false}>
         <Carousel.Item>
-          <StyleImage></StyleImage>
-
+          <StyledImage></StyledImage>
           <Carousel.Caption>
-            <CaptionStyle>
-              <HeadingStyle>
+            <StyledCaption>
+              <StyledHeading>
                 ПОДАРИ <br></br> ОБУВКИ НА ПРИЈАТЕЛ
-              </HeadingStyle>
-              <p>Ако патиките се ваши омилени обувки,значи дека на прво место ви е удобноста.</p>
-
-              <ButtonStyle>Подари веднаш</ButtonStyle>
-            </CaptionStyle>
+              </StyledHeading>
+              <Box component="p">Ако патиките се ваши омилени обувки, значи дека на прво место ви е удобноста.</Box>
+              <Button variant="contained" color="secondary">
+                Подари веднаш
+              </Button>
+            </StyledCaption>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item>
-          <StyleImage></StyleImage>
 
+        <Carousel.Item>
+          <StyledImage></StyledImage>
           <Carousel.Caption>
-            <CaptionStyle>
-              <HeadingStyle>
-                ПОДАРИ <br></br>ОБУВКИ НА ПРИЈАТЕЛ
-              </HeadingStyle>
-              <p>Ако патиките се ваши омилени обувки,значи дека на прво место ви е удобноста.</p>
-              <ButtonStyle>Подари веднаш</ButtonStyle>
-            </CaptionStyle>
+            <StyledCaption>
+              <StyledHeading>
+                ПОДАРИ <br></br> ОБУВКИ НА ПРИЈАТЕЛ
+              </StyledHeading>
+              <Box component="p">Ако патиките се ваши омилени обувки,значи дека на прво место ви е удобноста.</Box>
+              <Button variant="contained" color="secondary">
+                Подари веднаш
+              </Button>
+            </StyledCaption>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item>
-          <StyleImage></StyleImage>
 
+        <Carousel.Item>
+          <StyledImage></StyledImage>
           <Carousel.Caption>
-            <CaptionStyle>
-              <HeadingStyle>
-                ПОДАРИ <br></br>ОБУВКИ НА ПРИЈАТЕЛ
-              </HeadingStyle>
-              <p>Ако патиките се ваши омилени обувки,значи дека на прво место ви е удобноста.</p>
-              <ButtonStyle>Подари веднаш</ButtonStyle>
-            </CaptionStyle>
+            <StyledCaption>
+              <StyledHeading>
+                ПОДАРИ <br></br> ОБУВКИ НА ПРИЈАТЕЛ
+              </StyledHeading>
+              <Box component="p">Ако патиките се ваши омилени обувки,значи дека на прво место ви е удобноста.</Box>
+              <Button variant="contained" color="secondary">
+                Подари веднаш
+              </Button>
+            </StyledCaption>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-    </StyleBanner>
+    </StyledBanner>
   );
 };
 

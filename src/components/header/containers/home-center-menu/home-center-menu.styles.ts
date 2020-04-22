@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Nav, NavLink, NavItem } from 'reactstrap';
-import HomeCenterSubmenu from '../home-center-submenu/home-center-submenu';
 import { StyledContainer } from '../home-center-submenu/home-center-submenu.styles';
 
 const themePink = '#BF1736';
@@ -17,7 +16,6 @@ const CenterMenuContainer = styled.div`
   top: 0;
   background-color: #0d1440;
   box-shadow: rgba(0, 0, 0, 0.46);
-  font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 14px;
 `;

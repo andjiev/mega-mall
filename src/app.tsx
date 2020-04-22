@@ -10,7 +10,7 @@ import { Header } from './components/header';
 import { Footer } from './components/footer';
 
 import MainPage from './pages/main/main';
-import { CircularProgress } from '@material-ui/core';
+import { LinearProgress } from '@material-ui/core';
 
 interface IApp {
   applicationBootstraped: boolean;
@@ -31,7 +31,7 @@ const _App: React.FC<IApp> = (props: IApp) => {
           <Footer />
         </>
       ) : (
-        <CircularProgress />
+        <LinearProgress />
       )}
     </>
   );
