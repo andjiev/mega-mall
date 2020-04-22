@@ -15,7 +15,8 @@ import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import configureEasyFindStore from './store/configure-store';
-import { MuiThemeProvider } from '@material-ui/core';
+import { MuiThemeProvider, StylesProvider } from '@material-ui/core';
+import { ThemeProvider as SCThemeProvider } from 'styled-components';
 import { theme } from './theme';
 
 // basename: webGlobal.url.root
@@ -26,13 +27,17 @@ export type AppDispatch = ThunkDispatch<ApplicationState, null, Action<string>>;
 const render = (Component: any) => {
   ReactDOM.render(
     <AppContainer>
-      <MuiThemeProvider theme={theme}>
-        <Provider store={store}>
-          <ConnectedRouter history={history}>
-            <Component />
-          </ConnectedRouter>
-        </Provider>
-      </MuiThemeProvider>
+      <StylesProvider injectFirst>
+        <SCThemeProvider theme={theme}>
+          <MuiThemeProvider theme={theme}>
+            <Provider store={store}>
+              <ConnectedRouter history={history}>
+                <Component />
+              </ConnectedRouter>
+            </Provider>
+          </MuiThemeProvider>
+        </SCThemeProvider>
+      </StylesProvider>
     </AppContainer>,
     document.getElementById('root')
   );

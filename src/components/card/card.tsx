@@ -28,17 +28,25 @@ const _Card = (props: CardProps) => {
                   <Typography variant="h3">{props.title}</Typography>
                 </Box>
               </Typography>
-              {/* TODO: find a way to move the whole content at the bottom (Grid container flex or something) */}
-              <Box pt={33}>
-                {props.children}
-                <Box mt={3}>
-                  <Typography component="div">
+              <Hidden mdDown>
+                {/* TODO: find a way to move the whole content at the bottom (Grid container flex or something) */}
+                <Box pt={33}>
+                  {props.children}
+                  <Box mt={3}>
                     <Box color="white" component="span">
                       прикажи ги сите {' >'}
                     </Box>
-                  </Typography>
+                  </Box>
                 </Box>
-              </Box>
+              </Hidden>
+              <Hidden lgUp>
+                {/* TODO: find a way to move the whole content at the bottom (Grid container flex or something) */}
+                <Box pt={28}>
+                  <Box color="white" component="span">
+                    прикажи ги сите {' >'}
+                  </Box>
+                </Box>
+              </Hidden>
             </Box>
           </StyledImage>
         </CardMedia>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grid, Box, Typography } from '@material-ui/core';
+import { Grid, Box, Typography, Hidden } from '@material-ui/core';
 import Card from './../../../../components/card/card';
 import { StyledLink } from './category-grid.styles';
 
@@ -67,12 +67,22 @@ const CategoryGrid = () => {
     <>
       <Box>
         <Grid container justify="space-between">
-          <Grid item md={6} xs={7}>
+          <Grid item sm={6} xs={12}>
             <Typography variant="h5">Пребарај по категорија</Typography>
           </Grid>
-          <Grid container item md={6} xs={5} justify="flex-end" alignItems="flex-end">
-            <Box component="span">прикажи ги сите {' >'}</Box>
-          </Grid>
+          <Hidden xsDown>
+            <Grid container item xs={6} justify="flex-end" alignItems="flex-end">
+              <Box component="span">прикажи ги сите {' >'}</Box>
+            </Grid>
+          </Hidden>
+
+          <Hidden smUp>
+            <Grid container item xs={12} alignItems="flex-end">
+              <Box component="span" mt={1}>
+                прикажи ги сите {' >'}
+              </Box>
+            </Grid>
+          </Hidden>
         </Grid>
       </Box>
       <Box mt={3}>

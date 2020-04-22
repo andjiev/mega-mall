@@ -10,6 +10,10 @@ const StyledImage = styled(Box)`
   background-size: cover;
   width: 100%;
   height: 550px;
+
+  ${props => props.theme.breakpoints.down('md')} {
+    height: 350px;
+  }
 `;
 
 export { StyledImage };
