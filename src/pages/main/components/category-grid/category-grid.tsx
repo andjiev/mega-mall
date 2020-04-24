@@ -1,8 +1,8 @@
 import React from 'react';
-import Grid, { GridSpacing } from '@material-ui/core/Grid';
+
+import { Grid, Box, Typography, Hidden } from '@material-ui/core';
 import Card from './../../../../components/card/card';
-import { Link } from '@material-ui/core';
-import { StyledItem, TextStyle, HeaderStyle, BigStyle, SmallStyle, GridStyle } from './category-grid.styles';
+import { StyledLink } from './category-grid.styles';
 
 import TehnologijaImg from '../../../../assets/images/Tehnologija.jpg';
 import ModaImg from '../../../../assets/images/Moda.jpg';
@@ -19,7 +19,6 @@ const CategoryGrid = () => {
       link1: 'КОМПЈУТЕРИ',
       link2: 'КОМПЈУТЕРСКА ОПРЕМА',
       link3: 'МОБИЛНИ ТЕЛЕФОНИ',
-      link4: 'Прикажи ги сите >',
       img: TehnologijaImg
     },
     {
@@ -28,7 +27,6 @@ const CategoryGrid = () => {
       link1: 'МАШКА ОБЛЕКА',
       link2: 'ЖЕНСКА ОБЛЕКА',
       link3: 'ОБУВКИ',
-      link4: 'Прикажи ги сите >',
       img: ModaImg
     },
     {
@@ -37,7 +35,6 @@ const CategoryGrid = () => {
       link1: 'КОЗМЕТИКА',
       link2: 'ПАРФЕМИ',
       link3: 'НЕГА',
-      link4: 'Прикажи ги сите >',
       img: UbavinaImg
     },
     {
@@ -46,7 +43,6 @@ const CategoryGrid = () => {
       link1: 'СПОРТСКА ОПРЕМА',
       link2: 'СПОРТСКА ОБЛЕКА',
       link3: 'ФИТНЕС',
-      link4: 'Прикажи ги сите >',
       img: SportImg
     },
     {
@@ -55,7 +51,6 @@ const CategoryGrid = () => {
       link1: 'АПАРАТИ ЗА ДОМАЌИНСТВО',
       link2: 'БЕЛА ТЕХНИКА',
       link3: 'ДОМ И ГРАДИНА',
-      link4: 'Прикажи ги сите >',
       img: DomakinstvoImg
     },
     {
@@ -64,71 +59,58 @@ const CategoryGrid = () => {
       link1: 'ХРАНА И ПИЈАЛОЦИ',
       link2: 'ЕДУКАЦИЈА',
       link3: 'КУЛТУРА И НАСТАНИ',
-      link4: 'Прикажи ги сите >',
       img: UslugiImg
     }
   ];
 
   return (
-    <GridStyle>
-      <Grid container>
-        <Grid item direction="row" xs={12}>
-          <Grid container direction="row" xs={12}>
-            <HeaderStyle>
-              <BigStyle>
-                <h4>Пребарај по категорија</h4>
-              </BigStyle>
-
-              <SmallStyle>
-                <p>прикажи ги сите</p>
-              </SmallStyle>
-            </HeaderStyle>
+    <>
+      <Box>
+        <Grid container justify="space-between">
+          <Grid item sm={6} xs={12}>
+            <Typography variant="h5">Пребарај по категорија</Typography>
           </Grid>
-        </Grid>
-
-        <StyledItem>
-          <Grid item>
-            <Grid container xs={12} spacing={5}>
-              {cards.map(value => (
-                <Grid item key={value.id} xs={12} md={6} lg={4}>
-                  <Card key={value.id} title={value.title} size={'large'} img={value.img}>
-                    <p>
-                      <TextStyle>
-                        <Link href={'/'} style={{ color: 'white', textDecoration: 'underline' }}>
-                          {value.link1}
-                        </Link>
-                      </TextStyle>
-                    </p>
-
-                    <p>
-                      <TextStyle>
-                        <Link href={'/'} style={{ color: 'white', textDecoration: 'underline' }}>
-                          {value.link2}
-                        </Link>
-                      </TextStyle>
-                    </p>
-
-                    <p>
-                      <TextStyle>
-                        <Link href={'/'} style={{ color: 'white', textDecoration: 'underline' }}>
-                          {value.link3}
-                        </Link>
-                      </TextStyle>
-                    </p>
-
-                    <p>
-                      <Link href={'/'} style={{ color: 'white' }}>
-                        {value.link4}
-                      </Link>
-                    </p>
-                  </Card>
-                </Grid>
-              ))}
+          <Hidden xsDown>
+            <Grid container item xs={6} justify="flex-end" alignItems="flex-end">
+              <Box component="span">прикажи ги сите {' >'}</Box>
             </Grid>
-          </Grid>
-        </StyledItem>
-      </Grid>
-    </GridStyle>
+          </Hidden>
+
+          <Hidden smUp>
+            <Grid container item xs={12} alignItems="flex-end">
+              <Box component="span" mt={1}>
+                прикажи ги сите {' >'}
+              </Box>
+            </Grid>
+          </Hidden>
+        </Grid>
+      </Box>
+      <Box mt={3}>
+        <Grid container spacing={3}>
+          {cards.map(value => (
+            <Grid item key={value.id} xs={12} md={6} lg={4}>
+              <Card key={value.id} title={value.title} img={value.img} size="large">
+                <Box>
+                  <Typography variant="h6">
+                    <StyledLink href={'/'}>{value.link1}</StyledLink>
+                  </Typography>
+                </Box>
+                <Box mt={2}>
+                  <Typography variant="h6">
+                    <StyledLink href={'/'}>{value.link2}</StyledLink>
+                  </Typography>
+                </Box>
+                <Box mt={2}>
+                  <Typography variant="h6">
+                    <StyledLink href={'/'}>{value.link3}</StyledLink>
+                  </Typography>
+                </Box>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+    </>
   );
 };
 

@@ -1,13 +1,9 @@
-import React from "react";
+import React from 'react';
 
 interface GiftCardProps {}
 
 const GiftCard = (props: GiftCardProps) => {
-  return (
-    <>
-      <span>Gift card component</span>
-    </>
-  );
+  return <></>;
 };
 
 export default GiftCard;
