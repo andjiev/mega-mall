@@ -1,5 +1,5 @@
 import React from 'react';
-import { ColStyle, StyledCardBody, TitlesStyle, CategoryLinkStyle, StyledMaterialCard, StyledMaterialCardTitle, StyledMaterialCardPrice } from 'components/card/card.styles';
+import { ColStyle, StyledCardBody, TitlesStyle, CategoryLinkStyle, StyledMaterialCard, StyledMaterialCardTitle, StyledMaterialCardPrice, StyledCardMedia } from 'components/card/card.styles';
 import { makeStyles, Theme, createStyles, CardHeader, Avatar, IconButton, CardMedia, CardContent, Typography } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
 
@@ -31,7 +31,7 @@ const Card = (props: CardProps) => {
     <>
       {props.size == 'small' ? (
         <StyledMaterialCard>
-          <CardMedia className={classes.media} image={props.img} />
+          <StyledCardMedia className={classes.media} image={props.img} />
           <CardContent>
             <StyledMaterialCardTitle>{props.title}</StyledMaterialCardTitle>
             <StyledMaterialCardPrice>{props.children}</StyledMaterialCardPrice>

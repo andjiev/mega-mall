@@ -1,7 +1,7 @@
 import CardBody from '@material-ui/core/Card';
 import styled from 'styled-components';
 import React from 'react';
-import { CardContent } from '@material-ui/core';
+import { CardContent, CardMedia } from '@material-ui/core';
 import { Card as MaterialCard } from '@material-ui/core';
 
 //Large cards styles
@@ -34,13 +34,25 @@ const CategoryLinkStyle = styled.p`
 const StyledMaterialCard = styled(MaterialCard)`
   min-height: 340px;
   height: 100%;
-  max-width: 200px;
+  max-width: 220px;
   width: 100%;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.24);
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.24);
+  margin-top: 20%;
+  margin-bottom: 20%;
+  max-height: 340px;
+`;
+
+const StyledCardMedia = styled(CardMedia)`
+  top: 0;
+  background-size: auto;
+  background-position: top;
+  max-height: 261px;
+  height: 100%;
+  padding-top: 0px;
 `;
 
 const StyledMaterialCardTitle = styled.h6``;
 
 const StyledMaterialCardPrice = styled.h4``;
 
-export { ColStyle, StyledCardBody, TitlesStyle, CategoryLinkStyle, StyledMaterialCard, StyledMaterialCardTitle, StyledMaterialCardPrice };
+export { ColStyle, StyledCardBody, TitlesStyle, CategoryLinkStyle, StyledMaterialCard, StyledMaterialCardTitle, StyledMaterialCardPrice, StyledCardMedia };

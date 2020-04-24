@@ -2,6 +2,7 @@ import React from 'react';
 import { Card } from '../../../../components/card';
 import Carousel from 'react-multi-carousel';
 import './card-slider.styles';
+import 'react-multi-carousel/lib/styles.css';
 
 import mobilenSlika from './../../../../assets/images/CardSlider/Mobilen-telefon.jpg';
 import masinaSlika from './../../../../assets/images/CardSlider/Mashina-za-perenje.jpg';
@@ -52,11 +53,11 @@ const CardSlider = () => {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 4
+      items: 6
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3
+      items: 4
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -70,17 +71,51 @@ const CardSlider = () => {
 
   return (
     <Carousel
-      swipeable={true}
-      draggable={false}
+      additionalTransfrom={0}
+      arrows
+      autoPlaySpeed={3000}
+      centerMode
+      className="mb-5"
+      containerClass="container"
+      dotListClass=""
+      draggable
+      focusOnSelect={false}
+      infinite
+      itemClass=""
+      keyBoardControl
+      minimumTouchDrag={80}
+      renderButtonGroupOutside={false}
+      renderDotsOutside={false}
+      responsive={{
+        desktop: {
+          breakpoint: {
+            max: 3000,
+            min: 1024
+          },
+          items: 3,
+          partialVisibilityGutter: 40
+        },
+        mobile: {
+          breakpoint: {
+            max: 464,
+            min: 0
+          },
+          items: 1,
+          partialVisibilityGutter: 30
+        },
+        tablet: {
+          breakpoint: {
+            max: 1024,
+            min: 464
+          },
+          items: 2,
+          partialVisibilityGutter: 30
+        }
+      }}
       showDots={false}
-      responsive={responsive}
-      infinite={false}
-      keyBoardControl={true}
-      transitionDuration={500}
-      focusOnSelect={true}
-      containerClass="carousel-container"
-      deviceType="desktop"
-      removeArrowOnDeviceType={['tablet', 'mobile']}
+      sliderClass=""
+      slidesToSlide={1}
+      swipeable
     >
       {cardData.map(res => (
         <Card key={res.id} size={'small'} title={res.title} img={res.img}>
