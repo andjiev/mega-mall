@@ -37,7 +37,6 @@ const StyledMaterialCard = styled(MaterialCard)`
   max-width: 200px;
   width: 100%;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.24);
-  border: 1px solid black;
 `;
 
 const StyledMaterialCardTitle = styled.h6``;

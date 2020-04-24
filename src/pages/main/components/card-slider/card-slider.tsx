@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from '../../../../components/card';
 import Carousel from 'react-multi-carousel';
+import './card-slider.styles';
 
 import mobilenSlika from './../../../../assets/images/CardSlider/Mobilen-telefon.jpg';
 import masinaSlika from './../../../../assets/images/CardSlider/Mashina-za-perenje.jpg';
@@ -51,7 +52,7 @@ const CardSlider = () => {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 5
+      items: 4
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -69,19 +70,17 @@ const CardSlider = () => {
 
   return (
     <Carousel
-      swipeable={false}
+      swipeable={true}
       draggable={false}
       showDots={false}
       responsive={responsive}
-      ssr={true} // means to render carousel on server-side.
-      infinite={true}
-      autoPlaySpeed={1000}
+      infinite={false}
       keyBoardControl={true}
-      customTransition="all .5"
       transitionDuration={500}
+      focusOnSelect={true}
       containerClass="carousel-container"
+      deviceType="desktop"
       removeArrowOnDeviceType={['tablet', 'mobile']}
-      itemClass="carousel-item-padding-40-px"
     >
       {cardData.map(res => (
         <Card key={res.id} size={'small'} title={res.title} img={res.img}>
