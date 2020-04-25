@@ -8,6 +8,7 @@ import { bootstrapApp } from 'store/shared-store';
 // temporary loader (this one does not have typings)
 // @ts-ignore
 import LoadingScreen from 'react-loading-screen';
+import { Box } from '@material-ui/core';
 
 import { ROUTES } from './consts';
 import { Header } from './components/header';
@@ -34,7 +35,9 @@ const _App: React.FC<IApp> = (props: IApp) => {
           <Footer />
         </>
       ) : (
-        <LoadingScreen loading bgColor="#0d1440" spinnerColor="#BF1736" />
+        <LoadingScreen loading bgColor="#0d1440" spinnerColor="#BF1736">
+          <Box component="span">Default loading text to fix the children? error</Box>
+        </LoadingScreen>
       )}
     </>
   );

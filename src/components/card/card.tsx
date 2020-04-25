@@ -5,7 +5,7 @@ import { Card, Box, Typography, Hidden, Grid, CardMedia } from '@material-ui/cor
 
 interface CardProps {
   size: 'small' | 'medium' | 'large';
-  children: React.ReactNode;
+  children?: React.ReactNode;
   title: string;
   img: string;
 }

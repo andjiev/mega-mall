@@ -5,6 +5,7 @@ import ApplicationState from './store/application-store';
 import { ThunkDispatch } from 'redux-thunk';
 import { Action } from 'redux';
 
+// TODO: we should remove bootstrap from the project because it interferes with material ui style
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import './theme';
@@ -27,17 +28,17 @@ export type AppDispatch = ThunkDispatch<ApplicationState, null, Action<string>>;
 const render = (Component: any) => {
   ReactDOM.render(
     <AppContainer>
-      <StylesProvider injectFirst>
-        <SCThemeProvider theme={theme}>
-          <MuiThemeProvider theme={theme}>
-            <Provider store={store}>
-              <ConnectedRouter history={history}>
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <StylesProvider injectFirst>
+            <SCThemeProvider theme={theme}>
+              <MuiThemeProvider theme={theme}>
                 <Component />
-              </ConnectedRouter>
-            </Provider>
-          </MuiThemeProvider>
-        </SCThemeProvider>
-      </StylesProvider>
+              </MuiThemeProvider>
+            </SCThemeProvider>
+          </StylesProvider>
+        </ConnectedRouter>
+      </Provider>
     </AppContainer>,
     document.getElementById('root')
   );
