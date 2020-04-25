@@ -6,7 +6,7 @@ import { HomeCenterMenu } from './containers/home-center-menu';
 const Header = () => {
   return (
     <>
-      <SearchBarContainer />
+      {/* <SearchBarContainer /> */}
       <HomeCenterMenu />
     </>
   );

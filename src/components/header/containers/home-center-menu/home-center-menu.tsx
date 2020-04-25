@@ -60,7 +60,8 @@ const HomeCenterMenu = (props: HomeMenuProps) => {
           ))}
         </StyledNav>
       </CenterMenuWrapper>
-      {!hovered || <HomeCenterSubmenu />}
+      {/* <HomeCenterSubmenu /> */}
+
     </CenterMenuContainer>
   );
 };

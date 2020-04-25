@@ -1,32 +1,23 @@
-import CardBody from '@material-ui/core/Card';
 import styled from 'styled-components';
 import React from 'react';
 import { CardContent, CardMedia } from '@material-ui/core';
 import { Card as MaterialCard } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 
-//Large cards styles
-interface IStyledColProps {
+
+//Large Cards
+interface IStyledImage {
   img: string;
 }
-const ColStyle = styled.div`
-  background-image: url(${(props: IStyledColProps) => props.img});
-  background-repeat: no-repeat;
-  min-height: 460px;
-  max-width: 300px;
+const StyledImage = styled(Box)`
+  background-image: url(${(props: IStyledImage) => props.img});
+  background-size: cover;
   width: 100%;
-`;
-const StyledCardBody = styled.div`
-  align-items: center;
-  margin: 0 auto;
-`;
-const TitlesStyle = styled.h2`
-  color: white;
-  margin-top: 4%;
-  margin-left: 7%;
-`;
-const CategoryLinkStyle = styled.p`
-  margin-top: 75%;
-  margin-left: 7%;
+  height: 550px;
+
+  ${props => props.theme.breakpoints.down('md')} {
+    height: 350px;
+  }
 `;
 
 //Small cards styles
@@ -55,4 +46,5 @@ const StyledMaterialCardTitle = styled.h6``;
 
 const StyledMaterialCardPrice = styled.h4``;
 
-export { ColStyle, StyledCardBody, TitlesStyle, CategoryLinkStyle, StyledMaterialCard, StyledMaterialCardTitle, StyledMaterialCardPrice, StyledCardMedia };
+export { StyledImage, StyledMaterialCard, StyledMaterialCardTitle, StyledMaterialCardPrice, StyledCardMedia };
+
