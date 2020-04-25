@@ -8,6 +8,7 @@ import mobilenSlika from './../../../../assets/images/CardSlider/Mobilen-telefon
 import masinaSlika from './../../../../assets/images/CardSlider/Mashina-za-perenje.jpg';
 import kozmetikaSlika from './../../../../assets/images/CardSlider/Kozmetika.jpg';
 import tvSlika from './../../../../assets/images/CardSlider/Smart-televizor.jpg';
+import { Box, Grid, Typography, Link } from '@material-ui/core';
 
 const cardData = [
   {
@@ -70,59 +71,71 @@ const CardSlider = () => {
   };
 
   return (
-    <Carousel
-      additionalTransfrom={0}
-      arrows
-      autoPlaySpeed={3000}
-      centerMode
-      className="mb-5"
-      containerClass="container"
-      dotListClass=""
-      draggable
-      focusOnSelect={false}
-      infinite
-      itemClass=""
-      keyBoardControl
-      minimumTouchDrag={80}
-      renderButtonGroupOutside={false}
-      renderDotsOutside={false}
-      responsive={{
-        desktop: {
-          breakpoint: {
-            max: 3000,
-            min: 1024
+    <Box component="div">
+      <Grid container justify="space-between">
+        <Grid container item xs={6} justify="flex-start">
+          <Typography variant="h5">Најпосетени производи</Typography>
+        </Grid>
+        <Grid container item xs={6} justify="flex-end" alignItems="flex-end">
+          <Link className="text-dark" href="#">
+            <Box component="span">прикажи ги сите {' >'}</Box>
+          </Link>
+        </Grid>
+      </Grid>
+      <Carousel
+        additionalTransfrom={0}
+        arrows
+        autoPlaySpeed={3000}
+        centerMode
+        className="mb-5"
+        containerClass="container"
+        dotListClass=""
+        draggable
+        focusOnSelect={false}
+        infinite
+        itemClass=""
+        keyBoardControl
+        minimumTouchDrag={80}
+        renderButtonGroupOutside={false}
+        renderDotsOutside={false}
+        responsive={{
+          desktop: {
+            breakpoint: {
+              max: 3000,
+              min: 1024
+            },
+            items: 4,
+            partialVisibilityGutter: 40
           },
-          items: 4,
-          partialVisibilityGutter: 40
-        },
-        mobile: {
-          breakpoint: {
-            max: 464,
-            min: 0
+          mobile: {
+            breakpoint: {
+              max: 464,
+              min: 0
+            },
+            items: 1,
+            partialVisibilityGutter: 30
           },
-          items: 1,
-          partialVisibilityGutter: 30
-        },
-        tablet: {
-          breakpoint: {
-            max: 1024,
-            min: 464
-          },
-          items: 2,
-          partialVisibilityGutter: 30
-        }
-      }}
-      showDots={false}
-      sliderClass=""
-      slidesToSlide={1}
-      swipeable
-    >
-      {cardData.map(res => (
-        <Card key={res.id} size={'small'} title={res.title} img={res.img}>
-          <p>{res.price}</p>
-        </Card>
-      ))}
-    </Carousel>
+          tablet: {
+            breakpoint: {
+              max: 1024,
+              min: 464
+            },
+            items: 2,
+            partialVisibilityGutter: 30
+          }
+        }}
+        showDots={false}
+        sliderClass=""
+        slidesToSlide={1}
+        swipeable
+      >
+        {cardData.map(res => (
+          <Card key={res.id} size={'small'} title={res.title} img={res.img}>
+            <p>{res.price}</p>
+          </Card>
+        ))}
+      </Carousel>
+    </Box>
   );
 };
 

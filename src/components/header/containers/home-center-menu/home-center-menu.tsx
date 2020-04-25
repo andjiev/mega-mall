@@ -44,8 +44,10 @@ const HomeCenterMenu = (props: HomeMenuProps) => {
 
   useEffect(() => {
     if (ref && ref.current) {
-      ref.current.addEventListener('mouseenter', enter);
-      ref.current.addEventListener('mouseleave', leave);
+      {
+        /* ref.current.addEventListener('mouseenter', enter);
+       ref.current.addEventListener('mouseleave', leave); */
+      }
     }
   }, [ref]);
 
@@ -61,7 +63,6 @@ const HomeCenterMenu = (props: HomeMenuProps) => {
         </StyledNav>
       </CenterMenuWrapper>
       {/* <HomeCenterSubmenu /> */}
-
     </CenterMenuContainer>
   );
 };

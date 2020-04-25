@@ -4,7 +4,6 @@ import { CardContent, CardMedia } from '@material-ui/core';
 import { Card as MaterialCard } from '@material-ui/core';
 import { Box } from '@material-ui/core';
 
-
 //Large Cards
 interface IStyledImage {
   img: string;
@@ -42,9 +41,16 @@ const StyledCardMedia = styled(CardMedia)`
   padding-top: 0px;
 `;
 
-const StyledMaterialCardTitle = styled.h6``;
+const StyledMaterialCardTitle = styled.h6`
+  font-size: 16px;
+  font-family: 'RobotoRegular', sans-serif;
+  opacity: 87%;
+`;
 
-const StyledMaterialCardPrice = styled.h4``;
+const StyledMaterialCardPrice = styled.h4`
+  font-size: 25px;
+  font-family: 'OswaldMedium', sans-serif;
+  opacity: 87%;
+`;
 
 export { StyledImage, StyledMaterialCard, StyledMaterialCardTitle, StyledMaterialCardPrice, StyledCardMedia };
-

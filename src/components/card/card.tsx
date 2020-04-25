@@ -1,8 +1,6 @@
 import React from 'react';
-import { ColStyle, StyledCardBody, TitlesStyle, CategoryLinkStyle, StyledMaterialCard, StyledMaterialCardTitle, StyledImage, StyledMaterialCardPrice, StyledCardMedia } from 'components/card/card.styles';
-import { makeStyles, Theme, createStyles, CardHeader, Avatar, IconButton, CardMedia, CardContent, Typography } from '@material-ui/core';
-import { Card, Box, Typography, Hidden, Grid, CardMedia } from '@material-ui/core';
-
+import { StyledMaterialCard, StyledMaterialCardTitle, StyledImage, StyledMaterialCardPrice, StyledCardMedia } from 'components/card/card.styles';
+import { makeStyles, Theme, createStyles, CardMedia, CardContent, Typography, Card, Box, Hidden } from '@material-ui/core';
 
 interface CardProps {
   size: 'small' | 'medium' | 'large';
@@ -21,14 +19,23 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const _Card = (props: CardProps) => {
+  const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
+
   if (props.size == 'small') {
-    return (<StyledMaterialCard>
-          <StyledCardMedia className={classes.media} image={props.img} />
-          <CardContent>
-            <StyledMaterialCardTitle>{props.title}</StyledMaterialCardTitle>
-            <StyledMaterialCardPrice>{props.children}</StyledMaterialCardPrice>
-          </CardContent>
-        </StyledMaterialCard>)
+    return (
+      <StyledMaterialCard>
+        <StyledCardMedia className={classes.media} image={props.img} />
+        <CardContent>
+          <StyledMaterialCardTitle>{props.title}</StyledMaterialCardTitle>
+          <StyledMaterialCardPrice>{props.children}</StyledMaterialCardPrice>
+        </CardContent>
+      </StyledMaterialCard>
+    );
   } else if (props.size == 'medium') {
     return <> </>;
   }

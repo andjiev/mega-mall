@@ -10275,7 +10275,7 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-loading-screen@0.0.17:
+react-loading-screen@^0.0.17:
   version "0.0.17"
   resolved "https://registry.yarnpkg.com/react-loading-screen/-/react-loading-screen-0.0.17.tgz#e9c5f0e059c8f143ec5c753eb98077b1be5daeb4"
   integrity sha512-M0c4yE37/kEPS3IQWf4zgZ3Qpk+Lc1wKD6JFla/8srY1HuBSL+ApnmKHo7jDnbqLYlZKpGhTCmoMV0xP2uzHVQ==
