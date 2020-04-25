@@ -1,28 +1,29 @@
 import { translate } from 'lib/translate';
+import { CategoryTypes } from 'lib/enums';
 
 const menuItems = [
   {
-    id: 1,
+    type: CategoryTypes.Technology,
     title: 'ТЕХНОЛОГИЈА'
   },
   {
-    id: 2,
+    type: CategoryTypes.Sport,
     title: 'СПОРТ'
   },
   {
-    id: 3,
+    type: CategoryTypes.Fashion,
     title: 'МОДА'
   },
   {
-    id: 4,
+    type: CategoryTypes.Beauty,
     title: 'УБАВИНА И ЗДРАВЈЕ'
   },
   {
-    id: 5,
+    type: CategoryTypes.Home,
     title: 'ДОМАЌИНСТВО'
   },
   {
-    id: 6,
+    type: CategoryTypes.Services,
     title: translate('EasyFind_Header_Services', 'УСЛУГИ')
   }
 ];

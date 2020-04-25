@@ -9,8 +9,8 @@ const TopBar = () => {
   return (
     <>
       <StyledContainer>
-        <Box p={2}>
-          <Grid container spacing={2}>
+        <Box p={2} pb={0}>
+          <Grid container spacing={3}>
             <Grid item container sm={1} justify="flex-end" alignItems="center">
               {/* TODO: replace the whole box with logo */}
               <Box component="span" color="white">

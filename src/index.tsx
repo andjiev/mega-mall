@@ -5,6 +5,7 @@ import ApplicationState from './store/application-store';
 import { ThunkDispatch } from 'redux-thunk';
 import { Action } from 'redux';
 
+// TODO: we should remove bootstrap from the project because it interferes with material ui style
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import './theme';
