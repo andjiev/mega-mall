@@ -1,1 +1,0 @@
-export { default as SearchBarContainer } from './search-bar/search-bar.container';

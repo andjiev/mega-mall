@@ -5,7 +5,10 @@ import { AppDispatch } from '../../../..';
 import ApplicationState from '../../../../store/application-store';
 import * as SharedStore from '../../../../store/shared-store';
 
-import { StyledInput } from './search-bar.styles';
+import { StyledTextField } from './search-bar.styles';
+import { Grid } from '@material-ui/core';
+import { StyledButton } from './search-bar.styles';
+import SearchIcon from '@material-ui/icons/Search';
 
 interface IProps {
   searchText: string;
@@ -16,7 +19,30 @@ interface IProps {
 const SearchBar = (props: IProps) => {
   return (
     <>
-      <StyledInput aria-label="search-bar" value={props.searchText} onChange={(event: React.ChangeEvent<HTMLInputElement>) => props.onSearchTextChange(event.target.value)} />
+      <Grid container>
+        <Grid item sm>
+          {/* TODO: Center text in textField */}
+          <StyledTextField
+            fullWidth
+            variant="filled"
+            type="text"
+            placeholder="Пребарај"
+            value={props.searchText}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              props.onSearchTextChange(event.target.value);
+            }}
+            InputProps={{
+              disableUnderline: true
+            }}
+          />
+        </Grid>
+        <Grid item>
+          <StyledButton variant="contained" color="secondary">
+            {/* TODO: Add search icon */}
+            <SearchIcon />
+          </StyledButton>
+        </Grid>
+      </Grid>
     </>
   );
 };

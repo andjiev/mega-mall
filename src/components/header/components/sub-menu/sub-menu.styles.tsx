@@ -4,8 +4,6 @@ import Container from '@material-ui/core/Container';
 import { ListItemText, ListItem, Link } from '@material-ui/core';
 import NikeImage from '../../../../assets/images/nike.jpg';
 
-const darkBlue = '#BF1736';
-const lightBlue = '#BF1736';
 const themePink = '#BF1736';
 
 const StyledContainer = styled(Container)`
@@ -18,6 +16,7 @@ const StyledContainer = styled(Container)`
   padding-top: 3%;
   //display: none;
 `;
+
 const StyledListItem = styled(props => {
   return <ListItem {...props} />;
 })`

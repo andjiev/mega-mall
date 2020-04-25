@@ -10,9 +10,10 @@ const initTranslations = (translations: Translations, culture: string) => {
 };
 
 const translate = (key: string, fallback: string): string => {
-  if (CURRENT_ENVIRONMENT == Environment.Development) {
-    return i18next.t(key) || key;
-  }
+  // TODO: Uncoment this when translation keys are provided
+  // if (CURRENT_ENVIRONMENT == Environment.Development) {
+  //   return i18next.t(key) || key;
+  // }
 
   return i18next.t(key, { defaultValue: fallback }) || fallback;
 };

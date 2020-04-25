@@ -27,17 +27,17 @@ export type AppDispatch = ThunkDispatch<ApplicationState, null, Action<string>>;
 const render = (Component: any) => {
   ReactDOM.render(
     <AppContainer>
-      <StylesProvider injectFirst>
-        <SCThemeProvider theme={theme}>
-          <MuiThemeProvider theme={theme}>
-            <Provider store={store}>
-              <ConnectedRouter history={history}>
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <StylesProvider injectFirst>
+            <SCThemeProvider theme={theme}>
+              <MuiThemeProvider theme={theme}>
                 <Component />
-              </ConnectedRouter>
-            </Provider>
-          </MuiThemeProvider>
-        </SCThemeProvider>
-      </StylesProvider>
+              </MuiThemeProvider>
+            </SCThemeProvider>
+          </StylesProvider>
+        </ConnectedRouter>
+      </Provider>
     </AppContainer>,
     document.getElementById('root')
   );

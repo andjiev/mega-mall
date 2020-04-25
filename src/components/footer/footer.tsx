@@ -9,7 +9,7 @@ const Footer = () => {
       <StyledFooter p={4}>
         <Container>
           <Box>
-            <Grid container spacing={3}>
+            <Grid container>
               <Grid item xs={12} md={3}>
                 <StyledList>
                   <ListItem>
