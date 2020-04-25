@@ -16,7 +16,7 @@ const MainSlider = () => {
                 ПОДАРИ <br></br> ОБУВКИ НА ПРИЈАТЕЛ
               </StyledHeading>
               <Box component="p">Ако патиките се ваши омилени обувки, значи дека на прво место ви е удобноста.</Box>
-              <Button variant="contained" color="secondary">
+              <Button variant="contained" color="secondary" size="large">
                 Подари веднаш
               </Button>
             </StyledCaption>
@@ -31,7 +31,7 @@ const MainSlider = () => {
                 ПОДАРИ <br></br> ОБУВКИ НА ПРИЈАТЕЛ
               </StyledHeading>
               <Box component="p">Ако патиките се ваши омилени обувки,значи дека на прво место ви е удобноста.</Box>
-              <Button variant="contained" color="secondary">
+              <Button variant="contained" color="secondary" size="large">
                 Подари веднаш
               </Button>
             </StyledCaption>
@@ -46,7 +46,7 @@ const MainSlider = () => {
                 ПОДАРИ <br></br> ОБУВКИ НА ПРИЈАТЕЛ
               </StyledHeading>
               <Box component="p">Ако патиките се ваши омилени обувки,значи дека на прво место ви е удобноста.</Box>
-              <Button variant="contained" color="secondary">
+              <Button variant="contained" color="secondary" size="large">
                 Подари веднаш
               </Button>
             </StyledCaption>

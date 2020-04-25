@@ -1,7 +1,16 @@
 import styled from 'styled-components';
 
-const StyledInput = styled.input`
-    background-color: grey;
+import { TextField, Button } from '@material-ui/core';
+
+const StyledTextField = styled(TextField)`
+  background-color: #fff;
+  height: 50px;
 `;
 
-export { StyledInput }
+const StyledButton = styled(Button)`
+  width: 80px;
+  height: 50px;
+  border-radius: 0;
+`;
+
+export { StyledTextField, StyledButton };
