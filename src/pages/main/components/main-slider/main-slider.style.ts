@@ -21,7 +21,7 @@ const StyledHeading = styled.h1`
   font-size: 50px;
 `;
 
-const StyledImage = styled.img`
+const StyledImage = styled(Box)`
   background-image: url(${HeroImage});
   background-size: cover;
   width: 100%;

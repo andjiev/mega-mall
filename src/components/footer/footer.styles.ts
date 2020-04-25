@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
-import { Box, Grid, List } from '@material-ui/core';
+import { Box, List } from '@material-ui/core';
 
 const StyledList = styled(List)`
-  color: white;
+  height: 150px;
+  color: #ffffff;
 `;
 
-const StyledCopyright = styled(Grid)`
+const StyledCopyright = styled(Box)`
   color: #fefefe;
 `;
 
