@@ -27,6 +27,7 @@ const Footer = () => {
     <>
       <StyledFooter pt={3} pb={3}>
         <Container>
+          {/* for large devices */}
           <Hidden smDown>
             <Box>
               <Grid container justify="space-between">
@@ -46,6 +47,8 @@ const Footer = () => {
               </Grid>
             </Box>
           </Hidden>
+
+          {/* for small devices */}
           <Hidden mdUp>
             <Box mb={2}>
               <Box color="white">Logo</Box>
@@ -66,15 +69,18 @@ const Footer = () => {
               </Box>
               <Box mt={2}>{renderItem(footerItems[1])}</Box>
               <Box>
-                <Typography variant="h6">
-                  <Box component="span" color="white" textAlign="center">
-                    {footerItems[0].header.title}
-                  </Box>
-                </Typography>
+                <Grid container justify="center" alignItems="center">
+                  <Typography variant="h6">
+                    <Box component="span" color="white" textAlign="center">
+                      {footerItems[0].header.title}
+                    </Box>
+                  </Typography>
+                </Grid>
               </Box>
             </Box>
           </Hidden>
 
+          {/* copyright */}
           <Divider />
           <Box mt={3}>
             <Grid container justify="center" alignItems="center">

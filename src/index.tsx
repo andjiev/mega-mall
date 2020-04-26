@@ -5,7 +5,6 @@ import ApplicationState from './store/application-store';
 import { ThunkDispatch } from 'redux-thunk';
 import { Action } from 'redux';
 
-import './index.css';
 import './theme';
 
 import App from './app';

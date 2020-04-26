@@ -3,7 +3,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 // carousel style
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-import './fonts';
+import './index.css';
 
 const theme = createMuiTheme({
   typography: {

@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'OswaldBold';
+  src: url('../assets/fonts/Oswald-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'OswaldRegular';
+  src: url('../assets/fonts/Oswald-Regular.ttf');
+}
+@font-face {
+  font-family: 'OswaldMedium';
+  src: url('../assets/fonts/Oswald-Medium.ttf');
+}
+@font-face {
+  font-family: 'RobotoBold';
+  src: url('../assets/fonts/Roboto-Bold.ttf');
+}
+@font-face {
+  font-family: 'RobotoThin';
+  src: url('../assets/fonts/Roboto-Thin.ttf');
+}
+@font-face {
+  font-family: 'RobotoRegular';
+  src: url('../assets/fonts/Roboto-Regular.ttf');
+}
+@font-face {
+  font-family: 'RobotoMedium';
+  src: url('../assets/fonts/Roboto-Medium.ttf');
+}
+
+/* user agent stylesheet */
+body {
+  margin: 0;
+}
+
+/* main slider styles */
+.carousel .control-dots .dot {
+  width: 12px;
+  height: 12px;
+}
+
+.carousel .control-dots .dot.selected {
+  background-color: #bf1736;
+}

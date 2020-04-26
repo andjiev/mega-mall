@@ -1,30 +1,45 @@
 import React from 'react';
 
-import { StyledBanner, StyledImage, StyledCaption, StyledHeading } from './main-slider.style';
-import { Button, Box, Container } from '@material-ui/core';
+import { StyledGrid, StyledImage, StyledContainer, StyledButton, StyledTypography } from './main-slider.style';
+import { Box, Grid, Typography } from '@material-ui/core';
 import { Carousel } from 'react-responsive-carousel';
+import { ISliderItem, sliderItems } from './main-slider.data';
 
 const MainSlider = () => {
+  const renderItem = (item: ISliderItem) => {
+    return (
+      <StyledImage src={item.imageSource}>
+        <StyledGrid container direction="column" justify="center">
+          <StyledContainer>
+            <Box color="white">
+              <Grid item>
+                <StyledTypography variant="h2">{item.title}</StyledTypography>
+              </Grid>
+              <Box mt={2}>
+                <Grid item>
+                  <Box component="span">{item.subTitle}</Box>
+                </Grid>
+              </Box>
+            </Box>
+            <Grid item>
+              <Box mt={3}>
+                <StyledButton variant="contained" color="secondary" size="large">
+                  {item.buttonText}
+                </StyledButton>
+              </Box>
+            </Grid>
+          </StyledContainer>
+        </StyledGrid>
+      </StyledImage>
+    );
+  };
+
   return (
-    <StyledBanner>
-      <Carousel infiniteLoop autoPlay dynamicHeight showArrows={false} showStatus={false} showThumbs={false}>
-        {/* <Box>
-          <StyledImage>
-            <Container>
-              <StyledCaption>
-                <StyledHeading>
-                  ПОДАРИ <br></br> ОБУВКИ НА ПРИЈАТЕЛ
-                </StyledHeading>
-                <Box component="p"></Box>
-                <Button variant="contained" color="secondary" size="large">
-                  Подари веднаш
-                </Button>
-              </StyledCaption>
-            </Container>
-          </StyledImage>
-        </Box> */}
-      </Carousel>
-    </StyledBanner>
+    <Carousel infiniteLoop showArrows={false} showStatus={false} showThumbs={false}>
+      {sliderItems.map((item, index) => {
+        return <Box key={index}>{renderItem(item)}</Box>;
+      })}
+    </Carousel>
   );
 };
 
