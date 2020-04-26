@@ -4,27 +4,33 @@ import { CategoryTypes } from 'lib/enums';
 const menuItems = [
   {
     type: CategoryTypes.Technology,
-    title: 'ТЕХНОЛОГИЈА'
+    title: 'ТЕХНОЛОГИЈА',
+    link: `/categories/${CategoryTypes.Technology}`
   },
   {
     type: CategoryTypes.Sport,
-    title: 'СПОРТ'
+    title: 'СПОРТ',
+    link: `/categories/${CategoryTypes.Sport}`
   },
   {
     type: CategoryTypes.Fashion,
-    title: 'МОДА'
+    title: 'МОДА',
+    link: `/categories/${CategoryTypes.Fashion}`
   },
   {
     type: CategoryTypes.Beauty,
-    title: 'УБАВИНА И ЗДРАВЈЕ'
+    title: 'УБАВИНА И ЗДРАВЈЕ',
+    link: `/categories/${CategoryTypes.Beauty}`
   },
   {
     type: CategoryTypes.Home,
-    title: 'ДОМАЌИНСТВО'
+    title: 'ДОМАЌИНСТВО',
+    link: `/categories/${CategoryTypes.Home}`
   },
   {
     type: CategoryTypes.Services,
-    title: translate('EasyFind_Header_Services', 'УСЛУГИ')
+    title: translate('EasyFind_Header_Services', 'УСЛУГИ'),
+    link: `/categories/${CategoryTypes.Services}`
   }
 ];
 

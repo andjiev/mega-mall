@@ -20,9 +20,7 @@ const HomeCenterMenu = (props: IMenuProps) => {
             <Grid key={item.type} item>
               <StyledBox pt={2} pb={2} onMouseEnter={() => props.onCategoryChange(item.type)} onMouseLeave={() => props.onHideSubmenuChange()}>
                 <Typography variant="h6">
-                  <StyledLink href={'#'} underline="none">
-                    {item.title}
-                  </StyledLink>
+                  <StyledLink href={item.link}>{item.title}</StyledLink>
                 </Typography>
               </StyledBox>
             </Grid>
