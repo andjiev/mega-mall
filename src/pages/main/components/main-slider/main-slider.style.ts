@@ -1,31 +1,35 @@
 import styled from 'styled-components';
 
-import HeroImage from '../../../../assets/images/Hero-image-.jpg';
-import { Box } from '@material-ui/core';
+import { Box, Button, Container, Grid, Typography } from '@material-ui/core';
 
-const StyledBanner = styled(Box)`
-  background-size: 100% auto;
-`;
-
-const StyledCaption = styled(Box)`
-  text-align: initial;
-  font-family: Oswald Bold;
-  font-weight: bold;
-  padding-bottom: 178px;
-`;
-
-const StyledHeading = styled.h1`
-  text-align: initial;
-  font-family: 'OswaldBold', sans-serif;
-  font-weight: bold;
-  font-size: 50px;
-`;
-
-const StyledImage = styled.img`
-  background-image: url(${HeroImage});
+interface IBox {
+  src: string;
+}
+const StyledImage = styled(Box)`
+  background-image: url(${(props: IBox) => props.src});
   background-size: cover;
   width: 100%;
   height: 700px;
+
+  ${props => props.theme.breakpoints.down('sm')} {
+    height: 500px;
+  }
 `;
 
-export { StyledBanner, StyledImage, StyledCaption, StyledHeading };
+const StyledButton = styled(Button)`
+  height: 54px;
+`;
+
+const StyledContainer = styled(Container)`
+  text-align: left;
+`;
+
+const StyledGrid = styled(Grid)`
+  height: 100%;
+`;
+
+const StyledTypography = styled(Typography)`
+  white-space: pre-line;
+`;
+
+export { StyledGrid, StyledImage, StyledContainer, StyledButton, StyledTypography };

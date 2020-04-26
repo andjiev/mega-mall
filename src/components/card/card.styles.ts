@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Box } from '@material-ui/core';
+import { Box, Grid } from '@material-ui/core';
 
 interface IStyledImage {
   img: string;
@@ -16,4 +16,8 @@ const StyledImage = styled(Box)`
   }
 `;
 
-export { StyledImage };
+const StyledGrid = styled(Grid)`
+  height: 100%;
+`;
+
+export { StyledImage, StyledGrid };

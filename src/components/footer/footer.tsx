@@ -1,86 +1,91 @@
 import React from 'react';
 
 import { StyledList, StyledFooter, StyledCopyright } from './footer.styles';
-import { Container, Grid, Divider, Box, Typography, ListItem } from '@material-ui/core';
+import { Container, Grid, Divider, Box, Typography, ListItem, Hidden } from '@material-ui/core';
+import { StyledLink } from 'components/styled-link/styled-link.styles';
+import { footerItems, IFooterItem } from './footer.data';
 
 const Footer = () => {
+  const renderItem = (item: IFooterItem) => {
+    return (
+      <Box>
+        <StyledList>
+          <Typography variant="h6">{item.header.link ? <StyledLink href={item.header.link}>{item.header.title}</StyledLink> : <Box component="span">{item.header.title}</Box>}</Typography>
+          {item.links.map((linkItem, index) => {
+            return (
+              <ListItem key={index} disableGutters>
+                <StyledLink href={linkItem.link}>{linkItem.title}</StyledLink>
+              </ListItem>
+            );
+          })}
+        </StyledList>
+      </Box>
+    );
+  };
+
   return (
     <>
-      <StyledFooter p={4}>
+      <StyledFooter pt={3} pb={3}>
         <Container>
-          <Box>
-            <Grid container>
-              <Grid item xs={12} md={3}>
-                <StyledList>
-                  <ListItem>
-                    ВЕБСПОТ | ТА ВЕБСПОТ ДОО <br></br>Лиценца А, рег. бр. 13-753/2
-                    <br></br> ул. Лермонтова 3/6,<br></br> 1000 Скопје
-                  </ListItem>
-                </StyledList>
+          {/* for large devices */}
+          <Hidden smDown>
+            <Box>
+              <Grid container justify="space-between">
+                {footerItems.reduce((prev: JSX.Element | null, _, index: number, arr: IFooterItem[]) => {
+                  return (
+                    <>
+                      {prev}
+                      {!(index % 2) && (
+                        <Grid item>
+                          {renderItem(arr[index])}
+                          <Box mt={2}>{renderItem(arr[index + 1])}</Box>
+                        </Grid>
+                      )}
+                    </>
+                  );
+                }, null)}
               </Grid>
-              <Grid item xs={12} md={3}>
-                <StyledList>
-                  <Typography variant="h6">Технологија</Typography>
-                  <ListItem>Компјутери</ListItem>
-                  <ListItem>Компјутерска опрема</ListItem>
-                  <ListItem>Мобилни телефони</ListItem>
-                </StyledList>
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <StyledList>
-                  <Typography variant="h6">Мода</Typography>
-                  <ListItem>Машка облека</ListItem>
-                  <ListItem>Женска облека</ListItem>
-                  <ListItem>Обувки</ListItem>
-                </StyledList>
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <StyledList>
-                  <Typography variant="h6">Домаќинство</Typography>
-                  <ListItem>Апарати за домаќинство</ListItem>
-                  <ListItem>Бела техника</ListItem>
-                  <ListItem>Дом и градина</ListItem>
-                </StyledList>
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <StyledList>
-                  <Typography variant="h6">Следете не</Typography>
-                  <ListItem>Facebook</ListItem>
-                  <ListItem>Instagram</ListItem>
-                  <ListItem>LinkedIn</ListItem>
-                </StyledList>
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <StyledList>
-                  <Typography variant="h6">Спорт</Typography>
-                  <ListItem>Машка облека</ListItem>
-                  <ListItem>Женска облека</ListItem>
-                  <ListItem>Спортска опрема</ListItem>
-                </StyledList>
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <StyledList>
-                  <Typography variant="h6">Убавина и здравје</Typography>
-                  <ListItem>Козметика</ListItem>
-                  <ListItem>Парфеми</ListItem>
-                </StyledList>
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <StyledList>
-                  <Typography variant="h6">Услуги</Typography>
-                  <ListItem>Храна и пијалоци</ListItem>
-                  <ListItem>Едукација</ListItem>
-                  <ListItem>Култура и настани</ListItem>
-                </StyledList>
-              </Grid>
-            </Grid>
-          </Box>
+            </Box>
+          </Hidden>
 
+          {/* for small devices */}
+          <Hidden mdUp>
+            <Box mb={2}>
+              <Box color="white">Logo</Box>
+              <Box mt={2}>
+                <Grid container>
+                  {footerItems.slice(2).map((item, index) => {
+                    return (
+                      <Grid key={index} item xs={6}>
+                        <Box mt={1} mb={1}>
+                          <Typography variant="h6">
+                            <StyledLink href={item.header.link}>{item.header.title}</StyledLink>
+                          </Typography>
+                        </Box>
+                      </Grid>
+                    );
+                  })}
+                </Grid>
+              </Box>
+              <Box mt={2}>{renderItem(footerItems[1])}</Box>
+              <Box>
+                <Grid container justify="center" alignItems="center">
+                  <Typography variant="h6">
+                    <Box component="span" color="white" textAlign="center">
+                      {footerItems[0].header.title}
+                    </Box>
+                  </Typography>
+                </Grid>
+              </Box>
+            </Box>
+          </Hidden>
+
+          {/* copyright */}
           <Divider />
           <Box mt={3}>
-            <StyledCopyright container justify="center" alignItems="center">
-              <Box component="span">&copy;2020-2020 E-commerce Сите права задржани.</Box>
-            </StyledCopyright>
+            <Grid container justify="center" alignItems="center">
+              <StyledCopyright component="span">&copy;2020-2020 E-commerce Сите права задржани.</StyledCopyright>
+            </Grid>
           </Box>
         </Container>
       </StyledFooter>
