@@ -2,7 +2,7 @@ import React from 'react';
 
 import { StyledList, StyledFooter, StyledCopyright } from './footer.styles';
 import { Container, Grid, Divider, Box, Typography, ListItem, Hidden } from '@material-ui/core';
-import { StyledLink } from 'components/styled-link/styled-link.styles';
+import { StyledLink } from 'components/styled-link';
 import { footerItems, IFooterItem } from './footer.data';
 
 const Footer = () => {
