@@ -10,6 +10,10 @@ const StyledImage = styled(Box)`
   background-size: cover;
   width: 100%;
   height: 700px;
+
+  ${props => props.theme.breakpoints.down('sm')} {
+    height: 500px;
+  }
 `;
 
 const StyledButton = styled(Button)`

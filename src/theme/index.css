@@ -35,6 +35,10 @@ body {
 }
 
 /* main slider styles */
+.carousel .control-dots {
+  padding: 0;
+}
+
 .carousel .control-dots .dot {
   width: 12px;
   height: 12px;

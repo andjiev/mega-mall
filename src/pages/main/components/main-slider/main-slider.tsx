@@ -35,7 +35,7 @@ const MainSlider = () => {
   };
 
   return (
-    <Carousel infiniteLoop showArrows={false} showStatus={false} showThumbs={false}>
+    <Carousel infiniteLoop autoPlay showArrows={false} showStatus={false} showThumbs={false}>
       {sliderItems.map((item, index) => {
         return <Box key={index}>{renderItem(item)}</Box>;
       })}
