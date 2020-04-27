@@ -2,7 +2,7 @@ import React from 'react';
 
 import { StyledList, StyledFooter, StyledCopyright } from './footer.styles';
 import { Container, Grid, Divider, Box, Typography, ListItem, Hidden } from '@material-ui/core';
-import { StyledLink } from 'components/styled-link/styled-link.styles';
+import { StyledLink } from 'components/styled-link';
 import { footerItems, IFooterItem } from './footer.data';
 
 const Footer = () => {
@@ -11,13 +11,15 @@ const Footer = () => {
       <Box>
         <StyledList>
           <Typography variant="h6">{item.header.link ? <StyledLink href={item.header.link}>{item.header.title}</StyledLink> : <Box component="span">{item.header.title}</Box>}</Typography>
-          {item.links.map((linkItem, index) => {
-            return (
-              <ListItem key={index} disableGutters>
-                <StyledLink href={linkItem.link}>{linkItem.title}</StyledLink>
-              </ListItem>
-            );
-          })}
+          <Box mt={1}>
+            {item.links.map((linkItem, index) => {
+              return (
+                <ListItem key={index} disableGutters>
+                  <StyledLink href={linkItem.link}>{linkItem.title}</StyledLink>
+                </ListItem>
+              );
+            })}
+          </Box>
         </StyledList>
       </Box>
     );

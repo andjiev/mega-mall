@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { Link } from '@material-ui/core';
 
-const StyledLink = styled(Link)`
+const StyledHoverLink = styled(Link)`
   color: #fff;
   transition: 0.3s;
 
@@ -11,4 +11,4 @@ const StyledLink = styled(Link)`
   }
 `;
 
-export { StyledLink };
+export { StyledHoverLink };

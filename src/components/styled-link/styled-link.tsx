@@ -1,10 +1,13 @@
 import React from 'react';
 
-import { StyledLink } from './styled-link.styles';
+import { StyledHoverLink } from './styled-link.styles';
 import { LinkProps } from '@material-ui/core';
 
-const _StyledLink = (props: LinkProps) => {
-  return <StyledLink {...props}>{props.children}</StyledLink>;
+const StyledLink = (props: LinkProps) => {
+  return <StyledHoverLink {...props}>{props.children}</StyledHoverLink>;
 };
 
-export default _StyledLink;
+StyledLink.defaultProps = {
+  underline: 'none'
+};
+export default StyledLink;
