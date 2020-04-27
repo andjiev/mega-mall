@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
 import { Box } from '@material-ui/core';
-import { grey } from '@material-ui/core/colors';
 
 const StyledNavigation = styled(Box)`
-  background-color: ${grey[300]};
+  background-color: ${props => props.theme.palette.grey[300]};
   height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  ${props => props.theme.breakpoints.up('md')} {
+    min-height: 100vh;
+  }
 `;
 
 export { StyledNavigation };

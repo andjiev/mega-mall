@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { StyledList, StyledFooter, StyledCopyright } from './footer.styles';
-import { Container, Grid, Divider, Box, Typography, ListItem, Hidden } from '@material-ui/core';
+import { StyledList, StyledFooter, StyledCopyright, StyledDivider } from './footer.styles';
+import { Container, Grid, Box, Typography, ListItem, Hidden } from '@material-ui/core';
 import { StyledLink } from 'components/styled-link';
 import { footerItems, IFooterItem } from './footer.data';
 
@@ -27,7 +27,7 @@ const Footer = () => {
 
   return (
     <>
-      <StyledFooter pt={3} pb={3}>
+      <StyledFooter pt={3} pb={2}>
         <Container>
           {/* for large devices */}
           <Hidden smDown>
@@ -81,15 +81,15 @@ const Footer = () => {
               </Box>
             </Box>
           </Hidden>
-
-          {/* copyright */}
-          <Divider />
-          <Box mt={3}>
-            <Grid container justify="center" alignItems="center">
-              <StyledCopyright component="span">&copy;2020-2020 E-commerce Сите права задржани.</StyledCopyright>
-            </Grid>
-          </Box>
         </Container>
+
+        {/* copyright */}
+        <StyledDivider />
+        <Box mt={2}>
+          <Grid container justify="center" alignItems="center">
+            <StyledCopyright component="span">&copy;2020-2020 E-commerce Сите права задржани.</StyledCopyright>
+          </Grid>
+        </Box>
       </StyledFooter>
     </>
   );
