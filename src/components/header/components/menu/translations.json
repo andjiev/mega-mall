@@ -1,12 +1,22 @@
 {
   "mk-MK": {
     "translation": {
-      "EasyFind_Header_Services": "УСЛУГИ"
+      "EasyFind_Header_Services": "УСЛУГИ",
+      "EasyFind_Header_Technology": "ТЕХНОЛОГИЈА",
+      "EasyFind_Header_Sport": "СПОРТ",
+      "EasyFind_Header_Fashion": "МОДА",
+      "EasyFind_Header_Health": "УБАВИНА И ЗДРАВЈЕ",
+      "EasyFind_Header_Household": "ДОМАЌИНСТВО"
     }
   },
   "en-GB": {
     "translation": {
-      "EasyFind_Header_Services": "SERVICES"
+      "EasyFind_Header_Services": "SERVICES",
+      "EasyFind_Header_Technology": "TECHNOLOGY",
+      "EasyFind_Header_Sport": "SPORT",
+      "EasyFind_Header_Fashion": "FASHION",
+      "EasyFind_Header_Health": "BEAUTY AND HEALTH",
+      "EasyFind_Header_Household": "HOUSEHOLD"
     }
   }
 }

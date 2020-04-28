@@ -5,6 +5,9 @@ import SportImg from '../../../../assets/images/Sport.jpg';
 import DomakinstvoImg from '../../../../assets/images/Domakinstvo.jpg';
 import UslugiImg from '../../../../assets/images/Uslugi.jpg';
 
+import { translate } from 'lib/translate';
+import { CategoryTypes } from 'lib/enums';
+
 const cards = [
   {
     id: 1,
