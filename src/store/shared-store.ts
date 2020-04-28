@@ -36,8 +36,7 @@ export const bootstrapApp = (): AppThunk => async (dispatch, store) => {
     dispatch(UiStore.showInitialLoader());
     let translations = await getTranslations();
 
-    // TODO: pass webGlobal.culture
-    initTranslations(translations, 'mk-MK');
+    initTranslations(translations.data, 'mk-MK');
     initMoment('mk-MK');
 
     dispatch(UiStore.hideInitialLoader());
