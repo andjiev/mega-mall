@@ -5,7 +5,6 @@ import * as UiStore from './ui-store';
 import { getTranslations } from 'services/language-service';
 import { initTranslations } from 'lib/translate';
 import { initMoment } from 'lib/moment';
-import { webGlobal } from 'consts';
 
 export interface SharedStore {
   searchText: string;
