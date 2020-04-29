@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { StyledGrid, StyledImage, StyledContainer, StyledButton, StyledTypography } from './main-slider.style';
-import { Box, Grid, Typography } from '@material-ui/core';
+import { Box, Grid } from '@material-ui/core';
 import { Carousel } from 'react-responsive-carousel';
 import { ISliderItem, sliderItems } from './main-slider.data';
 

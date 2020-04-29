@@ -9,11 +9,7 @@ const StyledImage = styled(Box)`
   background-image: url(${(props: IBox) => props.src});
   background-size: cover;
   width: 100%;
-  height: 700px;
-
-  ${props => props.theme.breakpoints.down('sm')} {
-    height: 500px;
-  }
+  height: calc(80vh - 140px);
 `;
 
 const StyledButton = styled(Button)`

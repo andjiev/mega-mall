@@ -5,8 +5,6 @@ import { AppDispatch } from 'index';
 import ApplicationState from 'store/application-store';
 import { bootstrapApp } from 'store/shared-store';
 
-// temporary loader (this one does not have typings)
-// @ts-ignore
 import LoadingScreen from 'react-loading-screen';
 import { Box } from '@material-ui/core';
 

@@ -4,6 +4,7 @@ import { Grid, Box, Typography, Hidden } from '@material-ui/core';
 import Card from './../../../../components/card/card';
 import { StyledLink } from 'components/styled-link';
 import { cards } from './category-grid.data';
+import Zoom from 'react-reveal/Zoom';
 
 const CategoryGrid = () => {
   return (
@@ -32,29 +33,31 @@ const CategoryGrid = () => {
         <Grid container spacing={3}>
           {cards.map(value => (
             <Grid item key={value.id} xs={12} md={6} lg={4}>
-              <Card key={value.id} title={value.title} img={value.img} size="large">
-                <Box>
-                  <Typography variant="h5">
-                    <StyledLink href={'#'} underline="always">
-                      {value.link1}
-                    </StyledLink>
-                  </Typography>
-                </Box>
-                <Box mt={2}>
-                  <Typography variant="h5">
-                    <StyledLink href={'#'} underline="always">
-                      {value.link2}
-                    </StyledLink>
-                  </Typography>
-                </Box>
-                <Box mt={2}>
-                  <Typography variant="h5">
-                    <StyledLink href={'#'} underline="always">
-                      {value.link3}
-                    </StyledLink>
-                  </Typography>
-                </Box>
-              </Card>
+              <Zoom>
+                <Card key={value.id} title={value.title} img={value.img} size="large">
+                  <Box>
+                    <Typography variant="h5">
+                      <StyledLink href={'#'} underline="always">
+                        {value.link1}
+                      </StyledLink>
+                    </Typography>
+                  </Box>
+                  <Box mt={2}>
+                    <Typography variant="h5">
+                      <StyledLink href={'#'} underline="always">
+                        {value.link2}
+                      </StyledLink>
+                    </Typography>
+                  </Box>
+                  <Box mt={2}>
+                    <Typography variant="h5">
+                      <StyledLink href={'#'} underline="always">
+                        {value.link3}
+                      </StyledLink>
+                    </Typography>
+                  </Box>
+                </Card>
+              </Zoom>
             </Grid>
           ))}
         </Grid>
