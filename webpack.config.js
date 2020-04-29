@@ -2,6 +2,7 @@
 
 const path = require('path');
 const merge = require('webpack-merge');
+const webpack = require('webpack');
 
 // variables
 const outPath = path.join(__dirname, 'dist');
@@ -31,7 +32,7 @@ const baseConfig = {
     path: outPath,
     filename: 'static/[name].js',
     chunkFilename: 'static/[name].bundle.js',
-    publicPath: 'http://localhost:4100/'
+    publicPath: '/'
   },
   target: 'web',
   resolve: {
@@ -46,26 +47,32 @@ const baseConfig = {
       template: './public/index.html',
       favicon: './public/favicon.ico'
     }),
-    new CopyWebpackPlugin([{ from: 'public/manifest.json', to: '' }])
-    // new MergeJsonWebpackPlugin({
-    //   debug: false,
-    //   encoding: 'utf8',
-    //   output: {
-    //     groupBy: [
-    //       {
-    //         pattern: '**/translations.json',
-    //         fileName: 'static/translations.json'
-    //       }
-    //     ]
-    //   }
-    // })
+    new webpack.DefinePlugin({
+      ROOT: JSON.stringify('/'),
+      // TODO: change this when api is up and running
+      API_URL: JSON.stringify('http://localhost:5501/')
+    }),
+    new CopyWebpackPlugin([{ from: 'public/manifest.json', to: '' }]),
+    new MergeJsonWebpackPlugin({
+      debug: false,
+      encoding: 'utf8',
+      output: {
+        groupBy: [
+          {
+            pattern: '**/translations.json',
+            fileName: 'static/translations.json'
+          }
+        ]
+      }
+    })
   ],
   devServer: {
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
       'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
-    }
+    },
+    port: 4100
   },
   optimization: {
     splitChunks: {
@@ -91,7 +98,7 @@ const baseConfig = {
 module.exports = (env, argv) => {
   env = env || {};
 
-  let environment = (process.env.NODE_ENV || 'development').toLowerCase();
+  let environment = (process.env.APP_ENV || 'development').toLowerCase();
 
   if (environment === 'production') {
     return merge.smart(baseConfig, require('./webpack.config.production.js').apply(this, [env, argv]));
