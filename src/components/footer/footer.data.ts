@@ -1,3 +1,5 @@
+import { translate } from 'lib/translate';
+
 export interface IFooterItem {
   header: ILinkItem;
   links: ILinkItem[];
@@ -11,143 +13,143 @@ interface ILinkItem {
 const footerItems: IFooterItem[] = [
   {
     header: {
-      title: `ВЕБСПОТ | ТА ВЕБСПОТ ДОО`,
+      title: translate('EasyFind_Footer_title', `ВЕБСПОТ | ТА ВЕБСПОТ ДОО`),
       link: ''
     },
     links: []
   },
   {
     header: {
-      title: 'Следете не',
+      title: translate('EasyFind_Footer_header', 'Следете не'),
       link: ''
     },
     links: [
       {
-        title: 'Facebook',
+        title: translate('EasyFind_Footer_link1', 'Facebook'),
         link: '#'
       },
       {
-        title: 'Instagram',
+        title: translate('EasyFind_Footer_link2', 'Instagram'),
         link: '#'
       },
       {
-        title: 'LinkedIn',
+        title: translate('EasyFind_Footer_link3', 'LinkedIn'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: 'Технологија',
+      title: translate('EasyFind_Footer_title1', 'Технологија'),
       link: '#'
     },
     links: [
       {
-        title: 'Компјутери',
+        title: translate('EasyFind_Footer_link4', 'Компјутери'),
         link: '#'
       },
       {
-        title: 'Компјутерска опрема',
+        title: translate('EasyFind_Footer_link5', 'Компјутерска опрема'),
         link: '#'
       },
       {
-        title: 'Мобилни телефони',
+        title: translate('EasyFind_Footer_link6', 'Мобилни телефони'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: 'Спорт',
+      title: translate('EasyFind_Footer_title2', 'Спорт'),
       link: '#'
     },
     links: [
       {
-        title: 'Машка облека',
+        title: translate('EasyFind_link7', 'Машка облека'),
         link: '#'
       },
       {
-        title: 'Женска облека',
+        title: translate('EasyFind_link8', 'Женска облека'),
         link: '#'
       },
       {
-        title: 'Спортска опрема',
+        title: translate('EasyFind_link9', 'Спортска опрема'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: 'Мода',
+      title: translate('EasyFind_Footer_title3', 'Мода'),
       link: '#'
     },
     links: [
       {
-        title: 'Машка облека',
+        title: translate('EasyFind_link10', 'Машка облека'),
         link: '#'
       },
       {
-        title: 'Женска облека',
+        title: translate('EasyFind_link11', 'Женска облека'),
         link: '#'
       },
       {
-        title: 'Обувки',
+        title: translate('EasyFind_link12', 'Обувки'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: 'Убавина и здравје',
+      title: translate('EasyFind_Footer_title4', 'Убавина и здравје'),
       link: '#'
     },
     links: [
       {
-        title: 'Козметика',
+        title: translate('EasyFind_link13', 'Козметика'),
         link: '#'
       },
       {
-        title: 'Парфеми',
+        title: translate('EasyFind_link14', 'Парфеми'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: 'Домаќинство',
+      title: translate('EasyFind_Footer_title5', 'Домаќинство'),
       link: '#'
     },
     links: [
       {
-        title: 'Апарати за домаќинство',
+        title: translate('EasyFind_link15', 'Апарати за домаќинство'),
         link: '#'
       },
       {
-        title: 'Бела техника',
+        title: translate('EasyFind_link16', 'Бела техника'),
         link: '#'
       },
       {
-        title: 'Дом и градина',
+        title: translate('EasyFind_link17', 'Дом и градина'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: 'Услуги',
+      title: translate('EasyFind_Footer_title6', 'Услуги'),
       link: '#'
     },
     links: [
       {
-        title: 'Храна и пијалоци',
+        title: translate('EasyFind_link18', 'Храна и пијалоци'),
         link: '#'
       },
       {
-        title: 'Едукација',
+        title: translate('EasyFind_link19', 'Едукација'),
         link: '#'
       },
       {
-        title: 'Култура и настани',
+        title: translate('EasyFind_link20', 'Култура и настани'),
         link: '#'
       }
     ]
