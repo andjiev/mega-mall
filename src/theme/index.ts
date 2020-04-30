@@ -16,6 +16,9 @@ const theme = createMuiTheme({
     },
     secondary: {
       main: '#BF1736'
+    },
+    grey: {
+      300: '#E1E1E1'
     }
   },
   overrides: {}
