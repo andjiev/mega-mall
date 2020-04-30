@@ -13,7 +13,7 @@ interface ILinkItem {
 const footerItems: IFooterItem[] = [
   {
     header: {
-      title: translate('EasyFind_Footer_title', `ВЕБСПОТ | ТА ВЕБСПОТ ДОО`),
+      title: translate('EasyFind_Footer_WebSpot', `ВЕБСПОТ | ТА ВЕБСПОТ ДОО`),
       link: ''
     },
     links: []
@@ -25,131 +25,131 @@ const footerItems: IFooterItem[] = [
     },
     links: [
       {
-        title: translate('EasyFind_Footer_link1', 'Facebook'),
+        title: translate('EasyFind_Footer_Facebook', 'Facebook'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Footer_link2', 'Instagram'),
+        title: translate('EasyFind_Footer_Instagram', 'Instagram'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Footer_link3', 'LinkedIn'),
+        title: translate('EasyFind_Footer_LinkedIn', 'LinkedIn'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: translate('EasyFind_Footer_title1', 'Технологија'),
+      title: translate('EasyFind_Footer_Technology', 'Технологија'),
       link: '#'
     },
     links: [
       {
-        title: translate('EasyFind_Footer_link4', 'Компјутери'),
+        title: translate('EasyFind_Footer_Computer', 'Компјутери'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Footer_link5', 'Компјутерска опрема'),
+        title: translate('EasyFind_Footer_Computer_Equipment', 'Компјутерска опрема'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Footer_link6', 'Мобилни телефони'),
+        title: translate('EasyFind_Footer_Mobile', 'Мобилни телефони'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: translate('EasyFind_Footer_title2', 'Спорт'),
+      title: translate('EasyFind_Footer_Sport', 'Спорт'),
       link: '#'
     },
     links: [
       {
-        title: translate('EasyFind_link7', 'Машка облека'),
+        title: translate('EasyFind_Footer_Male_Clothes', 'Машка облека'),
         link: '#'
       },
       {
-        title: translate('EasyFind_link8', 'Женска облека'),
+        title: translate('EasyFind_Footer_Female_Clothes', 'Женска облека'),
         link: '#'
       },
       {
-        title: translate('EasyFind_link9', 'Спортска опрема'),
+        title: translate('EasyFind_Footer_Sport_Wear', 'Спортска опрема'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: translate('EasyFind_Footer_title3', 'Мода'),
+      title: translate('EasyFind_Footer_Fashion', 'Мода'),
       link: '#'
     },
     links: [
       {
-        title: translate('EasyFind_link10', 'Машка облека'),
+        title: translate('EasyFind_Footer_Male', 'Машка облека'),
         link: '#'
       },
       {
-        title: translate('EasyFind_link11', 'Женска облека'),
+        title: translate('EasyFind_Footer_Female', 'Женска облека'),
         link: '#'
       },
       {
-        title: translate('EasyFind_link12', 'Обувки'),
+        title: translate('EasyFind_Footer_Shoes', 'Обувки'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: translate('EasyFind_Footer_title4', 'Убавина и здравје'),
+      title: translate('EasyFind_Footer_Beauty_Health', 'Убавина и здравје'),
       link: '#'
     },
     links: [
       {
-        title: translate('EasyFind_link13', 'Козметика'),
+        title: translate('EasyFind_Footer_Cosmetics', 'Козметика'),
         link: '#'
       },
       {
-        title: translate('EasyFind_link14', 'Парфеми'),
+        title: translate('EasyFind_Footer_Perfumes', 'Парфеми'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: translate('EasyFind_Footer_title5', 'Домаќинство'),
+      title: translate('EasyFind_Footer_Household', 'Домаќинство'),
       link: '#'
     },
     links: [
       {
-        title: translate('EasyFind_link15', 'Апарати за домаќинство'),
+        title: translate('EasyFind_Footer_Home_Equipment', 'Апарати за домаќинство'),
         link: '#'
       },
       {
-        title: translate('EasyFind_link16', 'Бела техника'),
+        title: translate('EasyFind_Footer_Home_Enviroment', 'Бела техника'),
         link: '#'
       },
       {
-        title: translate('EasyFind_link17', 'Дом и градина'),
+        title: translate('EasyFind_Footer_Home_Garden', 'Дом и градина'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: translate('EasyFind_Footer_title6', 'Услуги'),
+      title: translate('EasyFind_Footer_Services', 'Услуги'),
       link: '#'
     },
     links: [
       {
-        title: translate('EasyFind_link18', 'Храна и пијалоци'),
+        title: translate('EasyFind_Footer_Food_Drinks', 'Храна и пијалоци'),
         link: '#'
       },
       {
-        title: translate('EasyFind_link19', 'Едукација'),
+        title: translate('EasyFind_Footer_Education', 'Едукација'),
         link: '#'
       },
       {
-        title: translate('EasyFind_link20', 'Култура и настани'),
+        title: translate('EasyFind_Footer_Culture_Events', 'Култура и настани'),
         link: '#'
       }
     ]
