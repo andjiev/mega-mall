@@ -11,9 +11,9 @@ const cards = [
   {
     id: 1,
     title: translate('EasyFind_CategotyGrid_Technology', 'Технологија'),
-    link1: translate('EasyFind_CategotyGrid_Link1', 'КОМПЈУТЕРИ'),
-    link2: translate('EasyFind_CategotyGrid_Link2', 'КОМПЈУТЕРСКА ОПРЕМА'),
-    link3: translate('EasyFind_CategotyGrid_Link3', 'МОБИЛНИ ТЕЛЕФОНИ'),
+    link1: translate('EasyFind_CategotyGrid_Computers', 'КОМПЈУТЕРИ'),
+    link2: translate('EasyFind_CategotyGrid_Computer_Equipment', 'КОМПЈУТЕРСКА ОПРЕМА'),
+    link3: translate('EasyFind_CategotyGrid_Mobile', 'МОБИЛНИ ТЕЛЕФОНИ'),
     img: TehnologijaImg
   },
   {
