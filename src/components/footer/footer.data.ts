@@ -1,3 +1,5 @@
+import { translate } from 'lib/translate';
+
 export interface IFooterItem {
   header: ILinkItem;
   links: ILinkItem[];
@@ -11,143 +13,143 @@ interface ILinkItem {
 const footerItems: IFooterItem[] = [
   {
     header: {
-      title: `ВЕБСПОТ | ТА ВЕБСПОТ ДОО`,
+      title: translate('EasyFind_Footer_WebSpot', `ВЕБСПОТ | ТА ВЕБСПОТ ДОО`),
       link: ''
     },
     links: []
   },
   {
     header: {
-      title: 'Следете не',
+      title: translate('EasyFind_Footer_header', 'Следете не'),
       link: ''
     },
     links: [
       {
-        title: 'Facebook',
+        title: translate('EasyFind_Footer_Facebook', 'Facebook'),
         link: '#'
       },
       {
-        title: 'Instagram',
+        title: translate('EasyFind_Footer_Instagram', 'Instagram'),
         link: '#'
       },
       {
-        title: 'LinkedIn',
+        title: translate('EasyFind_Footer_LinkedIn', 'LinkedIn'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: 'Технологија',
+      title: translate('EasyFind_Footer_Technology', 'Технологија'),
       link: '#'
     },
     links: [
       {
-        title: 'Компјутери',
+        title: translate('EasyFind_Footer_Computer', 'Компјутери'),
         link: '#'
       },
       {
-        title: 'Компјутерска опрема',
+        title: translate('EasyFind_Footer_Computer_Equipment', 'Компјутерска опрема'),
         link: '#'
       },
       {
-        title: 'Мобилни телефони',
+        title: translate('EasyFind_Footer_Mobile', 'Мобилни телефони'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: 'Спорт',
+      title: translate('EasyFind_Footer_Sport', 'Спорт'),
       link: '#'
     },
     links: [
       {
-        title: 'Машка облека',
+        title: translate('EasyFind_Footer_Male_Clothes', 'Машка облека'),
         link: '#'
       },
       {
-        title: 'Женска облека',
+        title: translate('EasyFind_Footer_Female_Clothes', 'Женска облека'),
         link: '#'
       },
       {
-        title: 'Спортска опрема',
+        title: translate('EasyFind_Footer_Sport_Wear', 'Спортска опрема'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: 'Мода',
+      title: translate('EasyFind_Footer_Fashion', 'Мода'),
       link: '#'
     },
     links: [
       {
-        title: 'Машка облека',
+        title: translate('EasyFind_Footer_Male', 'Машка облека'),
         link: '#'
       },
       {
-        title: 'Женска облека',
+        title: translate('EasyFind_Footer_Female', 'Женска облека'),
         link: '#'
       },
       {
-        title: 'Обувки',
+        title: translate('EasyFind_Footer_Shoes', 'Обувки'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: 'Убавина и здравје',
+      title: translate('EasyFind_Footer_Beauty_Health', 'Убавина и здравје'),
       link: '#'
     },
     links: [
       {
-        title: 'Козметика',
+        title: translate('EasyFind_Footer_Cosmetics', 'Козметика'),
         link: '#'
       },
       {
-        title: 'Парфеми',
+        title: translate('EasyFind_Footer_Perfumes', 'Парфеми'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: 'Домаќинство',
+      title: translate('EasyFind_Footer_Household', 'Домаќинство'),
       link: '#'
     },
     links: [
       {
-        title: 'Апарати за домаќинство',
+        title: translate('EasyFind_Footer_Home_Equipment', 'Апарати за домаќинство'),
         link: '#'
       },
       {
-        title: 'Бела техника',
+        title: translate('EasyFind_Footer_Home_Enviroment', 'Бела техника'),
         link: '#'
       },
       {
-        title: 'Дом и градина',
+        title: translate('EasyFind_Footer_Home_Garden', 'Дом и градина'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: 'Услуги',
+      title: translate('EasyFind_Footer_Services', 'Услуги'),
       link: '#'
     },
     links: [
       {
-        title: 'Храна и пијалоци',
+        title: translate('EasyFind_Footer_Food_Drinks', 'Храна и пијалоци'),
         link: '#'
       },
       {
-        title: 'Едукација',
+        title: translate('EasyFind_Footer_Education', 'Едукација'),
         link: '#'
       },
       {
-        title: 'Култура и настани',
+        title: translate('EasyFind_Footer_Culture_Events', 'Култура и настани'),
         link: '#'
       }
     ]
