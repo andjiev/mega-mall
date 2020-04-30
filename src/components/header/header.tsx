@@ -13,7 +13,7 @@ import { CategoryTypes } from 'lib/enums';
 
 interface IHeaderProps {
   categoryType?: CategoryTypes;
-  showSubmenu: boolean;
+  isActive: boolean;
 
   onCategoryChange: (value: CategoryTypes) => void;
   onSubmenuChange: (value: boolean) => void;
@@ -25,9 +25,9 @@ const Header = (props: IHeaderProps) => {
     <>
       <StyledHeader>
         <TopBar />
-        <Menu onCategoryChange={props.onCategoryChange} onHideSubmenuChange={props.onHideSubmenuChange} />
+        <Menu isActive={props.isActive} onCategoryChange={props.onCategoryChange} onHideSubmenuChange={props.onHideSubmenuChange} />
       </StyledHeader>
-      {props.showSubmenu && <SubMenu categoryType={props.categoryType} onSubmenuChange={props.onSubmenuChange} />}
+      {props.isActive && <SubMenu categoryType={props.categoryType} onSubmenuChange={props.onSubmenuChange} />}
     </>
   );
 };
@@ -47,7 +47,7 @@ const mapDispatchToProps = (dispatch: AppDispatch) => ({
 const mapStateToProps = (state: ApplicationState) => {
   return {
     categoryType: state.headerStore.categoryType,
-    showSubmenu: state.headerStore.showSubmenu || state.headerStore.isOnSubmenu
+    isActive: state.headerStore.showSubmenu || state.headerStore.isOnSubmenu
   };
 };
 

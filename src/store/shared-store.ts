@@ -5,7 +5,6 @@ import * as UiStore from './ui-store';
 import { getTranslations } from 'services/language-service';
 import { initTranslations } from 'lib/translate';
 import { initMoment } from 'lib/moment';
-import { webGlobal } from 'consts';
 
 export interface SharedStore {
   searchText: string;
@@ -36,8 +35,7 @@ export const bootstrapApp = (): AppThunk => async (dispatch, store) => {
     dispatch(UiStore.showInitialLoader());
     let translations = await getTranslations();
 
-    // TODO: pass webGlobal.culture
-    initTranslations(translations, 'mk-MK');
+    initTranslations(translations.data, 'mk-MK');
     initMoment('mk-MK');
 
     dispatch(UiStore.hideInitialLoader());

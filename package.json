@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "pretty": "pretty-quick",
-    "start": "rimraf ./dist && webpack-dev-server --hot --history-api-fallback --progress --colors --port 4100",
+    "start": "rimraf ./dist && webpack-dev-server --hot --history-api-fallback --progress --colors",
     "build": "rimraf ./dist && webpack --progress --colors",
     "lint": "eslint ./src/**/*.ts ./src/**/*.tsx",
     "serve": "node server.js",

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { StyledList, StyledFooter, StyledCopyright } from './footer.styles';
-import { Container, Grid, Divider, Box, Typography, ListItem, Hidden } from '@material-ui/core';
-import { StyledLink } from 'components/styled-link/styled-link.styles';
+import { StyledList, StyledFooter, StyledCopyright, StyledDivider } from './footer.styles';
+import { Container, Grid, Box, Typography, ListItem, Hidden } from '@material-ui/core';
+import { StyledLink } from 'components/styled-link';
 import { footerItems, IFooterItem } from './footer.data';
 
 const Footer = () => {
@@ -11,13 +11,15 @@ const Footer = () => {
       <Box>
         <StyledList>
           <Typography variant="h6">{item.header.link ? <StyledLink href={item.header.link}>{item.header.title}</StyledLink> : <Box component="span">{item.header.title}</Box>}</Typography>
-          {item.links.map((linkItem, index) => {
-            return (
-              <ListItem key={index} disableGutters>
-                <StyledLink href={linkItem.link}>{linkItem.title}</StyledLink>
-              </ListItem>
-            );
-          })}
+          <Box mt={1}>
+            {item.links.map((linkItem, index) => {
+              return (
+                <ListItem key={index} disableGutters>
+                  <StyledLink href={linkItem.link}>{linkItem.title}</StyledLink>
+                </ListItem>
+              );
+            })}
+          </Box>
         </StyledList>
       </Box>
     );
@@ -25,7 +27,7 @@ const Footer = () => {
 
   return (
     <>
-      <StyledFooter pt={3} pb={3}>
+      <StyledFooter pt={3} pb={2}>
         <Container>
           {/* for large devices */}
           <Hidden smDown>
@@ -79,15 +81,15 @@ const Footer = () => {
               </Box>
             </Box>
           </Hidden>
-
-          {/* copyright */}
-          <Divider />
-          <Box mt={3}>
-            <Grid container justify="center" alignItems="center">
-              <StyledCopyright component="span">&copy;2020-2020 E-commerce Сите права задржани.</StyledCopyright>
-            </Grid>
-          </Box>
         </Container>
+
+        {/* copyright */}
+        <StyledDivider />
+        <Box mt={2}>
+          <Grid container justify="center" alignItems="center">
+            <StyledCopyright component="span">&copy;2020-2020 E-commerce Сите права задржани.</StyledCopyright>
+          </Grid>
+        </Box>
       </StyledFooter>
     </>
   );

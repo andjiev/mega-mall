@@ -14,7 +14,8 @@ import { ROUTES } from './consts';
 import { Header } from './components/header';
 import { Footer } from './components/footer';
 
-import MainPage from './pages/main/main';
+import { MainPage } from 'pages/main';
+import { CategoryPage } from 'pages/category';
 
 interface IApp {
   applicationBootstraped: boolean;
@@ -31,7 +32,10 @@ const _App: React.FC<IApp> = (props: IApp) => {
       {props.applicationBootstraped ? (
         <>
           <Header />
-          <Route path={ROUTES.MAIN} component={MainPage} />
+          <Box height="100%" minHeight="100vh" display="flex" flexDirection="column">
+            <Route exact path={ROUTES.MAIN} component={MainPage} />
+            <Route path={ROUTES.CATEGORY} component={CategoryPage} />
+          </Box>
           <Footer />
         </>
       ) : (

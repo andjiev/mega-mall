@@ -17,8 +17,7 @@ import { MuiThemeProvider, StylesProvider } from '@material-ui/core';
 import { ThemeProvider as SCThemeProvider } from 'styled-components';
 import { theme } from './theme';
 
-// basename: webGlobal.url.root
-const history = createBrowserHistory({ basename: 'http://localhost:4100' });
+const history = createBrowserHistory({ basename: ROOT });
 const store = configureEasyFindStore(history);
 
 export type AppDispatch = ThunkDispatch<ApplicationState, null, Action<string>>;
