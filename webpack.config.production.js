@@ -4,7 +4,7 @@ const webpack = require('webpack');
 
 module.exports = (env, argv) => ({
   mode: 'production',
-  devtool: 'nosources-source-map',
+  devtool: false,
   plugins: [
     new webpack.DefinePlugin({
       ROOT: JSON.stringify('/'),

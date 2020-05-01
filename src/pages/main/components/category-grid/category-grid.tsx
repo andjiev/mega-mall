@@ -32,7 +32,7 @@ const CategoryGrid = () => {
         <Grid container spacing={3}>
           {cards.map(value => (
             <Grid item key={value.id} xs={12} md={6} lg={4}>
-              <Card key={value.id} title={value.title} img={value.img} size="large">
+              <Card key={value.id} title={value.title} url={value.url} size="large">
                 <Box>
                   <Typography variant="h5">
                     <StyledLink href={'#'} underline="always">

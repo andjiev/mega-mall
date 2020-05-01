@@ -1,21 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import { connect } from 'react-redux';
-import { Route } from 'react-router';
+import { Route, Switch } from 'react-router';
 import { AppDispatch } from 'index';
 import ApplicationState from 'store/application-store';
 import { bootstrapApp } from 'store/shared-store';
 
-// temporary loader (this one does not have typings)
-// @ts-ignore
-import LoadingScreen from 'react-loading-screen';
-import { Box } from '@material-ui/core';
-
 import { ROUTES } from './consts';
-import { Header } from './components/header';
-import { Footer } from './components/footer';
-
-import { MainPage } from 'pages/main';
-import { CategoryPage } from 'pages/category';
+import { Box } from '@material-ui/core';
+import LoadingScreen from 'react-loading-screen';
 
 interface IApp {
   applicationBootstraped: boolean;
@@ -27,16 +19,32 @@ const _App: React.FC<IApp> = (props: IApp) => {
   useEffect(() => {
     props.bootstrapApp();
   }, []);
+
+  const Header = lazy(() => import('components/header'));
+  const Footer = lazy(() => import('components/footer'));
+  const MainPage = lazy(() => import('pages/main'));
+  const CategoryPage = lazy(() => import('pages/category'));
+
   return (
     <>
       {props.applicationBootstraped ? (
         <>
-          <Header />
-          <Box height="100%" minHeight="100vh" display="flex" flexDirection="column">
-            <Route exact path={ROUTES.MAIN} component={MainPage} />
-            <Route path={ROUTES.CATEGORY} component={CategoryPage} />
-          </Box>
-          <Footer />
+          <Suspense
+            fallback={
+              <LoadingScreen loading bgColor="#0d1440" spinnerColor="#BF1736">
+                <Box component="span">Default loading text to fix the children? error</Box>
+              </LoadingScreen>
+            }
+          >
+            <Header />
+            <Box height="100%" minHeight="100vh" display="flex" flexDirection="column">
+              <Switch>
+                <Route exact path={ROUTES.MAIN} component={MainPage} />
+                <Route path={ROUTES.CATEGORY} component={CategoryPage} />
+              </Switch>
+            </Box>
+            <Footer />
+          </Suspense>
         </>
       ) : (
         <LoadingScreen loading bgColor="#0d1440" spinnerColor="#BF1736">
