@@ -25,17 +25,19 @@ const _App: React.FC<IApp> = (props: IApp) => {
   const MainPage = lazy(() => import('pages/main'));
   const CategoryPage = lazy(() => import('pages/category'));
 
+  const renderLoader = () => {
+    return (
+      <LoadingScreen loading bgColor="#0d1440" spinnerColor="#BF1736">
+        <Box component="span">Default loading text to fix the children? error</Box>
+      </LoadingScreen>
+    );
+  };
+
   return (
     <>
       {props.applicationBootstraped ? (
         <>
-          <Suspense
-            fallback={
-              <LoadingScreen loading bgColor="#0d1440" spinnerColor="#BF1736">
-                <Box component="span">Default loading text to fix the children? error</Box>
-              </LoadingScreen>
-            }
-          >
+          <Suspense fallback={renderLoader()}>
             <Header />
             <Box height="100%" minHeight="100vh" display="flex" flexDirection="column">
               <Switch>
@@ -47,9 +49,7 @@ const _App: React.FC<IApp> = (props: IApp) => {
           </Suspense>
         </>
       ) : (
-        <LoadingScreen loading bgColor="#0d1440" spinnerColor="#BF1736">
-          <Box component="span">Default loading text to fix the children? error</Box>
-        </LoadingScreen>
+        renderLoader()
       )}
     </>
   );
