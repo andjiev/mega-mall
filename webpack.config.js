@@ -91,7 +91,7 @@ const baseConfig = {
 module.exports = (env, argv) => {
   env = env || {};
 
-  let environment = (env.APP_ENV || 'development').toLowerCase();
+  let environment = (process.env.APP_ENV || 'development').toLowerCase();
 
   if (environment === 'production') {
     return merge.smart(baseConfig, require('./webpack.config.production.js').apply(this, [env, argv]));
