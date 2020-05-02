@@ -20,7 +20,7 @@ const footerItems: IFooterItem[] = [
   },
   {
     header: {
-      title: translate('EasyFind_Footer_header', 'Следете не'),
+      title: translate('EasyFind_Footer_Header', 'Следете не'),
       link: ''
     },
     links: [

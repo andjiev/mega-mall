@@ -7,7 +7,7 @@ interface CardProps {
   size: 'small' | 'medium' | 'large';
   children?: React.ReactNode;
   title: string;
-  img: string;
+  url: string;
 }
 
 const _Card = (props: CardProps) => {
@@ -21,7 +21,7 @@ const _Card = (props: CardProps) => {
     <>
       <Card raised>
         <CardMedia>
-          <StyledImage img={props.img}>
+          <StyledImage url={props.url}>
             <StyledGrid container direction="column">
               <Grid item xs>
                 <Box p={3} pt={2}>

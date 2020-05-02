@@ -8,7 +8,7 @@ import { ISliderItem, sliderItems } from './main-slider.data';
 const MainSlider = () => {
   const renderItem = (item: ISliderItem) => {
     return (
-      <StyledImage src={item.imageSource}>
+      <StyledImage src={item.imageSrc}>
         <StyledGrid container direction="column" justify="center">
           <StyledContainer>
             <Box color="white">
