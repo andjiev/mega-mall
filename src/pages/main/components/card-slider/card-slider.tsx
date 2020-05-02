@@ -86,17 +86,18 @@ const CardSlider = () => {
         additionalTransfrom={0}
         arrows
         autoPlaySpeed={3000}
-        centerMode
         className="mb-5"
+        centerMode={false}
+        partialVisible
         containerClass="container"
         dotListClass=""
         draggable
-        focusOnSelect={false}
+        focusOnSelect={true}
         infinite
         itemClass=""
         keyBoardControl
         minimumTouchDrag={80}
-        renderButtonGroupOutside={false}
+        renderButtonGroupOutside={true}
         renderDotsOutside={false}
         responsive={{
           desktop: {
@@ -113,15 +114,16 @@ const CardSlider = () => {
               min: 0
             },
             items: 1,
-            partialVisibilityGutter: 30
+            partialVisibilityGutter: 90
           },
+
           tablet: {
             breakpoint: {
               max: 1024,
               min: 464
             },
-            items: 2,
-            partialVisibilityGutter: 30
+            items: 3,
+            partialVisibilityGutter: 10
           }
         }}
         showDots={false}
