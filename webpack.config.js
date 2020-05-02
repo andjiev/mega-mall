@@ -63,13 +63,35 @@ const baseConfig = {
       'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
     },
     port: 4100
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          name: 'vendor',
+          chunks: 'all',
+          test: /[\\/]node_modules[\\/]/,
+          priority: 20
+        },
+        common: {
+          name: 'common',
+          minChunks: 2,
+          chunks: 'async',
+          priority: 10,
+          reuseExistingChunk: true,
+          enforce: true
+        }
+      }
+    },
+    minimize: false,
+    runtimeChunk: false
   }
 };
 
 module.exports = (env, argv) => {
   env = env || {};
 
-  let environment = (process.env.APP_ENV || 'development').toLowerCase();
+  let environment = (env.APP_ENV || 'development').toLowerCase();
 
   if (environment === 'production') {
     return merge.smart(baseConfig, require('./webpack.config.production.js').apply(this, [env, argv]));
