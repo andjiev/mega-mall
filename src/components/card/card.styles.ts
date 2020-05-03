@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { CardMedia, Box, Grid } from '@material-ui/core';
+import { Card as MaterialCard } from '@material-ui/core';
 
-import { Box, Grid } from '@material-ui/core';
-
+//Large Cards
 interface IStyledImage {
   url: string;
 }
@@ -16,9 +17,33 @@ const StyledImage = styled(Box)`
   }
 `;
 
+//Small cards styles
+
+const StyledMaterialCard = styled(MaterialCard)`
+  min-height: 340px;
+  height: 100%;
+  max-width: 220px;
+  width: 100%;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.24);
+  margin-top: 20%;
+  margin-bottom: 20%;
+  max-height: 340px;
+`;
+
+const StyledCardMedia = styled(CardMedia)`
+  top: 0;
+  background-size: auto;
+  background-position: top;
+  max-height: 261px;
+  height: 100%;
+  padding-top: 0px;
+`;
+
 const StyledGrid = styled(Grid)`
   height: 100%;
 `;
+
+//Medium cards styles
 
 interface IGiftCardImage {
   url: string;
@@ -34,4 +59,6 @@ const GiftCardImage = styled(Box)`
   }
 `;
 
-export { StyledImage, StyledGrid, GiftCardImage };
+
+export { StyledGrid, StyledImage, StyledMaterialCard, StyledCardMedia, GiftCardImage};
+
