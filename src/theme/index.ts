@@ -3,6 +3,9 @@ import { createMuiTheme } from '@material-ui/core/styles';
 // carousel style
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
+// slider style
+import 'react-multi-carousel/lib/styles.css';
+
 import './index.css';
 
 const theme = createMuiTheme({
