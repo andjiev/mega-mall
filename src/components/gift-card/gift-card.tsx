@@ -7,18 +7,16 @@ import { giftcards } from './gift-card.data';
 const GiftCard = () => {
   return (
     <>
-      <Box mt={5} mb={5}>
-        <Grid container direction="row" justify="center" alignItems="center" spacing={3}>
-          {giftcards.map(value => (
-            <Grid item key={value.id} xs={12} md={6} lg={6}>
-              <Card size="medium" url={value.url}></Card>
-              {/* *NOTE* Kartickata namerno e napravena vaka vo card shared komponentata so fiksiran height bidejki
+      <Grid container direction="row" justify="center" alignItems="center" spacing={3}>
+        {giftcards.map(value => (
+          <Grid item key={value.id} xs={12} md={6} lg={6}>
+            <Card size="medium" url={value.url}></Card>
+            {/* *NOTE* Kartickata namerno e napravena vaka vo card shared komponentata so fiksiran height bidejki
             taa treba dinamicki da se vnesuva kako baner na primer preku dashboardot i od tamu da se kontrolira dali kje se 
             display i dali kje se menuva slikata na samata karticka  */}
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
+          </Grid>
+        ))}
+      </Grid>
     </>
   );
 };
