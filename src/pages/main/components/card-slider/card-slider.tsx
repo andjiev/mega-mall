@@ -50,55 +50,24 @@ const cardData = [
 ];
 
 const CardSlider = () => {
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 6
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 4
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
-  };
-
   return (
     <Box component="div">
       <Grid container justify="space-between">
-        <Grid container item xs={6} justify="flex-start">
+        <Grid container item xs={12} md={6} justify="flex-start">
           <Typography variant="h5">Најпосетени производи</Typography>
         </Grid>
-        <Grid container item xs={6} justify="flex-end" alignItems="flex-end">
+        <Grid container item xs={12} md={6} justify="flex-end">
           <Link className="text-dark" href="#">
             <Box component="span">прикажи ги сите {' >'}</Box>
           </Link>
         </Grid>
       </Grid>
       <Carousel
-        additionalTransfrom={0}
         arrows
-        autoPlaySpeed={3000}
-        className="mb-5"
-        centerMode={false}
-        partialVisible
-        containerClass="container"
-        dotListClass=""
-        draggable
-        focusOnSelect={true}
+        partialVisbile
         infinite
-        itemClass=""
-        keyBoardControl
         minimumTouchDrag={80}
-        renderButtonGroupOutside={true}
-        renderDotsOutside={false}
+        swipeable
         responsive={{
           desktop: {
             breakpoint: {
@@ -114,7 +83,8 @@ const CardSlider = () => {
               min: 0
             },
             items: 1,
-            partialVisibilityGutter: 90
+            partialVisibilityGutter: 90,
+            slidesToSlide: 1
           },
 
           tablet: {
@@ -123,13 +93,10 @@ const CardSlider = () => {
               min: 464
             },
             items: 3,
-            partialVisibilityGutter: 10
+            partialVisibilityGutter: 10,
+            slidesToSlide: 3
           }
         }}
-        showDots={false}
-        sliderClass=""
-        slidesToSlide={1}
-        swipeable
       >
         {cardData.map(res => (
           <Card key={res.id} size={'small'} title={res.title} img={res.img}>

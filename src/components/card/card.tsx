@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledMaterialCard, StyledMaterialCardTitle, StyledImage, StyledMaterialCardPrice, StyledCardMedia } from 'components/card/card.styles';
+import { StyledMaterialCard, StyledImage, StyledCardMedia } from 'components/card/card.styles';
 import { makeStyles, Theme, createStyles, CardMedia, CardContent, Typography, Card, Box, Hidden } from '@material-ui/core';
 
 interface CardProps {
@@ -31,8 +31,12 @@ const _Card = (props: CardProps) => {
       <StyledMaterialCard>
         <StyledCardMedia className={classes.media} image={props.img} />
         <CardContent>
-          <StyledMaterialCardTitle>{props.title}</StyledMaterialCardTitle>
-          <StyledMaterialCardPrice>{props.children}</StyledMaterialCardPrice>
+          <Box fontWeight="fontWeightBold" fontFamily="RobotoRegular" fontSize="16px">
+            <Typography>{props.title}</Typography>
+          </Box>
+          <Box fontWeight="fontWeightBold" fontFamily="OswaldMedium" fontSize="24px">
+            <Typography variant="h5">{props.children}</Typography>
+          </Box>
         </CardContent>
       </StyledMaterialCard>
     );
@@ -46,7 +50,7 @@ const _Card = (props: CardProps) => {
         <CardMedia>
           <StyledImage img={props.img}>
             <Box p={3}>
-              <Typography component="div">
+              <Typography>
                 <Box fontWeight="fontWeightBold" color="white">
                   <Typography variant="h3">{props.title}</Typography>
                 </Box>
