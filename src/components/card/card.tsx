@@ -2,11 +2,12 @@ import React from 'react';
 import { StyledMaterialCard, StyledImage, StyledCardMedia } from 'components/card/card.styles';
 import { makeStyles, Theme, createStyles, CardMedia, CardContent, Typography, Card, Box, Hidden } from '@material-ui/core';
 
+
 interface CardProps {
   size: 'small' | 'medium' | 'large';
   children?: React.ReactNode;
   title: string;
-  img: string;
+  url: string;
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -48,33 +49,36 @@ const _Card = (props: CardProps) => {
     <>
       <Card raised>
         <CardMedia>
-          <StyledImage img={props.img}>
-            <Box p={3}>
-              <Typography>
-                <Box fontWeight="fontWeightBold" color="white">
-                  <Typography variant="h3">{props.title}</Typography>
+          <StyledImage url={props.url}>
+            <StyledGrid container direction="column">
+              <Grid item xs>
+                <Box p={3} pt={2}>
+                  <Typography component="div">
+                    <Box fontWeight="fontWeightBold" color="white">
+                      <Typography variant="h3">{props.title}</Typography>
+                    </Box>
+                  </Typography>
+
                 </Box>
-              </Typography>
-              <Hidden mdDown>
-                {/* TODO: find a way to move the whole content at the bottom (Grid container flex or something) */}
-                <Box pt={33}>
-                  {props.children}
-                  <Box mt={3}>
+              </Grid>
+              <Grid container item xs direction="column" justify="flex-end">
+                <Box p={3}>
+                  <Hidden mdDown>
+                    {props.children}
+                    <Box mt={3}>
+                      <Box color="white" component="span">
+                        прикажи ги сите {' >'}
+                      </Box>
+                    </Box>
+                  </Hidden>
+                  <Hidden lgUp>
                     <Box color="white" component="span">
                       прикажи ги сите {' >'}
                     </Box>
-                  </Box>
+                  </Hidden>
                 </Box>
-              </Hidden>
-              <Hidden lgUp>
-                {/* TODO: find a way to move the whole content at the bottom (Grid container flex or something) */}
-                <Box pt={28}>
-                  <Box color="white" component="span">
-                    прикажи ги сите {' >'}
-                  </Box>
-                </Box>
-              </Hidden>
-            </Box>
+              </Grid>
+            </StyledGrid>
           </StyledImage>
         </CardMedia>
       </Card>

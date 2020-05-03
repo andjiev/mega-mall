@@ -1,5 +1,6 @@
 const ROUTES = {
-    MAIN: ''
+  MAIN: '/',
+  CATEGORY: '/categories/:type'
 };
 
 export { ROUTES };

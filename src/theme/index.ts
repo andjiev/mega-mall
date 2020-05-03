@@ -1,6 +1,9 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
-import './fonts';
+// carousel style
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
+import './index.css';
 
 const theme = createMuiTheme({
   typography: {
@@ -13,6 +16,9 @@ const theme = createMuiTheme({
     },
     secondary: {
       main: '#BF1736'
+    },
+    grey: {
+      300: '#E1E1E1'
     }
   },
   overrides: {}

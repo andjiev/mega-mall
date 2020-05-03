@@ -5,9 +5,6 @@ import ApplicationState from './store/application-store';
 import { ThunkDispatch } from 'redux-thunk';
 import { Action } from 'redux';
 
-// TODO: we should remove bootstrap from the project because it interferes with material ui style
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
 import './theme';
 
 import App from './app';
@@ -20,8 +17,7 @@ import { MuiThemeProvider, StylesProvider } from '@material-ui/core';
 import { ThemeProvider as SCThemeProvider } from 'styled-components';
 import { theme } from './theme';
 
-// basename: webGlobal.url.root
-const history = createBrowserHistory({ basename: 'http://localhost:4100' });
+const history = createBrowserHistory({ basename: ROOT });
 const store = configureEasyFindStore(history);
 
 export type AppDispatch = ThunkDispatch<ApplicationState, null, Action<string>>;

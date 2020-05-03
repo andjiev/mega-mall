@@ -1,15 +1,14 @@
 import styled from 'styled-components';
-import React from 'react';
-import { CardContent, CardMedia } from '@material-ui/core';
+import { CardMedia, Box } from '@material-ui/core';
 import { Card as MaterialCard } from '@material-ui/core';
-import { Box } from '@material-ui/core';
+
 
 //Large Cards
 interface IStyledImage {
-  img: string;
+  url: string;
 }
 const StyledImage = styled(Box)`
-  background-image: url(${(props: IStyledImage) => props.img});
+  background-image: url(${(props: IStyledImage) => props.url});
   background-size: cover;
   width: 100%;
   height: 550px;
@@ -42,3 +41,4 @@ const StyledCardMedia = styled(CardMedia)`
 `;
 
 export { StyledImage, StyledMaterialCard, StyledCardMedia };
+

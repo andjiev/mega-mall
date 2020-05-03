@@ -1,59 +1,45 @@
 import React from 'react';
 
-import Carousel from 'react-bootstrap/Carousel';
-import { StyledBanner, StyledImage, StyledCaption, StyledHeading } from './main-slider.style';
-import { Button, Box } from '@material-ui/core';
+import { StyledGrid, StyledImage, StyledContainer, StyledButton, StyledTypography } from './main-slider.style';
+import { Box, Grid, Typography } from '@material-ui/core';
+import { Carousel } from 'react-responsive-carousel';
+import { ISliderItem, sliderItems } from './main-slider.data';
 
 const MainSlider = () => {
+  const renderItem = (item: ISliderItem) => {
+    return (
+      <StyledImage src={item.imageSrc}>
+        <StyledGrid container direction="column" justify="center">
+          <StyledContainer>
+            <Box color="white">
+              <Grid item>
+                <StyledTypography variant="h2">{item.title}</StyledTypography>
+              </Grid>
+              <Box mt={2}>
+                <Grid item>
+                  <Box component="span">{item.subTitle}</Box>
+                </Grid>
+              </Box>
+            </Box>
+            <Grid item>
+              <Box mt={3}>
+                <StyledButton variant="contained" color="secondary" size="large">
+                  {item.buttonText}
+                </StyledButton>
+              </Box>
+            </Grid>
+          </StyledContainer>
+        </StyledGrid>
+      </StyledImage>
+    );
+  };
+
   return (
-    <StyledBanner>
-      <Carousel controls={false}>
-        <Carousel.Item>
-          <StyledImage />
-          <Carousel.Caption>
-            <StyledCaption>
-              <StyledHeading>
-                ПОДАРИ <br></br> ОБУВКИ НА ПРИЈАТЕЛ
-              </StyledHeading>
-              <Box component="p">Ако патиките се ваши омилени обувки, значи дека на прво место ви е удобноста.</Box>
-              <Button variant="contained" color="secondary" size="large">
-                Подари веднаш
-              </Button>
-            </StyledCaption>
-          </Carousel.Caption>
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <StyledImage />
-          <Carousel.Caption>
-            <StyledCaption>
-              <StyledHeading>
-                ПОДАРИ <br></br> ОБУВКИ НА ПРИЈАТЕЛ
-              </StyledHeading>
-              <Box component="p">Ако патиките се ваши омилени обувки,значи дека на прво место ви е удобноста.</Box>
-              <Button variant="contained" color="secondary" size="large">
-                Подари веднаш
-              </Button>
-            </StyledCaption>
-          </Carousel.Caption>
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <StyledImage />
-          <Carousel.Caption>
-            <StyledCaption>
-              <StyledHeading>
-                ПОДАРИ <br></br> ОБУВКИ НА ПРИЈАТЕЛ
-              </StyledHeading>
-              <Box component="p">Ако патиките се ваши омилени обувки,значи дека на прво место ви е удобноста.</Box>
-              <Button variant="contained" color="secondary" size="large">
-                Подари веднаш
-              </Button>
-            </StyledCaption>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
-    </StyledBanner>
+    <Carousel infiniteLoop autoPlay showArrows={false} showStatus={false} showThumbs={false}>
+      {sliderItems.map((item, index) => {
+        return <Box key={index}>{renderItem(item)}</Box>;
+      })}
+    </Carousel>
   );
 };
 
