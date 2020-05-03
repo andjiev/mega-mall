@@ -4,11 +4,7 @@ import { Grid } from '@material-ui/core';
 import Card from './../../components/card/card';
 import { giftcards } from './gift-card.data';
 
-interface GiftCardProps {
-  id: number;
-  url: string;
-}
-const GiftCard = (props: GiftCardProps) => {
+const GiftCard = () => {
   return (
     <>
       <Grid container direction="row" justify="center" alignItems="center" spacing={3}>
