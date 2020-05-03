@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { StyledImage, StyledGrid } from 'components/card/card.styles';
+import { StyledImage, StyledGrid, GiftCardImage } from 'components/card/card.styles';
 import { Card, Box, Typography, Hidden, Grid, CardMedia } from '@material-ui/core';
 
 interface CardProps {
   size: 'small' | 'medium' | 'large';
   children?: React.ReactNode;
-  title: string;
+  title?: string;
   url: string;
 }
 
@@ -14,7 +14,15 @@ const _Card = (props: CardProps) => {
   if (props.size == 'small') {
     return <> </>;
   } else if (props.size == 'medium') {
-    return <> </>;
+    return (
+      <>
+        <Card>
+          <CardMedia>
+            <GiftCardImage url={props.url}></GiftCardImage>
+          </CardMedia>
+        </Card>
+      </>
+    );
   }
 
   return (
