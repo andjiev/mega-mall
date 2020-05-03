@@ -7,12 +7,11 @@ interface IStyledImage {
 }
 const StyledImage = styled(Box)`
   background-image: url(${(props: IStyledImage) => props.url});
-  background-size: cover;
   width: 100%;
-  height: 550px;
+  height: 320px;
 
   ${props => props.theme.breakpoints.down('md')} {
-    height: 350px;
+    height: 200px;
   }
 `;
 
