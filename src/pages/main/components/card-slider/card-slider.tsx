@@ -69,7 +69,8 @@ const CardSlider = () => {
               min: 1024
             },
             items: 4,
-            partialVisibilityGutter: 40
+            partialVisibilityGutter: 40,
+            slidesToSlide: 4
           },
           mobile: {
             breakpoint: {
@@ -95,7 +96,7 @@ const CardSlider = () => {
         {cardData.map(res => (
           <Card key={res.id} size={'small'} title={res.title} url={res.img}>
             {/* TODO: maybe span would be better */}
-            <p>{res.price}</p>
+            <span>{res.price}</span>
           </Card>
         ))}
       </Carousel>
