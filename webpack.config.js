@@ -23,7 +23,8 @@ const baseConfig = {
   module: {
     rules: [
       { test: /\.ts(x?)$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.css$/, use: ['style-loader', 'css-loader'] }
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+      { test: /\.(woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
     ]
   },
   output: {
