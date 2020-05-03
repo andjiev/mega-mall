@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { CardMedia, Box } from '@material-ui/core';
+import { CardMedia, Box, Grid } from '@material-ui/core';
 import { Card as MaterialCard } from '@material-ui/core';
-
 
 //Large Cards
 interface IStyledImage {
@@ -40,5 +39,8 @@ const StyledCardMedia = styled(CardMedia)`
   padding-top: 0px;
 `;
 
-export { StyledImage, StyledMaterialCard, StyledCardMedia };
+const StyledGrid = styled(Grid)`
+  height: 100%;
+`;
 
+export { StyledGrid, StyledImage, StyledMaterialCard, StyledCardMedia };

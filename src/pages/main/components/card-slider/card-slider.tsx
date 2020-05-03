@@ -1,13 +1,7 @@
 import React from 'react';
+
 import { Card } from '../../../../components/card';
 import Carousel from 'react-multi-carousel';
-import './card-slider.styles';
-import 'react-multi-carousel/lib/styles.css';
-
-import mobilenSlika from './../../../../assets/images/CardSlider/Mobilen-telefon.jpg';
-import masinaSlika from './../../../../assets/images/CardSlider/Mashina-za-perenje.jpg';
-import kozmetikaSlika from './../../../../assets/images/CardSlider/Kozmetika.jpg';
-import tvSlika from './../../../../assets/images/CardSlider/Smart-televizor.jpg';
 import { Box, Grid, Typography, Link } from '@material-ui/core';
 
 const cardData = [
@@ -15,37 +9,37 @@ const cardData = [
     id: 11,
     title: 'Мобилен Телефон',
     price: '8.000 ден',
-    img: mobilenSlika
+    img: 'assets/images/main/card-slider/Mobilen-telefon.jpg'
   },
   {
     id: 22,
     title: 'Смарт Телевизор',
     price: '60.000 ден',
-    img: tvSlika
+    img: 'assets/images/main/card-slider/Mashina-za-perenje.jpg'
   },
   {
     id: 33,
     title: 'Козметика',
     price: '400 ден',
-    img: kozmetikaSlika
+    img: 'assets/images/main/card-slider/Kozmetika.jpg'
   },
   {
     id: 44,
     title: 'Машина за перење',
     price: '70.000 ден',
-    img: masinaSlika
+    img: 'assets/images/main/card-slider/Smart-televizor.jpg'
   },
   {
     id: 55,
     title: 'Бормашина',
     price: '4.500 ден',
-    img: mobilenSlika
+    img: 'assets/images/main/card-slider/Mobilen-telefon.jpg'
   },
   {
     id: 66,
     title: 'Лаптоп',
     price: '45.000 ден',
-    img: tvSlika
+    img: 'assets/images/main/card-slider/Mashina-za-perenje.jpg'
   }
 ];
 
@@ -99,7 +93,8 @@ const CardSlider = () => {
         }}
       >
         {cardData.map(res => (
-          <Card key={res.id} size={'small'} title={res.title} img={res.img}>
+          <Card key={res.id} size={'small'} title={res.title} url={res.img}>
+            {/* TODO: maybe span would be better */}
             <p>{res.price}</p>
           </Card>
         ))}

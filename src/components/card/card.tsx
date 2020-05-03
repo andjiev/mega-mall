@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyledMaterialCard, StyledImage, StyledCardMedia } from 'components/card/card.styles';
-import { makeStyles, Theme, createStyles, CardMedia, CardContent, Typography, Card, Box, Hidden } from '@material-ui/core';
 
+import { StyledImage, StyledGrid, StyledMaterialCard, StyledCardMedia } from 'components/card/card.styles';
+import { Card, Box, Typography, Hidden, Grid, CardMedia, makeStyles, Theme, createStyles, CardContent } from '@material-ui/core';
 
 interface CardProps {
   size: 'small' | 'medium' | 'large';
@@ -23,14 +23,10 @@ const _Card = (props: CardProps) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
   if (props.size == 'small') {
     return (
       <StyledMaterialCard>
-        <StyledCardMedia className={classes.media} image={props.img} />
+        <StyledCardMedia className={classes.media} image={props.url} />
         <CardContent>
           <Box fontWeight="fontWeightBold" fontFamily="RobotoRegular" fontSize="16px">
             <Typography>{props.title}</Typography>
@@ -58,7 +54,6 @@ const _Card = (props: CardProps) => {
                       <Typography variant="h3">{props.title}</Typography>
                     </Box>
                   </Typography>
-
                 </Box>
               </Grid>
               <Grid container item xs direction="column" justify="flex-end">
