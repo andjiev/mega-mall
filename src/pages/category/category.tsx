@@ -21,7 +21,7 @@ const _CategoryPage = (props: CategoryPageProps) => {
           <Grid item xs={12} md={4} lg={3} xl={2}>
             <Navigation />
           </Grid>
-          <Grid item>
+          <Grid item xs={12} md={8} lg={9} xl={10}>
             <Display />
           </Grid>
         </Grid>
