@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { GiftCard } from "../../../../components/gift-card";
+import { GiftCard } from '../../../../components/gift-card';
 
 const GiftCardGrid = () => {
   return (

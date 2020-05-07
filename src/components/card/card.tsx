@@ -1,20 +1,51 @@
 import React from 'react';
-
-import { StyledImage, StyledGrid } from 'components/card/card.styles';
-import { Card, Box, Typography, Hidden, Grid, CardMedia } from '@material-ui/core';
+import { StyledImage, StyledGrid, StyledMaterialCard, StyledCardMedia, GiftCardImage } from 'components/card/card.styles';
+import { Card, Box, Typography, Hidden, Grid, CardMedia, makeStyles, Theme, createStyles, CardContent } from '@material-ui/core';
 
 interface CardProps {
   size: 'small' | 'medium' | 'large';
   children?: React.ReactNode;
-  title: string;
+  title?: string;
   url: string;
 }
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    media: {
+      height: 0,
+      paddingTop: '56.25%' // 16:9
+    }
+  })
+);
+
 const _Card = (props: CardProps) => {
+  const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(false);
+
   if (props.size == 'small') {
-    return <> </>;
+    return (
+      <StyledMaterialCard>
+        <StyledCardMedia className={classes.media} image={props.url} />
+        <CardContent>
+          <Box fontWeight="fontWeightBold" fontFamily="RobotoRegular" fontSize="16px">
+            <Typography>{props.title}</Typography>
+          </Box>
+          <Box fontWeight="fontWeightBold" fontFamily="OswaldMedium" fontSize="24px">
+            <Typography variant="h5">{props.children}</Typography>
+          </Box>
+        </CardContent>
+      </StyledMaterialCard>
+    );
   } else if (props.size == 'medium') {
-    return <> </>;
+    return (
+      <>
+        <Card>
+          <CardMedia>
+            <GiftCardImage url={props.url}></GiftCardImage>
+          </CardMedia>
+        </Card>
+      </>
+    );
   }
 
   return (
