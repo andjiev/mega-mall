@@ -1,7 +1,7 @@
 const mainbanner = [
   {
     id: 1,
-    url: 'assets/images/main/Baner.jpg'
+    url: '/assets/images/main/Baner.jpg'
   }
 ];
 

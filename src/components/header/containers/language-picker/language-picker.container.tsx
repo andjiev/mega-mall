@@ -35,7 +35,7 @@ export const LanguagePicker = (props: ILanguagePickerProps) => {
                 {languages.map((lang, index) => (
                   <StyledBox key={index} onClick={() => props.onLanguageChange(lang)}>
                     <ListItem>
-                      <StyledImage src={`assets/images/flags/${lang}.jpg`} />
+                      <StyledImage src={`/assets/images/flags/${lang}.jpg`} />
                       <Box pl={2} component="span">
                         {lang}
                       </Box>
