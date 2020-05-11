@@ -5,6 +5,7 @@ import { List, Grid, Container, ListItem, Box } from '@material-ui/core';
 import { submenuItems, ISubmenuItem } from './sub-menu.data';
 import { StyledLink } from 'components/styled-link';
 import { CategoryTypes } from 'lib/enums';
+import Card from './../../../../components/card/card';
 
 interface ISubMenuProps {
   categoryType?: CategoryTypes;
@@ -28,7 +29,7 @@ const SubMenu = (props: ISubMenuProps) => {
           <Container>
             <Box pt={3}>
               <Grid container spacing={10} onMouseEnter={() => props.onSubmenuChange(true)} onMouseLeave={() => props.onSubmenuChange(false)}>
-                <Grid item xs={4}>
+                <Grid item xs={3}>
                   <List>
                     <ListItem disableGutters>
                       <StyledListItemText primary={submenuContent.data.left.title}></StyledListItemText>
@@ -40,7 +41,7 @@ const SubMenu = (props: ISubMenuProps) => {
                     ))}
                   </List>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={3}>
                   <List>
                     <ListItem disableGutters>
                       <StyledListItemText primary={submenuContent.data.right.title}></StyledListItemText>
@@ -52,10 +53,9 @@ const SubMenu = (props: ISubMenuProps) => {
                     ))}
                   </List>
                 </Grid>
-                <Grid item xs={4}>
-                  {/* TODO: add submenu content image here */}
+                <Grid item xs={6}>
                   {submenuContent.data.side.items.map(item => (
-                    <SubmenuImage key={item.id} url={item.url}></SubmenuImage>
+                    <Card size="medium" key={item.id} url={item.url} title={item.title}></Card>
                   ))}
                 </Grid>
               </Grid>

@@ -91,7 +91,7 @@ const submenuItems: ISubmenuItem[] = [
           {
             id: 1,
             title: 'Slika1',
-            url: 'assets/images/main/Najnovite-patiki-na-nike.jpg'
+            url: '/assets/images/main/Najnovite-patiki-na-nike.jpg'
           }
         ]
       }
@@ -101,7 +101,7 @@ const submenuItems: ISubmenuItem[] = [
     type: CategoryTypes.Sport,
     data: {
       left: {
-        title: 'Title',
+        title: 'Спорт1',
         items: [
           {
             id: 1,
@@ -114,7 +114,171 @@ const submenuItems: ISubmenuItem[] = [
         ]
       },
       right: {
-        title: 'Title',
+        title: 'Спорт2',
+        items: [
+          {
+            id: 1,
+            title: 'Тест'
+          },
+          {
+            id: 2,
+            title: 'Тест'
+          }
+        ]
+      },
+      side: {
+        title: 'Slika2',
+        items: [
+          {
+            id: 1,
+            title: 'Slika2',
+            url: 'assets/images/main/Najnovite-patiki-na-nike.jpg'
+          }
+        ]
+      }
+    }
+  },
+  {
+    type: CategoryTypes.Fashion,
+    data: {
+      left: {
+        title: 'Мода1',
+        items: [
+          {
+            id: 1,
+            title: 'Тест'
+          },
+          {
+            id: 2,
+            title: 'Тест'
+          }
+        ]
+      },
+      right: {
+        title: 'Мода2',
+        items: [
+          {
+            id: 1,
+            title: 'Тест'
+          },
+          {
+            id: 2,
+            title: 'Тест'
+          }
+        ]
+      },
+      side: {
+        title: 'Slika2',
+        items: [
+          {
+            id: 1,
+            title: 'Slika2',
+            url: 'assets/images/main/Najnovite-patiki-na-nike.jpg'
+          }
+        ]
+      }
+    }
+  },
+  {
+    type: CategoryTypes.Beauty,
+    data: {
+      left: {
+        title: 'Здравје и убавина',
+        items: [
+          {
+            id: 1,
+            title: 'Тест'
+          },
+          {
+            id: 2,
+            title: 'Тест'
+          }
+        ]
+      },
+      right: {
+        title: 'Здравје и убавина',
+        items: [
+          {
+            id: 1,
+            title: 'Тест'
+          },
+          {
+            id: 2,
+            title: 'Тест'
+          }
+        ]
+      },
+      side: {
+        title: 'Slika2',
+        items: [
+          {
+            id: 1,
+            title: 'Slika2',
+            url: 'assets/images/main/Najnovite-patiki-na-nike.jpg'
+          }
+        ]
+      }
+    }
+  },
+  {
+    type: CategoryTypes.Home,
+    data: {
+      left: {
+        title: 'Домакинство',
+        items: [
+          {
+            id: 1,
+            title: 'Тест'
+          },
+          {
+            id: 2,
+            title: 'Тест'
+          }
+        ]
+      },
+      right: {
+        title: 'Домакинство',
+        items: [
+          {
+            id: 1,
+            title: 'Тест'
+          },
+          {
+            id: 2,
+            title: 'Тест'
+          }
+        ]
+      },
+      side: {
+        title: 'Slika2',
+        items: [
+          {
+            id: 1,
+            title: 'Slika2',
+            url: 'assets/images/main/Najnovite-patiki-na-nike.jpg'
+          }
+        ]
+      }
+    }
+  },
+  {
+    type: CategoryTypes.Services,
+    data: {
+      left: {
+        title: 'Услуги',
+        items: [
+          {
+            id: 1,
+            title: 'Тест'
+          },
+          {
+            id: 2,
+            title: 'Тест'
+          }
+        ]
+      },
+      right: {
+        title: 'Услуги',
         items: [
           {
             id: 1,

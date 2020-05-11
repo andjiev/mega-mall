@@ -22,7 +22,8 @@ interface ISubmenuImage {
 const SubmenuImage = styled(Box)`
   background-image: url(${(props: ISubmenuImage) => props.url});
   background-size: cover;
-  height: 260px;
+  height: 100%;
+  max-height: 260px;
   width: 100%;
 `;
 

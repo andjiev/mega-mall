@@ -4,7 +4,7 @@ import { Card as MaterialCard } from '@material-ui/core';
 
 //Large Cards
 interface IStyledImage {
-  url: string;
+  url?: string;
 }
 const StyledImage = styled(Box)`
   background-image: url(${(props: IStyledImage) => props.url});
@@ -46,7 +46,7 @@ const StyledGrid = styled(Grid)`
 //Medium cards styles
 
 interface IGiftCardImage {
-  url: string;
+  url?: string;
 }
 const GiftCardImage = styled(Box)`
   background-image: url(${(props: IGiftCardImage) => props.url});
@@ -59,6 +59,4 @@ const GiftCardImage = styled(Box)`
   }
 `;
 
-
-export { StyledGrid, StyledImage, StyledMaterialCard, StyledCardMedia, GiftCardImage};
-
+export { StyledGrid, StyledImage, StyledMaterialCard, StyledCardMedia, GiftCardImage };

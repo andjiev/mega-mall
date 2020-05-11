@@ -6,7 +6,7 @@ interface CardProps {
   size: 'small' | 'medium' | 'large';
   children?: React.ReactNode;
   title?: string;
-  url: string;
+  url?: string;
 }
 
 const useStyles = makeStyles((theme: Theme) =>
