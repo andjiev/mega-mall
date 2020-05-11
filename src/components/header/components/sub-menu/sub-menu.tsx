@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { StyledSubMenu, StyledListItemText } from './sub-menu.styles';
+import { StyledSubMenu, StyledListItemText, SubmenuImage } from './sub-menu.styles';
 import { List, Grid, Container, ListItem, Box } from '@material-ui/core';
 import { submenuItems, ISubmenuItem } from './sub-menu.data';
 import { StyledLink } from 'components/styled-link';
@@ -54,6 +54,9 @@ const SubMenu = (props: ISubMenuProps) => {
                 </Grid>
                 <Grid item xs={4}>
                   {/* TODO: add submenu content image here */}
+                  {submenuContent.data.side.items.map(item => (
+                    <SubmenuImage key={item.id} url={item.url}></SubmenuImage>
+                  ))}
                 </Grid>
               </Grid>
             </Box>

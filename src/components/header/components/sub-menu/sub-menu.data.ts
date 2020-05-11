@@ -8,16 +8,19 @@ export interface ISubmenuItem {
 interface IData {
   left: IBoxItem;
   right: IBoxItem;
+  side: IBoxItem;
 }
 
 interface IBoxItem {
   title: string;
   items: IItem[];
+  url?: string;
 }
 
 interface IItem {
   id: number;
   title: string;
+  url?: string;
 }
 
 const submenuItems: ISubmenuItem[] = [
@@ -81,6 +84,16 @@ const submenuItems: ISubmenuItem[] = [
             title: 'Задни капачиња'
           }
         ]
+      },
+      side: {
+        title: 'Slika1',
+        items: [
+          {
+            id: 1,
+            title: 'Slika1',
+            url: 'assets/images/main/Najnovite-patiki-na-nike.jpg'
+          }
+        ]
       }
     }
   },
@@ -110,6 +123,16 @@ const submenuItems: ISubmenuItem[] = [
           {
             id: 2,
             title: 'Тест'
+          }
+        ]
+      },
+      side: {
+        title: 'Slika2',
+        items: [
+          {
+            id: 1,
+            title: 'Slika2',
+            url: 'assets/images/main/Najnovite-patiki-na-nike.jpg'
           }
         ]
       }
