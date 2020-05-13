@@ -5,7 +5,6 @@ import { List, Grid, Container, ListItem, Box } from '@material-ui/core';
 import { submenuItems, ISubmenuItem } from './sub-menu.data';
 import { StyledLink } from 'components/styled-link';
 import { CategoryTypes } from 'lib/enums';
-import Card from './../../../../components/card/card';
 
 interface ISubMenuProps {
   categoryType?: CategoryTypes;
@@ -55,7 +54,9 @@ const SubMenu = (props: ISubMenuProps) => {
                 </Grid>
                 <Grid item xs={6}>
                   {submenuContent.data.side.items.map(item => (
-                    <Card size="medium" key={item.id} url={item.url} title={item.title}></Card>
+                    <Box key={item.id}>
+                      <SubmenuImage key={item.id} url={item.url}></SubmenuImage>
+                    </Box>
                   ))}
                 </Grid>
               </Grid>

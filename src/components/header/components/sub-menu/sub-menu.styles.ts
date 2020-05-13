@@ -17,13 +17,12 @@ const StyledListItemText = styled(ListItemText)`
   padding-bottom: 3%;
 `;
 interface ISubmenuImage {
-  url: string;
+  url?: string;
 }
 const SubmenuImage = styled(Box)`
   background-image: url(${(props: ISubmenuImage) => props.url});
   background-size: cover;
-  height: 100%;
-  max-height: 260px;
+  height: 310px;
   width: 100%;
 `;
 
