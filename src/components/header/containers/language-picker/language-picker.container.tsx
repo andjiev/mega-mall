@@ -8,7 +8,6 @@ import * as HeaderStore from 'store/header-store';
 import { Box, List, ListItem } from '@material-ui/core';
 import { formatCulture, formatLanguage } from './language-picker.utils';
 import { StyledPicker, StyledImage, StyledDisplay, StyledBox } from './language-picker.styles';
-import { languages } from './language-picker.data';
 
 interface ILanguagePickerProps {
   language: string;
@@ -17,6 +16,7 @@ interface ILanguagePickerProps {
 }
 
 export const LanguagePicker = (props: ILanguagePickerProps) => {
+  const languages = ['MK', 'EN'];
   const [showPicker, setShowPicker] = useState(false);
   const [pickerActive, setPickerActive] = useState(false);
 
@@ -33,11 +33,11 @@ export const LanguagePicker = (props: ILanguagePickerProps) => {
             <StyledPicker>
               <List disablePadding>
                 {languages.map((lang, index) => (
-                  <StyledBox key={index} onClick={() => props.onLanguageChange(lang.name)}>
+                  <StyledBox key={index} onClick={() => props.onLanguageChange(lang)}>
                     <ListItem>
-                      <StyledImage src={lang.imageSrc} />
+                      <StyledImage src={`/assets/images/flags/${lang}.jpg`} />
                       <Box pl={2} component="span">
-                        {lang.name}
+                        {lang}
                       </Box>
                     </ListItem>
                   </StyledBox>
