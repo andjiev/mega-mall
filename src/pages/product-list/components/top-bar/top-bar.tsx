@@ -10,13 +10,15 @@ const TopBar = () => {
       <Box>
         <Grid container>
           <Grid item xs={12} md={5}>
-            <Typography variant="h5">Компјутери</Typography>
+            <Typography variant="h5">Преносни компјутери</Typography>
           </Grid>
           <Grid item xs={12} md={7}>
             <Hidden smUp>
               <MobileFilter />
             </Hidden>
-            <FilterBar />
+            <Grid container justify="flex-end" alignItems="flex-end">
+              <FilterBar />
+            </Grid>
           </Grid>
         </Grid>
       </Box>
