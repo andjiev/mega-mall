@@ -16,5 +16,14 @@ const StyledListItemText = styled(ListItemText)`
   border-bottom: 2px solid #101a50;
   padding-bottom: 3%;
 `;
+interface ISubmenuImage {
+  url?: string;
+}
+const SubmenuImage = styled(Box)`
+  background-image: url(${(props: ISubmenuImage) => props.url});
+  background-size: cover;
+  height: 310px;
+  width: 100%;
+`;
 
-export { StyledSubMenu, StyledListItemText };
+export { StyledSubMenu, StyledListItemText, SubmenuImage };

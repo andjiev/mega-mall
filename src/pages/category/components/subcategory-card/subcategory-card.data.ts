@@ -1,23 +1,29 @@
+import { CategoryTypes } from 'lib/enums';
+
 const cardData = [
   {
     id: 1,
     url: '/assets/images/main/card-slider/Mashina-za-perenje.jpg',
-    title: 'Мобилни Телефони'
+    title: 'Мобилни Телефони',
+    link: `/categories/${CategoryTypes.Technology}/1`
   },
   {
     id: 2,
     url: '/assets/images/main/card-slider/Mashina-za-perenje.jpg',
-    title: 'Персонални Компјутери'
+    title: 'Персонални Компјутери',
+    link: `/categories/${CategoryTypes.Technology}/2`
   },
   {
     id: 3,
     url: '/assets/images/main/card-slider/Mashina-za-perenje.jpg',
-    title: 'Компјутерски Звучници'
+    title: 'Компјутерски Звучници',
+    link: `/categories/${CategoryTypes.Technology}/3`
   },
   {
     id: 4,
     url: '/assets/images/main/card-slider/Mashina-za-perenje.jpg',
-    title: 'Компјутерски Звучници'
+    title: 'Компјутерски Звучници',
+    link: `/categories/${CategoryTypes.Technology}/4`
   },
   {
     id: 5,

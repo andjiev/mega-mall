@@ -1,7 +1,7 @@
 import React from 'react';
-import SubcategoryCard from './../subcategoryCard/subcategoryCard';
+import SubcategoryCard from '../subcategory-card/subcategory-card';
 import { Box, Typography, Grid } from '@material-ui/core';
-import { cardData } from './../subcategoryCard/subcategoryCard.data';
+import { cardData } from '../subcategory-card/subcategory-card.data';
 
 const Display = () => {
   return (
@@ -15,7 +15,7 @@ const Display = () => {
             {cardData.map(value => (
               <Grid item key={value.id} xs={12} md={6} lg={3}>
                 <Box p={1}>
-                  <SubcategoryCard key={value.id} url={value.url} title={value.title}></SubcategoryCard>
+                  <SubcategoryCard key={value.id} url={value.url} title={value.title} link={value.link}></SubcategoryCard>
                 </Box>
               </Grid>
             ))}
