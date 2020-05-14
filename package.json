@@ -29,7 +29,7 @@
     "react-hot-loader": "4.12.20",
     "react-loading-screen": "0.0.17",
     "react-moment": "0.9.7",
-    "react-multi-carousel": "^2.5.5",
+    "react-multi-carousel": "2.5.5",
     "react-redux": "7.2.0",
     "react-responsive-carousel": "3.2.4",
     "react-router": "5.1.2",
@@ -100,7 +100,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && npm run tsc && npm run lint"
+      "pre-commit": "pretty-quick --staged && npm run lint"
     }
   }
 }

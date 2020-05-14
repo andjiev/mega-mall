@@ -2,9 +2,11 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppThunk } from './app-thunk';
 
 import * as UiStore from './ui-store';
-import { getTranslations } from 'services/language-service';
+import * as HeaderStore from './header-store';
+import { getTranslations } from 'services/translation-service';
 import { initTranslations } from 'lib/translate';
 import { initMoment } from 'lib/moment';
+import { getCultureFromStorage } from './helpers/language-helper';
 
 export interface SharedStore {
   searchText: string;
@@ -29,14 +31,16 @@ export const { setSearchText } = slice.actions;
 export const reducer = slice.reducer;
 
 //thunk
-
 export const bootstrapApp = (): AppThunk => async (dispatch, store) => {
   try {
     dispatch(UiStore.showInitialLoader());
-    let translations = await getTranslations();
+    const translations = await getTranslations();
 
-    initTranslations(translations.data, 'mk-MK');
-    initMoment('mk-MK');
+    const culture = getCultureFromStorage();
+    dispatch(HeaderStore.setCulture(culture));
+
+    initTranslations(translations.data, culture);
+    initMoment(culture);
 
     dispatch(UiStore.hideInitialLoader());
   } catch (err) {
