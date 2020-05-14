@@ -1,11 +1,11 @@
 const languages = [
   {
     name: 'MK',
-    imageSrc: '/assets/images/flags/MK.jpg'
+    imageSrc: '/assets/images/flags/mk.jpg'
   },
   {
     name: 'EN',
-    imageSrc: '/assets/images/flags/EN.jpg'
+    imageSrc: '/assets/images/flags/en.jpg'
   }
 ];
 
