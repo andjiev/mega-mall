@@ -1,13 +1,12 @@
 import React from 'react';
-
-import { StyledImage, StyledGrid, StyledMaterialCard, StyledCardMedia } from 'components/card/card.styles';
+import { StyledImage, StyledGrid, StyledMaterialCard, StyledCardMedia, GiftCardImage } from 'components/card/card.styles';
 import { Card, Box, Typography, Hidden, Grid, CardMedia, makeStyles, Theme, createStyles, CardContent } from '@material-ui/core';
 
 interface CardProps {
   size: 'small' | 'medium' | 'large';
   children?: React.ReactNode;
-  title: string;
-  url: string;
+  title?: string;
+  url?: string;
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -38,7 +37,15 @@ const _Card = (props: CardProps) => {
       </StyledMaterialCard>
     );
   } else if (props.size == 'medium') {
-    return <> </>;
+    return (
+      <>
+        <Card>
+          <CardMedia>
+            <GiftCardImage url={props.url}></GiftCardImage>
+          </CardMedia>
+        </Card>
+      </>
+    );
   }
 
   return (

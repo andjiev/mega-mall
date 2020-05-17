@@ -1,15 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
 
-import { Box } from '@material-ui/core';
+import { AppDispatch } from 'index';
+import ApplicationState from 'store/application-store';
+import * as HeaderStore from 'store/header-store';
 
-export const LanguagePickerContainer = () => {
+import { Box, List, ListItem } from '@material-ui/core';
+import { formatCulture, formatLanguage } from './language-picker.utils';
+import { StyledPicker, StyledImage, StyledDisplay, StyledBox } from './language-picker.styles';
+import { languages } from './language-picker.data';
+
+interface ILanguagePickerProps {
+  language: string;
+
+  onLanguageChange: (lang: string) => void;
+}
+
+export const LanguagePicker = (props: ILanguagePickerProps) => {
+  const [showPicker, setShowPicker] = useState(false);
+  const [pickerActive, setPickerActive] = useState(false);
+
   return (
     <>
-      <Box component="span" color="white">
-        MK
+      <Box>
+        <Box pt={1} pb={1} onMouseEnter={() => setShowPicker(true)} onMouseLeave={() => setShowPicker(false)}>
+          <StyledDisplay pb={1} component="span" color="white" isActive={showPicker || pickerActive}>
+            {props.language}
+          </StyledDisplay>
+        </Box>
+        {(showPicker || pickerActive) && (
+          <Box onMouseEnter={() => setPickerActive(true)} onMouseLeave={() => setPickerActive(false)}>
+            <StyledPicker>
+              <List disablePadding>
+                {languages.map((lang, index) => (
+                  <StyledBox key={index} onClick={() => props.onLanguageChange(lang.name)}>
+                    <ListItem>
+                      <StyledImage src={lang.imageSrc} />
+                      <Box pl={2} component="span">
+                        {lang.name}
+                      </Box>
+                    </ListItem>
+                  </StyledBox>
+                ))}
+              </List>
+            </StyledPicker>
+          </Box>
+        )}
       </Box>
     </>
   );
 };
+
+const mapDispatchToProps = (dispatch: AppDispatch) => ({
+  onLanguageChange: (lang: string) => {
+    dispatch(HeaderStore.changeCulture(formatLanguage(lang)));
+  }
+});
+
+const mapStateToProps = (state: ApplicationState) => {
+  return {
+    language: formatCulture(state.headerStore.culture)
+  };
+};
+
+const LanguagePickerContainer = connect(mapStateToProps, mapDispatchToProps)(LanguagePicker);
 
 export default LanguagePickerContainer;

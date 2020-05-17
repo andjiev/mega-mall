@@ -7,19 +7,19 @@ import ApplicationState from '../../store/application-store';
 
 import { BreadCrumbs } from 'components/breadcrumbs';
 import { Grid, Box } from '@material-ui/core';
-import { Navigation } from './components/navigation';
+import { Filter } from './components/filter';
 import { Display } from './components/display';
 
-interface CategoryPageProps extends RouteComponentProps {}
+interface IProps extends RouteComponentProps {}
 
-const _CategoryPage = (props: CategoryPageProps) => {
+const ProductList = (props: IProps) => {
   return (
     <>
       <BreadCrumbs />
       <Box mt={5}>
         <Grid container>
           <Grid item xs={12} md={4} lg={3} xl={2}>
-            <Navigation />
+            <Filter />
           </Grid>
           <Grid item xs={12} md={8} lg={9} xl={10}>
             <Display />
@@ -36,5 +36,5 @@ const mapStateToProps = (state: ApplicationState) => {
   return {};
 };
 
-const CategoryPage = connect(() => mapStateToProps, mapDisptachToProps)(_CategoryPage);
-export default CategoryPage;
+const ProductListPage = connect(() => mapStateToProps, mapDisptachToProps)(ProductList);
+export default ProductListPage;

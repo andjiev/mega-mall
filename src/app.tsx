@@ -24,6 +24,7 @@ const _App: React.FC<IApp> = (props: IApp) => {
   const Footer = lazy(() => import('components/footer'));
   const MainPage = lazy(() => import('pages/main'));
   const CategoryPage = lazy(() => import('pages/category'));
+  const ProductListPage = lazy(() => import('pages/product-list'));
 
   const renderLoader = () => {
     return (
@@ -42,7 +43,8 @@ const _App: React.FC<IApp> = (props: IApp) => {
             <Box height="100%" minHeight="100vh" display="flex" flexDirection="column">
               <Switch>
                 <Route exact path={ROUTES.MAIN} component={MainPage} />
-                <Route path={ROUTES.CATEGORY} component={CategoryPage} />
+                <Route exact path={ROUTES.CATEGORY} component={CategoryPage} />
+                <Route path={ROUTES.LIST} component={ProductListPage} />
               </Switch>
             </Box>
             <Footer />

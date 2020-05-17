@@ -27,12 +27,14 @@ const _MainPage = (props: MainPageProps) => {
         <Box mt={5}>
           <CardSlider />
         </Box>
-        <MainBanner />
-        <Box mt={5}>
-          <ProductGrid />
+        <Box mt={5} mb={5}>
+          <MainBanner />
+        </Box>
+        <ProductGrid />
+        <Box mt={5} mb={5}>
+          <GiftCardGrid />
         </Box>
 
-        <GiftCardGrid />
       </Container>
     </>
   );

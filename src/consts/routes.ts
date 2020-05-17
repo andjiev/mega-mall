@@ -1,6 +1,7 @@
 const ROUTES = {
   MAIN: '/',
-  CATEGORY: '/categories/:type'
+  CATEGORY: '/categories/:type',
+  LIST: '/categories/:type/:subtype'
 };
 
 export { ROUTES };
