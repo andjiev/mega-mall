@@ -8,7 +8,7 @@
     "build": "rimraf ./dist && webpack --progress --colors",
     "lint": "eslint ./src/**/*.ts ./src/**/*.tsx",
     "serve": "node server.js",
-    "compile": "tsc"
+    "tsc": "tsc"
   },
   "dependencies": {
     "@material-ui/core": "4.9.5",
@@ -29,6 +29,7 @@
     "react-hot-loader": "4.12.20",
     "react-loading-screen": "0.0.17",
     "react-moment": "0.9.7",
+    "react-multi-carousel": "^2.5.5",
     "react-redux": "7.2.0",
     "react-responsive-carousel": "3.2.4",
     "react-router": "5.1.2",
@@ -69,6 +70,7 @@
     "rimraf": "3.0.0",
     "tsconfig-paths-webpack-plugin": "3.2.0",
     "typescript": "3.7.2",
+    "url-loader": "4.1.0",
     "webpack": "4.41.2",
     "webpack-cli": "3.3.10",
     "webpack-dev-server": "3.9.0",
@@ -98,7 +100,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && npm run lint"
+      "pre-commit": "pretty-quick --staged && npm run tsc && npm run lint"
     }
   }
 }

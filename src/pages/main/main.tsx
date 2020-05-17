@@ -28,7 +28,10 @@ const _MainPage = (props: MainPageProps) => {
           <CardSlider />
         </Box>
         <MainBanner />
-        <ProductGrid />
+        <Box mt={5}>
+          <ProductGrid />
+        </Box>
+
         <GiftCardGrid />
       </Container>
     </>
