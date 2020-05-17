@@ -12,14 +12,14 @@ const FilterBar = () => {
           <StyledButton>Продавници</StyledButton>
         </ButtonGroup>
 
-        <FormControl>
+        <FormControl style={{ width: '176px', height: '40px' }}>
+          <InputLabel id="demo-simple-select-filled-label">Цена ниска {'>'}висока</InputLabel>
           <Select displayEmpty inputProps={{ 'aria-label': 'Without label' }} style={{ border: '1px solid #0D1440' }}>
-            <MenuItem value="" disabled>
-              Цена ниска висока
-            </MenuItem>
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
+            <MenuItem value="" disabled></MenuItem>
+            <MenuItem value="0">Ниска</MenuItem>
+            <MenuItem value="1">Ниско висока</MenuItem>
+            <MenuItem value="2">Високо ниска</MenuItem>
+            <MenuItem value="3">Висока</MenuItem>
           </Select>
         </FormControl>
       </Box>
