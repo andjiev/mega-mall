@@ -12,4 +12,10 @@ enum CategoryTypes {
   Services = 6
 }
 
-export { Environment, CategoryTypes };
+enum OrderTypes {
+  PriceAscending = 1,
+  PriceDescending = 2,
+  Latest = 3
+}
+
+export { Environment, CategoryTypes, OrderTypes };

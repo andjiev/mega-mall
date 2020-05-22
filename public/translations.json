@@ -58,7 +58,10 @@
       "EasyFind_Footer_Services": "Услуги",
       "EasyFind_Footer_Food_Drinks": "Храна и пијалоци",
       "EasyFind_Footer_Education": "Едукација",
-      "EasyFind_Footer_Culture_Events": "Култура и настани"
+      "EasyFind_Footer_Culture_Events": "Култура и настани",
+      "EasyFind_FilterBar_PriceAscending": "цена ниска > висока",
+      "EasyFind_FilterBar_PriceDescending": "цена висока > ниска",
+      "EasyFind_FilterBar_Latest": "најнови"
     }
   },
   "en-GB": {
@@ -116,7 +119,10 @@
       "EasyFind_Footer_Services": "Services",
       "EasyFind_Footer_Food_Drinks": "Food and drinks",
       "EasyFind_Footer_Education": "Education",
-      "EasyFind_Footer_Culture_Events": "Culture and events"
+      "EasyFind_Footer_Culture_Events": "Culture and events",
+      "EasyFind_FilterBar_PriceAscending": "",
+      "EasyFind_FilterBar_PriceDescending": "",
+      "EasyFind_FilterBar_Latest": ""
     }
   }
 }
