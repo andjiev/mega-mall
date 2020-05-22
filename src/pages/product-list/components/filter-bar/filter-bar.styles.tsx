@@ -5,6 +5,7 @@ import { Button, NativeSelect } from '@material-ui/core';
 
 interface IStyledButton {
   isToggled: boolean;
+  theme?: any;
 }
 const StyledButton = styled(props => {
   const btnProps = { ...props };
@@ -13,8 +14,8 @@ const StyledButton = styled(props => {
 })`
   height: 40px;
   width: 111px;
-  color: ${(props: IStyledButton) => (props.isToggled == true ? 'white' : 'black')};
-  background-color: ${(props: IStyledButton) => (props.isToggled == true ? '#BF1736' : 'white')};
+  color: ${(props: IStyledButton) => (props.isToggled ? 'white' : 'black')};
+  background-color: ${(props: IStyledButton) => (props.isToggled ? props.theme.palette.secondary.main : 'white')};
 `;
 
 const StyledSelect = styled(NativeSelect)`
