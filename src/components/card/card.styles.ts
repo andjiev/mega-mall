@@ -22,19 +22,15 @@ const StyledImage = styled(Box)`
 const StyledMaterialCard = styled(MaterialCard)`
   min-height: 340px;
   height: 100%;
-  max-width: 220px;
   width: 100%;
   box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.24);
-  margin-top: 20%;
-  margin-bottom: 20%;
-  max-height: 340px;
 `;
 
 const StyledCardMedia = styled(CardMedia)`
   top: 0;
-  background-size: auto;
+  background-size: cover;
   background-position: top;
-  max-height: 261px;
+  max-height: 238px;
   height: 100%;
   padding-top: 0px;
 `;

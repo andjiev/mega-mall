@@ -34,6 +34,7 @@ const _MainPage = (props: MainPageProps) => {
         <Box mt={5} mb={5}>
           <GiftCardGrid />
         </Box>
+
       </Container>
     </>
   );
