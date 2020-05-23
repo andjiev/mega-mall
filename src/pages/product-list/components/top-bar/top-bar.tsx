@@ -17,7 +17,9 @@ const TopBar = () => {
               <MobileFilter />
             </Hidden>
             <Grid container justify="flex-end" alignItems="flex-end">
-              <FilterBar />
+              <Hidden mdDown>
+                <FilterBar />
+              </Hidden>
             </Grid>
           </Grid>
         </Grid>

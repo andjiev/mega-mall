@@ -5,7 +5,7 @@ import { Box, Grid } from '@material-ui/core';
 const MobileFilter = () => {
   return (
     <>
-      <Box>Mobile filter</Box>
+      <Grid container justify="center" alignItems="center"></Grid>
     </>
   );
 };
