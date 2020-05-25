@@ -3,6 +3,7 @@ import React from 'react';
 import { Box, Grid, ExpansionPanel, ExpansionPanelSummary, Typography, ExpansionPanelDetails, Button } from '@material-ui/core';
 import { StyledTypography, StyledButton } from 'pages/main/components/main-slider/main-slider.style';
 import { StyledDetails, StyledBox } from './mobile-filter.styles';
+import { filterData, sortData } from './mobile-filter.data';
 
 const MobileFilter = () => {
   return (
@@ -16,45 +17,25 @@ const MobileFilter = () => {
         <StyledDetails>
           <Grid container spacing={2}>
             <Grid item alignContent="space-between">
-              <StyledTypography>Сортирај</StyledTypography>
-
-              <StyledButton variant="outlined">Висока {'>'} ниска</StyledButton>
-              <StyledButton variant="outlined">Ниска {'>'} висока</StyledButton>
-            </Grid>
-            <Grid item>
-              <StyledTypography>Производител</StyledTypography>
-
-              <StyledButton variant="outlined">Acer</StyledButton>
-              <StyledButton variant="outlined">Apple</StyledButton>
-              <StyledButton variant="outlined">Allienware</StyledButton>
-              <StyledButton variant="outlined">Dell</StyledButton>
-              <StyledButton variant="outlined">HP</StyledButton>
-              <StyledButton variant="outlined">Lenovo</StyledButton>
-              <StyledButton variant="outlined">Skytech Gaming</StyledButton>
-              <StyledButton variant="outlined">Samsung</StyledButton>
-              <StyledButton variant="outlined">Toshiba</StyledButton>
-            </Grid>
-
-            <Grid item>
-              <StyledTypography>Продавници</StyledTypography>
-
-              <StyledButton variant="outlined">Анхоч</StyledButton>
-              <StyledButton variant="outlined">Сетек</StyledButton>
-              <StyledButton variant="outlined">Нептун</StyledButton>
-              <StyledButton variant="outlined">Нико компјутери</StyledButton>
-              <StyledButton variant="outlined">Макпетрол Dell</StyledButton>
-              <StyledButton variant="outlined">Техно Маркет</StyledButton>
-              <StyledButton variant="outlined">Премиум компјутери</StyledButton>
-              <StyledButton variant="outlined">Вортекс компјутери</StyledButton>
-              <StyledButton variant="outlined">Дека електроникс</StyledButton>
-              <StyledButton variant="outlined">Макс компјутери</StyledButton>
-              <StyledButton variant="outlined">Електро Механика</StyledButton>
-              <StyledButton variant="outlined">DDStore LTD</StyledButton>
-            </Grid>
-            <Grid item>
-              <Button variant="contained" color="secondary">
-                Филтрирај
-              </Button>
+              {filterData.map(value => (
+                <Grid item key={value.id}>
+                  <Box key={value.id} m={1}>
+                    <StyledTypography key={value.id}>{value.title}</StyledTypography>
+                    <StyledButton key={value.id}>{value.link1}</StyledButton>
+                    <StyledButton key={value.id}>{value.link2}</StyledButton>
+                    <StyledButton key={value.id}>{value.link3}</StyledButton>
+                    <StyledButton key={value.id}>{value.link4}</StyledButton>
+                    <StyledButton key={value.id}>{value.link5}</StyledButton>
+                    <StyledButton key={value.id}>{value.link6}</StyledButton>
+                    <StyledButton key={value.id}>{value.link7}</StyledButton>
+                    <StyledButton key={value.id}>{value.link8}</StyledButton>
+                    <StyledButton key={value.id}>{value.link9}</StyledButton>
+                    <StyledButton key={value.id}>{value.link10}</StyledButton>
+                    <StyledButton key={value.id}>{value.link11}</StyledButton>
+                    <StyledButton key={value.id}>{value.link12}</StyledButton>
+                  </Box>
+                </Grid>
+              ))}
             </Grid>
           </Grid>
         </StyledDetails>
