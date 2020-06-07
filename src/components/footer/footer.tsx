@@ -10,12 +10,14 @@ const Footer = () => {
     return (
       <Box>
         <StyledList>
-          <Typography variant="h6">{item.header.link ? <StyledLink href={item.header.link}>{item.header.title}</StyledLink> : <Box component="span">{item.header.title}</Box>}</Typography>
+          <Typography variant="body1">{item.header.link ? <StyledLink href={item.header.link}>{item.header.title}</StyledLink> : <Box component="span">{item.header.title}</Box>}</Typography>
           <Box mt={1}>
             {item.links.map((linkItem, index) => {
               return (
                 <ListItem key={index} disableGutters>
-                  <StyledLink href={linkItem.link}>{linkItem.title}</StyledLink>
+                  <Typography variant="body2">
+                    <StyledLink href={linkItem.link}>{linkItem.title}</StyledLink>
+                  </Typography>
                 </ListItem>
               );
             })}
@@ -24,7 +26,7 @@ const Footer = () => {
       </Box>
     );
   };
-
+  //TODO add fonts and sizes. . .
   return (
     <>
       <StyledFooter pt={3} pb={2}>
