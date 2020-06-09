@@ -16,6 +16,10 @@ const StyledButton = styled(props => {
   width: 111px;
   color: ${(props: IStyledButton) => (props.isToggled ? 'white' : 'black')};
   background-color: ${(props: IStyledButton) => (props.isToggled ? props.theme.palette.secondary.main : 'white')};
+
+  ${props => props.theme.breakpoints.down('sm')} {
+    width: 100%;
+  }
 `;
 
 const StyledSelect = styled(NativeSelect)`
