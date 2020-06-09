@@ -5,11 +5,11 @@ import { Card as MaterialCard } from '@material-ui/core';
 const StyledMaterialCard = styled(MaterialCard)`
   height: 100%;
   width: 100%;
-  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.24);
-  margin: 0;
+  border-boxmargin: 0;
   padding: 0;
   min-height: 220px;
   max-height: 340px;
+  box-shadow: 0px 1px 1px 1px rgba(255, 255, 255, 0.24);
 `;
 
 const StyledCardMedia = styled(CardMedia)`
