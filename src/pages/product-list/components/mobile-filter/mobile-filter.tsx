@@ -27,6 +27,7 @@ const MobileFilter = () => {
   };
   return (
     <>
+      {/* not sure about this i added right margin because there was padding on the left so it will stay centered  */}
       <Box mr={3}>
         <ExpansionPanel>
           <ExpansionPanelSummary>
