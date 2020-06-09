@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Box, Grid, ExpansionPanel, ExpansionPanelSummary, Typography, ExpansionPanelDetails, Button } from '@material-ui/core';
-import { StyledDetails, StyledBox, StyledGrid } from './mobile-filter.styles';
+import { StyledDetails, StyledBox, StyledGrid, StyledButton } from './mobile-filter.styles';
 import { filterData, IFilterItem } from './mobile-filter.data';
 
 const MobileFilter = () => {
@@ -27,23 +27,25 @@ const MobileFilter = () => {
   };
   return (
     <>
-      <ExpansionPanel>
-        <ExpansionPanelSummary>
-          <StyledBox>
-            <Typography>Филтри</Typography>
-          </StyledBox>
-        </ExpansionPanelSummary>
-        <StyledDetails>
-          <Grid container spacing={2}>
-            <Grid item alignContent="space-between">
-              <Grid item>{filterData.map(val => renderItem(val))}</Grid>
+      <Box mr={3}>
+        <ExpansionPanel>
+          <ExpansionPanelSummary>
+            <StyledBox>
+              <Typography>Филтри</Typography>
+            </StyledBox>
+          </ExpansionPanelSummary>
+          <StyledDetails>
+            <Grid container spacing={2}>
+              <Grid item alignContent="space-between">
+                <Grid item>{filterData.map(val => renderItem(val))}</Grid>
+              </Grid>
+              <StyledButton variant="contained" color="secondary">
+                Филтрирај
+              </StyledButton>
             </Grid>
-            <StyledGrid item>
-              <Button>Филтрирај</Button>
-            </StyledGrid>
-          </Grid>
-        </StyledDetails>
-      </ExpansionPanel>
+          </StyledDetails>
+        </ExpansionPanel>
+      </Box>
     </>
   );
 };

@@ -8,9 +8,12 @@ const StyledBox = styled(Box)`
 const StyledGrid = styled(Grid)`
   margin: 0 auto;
 `;
+const StyledButton = styled(Button)`
+  width: inherit;
+`;
 
 const StyledDetails = styled(ExpansionPanelDetails)`
   background-color: #ecedf0;
 `;
 
-export { StyledBox, StyledDetails, StyledGrid };
+export { StyledBox, StyledDetails, StyledGrid, StyledButton };
