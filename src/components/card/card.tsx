@@ -27,11 +27,11 @@ const _Card = (props: CardProps) => {
       <StyledMaterialCard>
         <StyledCardMedia className={classes.media} image={props.url} />
         <CardContent>
-          <Box fontWeight="fontWeightBold" fontFamily="RobotoRegular" fontSize="16px">
-            <Typography>{props.title}</Typography>
+          <Box>
+            <Typography variant="subtitle2">{props.title}</Typography>
           </Box>
-          <Box fontWeight="fontWeightBold" fontFamily="OswaldMedium" fontSize="24px">
-            <Typography variant="h5">{props.children}</Typography>
+          <Box>
+            <Typography variant="h3">{props.children}</Typography> {/*Same her varian h3 is 22px and its Regular not medium weight it needs to be 24px and fontweightmedium*/}
           </Box>
         </CardContent>
       </StyledMaterialCard>
@@ -58,7 +58,7 @@ const _Card = (props: CardProps) => {
                 <Box p={3} pt={2}>
                   <Typography component="div">
                     <Box fontWeight="fontWeightBold" color="white">
-                      <Typography variant="h3">{props.title}</Typography>
+                      <Typography variant="h2">{props.title}</Typography>
                     </Box>
                   </Typography>
                 </Box>

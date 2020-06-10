@@ -13,7 +13,7 @@ const MainSlider = () => {
           <StyledContainer>
             <Box color="white">
               <Grid item>
-                <StyledTypography variant="h2">{item.title}</StyledTypography>
+                <StyledTypography variant="h1">{item.title}</StyledTypography>
               </Grid>
               <Box mt={2}>
                 <Grid item>

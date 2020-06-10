@@ -8,7 +8,7 @@ const Display = () => {
     <>
       <Box p={3}>
         <Box>
-          <Typography variant="h5">Технологија</Typography>
+          <Typography variant="h3">Технологија</Typography>
         </Box>
         <Box mt={3}>
           <Grid container spacing={2}>
