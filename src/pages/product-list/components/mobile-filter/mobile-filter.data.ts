@@ -1,51 +1,128 @@
 import { translate } from 'lib/translate';
+export interface IFilterItem {
+  header: ILinkItem;
+  links: ILinkItem[];
+}
 
-const filterData = [
+interface ILinkItem {
+  title: string;
+  link?: string;
+}
+
+const filterData: IFilterItem[] = [
   {
-    id: 1,
-    title: translate('EasyFind_Mobile_Filter_Sort', 'Сортирај'),
-    link1: translate('EasyFind_Mobile_Filter_High', 'Висока > ниска'),
-    link2: translate('EasyFind_Mobile_Filter_Low', 'Ниска > висока')
+    header: {
+      title: translate('EasyFind_Mobile_Filter_Sort', 'Сортирај')
+    },
+    links: [
+      {
+        title: translate('EasyFind_Mobile_Filter_High', 'Висока > ниска'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_Low', 'Ниска > висока'),
+        link: '#'
+      }
+    ]
   },
   {
-    id: 2,
-    title: translate('EasyFind_Mobile_Filter_Manufacturer', 'Производител'),
-    link1: translate('EasyFind_Mobile_Filter_Acer', 'Acer'),
-    link2: translate('EasyFind_Mobile_Filter_Apple', 'Apple'),
-    link3: translate('EasyFind_Mobile_Filter_Allienware', 'Allienware'),
-    link4: translate('EasyFind_Mobile_Filter_Dell', 'Dell'),
-    link5: translate('EasyFind_Mobile_Filter_HP', 'HP'),
-    link6: translate('EasyFind_Mobile_Filter_Lenovo', 'Lenovo'),
-    link7: translate('EasyFind_Mobile_Filter_Skytech', 'Skytech Gaming'),
-    link8: translate('EasyFind_Mobile_Filter_Samsung', 'Samsung'),
-    link9: translate('EasyFind_Mobile_Filter_Toshiba', 'Toshiba')
+    header: {
+      title: translate('EasyFind_Mobile_Filter_Manufacturer', 'Производител')
+    },
+    links: [
+      {
+        title: translate('EasyFind_Mobile_Filter_Acer', 'Acer'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_Apple', 'Apple'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_Allienware', 'Allienware'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_Dell', 'Dell'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_HP', 'HP'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_Lenovo', 'Lenovo'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_Skytech', 'Skytech Gaming'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_Samsung', 'Samsung'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_Toshiba', 'Toshiba'),
+        link: '#'
+      }
+    ]
   },
   {
-    id: 3,
-    title: translate('EasyFind_Mobile_Filter_Shops', 'Продавници'),
-    link1: translate('EasyFind_Mobile_Filter_Anhoch', 'Анхоч'),
-    link2: translate('EasyFind_Mobile_Filter_Setec', 'Сетек'),
-    link3: translate('EasyFind_Mobile_Filter_Neptun', 'Нептун'),
-    link4: translate('EasyFind_Mobile_Filter_Niko', 'Нико компјутери'),
-    link5: translate('EasyFind_Mobile_Filter_Makpetrol', 'Макпетрол Dell'),
-    link6: translate('EasyFind_Mobile_Filter_Techno', 'Техно маркет'),
-    link7: translate('EasyFind_Mobile_Filter_Premium', 'Премиум компјутери'),
-    link8: translate('EasyFind_Mobile_Filter_Wort', 'Вортекс компјутери'),
-    link9: translate('EasyFind_Mobile_Filter_Deka', 'Дека електроникс'),
-    link10: translate('EasyFind_Mobile_Filter_Maks', 'Макс компјутери'),
-    link11: translate('EasyFind_Mobile_Filter_Elektro', 'Електро Механика'),
-    link12: translate('EasyFind_Mobile_Filter_DDStore', 'DDStore LTD')
+    header: {
+      title: translate('EasyFind_Mobile_Filter_Shops', 'Продавници')
+    },
+    links: [
+      {
+        title: translate('EasyFind_Mobile_Filter_Anhoch', 'Анхоч'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_Setec', 'Сетек'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_Neptun', 'Нептун'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_Niko', 'Нико компјутери'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_Makpetrol', 'Макпетрол Dell'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_Techno', 'Техно маркет'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_Premium', 'Премиум компјутери'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_Wort', 'Вортекс компјутери'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_Deka', 'Дека електроникс'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_Maks', 'Макс компјутери'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_Elektro', 'Електро Механика'),
+        link: '#'
+      },
+      {
+        title: translate('EasyFind_Mobile_Filter_DDStore', 'DDStore LTD'),
+        link: '#'
+      }
+    ]
   }
 ];
 
-const sortData = [
-  {
-    id: 1,
-    link: translate('EasyFind_Mobile_Filter_High', 'Висока > ниска')
-  },
-  {
-    id: 2,
-    link: translate('EasyFind_Mobile_Filter_Low', 'Ниска > висока')
-  }
-];
-export { filterData, sortData };
+export { filterData };
