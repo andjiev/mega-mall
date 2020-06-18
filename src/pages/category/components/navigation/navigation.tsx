@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { StyledNavigation } from './navigation.styles';
-import { Box, List, ListItem, Typography, Checkbox, Grid } from '@material-ui/core';
+import { StyledNavigation, StyledButton } from './navigation.styles';
+import { Box, List, ListItem, Typography, Checkbox, Grid, FormControlLabel } from '@material-ui/core';
+import { INavItem, navigationData } from './navigation.data';
 
 interface NavigationProps {}
 
@@ -10,6 +11,24 @@ const Navigation = (props: NavigationProps) => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
+  };
+
+  const renderItem = (item: INavItem) => {
+    return (
+      <>
+        <Box mt={1}>
+          <Typography variant="h6">{item.header.title}</Typography>
+        </Box>
+        <Box>
+          {item.links.map(val => (
+            <Grid container alignContent="center" alignItems="center" key={val.title}>
+              <Checkbox checked={checked} color="default" onChange={handleChange} inputProps={{ 'aria-label': 'checkbox with default color' }} />
+              <Typography key={val.title}>{val.title}</Typography>
+            </Grid>
+          ))}
+        </Box>
+      </>
+    );
   };
   return (
     <>
@@ -21,16 +40,13 @@ const Navigation = (props: NavigationProps) => {
             <ListItem>Мобилни телефони</ListItem>
           </List>
 
-          <List>
-            <Typography variant="h6">Производител</Typography>
-            <Grid container alignContent="center" alignItems="center">
-              <Checkbox checked={checked} onChange={handleChange} inputProps={{ 'aria-label': 'primary checkbox' }} />
-              <Typography>HP</Typography>
+          <Grid container>
+            <Grid item alignContent="space-between">
+              <Grid item>{navigationData.map(val => renderItem(val))}</Grid>
             </Grid>
-            <Checkbox checked={checked} onChange={handleChange} inputProps={{ 'aria-label': 'primary checkbox' }}>
-              Dell
-            </Checkbox>
-          </List>
+
+            <StyledButton variant="outlined">види ги сите</StyledButton>
+          </Grid>
         </Box>
       </StyledNavigation>
     </>

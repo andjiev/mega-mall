@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Box } from '@material-ui/core';
+import { Box, Button } from '@material-ui/core';
 
 const StyledNavigation = styled(Box)`
   background-color: ${props => props.theme.palette.grey[300]};
@@ -12,5 +12,8 @@ const StyledNavigation = styled(Box)`
     min-height: 100vh;
   }
 `;
+const StyledButton = styled(Button)`
+  width: inherit;
+`;
 
-export { StyledNavigation };
+export { StyledNavigation, StyledButton };
