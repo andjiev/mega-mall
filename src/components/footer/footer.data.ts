@@ -8,11 +8,13 @@ export interface IFooterItem {
 interface ILinkItem {
   title: string;
   link: string;
+  url?: string;
 }
 
 const footerItems: IFooterItem[] = [
   {
     header: {
+      url: '/assets/images/main/Mega-m-white.svg',
       title: translate('EasyFind_Footer_WebSpot', `ВЕБСПОТ | ТА ВЕБСПОТ ДОО`),
       link: ''
     },
