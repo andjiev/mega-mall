@@ -14,11 +14,16 @@ interface ILinkItem {
 const footerItems: IFooterItem[] = [
   {
     header: {
-      url: '/assets/images/main/Mega-m-white.svg',
       title: translate('EasyFind_Footer_WebSpot', `ВЕБСПОТ | ТА ВЕБСПОТ ДОО`),
       link: ''
     },
-    links: []
+    links: [
+      {
+        title: translate('EasyFind_Footer_Logo', 'Logo'),
+        link: '#',
+        url: '/assets/images/main/Mega-m-white.svg'
+      }
+    ]
   },
   {
     header: {
