@@ -8,11 +8,11 @@ const StyledList = styled(List)`
 `;
 
 const StyledCopyright = styled(Box)`
-  color: #6e6e6e;
+  color: white;
 `;
 
 const StyledFooter = styled(Box)`
-  background: #252525;
+  background: #355c7c;
 `;
 
 const StyledDivider = styled(Divider)`
