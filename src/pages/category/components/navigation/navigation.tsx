@@ -36,8 +36,13 @@ const Navigation = (props: NavigationProps) => {
         <Box p={3} pt={2}>
           <List>
             <Typography variant="h6">Технологија</Typography>
-            <ListItem>Компјутери и опрема</ListItem>
-            <ListItem>Мобилни телефони</ListItem>
+            <List>Компјутери и опрема</List>
+            <ListItem>Персонални компјутери</ListItem>
+            <ListItem>Преносни компјутери</ListItem>
+            <ListItem>Опрема за компјутери</ListItem>
+            <ListItem>Глувчиња</ListItem>
+            <ListItem>Тастатури</ListItem>
+            <List>Мобилни телефони</List>
           </List>
 
           <Grid container>
