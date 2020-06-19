@@ -14,6 +14,10 @@ const StyledNavigation = styled(Box)`
 `;
 const StyledButton = styled(Button)`
   width: inherit;
+
+  &:hover {
+    background-color: gray;
+  }
 `;
 
 export { StyledNavigation, StyledButton };
