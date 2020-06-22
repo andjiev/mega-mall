@@ -18,7 +18,7 @@ const Footer = () => {
               return (
                 <ListItem key={index} disableGutters>
                   <Typography variant="body2">
-                    <StyledLink>{linkItem.title}</StyledLink>
+                    <StyledLink href={linkItem.link}>{linkItem.title}</StyledLink>
                   </Typography>
                 </ListItem>
               );

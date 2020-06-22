@@ -7,6 +7,7 @@ export interface IFooterItem {
 
 interface ILinkItem {
   title: string;
+  link?: string;
   src?: string;
 }
 
@@ -18,7 +19,8 @@ const footerItems: IFooterItem[] = [
     },
     links: [
       {
-        title: translate('EasyFind_Footer_WebSpot', `ВЕБСПОТ | ТА ВЕБСПОТ ДОО`)
+        title: translate('EasyFind_Footer_WebSpot', `ВЕБСПОТ | ТА ВЕБСПОТ ДОО`),
+        link: '#'
       }
     ]
   },
@@ -28,13 +30,16 @@ const footerItems: IFooterItem[] = [
     },
     links: [
       {
-        title: translate('EasyFind_Footer_Facebook', 'Facebook')
+        title: translate('EasyFind_Footer_Facebook', 'Facebook'),
+        link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Instagram', 'Instagram')
+        title: translate('EasyFind_Footer_Instagram', 'Instagram'),
+        link: '#'
       },
       {
-        title: translate('EasyFind_Footer_LinkedIn', 'LinkedIn')
+        title: translate('EasyFind_Footer_LinkedIn', 'LinkedIn'),
+        link: '#'
       }
     ]
   },
@@ -44,13 +49,16 @@ const footerItems: IFooterItem[] = [
     },
     links: [
       {
-        title: translate('EasyFind_Footer_Computer', 'Компјутери')
+        title: translate('EasyFind_Footer_Computer', 'Компјутери'),
+        link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Computer_Equipment', 'Компјутерска опрема')
+        title: translate('EasyFind_Footer_Computer_Equipment', 'Компјутерска опрема'),
+        link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Mobile', 'Мобилни телефони')
+        title: translate('EasyFind_Footer_Mobile', 'Мобилни телефони'),
+        link: '#'
       }
     ]
   },
@@ -60,13 +68,16 @@ const footerItems: IFooterItem[] = [
     },
     links: [
       {
-        title: translate('EasyFind_Footer_Male_Clothes', 'Машка облека')
+        title: translate('EasyFind_Footer_Male_Clothes', 'Машка облека'),
+        link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Female_Clothes', 'Женска облека')
+        title: translate('EasyFind_Footer_Female_Clothes', 'Женска облека'),
+        link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Sport_Wear', 'Спортска опрема')
+        title: translate('EasyFind_Footer_Sport_Wear', 'Спортска опрема'),
+        link: '#'
       }
     ]
   },
@@ -76,13 +87,16 @@ const footerItems: IFooterItem[] = [
     },
     links: [
       {
-        title: translate('EasyFind_Footer_Male', 'Машка облека')
+        title: translate('EasyFind_Footer_Male', 'Машка облека'),
+        link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Female', 'Женска облека')
+        title: translate('EasyFind_Footer_Female', 'Женска облека'),
+        link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Shoes', 'Обувки')
+        title: translate('EasyFind_Footer_Shoes', 'Обувки'),
+        link: '#'
       }
     ]
   },
@@ -92,10 +106,12 @@ const footerItems: IFooterItem[] = [
     },
     links: [
       {
-        title: translate('EasyFind_Footer_Cosmetics', 'Козметика')
+        title: translate('EasyFind_Footer_Cosmetics', 'Козметика'),
+        link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Perfumes', 'Парфеми')
+        title: translate('EasyFind_Footer_Perfumes', 'Парфеми'),
+        link: '#'
       }
     ]
   },
@@ -105,13 +121,16 @@ const footerItems: IFooterItem[] = [
     },
     links: [
       {
-        title: translate('EasyFind_Footer_Home_Equipment', 'Апарати за домаќинство')
+        title: translate('EasyFind_Footer_Home_Equipment', 'Апарати за домаќинство'),
+        link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Home_Enviroment', 'Бела техника')
+        title: translate('EasyFind_Footer_Home_Enviroment', 'Бела техника'),
+        link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Home_Garden', 'Дом и градина')
+        title: translate('EasyFind_Footer_Home_Garden', 'Дом и градина'),
+        link: '#'
       }
     ]
   },
@@ -121,13 +140,16 @@ const footerItems: IFooterItem[] = [
     },
     links: [
       {
-        title: translate('EasyFind_Footer_Food_Drinks', 'Храна и пијалоци')
+        title: translate('EasyFind_Footer_Food_Drinks', 'Храна и пијалоци'),
+        link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Education', 'Едукација')
+        title: translate('EasyFind_Footer_Education', 'Едукација'),
+        link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Culture_Events', 'Култура и настани')
+        title: translate('EasyFind_Footer_Culture_Events', 'Култура и настани'),
+        link: '#'
       }
     ]
   }
