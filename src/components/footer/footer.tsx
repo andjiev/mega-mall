@@ -11,7 +11,13 @@ const Footer = () => {
       <Box>
         <StyledList>
           <Typography variant="body1">
-            {item.header.src ? <StyledImage src={item.header.src}></StyledImage> : item.header.title ? <StyledLink>{item.header.title}</StyledLink> : <Box component="span">{item.header.title}</Box>}
+            {item.header.src ? (
+              <StyledImage src={item.header.src}></StyledImage>
+            ) : item.header.title ? (
+              <StyledLink href={item.header.link}>{item.header.title}</StyledLink>
+            ) : (
+              <Box component="span">{item.header.title}</Box>
+            )}
           </Typography>
           <Box mt={1}>
             {item.links.map((linkItem, index) => {
@@ -65,7 +71,7 @@ const Footer = () => {
                       <Grid key={index} item xs={6}>
                         <Box mt={1} mb={1}>
                           <Typography variant="h6">
-                            <StyledLink>{item.header.title}</StyledLink>
+                            <StyledLink href={item.header.link}>{item.header.title}</StyledLink>
                           </Typography>
                         </Box>
                       </Grid>

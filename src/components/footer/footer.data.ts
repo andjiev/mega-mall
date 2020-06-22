@@ -26,7 +26,8 @@ const footerItems: IFooterItem[] = [
   },
   {
     header: {
-      title: translate('EasyFind_Footer_Header', 'Следете не')
+      title: translate('EasyFind_Footer_Header', 'Следете не'),
+      link: '#'
     },
     links: [
       {
@@ -45,7 +46,8 @@ const footerItems: IFooterItem[] = [
   },
   {
     header: {
-      title: translate('EasyFind_Footer_Technology', 'Технологија')
+      title: translate('EasyFind_Footer_Technology', 'Технологија'),
+      link: '#'
     },
     links: [
       {
@@ -64,7 +66,8 @@ const footerItems: IFooterItem[] = [
   },
   {
     header: {
-      title: translate('EasyFind_Footer_Sport', 'Спорт')
+      title: translate('EasyFind_Footer_Sport', 'Спорт'),
+      link: '#'
     },
     links: [
       {
@@ -83,7 +86,8 @@ const footerItems: IFooterItem[] = [
   },
   {
     header: {
-      title: translate('EasyFind_Footer_Fashion', 'Мода')
+      title: translate('EasyFind_Footer_Fashion', 'Мода'),
+      link: '#'
     },
     links: [
       {
@@ -102,7 +106,8 @@ const footerItems: IFooterItem[] = [
   },
   {
     header: {
-      title: translate('EasyFind_Footer_Beauty_Health', 'Убавина и здравје')
+      title: translate('EasyFind_Footer_Beauty_Health', 'Убавина и здравје'),
+      link: '#'
     },
     links: [
       {
@@ -117,7 +122,8 @@ const footerItems: IFooterItem[] = [
   },
   {
     header: {
-      title: translate('EasyFind_Footer_Household', 'Домаќинство')
+      title: translate('EasyFind_Footer_Household', 'Домаќинство'),
+      link: '#'
     },
     links: [
       {
@@ -136,7 +142,8 @@ const footerItems: IFooterItem[] = [
   },
   {
     header: {
-      title: translate('EasyFind_Footer_Services', 'Услуги')
+      title: translate('EasyFind_Footer_Services', 'Услуги'),
+      link: '#'
     },
     links: [
       {
