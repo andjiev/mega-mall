@@ -7,21 +7,27 @@ export interface IFooterItem {
 
 interface ILinkItem {
   title: string;
-  link: string;
+  link?: string;
+  src?: string;
 }
 
 const footerItems: IFooterItem[] = [
   {
     header: {
-      title: translate('EasyFind_Footer_WebSpot', `ВЕБСПОТ | ТА ВЕБСПОТ ДОО`),
-      link: ''
+      title: 'Logo',
+      src: '/assets/images/main/Mega-m-white.svg'
     },
-    links: []
+    links: [
+      {
+        title: translate('EasyFind_Footer_WebSpot', `ВЕБСПОТ | ТА ВЕБСПОТ ДОО`),
+        link: '#'
+      }
+    ]
   },
   {
     header: {
       title: translate('EasyFind_Footer_Header', 'Следете не'),
-      link: ''
+      link: '#'
     },
     links: [
       {
