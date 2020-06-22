@@ -7,7 +7,7 @@ export interface IFooterItem {
 
 interface ILinkItem {
   title: string;
-  link: string;
+  link?: string;
   url?: string;
 }
 
@@ -15,7 +15,6 @@ const footerItems: IFooterItem[] = [
   {
     header: {
       title: 'Logo',
-      link: '',
       url: '/src/assets/images/main/Mega-m-white.svg'
     },
     links: [

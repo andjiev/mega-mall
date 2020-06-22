@@ -19,4 +19,9 @@ const StyledDivider = styled(Divider)`
   height: 2px;
 `;
 
-export { StyledList, StyledFooter, StyledCopyright, StyledDivider };
+const StyledImage = styled.img`
+  height: 47px;
+  width: 68px;
+`;
+
+export { StyledList, StyledFooter, StyledCopyright, StyledDivider, StyledImage };
