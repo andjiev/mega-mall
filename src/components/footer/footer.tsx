@@ -63,7 +63,7 @@ const Footer = () => {
           {/* for small devices */}
           <Hidden mdUp>
             <Box mb={2}>
-              <Box color="white">Logo</Box>
+              <StyledImage src={footerItems[0].header.src}></StyledImage>
               <Box mt={2}>
                 <Grid container>
                   {footerItems.slice(2).map((item, index) => {
@@ -84,7 +84,7 @@ const Footer = () => {
                 <Grid container justify="center" alignItems="center">
                   <Typography variant="h6">
                     <Box component="span" color="white" textAlign="center">
-                      {footerItems[0].header.title}
+                      {footerItems[0].links[0].title}
                     </Box>
                   </Typography>
                 </Grid>
