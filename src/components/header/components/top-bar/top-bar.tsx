@@ -1,28 +1,52 @@
 import React from 'react';
 
-import { Grid, Box } from '@material-ui/core';
+import { Grid, Box, Typography } from '@material-ui/core';
 import { SearchBarContainer } from 'components/header/containers/search-bar';
 import { LanguagePickerContainer } from 'components/header/containers/language-picker';
-import { StyledContainer } from './top-bar.styles';
+import { StyledContainer, StyledImage } from './top-bar.styles';
 import { StyledLink } from 'components/styled-link';
+import { topItems } from './top-bar.data';
 
 const TopBar = () => {
   return (
     <>
       <StyledContainer>
+        <Box pt={2}>
+          <Grid container justify="flex-end" alignContent="flex-end" alignItems="flex-end" spacing={2}>
+            <Grid item>
+              <Typography variant="h6" style={{ color: 'white' }}>
+                Продавници
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="h6" style={{ color: 'white' }}>
+                Fb
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="h6" style={{ color: 'white' }}>
+                Insta
+              </Typography>
+            </Grid>
+            <Grid item>
+              <LanguagePickerContainer />
+            </Grid>
+          </Grid>
+        </Box>
         <Box pt={3}>
           <Grid container spacing={3}>
             <Grid item container sm={1} justify="flex-end" alignItems="center">
               {/* TODO: replace the whole box with logo */}
               <Box component="span" color="white">
-                <StyledLink href={'/'}>Logo</StyledLink>
+                {topItems.map(val => (
+                  <Box key={val.id}>
+                    <StyledImage src={val.src}></StyledImage>
+                  </Box>
+                ))}
               </Box>
             </Grid>
             <Grid item sm={10}>
               <SearchBarContainer />
-            </Grid>
-            <Grid item container sm={1} alignItems="center">
-              <LanguagePickerContainer />
             </Grid>
           </Grid>
         </Box>
