@@ -69,7 +69,9 @@ const Footer = () => {
                     return (
                       <Grid key={index} item xs={6}>
                         <Box mt={1} mb={1}>
-                          <Typography variant="h6">{item.header.src ? <StyledImage src={item.header.src}></StyledImage> : <StyledLink href={item.header.link}>{item.header.title}</StyledLink>}</Typography>
+                          <Typography variant="h6">
+                            <StyledLink href={item.header.link}>{item.header.title}</StyledLink>
+                          </Typography>
                         </Box>
                       </Grid>
                     );
