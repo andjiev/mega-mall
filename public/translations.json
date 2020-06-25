@@ -88,9 +88,9 @@
       "EasyFind_Mobile_Filter_Maks": "Макс компјутери",
       "EasyFind_Mobile_Filter_Elektro": "Електро Механика",
       "EasyFind_Mobile_Filter_DDStore": "DDStore LTD",
-      "EasyFind_Header_Shops": "Продавници",
-      "EasyFind_Header_Fb": "Fb",
-      "EasyFind_Header_Insta": "Insta"
+      "EasyFind_TopBar_Shops": "Продавници",
+      "EasyFind_TopBar_Fb": "Fb",
+      "EasyFind_TopBar_Insta": "Insta"
     }
   },
   "en-GB": {
@@ -178,9 +178,9 @@
       "EasyFind_Mobile_Filter_Maks": "Maks computers",
       "EasyFind_Mobile_Filter_Elektro": "Electro Mechanics",
       "EasyFind_Mobile_Filter_DDStore": "DDStore LTD",
-      "EasyFind_Header_Shops": "Shops",
-      "EasyFind_Header_Fb": "Fb",
-      "EasyFind_Header_Insta": "Insta"
+      "EasyFind_TopBar_Shops": "Shops",
+      "EasyFind_TopBar_Fb": "Fb",
+      "EasyFind_TopBar_Insta": "Insta"
     }
   }
 }

@@ -5,7 +5,7 @@ import { SearchBarContainer } from 'components/header/containers/search-bar';
 import { LanguagePickerContainer } from 'components/header/containers/language-picker';
 import { StyledContainer, StyledImage } from './top-bar.styles';
 import { StyledLink } from 'components/styled-link';
-import { topItems } from './top-bar.data';
+import { topData } from './top-bar.data';
 
 const TopBar = () => {
   return (
@@ -14,6 +14,7 @@ const TopBar = () => {
         <Box pt={2}>
           <Grid container justify="flex-end" alignContent="flex-end" alignItems="flex-end" spacing={2}>
             <Grid item>
+              {topData.links}
               <Typography variant="h6" style={{ color: 'white' }}>
                 Продавници
               </Typography>
