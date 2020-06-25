@@ -1,3 +1,4 @@
+import SearchIcon from '@material-ui/icons/Search';
 import styled from 'styled-components';
 
 import { TextField, Button } from '@material-ui/core';
