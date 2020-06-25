@@ -13,22 +13,14 @@ const TopBar = () => {
       <Container fixed>
         <Box pt={2}>
           <Grid container justify="flex-end" alignContent="flex-end" alignItems="flex-end" spacing={2}>
-            <Grid item>
-              {topData.links}
-              <Typography variant="h6" style={{ color: 'white' }}>
-                Продавници
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="h6" style={{ color: 'white' }}>
-                Fb
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="h6" style={{ color: 'white' }}>
-                Insta
-              </Typography>
-            </Grid>
+            {item.links.map(val => (
+              <Grid item key={val.id}>
+                <Typography variant="h6" key={val.id} style={{ color: 'white' }}>
+                  {item.links.title}
+                </Typography>
+              </Grid>
+            ))}
+
             <Grid item>
               <LanguagePickerContainer />
             </Grid>
@@ -39,7 +31,7 @@ const TopBar = () => {
             <Grid item container sm={1} justify="flex-end" alignItems="center">
               {/* TODO: replace the whole box with logo */}
               <Box component="span" color="white">
-                {topItems.map(val => (
+                {item.header.map(val => (
                   <Box key={val.id}>
                     <StyledImage src={val.src}></StyledImage>
                   </Box>
