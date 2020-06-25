@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grid, Box, Typography } from '@material-ui/core';
+import { Grid, Box, Typography, Container } from '@material-ui/core';
 import { SearchBarContainer } from 'components/header/containers/search-bar';
 import { LanguagePickerContainer } from 'components/header/containers/language-picker';
 import { StyledContainer, StyledImage } from './top-bar.styles';
@@ -10,7 +10,7 @@ import { topItems } from './top-bar.data';
 const TopBar = () => {
   return (
     <>
-      <StyledContainer>
+      <Container fixed>
         <Box pt={2}>
           <Grid container justify="flex-end" alignContent="flex-end" alignItems="flex-end" spacing={2}>
             <Grid item>
@@ -45,12 +45,12 @@ const TopBar = () => {
                 ))}
               </Box>
             </Grid>
-            <Grid item sm={10}>
+            <Grid item sm={11}>
               <SearchBarContainer />
             </Grid>
           </Grid>
         </Box>
-      </StyledContainer>
+      </Container>
     </>
   );
 };
