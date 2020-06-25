@@ -6,7 +6,7 @@ export interface ITopItem {
 }
 
 interface ILinkItem {
-  title?: string;
+  title: string;
   link?: string;
   id?: number;
   src?: string;
@@ -15,6 +15,7 @@ const topData: ITopItem[] = [
   {
     header: {
       id: 1,
+      title: 'Logo',
       src: '/src/assets/images/main/Mega-m-original.svg'
     },
     links: [

@@ -5,7 +5,7 @@ import { SearchBarContainer } from 'components/header/containers/search-bar';
 import { LanguagePickerContainer } from 'components/header/containers/language-picker';
 import { StyledContainer, StyledImage } from './top-bar.styles';
 import { StyledLink } from 'components/styled-link';
-import { topData } from './top-bar.data';
+import { topData, ITopItem } from './top-bar.data';
 
 const TopBar = () => {
   const renderItem = (item: ITopItem) => {
@@ -34,7 +34,7 @@ const TopBar = () => {
                 <Box component="span" color="white">
                   {item.header.map(val => (
                     <Box key={val.id}>
-                      <StyledImage src={val.src}></StyledImage>
+                      <StyledImage src={val.header.src}></StyledImage>
                     </Box>
                   ))}
                 </Box>
