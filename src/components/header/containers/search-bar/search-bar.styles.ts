@@ -5,6 +5,7 @@ import { TextField, Button } from '@material-ui/core';
 const StyledTextField = styled(TextField)`
   background-color: #fff;
   height: 50px;
+  border-radius: 5px;
 `;
 
 const StyledButton = styled(Button)`
