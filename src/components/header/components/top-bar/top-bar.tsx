@@ -17,7 +17,7 @@ const TopBar = () => {
               {item.links.map(val => (
                 <Grid item key={val.id}>
                   <Typography variant="h6" key={val.id} style={{ color: 'white' }}>
-                    {item.links.title}
+                    {val.title}
                   </Typography>
                 </Grid>
               ))}
@@ -32,11 +32,9 @@ const TopBar = () => {
               <Grid item container sm={1} justify="flex-end" alignItems="center">
                 {/* TODO: replace the whole box with logo */}
                 <Box component="span" color="white">
-                  {item.header.map(val => (
-                    <Box key={val.id}>
-                      <StyledImage src={val.header.src}></StyledImage>
-                    </Box>
-                  ))}
+                  <Box>
+                    <StyledImage src={item.header.src}></StyledImage>
+                  </Box>
                 </Box>
               </Grid>
               <Grid item sm={11}>
@@ -48,6 +46,8 @@ const TopBar = () => {
       </>
     );
   };
+
+  return <>renderItem()</>;
 };
 
 export default TopBar;
