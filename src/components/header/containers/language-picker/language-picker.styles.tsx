@@ -24,8 +24,9 @@ const StyledPicker = styled(Box)`
   position: absolute;
   z-index: 1000;
   width: 100px;
-  margin-top: 1px; // this is for showing the border-bottom of the StyledDiplay
+  margin-top: 1px;
 `;
+// this is for showing the border-bottom of the StyledDiplay
 
 const StyledBox = styled(Box)`
   color: #ffffff;
