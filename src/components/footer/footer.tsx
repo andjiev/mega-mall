@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StyledList, StyledFooter, StyledCopyright, StyledDivider } from './footer.styles';
+import { StyledList, StyledFooter, StyledCopyright, StyledDivider, StyledImage } from './footer.styles';
 import { Container, Grid, Box, Typography, ListItem, Hidden } from '@material-ui/core';
 import { StyledLink } from 'components/styled-link';
 import { footerItems, IFooterItem } from './footer.data';
@@ -10,7 +10,15 @@ const Footer = () => {
     return (
       <Box>
         <StyledList>
-          <Typography variant="body1">{item.header.link ? <StyledLink href={item.header.link}>{item.header.title}</StyledLink> : <Box component="span">{item.header.title}</Box>}</Typography>
+          <Typography variant="body1">
+            {item.header.src ? (
+              <StyledImage src={item.header.src}></StyledImage>
+            ) : item.header.title ? (
+              <StyledLink href={item.header.link}>{item.header.title}</StyledLink>
+            ) : (
+              <Box component="span">{item.header.title}</Box>
+            )}
+          </Typography>
           <Box mt={1}>
             {item.links.map((linkItem, index) => {
               return (
@@ -55,7 +63,7 @@ const Footer = () => {
           {/* for small devices */}
           <Hidden mdUp>
             <Box mb={2}>
-              <Box color="white">Logo</Box>
+              <StyledImage src={footerItems[0].header.src}></StyledImage>
               <Box mt={2}>
                 <Grid container>
                   {footerItems.slice(2).map((item, index) => {
@@ -76,7 +84,7 @@ const Footer = () => {
                 <Grid container justify="center" alignItems="center">
                   <Typography variant="h6">
                     <Box component="span" color="white" textAlign="center">
-                      {footerItems[0].header.title}
+                      {footerItems[0].links[0].title}
                     </Box>
                   </Typography>
                 </Grid>
