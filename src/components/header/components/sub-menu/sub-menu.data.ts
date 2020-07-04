@@ -56,6 +56,7 @@ const submenuItems: ISubmenuItem[] = [
           }
         ]
       },
+
       right: {
         title: 'Мобилни телефони',
         items: [
@@ -113,6 +114,7 @@ const submenuItems: ISubmenuItem[] = [
           }
         ]
       },
+
       right: {
         title: 'Спорт2',
         items: [
@@ -155,7 +157,7 @@ const submenuItems: ISubmenuItem[] = [
         ]
       },
       right: {
-        title: 'Мода2',
+        title: 'Спорт2',
         items: [
           {
             id: 1,
@@ -167,6 +169,7 @@ const submenuItems: ISubmenuItem[] = [
           }
         ]
       },
+
       side: {
         title: 'Slika2',
         items: [
@@ -196,7 +199,7 @@ const submenuItems: ISubmenuItem[] = [
         ]
       },
       right: {
-        title: 'Здравје и убавина',
+        title: 'Спорт2',
         items: [
           {
             id: 1,
@@ -237,7 +240,7 @@ const submenuItems: ISubmenuItem[] = [
         ]
       },
       right: {
-        title: 'Домакинство',
+        title: 'Спорт2',
         items: [
           {
             id: 1,
@@ -249,6 +252,7 @@ const submenuItems: ISubmenuItem[] = [
           }
         ]
       },
+
       side: {
         title: 'Slika2',
         items: [
@@ -277,6 +281,7 @@ const submenuItems: ISubmenuItem[] = [
           }
         ]
       },
+
       right: {
         title: 'Услуги',
         items: [

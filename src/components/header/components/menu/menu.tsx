@@ -29,7 +29,7 @@ const HomeCenterMenu = (props: IMenuProps) => {
         <Grid container justify="space-between">
           {menuItems.map(item => (
             <Grid key={item.type} item>
-              <StyledBox pt={2} pb={2} isActive={props.isActive && categoryType === item.type} onMouseEnter={() => onCategoryChange(item.type)} onMouseLeave={() => props.onHideSubmenuChange()}>
+              <StyledBox pt={2} pb={2} isActive={props.isActive && categoryType === item.type} onMouseEnter={() => onCategoryChange(item.type)} /*onMouseLeave={() => props.onHideSubmenuChange()} */>
                 <Typography variant="h6">
                   <StyledLink href={item.link}>{item.title}</StyledLink>
                 </Typography>
