@@ -87,7 +87,10 @@
       "EasyFind_Mobile_Filter_Deka": "Дека електроникс",
       "EasyFind_Mobile_Filter_Maks": "Макс компјутери",
       "EasyFind_Mobile_Filter_Elektro": "Електро Механика",
-      "EasyFind_Mobile_Filter_DDStore": "DDStore LTD"
+      "EasyFind_Mobile_Filter_DDStore": "DDStore LTD",
+      "EasyFind_TopBar_Shops": "Продавници",
+      "EasyFind_TopBar_Fb": "Fb",
+      "EasyFind_TopBar_Insta": "Insta"
     }
   },
   "en-GB": {
@@ -174,7 +177,10 @@
       "EasyFind_Mobile_Filter_Deka": "Deka electronics",
       "EasyFind_Mobile_Filter_Maks": "Maks computers",
       "EasyFind_Mobile_Filter_Elektro": "Electro Mechanics",
-      "EasyFind_Mobile_Filter_DDStore": "DDStore LTD"
+      "EasyFind_Mobile_Filter_DDStore": "DDStore LTD",
+      "EasyFind_TopBar_Shops": "Shops",
+      "EasyFind_TopBar_Fb": "Fb",
+      "EasyFind_TopBar_Insta": "Insta"
     }
   }
 }
