@@ -5,7 +5,6 @@ import { Box, List, ListItem, Typography, Checkbox, Grid, FormControlLabel } fro
 import { INavItem, navigationData } from './navigation.data';
 
 interface NavigationProps {}
-const items = ['One', 'Two', 'Three'];
 
 const Navigation = (props: NavigationProps) => {
   const [checked, setChecked] = React.useState(false);
@@ -23,7 +22,7 @@ const Navigation = (props: NavigationProps) => {
         <Box>
           {item.links.map(val => (
             <Grid container alignContent="center" alignItems="center" key={val.title}>
-              <Checkbox color="default" key={val.id} onChange={handleChange} inputProps={{ 'aria-label': 'checkbox with default color' }} />
+              <Checkbox size="small" color="default" key={val.id} onChange={handleChange} inputProps={{ 'aria-label': 'checkbox with default color' }} />
               <Typography key={val.title}>{val.title}</Typography>
             </Grid>
           ))}
