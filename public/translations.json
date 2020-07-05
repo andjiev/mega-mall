@@ -88,6 +88,7 @@
       "EasyFind_Mobile_Filter_Maks": "Макс компјутери",
       "EasyFind_Mobile_Filter_Elektro": "Електро Механика",
       "EasyFind_Mobile_Filter_DDStore": "DDStore LTD",
+
       "EasyFind_Navigation_Manufacturer": "Производител",
       "EasyFind_Navigation_HP": "HP",
       "EasyFind_Navigation_Dell": "Dell",
@@ -105,6 +106,11 @@
       "EasyFind_Navigation_Premiumkompjuteri": "Премиум компјутери",
       "EasyFind_Navigation_DDStoreLtd": "DDStore LTD",
       "EasyFind_Navigation_DekaElektroniks": "Дека електроникс"
+
+      "EasyFind_TopBar_Shops": "Продавници",
+      "EasyFind_TopBar_Fb": "Fb",
+      "EasyFind_TopBar_Insta": "Insta"
+
     }
   },
   "en-GB": {
@@ -169,7 +175,8 @@
       "EasyFind_Mobile_Filter_Sort": "Sort",
       "EasyFind_Mobile_Filter_High": "High > low",
       "EasyFind_Mobile_Filter_Low": "Low > high",
-      "EasyFind_Mobile_Filter_Manufacturer": "Manufacturer",
+      "EasyFind_Mobile_Filter
+      ": "Manufacturer",
       "EasyFind_Mobile_Filter_Acer": "Acer",
       "EasyFind_Mobile_Filter_Apple": "Apple",
       "EasyFind_Mobile_Filter_Allienware": "Allienware",
@@ -192,7 +199,7 @@
       "EasyFind_Mobile_Filter_Maks": "Maks computers",
       "EasyFind_Mobile_Filter_Elektro": "Electro Mechanics",
       "EasyFind_Mobile_Filter_DDStore": "DDStore LTD",
-      "EasyFind_Navigation_Manufacturer": "Manufacturer",
+     "Manufacturer",
       "EasyFind_Navigation_HP": "HP",
       "EasyFind_Navigation_Dell": "Dell",
       "EasyFind_Navigation_Acer": "Acer",
@@ -209,6 +216,9 @@
       "EasyFind_Navigation_Premiumkompjuteri": "Premium computers",
       "EasyFind_Navigation_DDStoreLtd": "DDStore LTD",
       "EasyFind_Navigation_DekaElektroniks": "Deka electronics"
+      "EasyFind_TopBar_Shops": "Shops",
+      "EasyFind_TopBar_Fb": "Fb",
+      "EasyFind_TopBar_Insta": "Insta"
     }
   }
 }
