@@ -1,4 +1,5 @@
 import { translate } from 'lib/translate';
+
 export interface INavItem {
   header: ILinkItem;
   links: ILinkItem[];
