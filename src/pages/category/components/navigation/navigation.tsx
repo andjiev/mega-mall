@@ -23,7 +23,7 @@ const Navigation = (props: NavigationProps) => {
         <Box>
           {item.links.map(val => (
             <Grid container alignContent="center" alignItems="center" key={val.title}>
-              <Checkbox checked={checked} color="default" key={val.id} onChange={handleChange} inputProps={{ 'aria-label': 'checkbox with default color' }} />
+              <Checkbox color="default" key={val.id} onChange={handleChange} inputProps={{ 'aria-label': 'checkbox with default color' }} />
               <Typography key={val.title}>{val.title}</Typography>
             </Grid>
           ))}
