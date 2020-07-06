@@ -27,5 +27,13 @@ const StyledLogoBox = styled(Box)`
   display: flex;
   justify-content: flex-end;
 `;
+const StyledFlexGrid = styled(Grid)`
+  height: 100%;
+  min-height: 140px;
+  max-height: 140%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
 
-export { StyledImage, StyledGrid, StyledGridLogo, StyledLogo, StyledLogoBox };
+export { StyledImage, StyledGrid, StyledGridLogo, StyledLogo, StyledLogoBox, StyledFlexGrid };

@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Typography, Hidden, Grid, CardMedia, makeStyles, Theme, createStyles, CardContent } from '@material-ui/core';
 
 import { Box } from '@material-ui/core';
-import { StyledImage, StyledGrid, StyledGridLogo, StyledLogo, StyledLogoBox } from './product-item.styles';
+import { StyledImage, StyledGrid, StyledGridLogo, StyledLogo, StyledLogoBox, StyledFlexGrid } from './product-item.styles';
 
 interface ProductItemProps {
   img: string;
@@ -23,14 +23,14 @@ const ProductItem = (props: ProductItemProps) => {
         </Grid>
         <Grid item xs={8}>
           <Box>
-            <Grid container item xs direction="column" justify="flex-end">
+            <StyledFlexGrid container item xs direction="column" justify="flex-end">
               {/*TODO THIS ISNT LIKE IN THE DESING NEEDS HEIGHT AND SPACE BETWEEN THE TEXTS */}
               <Grid item xs={12}>
                 <Typography variant="h4">{props.title}</Typography>
                 {/* TODO this is not lined up to the top of the card :/ FIX IT  */}
               </Grid>
               <Grid item xs={12}>
-                <Box mb={2}>
+                <Box>
                   <Typography variant="h3">{props.price}</Typography>
                 </Box>
                 <Box>
@@ -39,7 +39,7 @@ const ProductItem = (props: ProductItemProps) => {
                   </Typography>
                 </Box>
               </Grid>
-            </Grid>
+            </StyledFlexGrid>
           </Box>
         </Grid>
         <StyledGridLogo item xs={2}>
