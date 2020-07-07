@@ -1,4 +1,5 @@
 import { translate } from 'lib/translate';
+import { ProductTypes } from 'lib/enums';
 
 const displayData = [
   {
@@ -7,7 +8,8 @@ const displayData = [
     title: '1Notebook Apple MacBook Air i5 2.9Ghz/8GB/256GB SSD/IntelHD6000/13.3" LED Retina MREC2',
     price: '45.000 ден',
     description: 'Retina display 13.3-inch (diagonal) LED-backlit display with IPS technology; 2560-by-1600 native resolution at 227 pixels per inch with support for millions of colors',
-    logo: '/assets/images/product-list/logo-btns/Anhoch.png'
+    logo: '/assets/images/product-list/logo-btns/Anhoch.png',
+    link: `/products/${ProductTypes.Laptop}/1`
   },
   {
     id: 2,
@@ -15,7 +17,8 @@ const displayData = [
     title: '2Notebook Apple MacBook Air i5 2.9Ghz/8GB/256GB SSD/IntelHD6000/13.3" LED Retina MREC2',
     price: '45.000 ден',
     description: 'Retina display 13.3-inch (diagonal) LED-backlit display with IPS technology; 2560-by-1600 native resolution at 227 pixels per inch with support for millions of colors',
-    logo: '/assets/images/product-list/logo-btns/Anhoch.png'
+    logo: '/assets/images/product-list/logo-btns/Anhoch.png',
+    link: `/products/${ProductTypes.Laptop}/1`
   },
   {
     id: 3,
@@ -23,7 +26,8 @@ const displayData = [
     title: '3Notebook Apple MacBook Air i5 2.9Ghz/8GB/256GB SSD/IntelHD6000/13.3" LED Retina MREC2',
     price: '45.000 ден',
     description: 'Retina display 13.3-inch (diagonal) LED-backlit display with IPS technology; 2560-by-1600 native resolution at 227 pixels per inch with support for millions of colors',
-    logo: '/assets/images/product-list/logo-btns/Anhoch.png'
+    logo: '/assets/images/product-list/logo-btns/Anhoch.png',
+    link: `/products/${ProductTypes.Laptop}/1`
   },
   {
     id: 4,
@@ -31,7 +35,8 @@ const displayData = [
     title: '4Notebook Apple MacBook Air i5 2.9Ghz/8GB/256GB SSD/IntelHD6000/13.3" LED Retina MREC2',
     price: '45.000 ден',
     description: 'Retina display 13.3-inch (diagonal) LED-backlit display with IPS technology; 2560-by-1600 native resolution at 227 pixels per inch with support for millions of colors',
-    logo: '/assets/images/product-list/logo-btns/Anhoch.png'
+    logo: '/assets/images/product-list/logo-btns/Anhoch.png',
+    link: `/products/${ProductTypes.Laptop}/1`
   },
   {
     id: 5,
@@ -39,7 +44,8 @@ const displayData = [
     title: '5Notebook Apple MacBook Air i5 2.9Ghz/8GB/256GB SSD/IntelHD6000/13.3" LED Retina MREC2',
     price: '45.000 ден',
     description: 'Retina display 13.3-inch (diagonal) LED-backlit display with IPS technology; 2560-by-1600 native resolution at 227 pixels per inch with support for millions of colors',
-    logo: '/assets/images/product-list/logo-btns/Anhoch.png'
+    logo: '/assets/images/product-list/logo-btns/Anhoch.png',
+    link: `/products/${ProductTypes.Laptop}/1`
   },
   {
     id: 6,
@@ -47,7 +53,8 @@ const displayData = [
     title: '6Notebook Apple MacBook Air i5 2.9Ghz/8GB/256GB SSD/IntelHD6000/13.3" LED Retina MREC2',
     price: '45.000 ден',
     description: 'Retina display 13.3-inch (diagonal) LED-backlit display with IPS technology; 2560-by-1600 native resolution at 227 pixels per inch with support for millions of colors',
-    logo: '/assets/images/product-list/logo-btns/Anhoch.png'
+    logo: '/assets/images/product-list/logo-btns/Anhoch.png',
+    link: `/products/${ProductTypes.Laptop}/1`
   },
   {
     id: 7,
@@ -55,7 +62,8 @@ const displayData = [
     title: '7Notebook Apple MacBook Air i5 2.9Ghz/8GB/256GB SSD/IntelHD6000/13.3" LED Retina MREC2',
     price: '45.000 ден',
     description: 'Retina display 13.3-inch (diagonal) LED-backlit display with IPS technology; 2560-by-1600 native resolution at 227 pixels per inch with support for millions of colors',
-    logo: '/assets/images/product-list/logo-btns/Anhoch.png'
+    logo: '/assets/images/product-list/logo-btns/Anhoch.png',
+    link: `/products/${ProductTypes.Laptop}/1`
   },
   {
     id: 8,
@@ -63,7 +71,8 @@ const displayData = [
     title: '8Notebook Apple MacBook Air i5 2.9Ghz/8GB/256GB SSD/IntelHD6000/13.3" LED Retina MREC2',
     price: '45.000 ден',
     description: 'Retina display 13.3-inch (diagonal) LED-backlit display with IPS technology; 2560-by-1600 native resolution at 227 pixels per inch with support for millions of colors',
-    logo: '/assets/images/product-list/logo-btns/Anhoch.png'
+    logo: '/assets/images/product-list/logo-btns/Anhoch.png',
+    link: `/products/${ProductTypes.Laptop}/1`
   },
   {
     id: 9,
@@ -71,7 +80,8 @@ const displayData = [
     title: '9Notebook Apple MacBook Air i5 2.9Ghz/8GB/256GB SSD/IntelHD6000/13.3" LED Retina MREC2',
     price: '45.000 ден',
     description: 'Retina display 13.3-inch (diagonal) LED-backlit display with IPS technology; 2560-by-1600 native resolution at 227 pixels per inch with support for millions of colors',
-    logo: '/assets/images/product-list/logo-btns/Anhoch.png'
+    logo: '/assets/images/product-list/logo-btns/Anhoch.png',
+    link: `/products/${ProductTypes.Laptop}/1`
   },
   {
     id: 10,

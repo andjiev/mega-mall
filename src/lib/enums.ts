@@ -3,6 +3,10 @@ enum Environment {
   Production = 'production'
 }
 
+enum ProductTypes {
+  Laptop = 1
+}
+
 enum CategoryTypes {
   Technology = 1,
   Sport = 2,
@@ -18,4 +22,4 @@ enum OrderTypes {
   Latest = 3
 }
 
-export { Environment, CategoryTypes, OrderTypes };
+export { Environment, CategoryTypes, OrderTypes, ProductTypes };

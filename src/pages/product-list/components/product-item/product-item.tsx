@@ -6,6 +6,7 @@ import { StyledImage, StyledGrid, StyledGridLogo, StyledLogo, StyledLogoBox, Sty
 
 interface ProductItemProps {
   img: string;
+  link?: string;
   title: string;
   price: string;
   description: string;
@@ -15,7 +16,7 @@ interface ProductItemProps {
 const ProductItem = (props: ProductItemProps) => {
   return (
     <>
-      <StyledGrid container direction="row" justify="flex-start" alignItems="flex-start" spacing={2}>
+      <StyledGrid container direction="row" justify="flex-start" alignItems="flex-start" spacing={2} onClick={() => (window.location.href = props.link!)}>
         <Grid item xs={2}>
           <Box>
             <StyledImage src={props.img} />

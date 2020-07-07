@@ -5,7 +5,6 @@ import { TopBar } from '../top-bar';
 import { ProductItem } from '../product-item';
 import { displayData } from './display.data';
 import { StyledBox, StyledPagination } from './display.styles';
-import Pagination from '@material-ui/lab/Pagination';
 
 const Display = () => {
   const [posts, setPosts] = useState(displayData);
@@ -45,7 +44,7 @@ const Display = () => {
             {currentPost.map(val => (
               <ListItem key={val.id} disableGutters={true} divider={true}>
                 <StyledBox mt={1} mb={1}>
-                  <ProductItem key={val.id} img={val.img} title={val.title} price={val.price} description={val.description} logo={val.logo}></ProductItem>
+                  <ProductItem key={val.id} link={val.link} img={val.img} title={val.title} price={val.price} description={val.description} logo={val.logo}></ProductItem>
                 </StyledBox>
               </ListItem>
             ))}
