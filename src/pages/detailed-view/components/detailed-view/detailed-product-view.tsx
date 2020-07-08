@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Typography, Card, CardContent, Button, CardActions, Box } from '@material-ui/core';
 import { Detailedproduct } from './detailed-product-view.data';
-import { StyledImage } from './detailed-product-view.styles';
+import { StyledImage, StyledBox } from './detailed-product-view.styles';
 
 const DetailedProductView = () => {
   return (
@@ -15,7 +15,7 @@ const DetailedProductView = () => {
           ))}
         </Grid>
         <Grid item xs={12} lg={4} md={4}>
-          <Box m={3}>
+          <StyledBox m={3}>
             <Card raised={true}>
               <CardContent>
                 <Typography color="textSecondary" gutterBottom>
@@ -35,7 +35,7 @@ const DetailedProductView = () => {
                 <Button size="small">Learn More</Button>
               </CardActions>
             </Card>
-          </Box>
+          </StyledBox>
         </Grid>
       </Grid>
     </>
