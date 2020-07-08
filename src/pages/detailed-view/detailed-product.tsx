@@ -5,7 +5,8 @@ import { AppDispatch } from 'index';
 import ApplicationState from 'store/application-store';
 import { connect } from 'react-redux';
 import DetailedProductView from './components/detailed-view/detailed-product-view';
-import { Box } from '@material-ui/core';
+import { Box, Grid } from '@material-ui/core';
+import { Display } from 'pages/product-list/components/display';
 
 interface DetailedProductProps extends RouteComponentProps {}
 
@@ -16,6 +17,11 @@ const _DetailedProductPage = (props: DetailedProductProps) => {
       <Box mt={5}>
         <DetailedProductView />
       </Box>
+      <Grid item lg={8} xs={12}>
+        <Box mt={5}>
+          <Display />
+        </Box>
+      </Grid>
     </>
   );
 };
