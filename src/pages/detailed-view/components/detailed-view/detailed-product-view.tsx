@@ -18,22 +18,14 @@ const DetailedProductView = () => {
           <StyledBox m={3}>
             <Card raised={true}>
               <CardContent>
-                <Typography color="textSecondary" gutterBottom>
-                  Word of the Day
+                <Typography variant="h4" gutterBottom>
+                  DELL XPS 7590 (I7, 16Gb, 1Tb SSD, nVidia, Windows)
                 </Typography>
-                <Typography variant="h5" component="h2">
-                  belent
-                </Typography>
-                <Typography color="textSecondary">adjective</Typography>
-                <Typography variant="body2" component="p">
-                  well meaning and kindly.
-                  <br />
-                  {'"a benevolent smile"'}
+                <hr></hr>
+                <Typography variant="h4" gutterBottom>
+                  131,250 ден
                 </Typography>
               </CardContent>
-              <CardActions>
-                <Button size="small">Learn More</Button>
-              </CardActions>
             </Card>
           </StyledBox>
         </Grid>
