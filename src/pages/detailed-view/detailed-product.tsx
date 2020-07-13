@@ -6,11 +6,9 @@ import ApplicationState from 'store/application-store';
 import { connect } from 'react-redux';
 import DetailedProductView from './components/detailed-view/detailed-product-view';
 import { Box, Grid, List, ListItem, Button } from '@material-ui/core';
-import { Display } from 'pages/product-list/components/display';
 import { displayData } from './../product-list/components/display/display.data';
 import { StyledBox } from 'pages/product-list/components/display/display.styles';
 import ProductItem from 'pages/product-list/components/product-item/product-item';
-import CardSlider from 'pages/main/components/card-slider/card-slider';
 
 interface DetailedProductProps extends RouteComponentProps {}
 
@@ -60,9 +58,11 @@ const _DetailedProductPage = (props: DetailedProductProps) => {
             </List>
           </Box>
           <Grid item>
-            <Button variant="contained" color="secondary">
-              види повеќе
-            </Button>
+            <Box m={5}>
+              <Button variant="contained" color="secondary">
+                види повеќе
+              </Button>
+            </Box>
           </Grid>
         </Box>
       </Grid>
