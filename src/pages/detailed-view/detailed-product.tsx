@@ -5,7 +5,7 @@ import { AppDispatch } from 'index';
 import ApplicationState from 'store/application-store';
 import { connect } from 'react-redux';
 import DetailedProductView from './components/detailed-view/detailed-product-view';
-import { Box, Grid, List, ListItem, Button } from '@material-ui/core';
+import { Box, Grid, List, ListItem, Button, Typography } from '@material-ui/core';
 import { displayData } from './../product-list/components/display/display.data';
 import { StyledBox } from 'pages/product-list/components/display/display.styles';
 import ProductItem from 'pages/product-list/components/product-item/product-item';
@@ -44,7 +44,7 @@ const _DetailedProductPage = (props: DetailedProductProps) => {
       <Box mt={5}>
         <DetailedProductView />
       </Box>
-      <Grid item lg={8} xs={12}>
+      {/* <Grid item lg={8} xs={12}>
         <Box mt={5} p={3}>
           <Box>
             <List component={'ul'}>
@@ -65,7 +65,7 @@ const _DetailedProductPage = (props: DetailedProductProps) => {
             </Box>
           </Grid>
         </Box>
-      </Grid>
+      </Grid> */}
     </>
   );
 };
