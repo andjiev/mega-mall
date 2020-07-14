@@ -5,10 +5,13 @@ import { AppDispatch } from 'index';
 import ApplicationState from 'store/application-store';
 import { connect } from 'react-redux';
 import DetailedProductView from './components/detailed-view/detailed-product-view';
-import { Box, Grid, List, ListItem, Button, Typography } from '@material-ui/core';
+import { Box, Grid, List, ListItem, Button, Typography, Link } from '@material-ui/core';
 import { displayData } from './../product-list/components/display/display.data';
-import { StyledBox } from 'pages/product-list/components/display/display.styles';
-import ProductItem from 'pages/product-list/components/product-item/product-item';
+
+import { CardSlider } from 'pages/main/components/card-slider';
+
+import { cardData } from './../main/components/card-slider/card-slider.data';
+import { MainBanner } from 'pages/main/components/main-banner';
 
 interface DetailedProductProps extends RouteComponentProps {}
 
@@ -66,6 +69,13 @@ const _DetailedProductPage = (props: DetailedProductProps) => {
           </Grid>
         </Box>
       </Grid> */}
+      {/* <Box m={5}>
+        <CardSlider />
+      </Box> */}
+
+      <Box m={5}>
+        <MainBanner />
+      </Box>
     </>
   );
 };
