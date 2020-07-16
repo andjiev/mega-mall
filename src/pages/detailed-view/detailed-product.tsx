@@ -5,7 +5,7 @@ import { AppDispatch } from 'index';
 import ApplicationState from 'store/application-store';
 import { connect } from 'react-redux';
 import DetailedProductView from './components/detailed-view/detailed-product-view';
-import { Box, Grid, List, ListItem, Button, Typography, Link } from '@material-ui/core';
+import { Box, Grid, List, ListItem, Button, Typography, Link, Container } from '@material-ui/core';
 import { displayData } from './../product-list/components/display/display.data';
 
 import { CardSlider } from 'pages/main/components/card-slider';
@@ -44,38 +44,18 @@ const _DetailedProductPage = (props: DetailedProductProps) => {
   return (
     <>
       <BreadCrumbs />
-      <Box mt={5}>
-        <DetailedProductView />
-      </Box>
-      {/* <Grid item lg={8} xs={12}>
-        <Box mt={5} p={3}>
-          <Box>
-            <List component={'ul'}>
-              {currentPost.map(val => (
-                <ListItem key={val.id} disableGutters={true} divider={true}>
-                  <StyledBox mt={1} mb={1}>
-                    <ProductItem key={val.id} link={val.link} img={val.img} title={val.title} price={val.price} description={val.description} logo={val.logo}></ProductItem>
-                  </StyledBox>
-                </ListItem>
-              ))}
-            </List>
-          </Box>
-          <Grid item>
-            <Box m={5}>
-              <Button variant="contained" color="secondary">
-                види повеќе
-              </Button>
-            </Box>
-          </Grid>
+      <Container maxWidth={false} disableGutters={true}>
+        <Box mt={5}>
+          <DetailedProductView />
         </Box>
-      </Grid> */}
-      {/* <Box m={5}>
-        <CardSlider />
-      </Box> */}
+        <Box m={5}>
+          <CardSlider />
+        </Box>
 
-      <Box m={5}>
-        <MainBanner />
-      </Box>
+        <Box m={5}>
+          <MainBanner />
+        </Box>
+      </Container>
     </>
   );
 };

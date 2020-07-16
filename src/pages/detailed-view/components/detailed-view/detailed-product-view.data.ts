@@ -1,7 +1,7 @@
 const Detailedproduct = [
   {
     id: 1,
-    url: '/src/assets/images/product-list/apple_laptop.jpg'
+    url: '/src/assets/images/product-list/primer.jpg'
   }
 ];
 
