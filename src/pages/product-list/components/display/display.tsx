@@ -2,6 +2,7 @@ import React from 'react';
 import { Box } from '@material-ui/core';
 import { TopBar } from '../top-bar';
 import ProductItemList from './../product-item-list/product-item-list';
+import ShopsList from './../shops-list/shops-list';
 
 const Display = () => {
   return (

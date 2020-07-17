@@ -29,7 +29,7 @@ const ProductItem = (props: ProductItemProps) => {
                 {/* TODO this is not lined up to the top of the card :/ FIX IT  */}
               </Grid>
               <Grid item xs={12}>
-                <Box mb={2}>
+                <Box mb={1}>
                   <Typography variant="h3">{props.price}</Typography>
                 </Box>
                 <Box>
