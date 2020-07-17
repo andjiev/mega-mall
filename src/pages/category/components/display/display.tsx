@@ -11,9 +11,9 @@ const Display = () => {
           <Typography variant="h3">Технологија</Typography>
         </Box>
         <Box mt={3}>
-          <Grid container spacing={2}>
+          <Grid container justify="space-between" spacing={2}>
             {cardData.map(value => (
-              <Grid item key={value.id} xs={12} md={6} lg={3}>
+              <Grid item key={value.id} xs={12} sm={6} md={6} lg={3}>
                 <Box p={1}>
                   <SubcategoryCard key={value.id} url={value.url} title={value.title} link={value.link}></SubcategoryCard>
                 </Box>

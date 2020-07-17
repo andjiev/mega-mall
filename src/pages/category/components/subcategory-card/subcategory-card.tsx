@@ -11,7 +11,7 @@ interface SubcategoryCardProps {
 const SubcategoryCard = (props: SubcategoryCardProps) => {
   return (
     <>
-      <StyledMaterialCard onClick={() => (window.location.href = props.link!)}>
+      <StyledMaterialCard raised={true} onClick={() => (window.location.href = props.link!)}>
         <StyledCardMedia image={props.url} />
         <CardContent>
           <Box pt={3} pb={3} fontWeight="fontWeightBold" fontFamily="RobotoRegular" fontSize="16px" textAlign="center">

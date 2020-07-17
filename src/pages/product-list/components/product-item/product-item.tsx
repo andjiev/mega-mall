@@ -26,12 +26,12 @@ const ProductItem = (props: ProductItemProps) => {
             <StyledFlexGrid container item xs direction="column" justify="flex-end">
               {/*TODO THIS ISNT LIKE IN THE DESING NEEDS HEIGHT AND SPACE BETWEEN THE TEXTS */}
               <Grid item xs={12}>
-                <Typography variant="h4">{props.title}</Typography>
+                <Typography variant="h5">{props.title}</Typography>
                 {/* TODO this is not lined up to the top of the card :/ FIX IT  */}
               </Grid>
               <Grid item xs={12}>
                 <Box>
-                  <Typography variant="h3">{props.price}</Typography>
+                  <Typography variant="h5">{props.price}</Typography>
                 </Box>
                 <Box>
                   <Typography variant="body1" noWrap>
