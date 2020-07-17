@@ -17,7 +17,7 @@ const StyledMaterialCard = styled(MaterialCard)`
 `;
 
 const StyledCardMedia = styled(CardMedia)`
-  background-size: auto;
+  background-size: contain;
   background-position: top;
   height: 100%;
   min-height: 280px;

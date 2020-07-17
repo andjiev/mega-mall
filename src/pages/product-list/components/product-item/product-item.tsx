@@ -1,6 +1,5 @@
 import React from 'react';
-import { Card, Typography, Hidden, Grid, CardMedia, makeStyles, Theme, createStyles, CardContent } from '@material-ui/core';
-
+import { Typography, Grid } from '@material-ui/core';
 import { Box } from '@material-ui/core';
 import { StyledImage, StyledGrid, StyledGridLogo, StyledLogo, StyledLogoBox, StyledFlexGrid } from './product-item.styles';
 
@@ -26,12 +25,12 @@ const ProductItem = (props: ProductItemProps) => {
             <StyledFlexGrid container item xs direction="column" justify="flex-end">
               {/*TODO THIS ISNT LIKE IN THE DESING NEEDS HEIGHT AND SPACE BETWEEN THE TEXTS */}
               <Grid item xs={12}>
-                <Typography variant="h5">{props.title}</Typography>
+                <Typography variant="h4">{props.title}</Typography>
                 {/* TODO this is not lined up to the top of the card :/ FIX IT  */}
               </Grid>
               <Grid item xs={12}>
-                <Box>
-                  <Typography variant="h5">{props.price}</Typography>
+                <Box mb={2}>
+                  <Typography variant="h3">{props.price}</Typography>
                 </Box>
                 <Box>
                   <Typography variant="body1" noWrap>
