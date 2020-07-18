@@ -5,7 +5,6 @@ import { ListItemText, Box } from '@material-ui/core';
 const StyledSubMenu = styled(Box)`
   // background-color: ${props => props.theme.palette.primary.dark};
   // background-color: #fef3f4;
-  padding: 0;
   width: 100%;
   height: auto;
   overflow: hidden;
@@ -22,8 +21,8 @@ interface ISubmenuImage {
 }
 const SubmenuImage = styled(Box)`
   background-image: url(${(props: ISubmenuImage) => props.url});
-  background-size: auto;
-  height: 100vh;
+  background-size: contain;
+  height: 260px;
   width: 100%;
   background-repeat: no-repeat;
   margin-top: 5%;

@@ -51,7 +51,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     overflowY: 'hidden',
     width: '100%',
     zIndex: 10,
-    position: 'absolute'
+    position: 'absolute',
+    textAlign: 'left'
   },
   tabs: {
     borderRight: `1px solid #355C7C`,
@@ -64,7 +65,13 @@ const useStyles = makeStyles((theme: Theme) => ({
   tabLabel: {
     fontFamily: 'OswaldBold',
     fontSize: '14px',
-    textAlign: 'left'
+    textAlign: 'left',
+    alignItems: 'left'
+  },
+  subContainer: {
+    maxWidth: '1600px',
+    margin: '0 auto',
+    display: 'block'
   }
 }));
 
@@ -74,6 +81,7 @@ interface ISubMenuProps {
   categoryType?: CategoryTypes;
 
   onSubmenuChange: (value: boolean) => void;
+  onCategoryChange: (value: CategoryTypes) => void;
 }
 
 const SubMenu = (props: ISubMenuProps) => {
@@ -81,12 +89,6 @@ const SubMenu = (props: ISubMenuProps) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
-    event.preventDefault();
-    setValue(newValue);
-  };
-
-  //=========================
   const [submenuContent, setSubmenuContent] = useState<ISubmenuItem | undefined>(undefined);
 
   useEffect(() => {
@@ -95,52 +97,84 @@ const SubMenu = (props: ISubMenuProps) => {
     }
   }, [props.categoryType]);
 
+  const [categoryType, setCategoryType] = useState<CategoryTypes | undefined>(undefined);
+
+  const onCategoryChange = (type: CategoryTypes) => {
+    setCategoryType(type);
+    // this one indicates the submenu to render the proper content
+    props.onCategoryChange(type);
+  };
+
   return (
     <>
       <div className={classes.root}>
-        <Tabs orientation="vertical" variant="scrollable" value={value} onChange={handleChange} aria-label="Vertical tabs example" className={classes.tabs}>
-          {/* //TODO: Dynamicaly assign tabs */}
+        <Tabs orientation="vertical" value={props.categoryType} onChange={(event, value) => onCategoryChange(value)} aria-label="Main Categories" className={classes.tabs}>
           {menuItems.map((item, index) => {
-            return <Tab key={index} className={classes.tabLabel} label={item.title} {...a11yProps(index)} />;
+            //Make Tab with styledcomponents
+            return <Tab key={index} value={item.type} className={classes.tabLabel} label={item.title} {...a11yProps(index)} />;
           })}
         </Tabs>
 
-        <TabPanel className={classes.tabPanel} value={value} index={0}>
+        <TabPanel className={classes.tabPanel} value={props.categoryType} index={props.categoryType}>
           {submenuContent && (
             <StyledSubMenu>
-              <Container>
+              <Container className={classes.subContainer}>
                 <Box>
-                  <Grid container spacing={10} onMouseEnter={() => props.onSubmenuChange(true)} onMouseLeave={() => props.onSubmenuChange(false)}>
-                    <Grid item xs={3}>
-                      <List>
-                        <ListItem disableGutters>
-                          <StyledListItemText primary={submenuContent.data.left.title}></StyledListItemText>
-                        </ListItem>
-                        {submenuContent.data.left.items.map(item => (
-                          <ListItem key={item.id} disableGutters>
-                            <Link href="#">{item.title}</Link>
-                          </ListItem>
-                        ))}
-                      </List>
+                  <Grid container>
+                    <Grid item xs={8}>
+                      <Grid container item xs={12} spacing={10} onMouseEnter={() => props.onSubmenuChange(true)} onMouseLeave={() => props.onSubmenuChange(false)}>
+                        <Grid item xs={4}>
+                          <List>
+                            <ListItem disableGutters>
+                              <StyledListItemText primary={submenuContent.data.left.title}></StyledListItemText>
+                            </ListItem>
+                            {submenuContent.data.left.items.map(item => {
+                              return (
+                                <ListItem key={item.id} disableGutters>
+                                  <Link href="#">{item.title}</Link>
+                                </ListItem>
+                              );
+                            })}
+                          </List>
+                        </Grid>
+                        <Grid item xs={4}>
+                          <List>
+                            <ListItem disableGutters>
+                              <StyledListItemText primary={submenuContent.data.right.title}></StyledListItemText>
+                            </ListItem>
+                            {submenuContent.data.right.items.map(item => {
+                              return (
+                                <ListItem key={item.id} disableGutters>
+                                  <Link href="#">{item.title}</Link>
+                                </ListItem>
+                              );
+                            })}
+                          </List>
+                        </Grid>
+                        <Grid item xs={4}>
+                          <List>
+                            <ListItem disableGutters>
+                              <StyledListItemText primary={submenuContent.data.right.title}></StyledListItemText>
+                            </ListItem>
+                            {submenuContent.data.right.items.map(item => {
+                              return (
+                                <ListItem key={item.id} disableGutters>
+                                  <Link href="#">{item.title}</Link>
+                                </ListItem>
+                              );
+                            })}
+                          </List>
+                        </Grid>
+                      </Grid>
                     </Grid>
-                    <Grid item xs={3}>
-                      <List>
-                        <ListItem disableGutters>
-                          <StyledListItemText primary={submenuContent.data.right.title}></StyledListItemText>
-                        </ListItem>
-                        {submenuContent.data.right.items.map(item => (
-                          <ListItem key={item.id} disableGutters>
-                            <Link href="#">{item.title}</Link>
-                          </ListItem>
-                        ))}
-                      </List>
-                    </Grid>
-                    <Grid item xs={6}>
-                      {submenuContent.data.side.items.map(item => (
-                        <Box key={item.id}>
-                          <SubmenuImage key={item.id} url={item.url}></SubmenuImage>
-                        </Box>
-                      ))}
+                    <Grid item xs={4}>
+                      {submenuContent.data.side.items.map(item => {
+                        return (
+                          <Box key={item.id}>
+                            <SubmenuImage key={item.id} url={item.url}></SubmenuImage>
+                          </Box>
+                        );
+                      })}
                     </Grid>
                   </Grid>
                 </Box>

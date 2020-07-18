@@ -157,7 +157,7 @@ const submenuItems: ISubmenuItem[] = [
         ]
       },
       right: {
-        title: 'Спорт2',
+        title: 'Мода2',
         items: [
           {
             id: 1,
@@ -186,7 +186,7 @@ const submenuItems: ISubmenuItem[] = [
     type: CategoryTypes.Beauty,
     data: {
       left: {
-        title: 'Здравје и убавина',
+        title: 'Здравје и убавина 1',
         items: [
           {
             id: 1,
@@ -199,7 +199,7 @@ const submenuItems: ISubmenuItem[] = [
         ]
       },
       right: {
-        title: 'Спорт2',
+        title: 'Здравје и убавина 2',
         items: [
           {
             id: 1,
@@ -227,7 +227,7 @@ const submenuItems: ISubmenuItem[] = [
     type: CategoryTypes.Home,
     data: {
       left: {
-        title: 'Домакинство',
+        title: 'Домаќинство 1',
         items: [
           {
             id: 1,
@@ -240,7 +240,7 @@ const submenuItems: ISubmenuItem[] = [
         ]
       },
       right: {
-        title: 'Спорт2',
+        title: 'Домаќинство 2',
         items: [
           {
             id: 1,
@@ -269,7 +269,7 @@ const submenuItems: ISubmenuItem[] = [
     type: CategoryTypes.Services,
     data: {
       left: {
-        title: 'Услуги',
+        title: 'Услуги 1',
         items: [
           {
             id: 1,
@@ -283,7 +283,7 @@ const submenuItems: ISubmenuItem[] = [
       },
 
       right: {
-        title: 'Услуги',
+        title: 'Услуги 2',
         items: [
           {
             id: 1,
