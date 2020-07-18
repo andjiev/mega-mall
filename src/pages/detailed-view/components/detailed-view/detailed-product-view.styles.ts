@@ -16,7 +16,7 @@ const StyledGridContainer = styled(Grid)`
 const StyledStickyGridItem = styled(Grid)`
   position: -webkit-sticky;
   position: sticky;
-  top: 150px;
+  top: 0;
   height: 100%;
   z-index: 999;
 `;
