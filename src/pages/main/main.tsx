@@ -28,13 +28,12 @@ const _MainPage = (props: MainPageProps) => {
           <CardSlider />
         </Box>
         <Box mt={5} mb={5}>
-          <MainBanner />
+          <MainBanner size="xl" url="/assets/images/main/Main-slider.jpg" />
         </Box>
         <ProductGrid />
         <Box mt={5} mb={5}>
           <GiftCardGrid />
         </Box>
-
       </Container>
     </>
   );
