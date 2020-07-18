@@ -57,9 +57,14 @@ const useStyles = makeStyles((theme: Theme) => ({
     borderRight: `1px solid #355C7C`,
     overflow: 'visible'
   },
-  tabpanel: {
+  tabPanel: {
     padding: 0,
     width: '100%'
+  },
+  tabLabel: {
+    fontFamily: 'OswaldBold',
+    fontSize: '14px',
+    textAlign: 'left'
   }
 }));
 
@@ -95,20 +100,12 @@ const SubMenu = (props: ISubMenuProps) => {
       <div className={classes.root}>
         <Tabs orientation="vertical" variant="scrollable" value={value} onChange={handleChange} aria-label="Vertical tabs example" className={classes.tabs}>
           {/* //TODO: Dynamicaly assign tabs */}
-          {/* {menuItems.map((item, index) => {
-            <Tab label={item.title} {...a11yProps(index)} />
-          })} */}
-
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
-          <Tab label="Item Four" {...a11yProps(3)} />
-          <Tab label="Item Five" {...a11yProps(4)} />
-          <Tab label="Item Six" {...a11yProps(5)} />
-          <Tab label="Item Seven" {...a11yProps(6)} />
+          {menuItems.map((item, index) => {
+            return <Tab key={index} className={classes.tabLabel} label={item.title} {...a11yProps(index)} />;
+          })}
         </Tabs>
 
-        <TabPanel className={classes.tabpanel} value={value} index={0}>
+        <TabPanel className={classes.tabPanel} value={value} index={0}>
           {submenuContent && (
             <StyledSubMenu>
               <Container>
