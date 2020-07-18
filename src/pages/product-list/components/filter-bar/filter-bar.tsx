@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Grid, ButtonGroup, FormControl, Hidden } from '@material-ui/core';
+import { Grid, ButtonGroup, FormControl, Hidden, Typography } from '@material-ui/core';
 import { StyledButton, StyledSelect } from './filter-bar.styles';
 import { OrderTypes } from 'lib/enums';
 import { getTextForOrderType } from './filter-bar.utils';
@@ -13,10 +13,11 @@ const FilterBar = () => {
     return (
       <ButtonGroup color="secondary">
         <StyledButton isToggled={!isToggled} onClick={() => setToggled(!isToggled)}>
-          Производи
+          <Typography variant="h5">Производи</Typography>
+          {/* ADD TRANSLATION FOR THE BUTTON TEXT !!! */}
         </StyledButton>
         <StyledButton isToggled={isToggled} onClick={() => setToggled(!isToggled)}>
-          Продавници
+          <Typography variant="h5">Продавници</Typography>
         </StyledButton>
       </ButtonGroup>
     );
