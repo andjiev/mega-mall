@@ -31,7 +31,7 @@ const CategoryGrid = () => {
       <Box mt={3}>
         <Grid container spacing={3}>
           {cards.map(value => (
-            <Grid item key={value.id} xs={12} md={6} lg={4}>
+            <Grid item key={value.id} xs={6} md={6} lg={4}>
               <Card key={value.id} title={value.title} url={value.url} size="large">
                 <Box>
                   <Typography variant="subtitle1">
