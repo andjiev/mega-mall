@@ -1,32 +1,31 @@
 import React from 'react';
 
-import { Grid, Box } from '@material-ui/core';
+import { Grid, Box, Container } from '@material-ui/core';
 import { SearchBarContainer } from 'components/header/containers/search-bar';
 import { LanguagePickerContainer } from 'components/header/containers/language-picker';
-import { StyledContainer } from './top-bar.styles';
-import { StyledLink } from 'components/styled-link';
+import { StyledImage, StyledTypography } from './top-bar.styles';
 
 const TopBar = () => {
   return (
     <>
-      <StyledContainer>
-        <Box pt={3}>
-          <Grid container spacing={3}>
-            <Grid item container sm={1} justify="flex-end" alignItems="center">
-              {/* TODO: replace the whole box with logo */}
-              <Box component="span" color="white">
-                <StyledLink href={'/'}>Logo</StyledLink>
-              </Box>
+      <Container fixed>
+        <Box>
+          <Grid container justify="flex-end" alignItems="flex-end" spacing={2}>
+            <Grid item>
+              <StyledTypography variant="h6">Продавници</StyledTypography>
             </Grid>
-            <Grid item sm={10}>
-              <SearchBarContainer />
+            <Grid item>
+              <StyledTypography variant="h6">Fb</StyledTypography>
             </Grid>
-            <Grid item container sm={1} alignItems="center">
+            <Grid item>
+              <StyledTypography variant="h6">Insta</StyledTypography>
+            </Grid>
+            <Grid item>
               <LanguagePickerContainer />
             </Grid>
           </Grid>
         </Box>
-      </StyledContainer>
+      </Container>
     </>
   );
 };

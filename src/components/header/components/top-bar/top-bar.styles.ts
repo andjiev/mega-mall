@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
-import { Container } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
 
-const StyledContainer = styled(Container)`
-  max-width: 1530px;
+const StyledImage = styled.img``;
+const StyledTypography = styled(Typography)`
+  color: ${props => props.theme.palette.primary.main};
 `;
 
-export { StyledContainer };
+export { StyledImage, StyledTypography };
