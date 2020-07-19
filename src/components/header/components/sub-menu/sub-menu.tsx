@@ -140,7 +140,7 @@ const SubMenu = (props: ISubMenuProps) => {
                         <Grid item xs={4}>
                           <List>
                             <ListItem disableGutters>
-                              <StyledListItemText primary={submenuContent.data.right.title}></StyledListItemText>
+                              <StyledListItemText primary={submenuContent.data.center.title}></StyledListItemText>
                             </ListItem>
                             {submenuContent.data.right.items.map(item => {
                               return (
@@ -167,7 +167,8 @@ const SubMenu = (props: ISubMenuProps) => {
                         </Grid>
                       </Grid>
                     </Grid>
-                    <Grid item xs={4}>
+                    {/* TODO: replace the SubmenyImage component with the banner component */}
+                    {/* <Grid item xs={4}>
                       {submenuContent.data.side.items.map(item => {
                         return (
                           <Box key={item.id}>
@@ -175,7 +176,7 @@ const SubMenu = (props: ISubMenuProps) => {
                           </Box>
                         );
                       })}
-                    </Grid>
+                    </Grid> */}
                   </Grid>
                 </Box>
               </Container>
