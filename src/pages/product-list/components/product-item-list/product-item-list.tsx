@@ -29,7 +29,7 @@ const ProductItemList = (props: ShopsListProps) => {
         {currentPost.map(val => (
           <ListItem key={val.id} disableGutters={true} divider={true}>
             <StyledBox mt={1} mb={1}>
-              <ProductItem key={val.id} img={val.img} title={val.title} price={val.price} description={val.description} logo={val.logo}></ProductItem>
+              <ProductItem key={val.id} img={val.img} title={val.title} price={val.price} description={val.description} logo={val.logo} link={val.link}></ProductItem>
             </StyledBox>
           </ListItem>
         ))}
