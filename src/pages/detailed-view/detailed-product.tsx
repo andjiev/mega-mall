@@ -7,9 +7,7 @@ import { connect } from 'react-redux';
 import DetailedProductView from './components/detailed-view/detailed-product-view';
 import { Box, Grid, List, ListItem, Button, Typography, Link, Container } from '@material-ui/core';
 import { displayData } from './../product-list/components/display/display.data';
-
 import { CardSlider } from 'pages/main/components/card-slider';
-
 import { cardData } from './../main/components/card-slider/card-slider.data';
 import { MainBanner } from 'pages/main/components/main-banner';
 
@@ -48,10 +46,10 @@ const _DetailedProductPage = (props: DetailedProductProps) => {
         <Box mt={5}>
           <DetailedProductView />
         </Box>
+
         <Box m={5}>
           <CardSlider />
         </Box>
-
         <Box m={5}>
           <MainBanner />
         </Box>

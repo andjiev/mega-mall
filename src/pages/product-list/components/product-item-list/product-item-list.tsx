@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { List, ListItem } from '@material-ui/core';
+import { List, ListItem, Button } from '@material-ui/core';
 import ProductItem from './../product-item/product-item';
 import { StyledPagination, StyledBox } from './../display/display.styles';
 import { displayData } from './../display/display.data';
+import { StyledButton } from './product-item-list.styles';
 
-interface ShopsListProps {}
+interface ShopsListProps {
+  isPaging: 'prodList' | 'detailList';
+}
 
 const ProductItemList = (props: ShopsListProps) => {
   const [posts, setPosts] = useState(displayData);
@@ -13,6 +16,7 @@ const ProductItemList = (props: ShopsListProps) => {
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
   const currentPost = posts.slice(indexOfFirstPost, indexOfLastPost);
+
   var pages = 0;
   if (posts.length % postPerPage == 0) {
     pages = posts.length / postPerPage;
@@ -22,6 +26,30 @@ const ProductItemList = (props: ShopsListProps) => {
 
   const paginate = (event: React.ChangeEvent<unknown>, value: number) => {
     setCurrentPage(value);
+  };
+
+  const showMorePosts = () => {
+    setPostPerPage(postPerPage + 10);
+  };
+
+  const rednerPagination = () => {
+    const indexOfLastPost = currentPage * (postPerPage + 10);
+    const indexOfFirstPost = indexOfLastPost - postPerPage;
+    const currentPost = posts.slice(indexOfFirstPost, indexOfLastPost);
+    return (
+      <>
+        <StyledPagination count={pages} page={currentPage} onChange={paginate} />
+      </>
+    );
+  };
+  const rednerShowMoreBtn = () => {
+    return (
+      <>
+        <StyledButton variant="contained" color="secondary" onClick={showMorePosts}>
+          види повеќе
+        </StyledButton>
+      </>
+    );
   };
   return (
     <>
@@ -34,7 +62,8 @@ const ProductItemList = (props: ShopsListProps) => {
           </ListItem>
         ))}
       </List>
-      <StyledPagination count={pages} page={currentPage} onChange={paginate} />
+      {props.isPaging === 'prodList' ? rednerPagination() : rednerShowMoreBtn()}
+
       {/* TODO fix the part with min-height on the box so that the paginationt doesn't jump up lol */}
     </>
   );
