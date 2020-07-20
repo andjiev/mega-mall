@@ -3,6 +3,7 @@ import { Grid, Typography, Card, CardContent, Button, CardActions, Box, Hidden, 
 import { Detailedproduct } from './detailed-product-view.data';
 import { StyledImage, StyledStickyGridItem, StyledGridContainer, StyledCardContent, StyledBox } from './detailed-product-view.styles';
 import Display from './../../../product-list/components/display/display';
+import { ProductItemList } from 'pages/product-list/components/product-item-list';
 
 const DetailedProductView = () => {
   return (
@@ -45,7 +46,10 @@ const DetailedProductView = () => {
         {/* Now its done with z-index to go over the other list products for mobile so that way when we scroll downwards
         we still can compare the components stinn needs minor fixes has space on the top :)  */}
         <Grid item xs={12} md={7} lg={7}>
-          <Display />
+          <Box>{/* TODO add FILTER COMPONENT FOR DETAILED VIEW */}</Box>
+          <Box>
+            <ProductItemList isPaging="detailList" />
+          </Box>
           {/* This later should be updated by Davor in Display component to render differently on different pages, here we need
           a button "show more not pagination" */}
         </Grid>

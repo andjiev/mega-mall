@@ -11,7 +11,7 @@ const Display = () => {
           <TopBar />
         </Box>
         <Box mt={3}>
-          <ProductItemList></ProductItemList>
+          <ProductItemList isPaging="prodList"></ProductItemList>
         </Box>
         {/* <Box mt={3}>
           <ShopsList></ShopsList>
