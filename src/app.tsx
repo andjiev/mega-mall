@@ -8,6 +8,8 @@ import { bootstrapApp } from 'store/shared-store';
 import { ROUTES } from './consts';
 import { Box } from '@material-ui/core';
 import LoadingScreen from 'react-loading-screen';
+import DetailedProductView from 'pages/detailed-view/components/detailed-view/detailed-product-view';
+import _DetailedProductPage from 'pages/detailed-view/detailed-product';
 
 interface IApp {
   applicationBootstraped: boolean;
@@ -45,6 +47,7 @@ const _App: React.FC<IApp> = (props: IApp) => {
                 <Route exact path={ROUTES.MAIN} component={MainPage} />
                 <Route exact path={ROUTES.CATEGORY} component={CategoryPage} />
                 <Route path={ROUTES.LIST} component={ProductListPage} />
+                <Route path={ROUTES.PRODUCT} component={_DetailedProductPage} />
               </Switch>
             </Box>
             <Footer />

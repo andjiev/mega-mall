@@ -1,12 +1,12 @@
 {
   "mk-MK": {
     "translation": {
-      "EasyFind_Header_Services": "УСЛУГИ",
-      "EasyFind_Header_Technology": "ТЕХНОЛОГИЈА",
-      "EasyFind_Header_Sport": "СПОРТ",
-      "EasyFind_Header_Fashion": "МОДА",
-      "EasyFind_Header_Health": "УБАВИНА И ЗДРАВЈЕ",
-      "EasyFind_Header_Household": "ДОМАЌИНСТВО",
+      "EasyFind_Header_Services": "Услуги",
+      "EasyFind_Header_Technology": "Технологија",
+      "EasyFind_Header_Sport": "Спорт",
+      "EasyFind_Header_Fashion": "Мода",
+      "EasyFind_Header_Health": "Убавина и Здравје",
+      "EasyFind_Header_Household": "Домаќинство",
       "EasyFind_CategotyGrid_Technology": "Технологија",
       "EasyFind_CategotyGrid_Computers": "КОМПЈУТЕРИ",
       "EasyFind_CategotyGrid_Computer_Equipment": "КОМПЈУТЕРСКА ОПРЕМА",
@@ -115,12 +115,12 @@
   "en-GB": {
     "translation": {
       "EasyFind_Navigation_Manufacturer": "Manufacturer",
-      "EasyFind_Header_Services": "SERVICES",
-      "EasyFind_Header_Technology": "TECHNOLOGY",
-      "EasyFind_Header_Sport": "SPORT",
-      "EasyFind_Header_Fashion": "FASHION",
-      "EasyFind_Header_Health": "BEAUTY AND HEALTH",
-      "EasyFind_Header_Household": "HOUSEHOLD",
+      "EasyFind_Header_Services": "Services",
+      "EasyFind_Header_Technology": "Technology",
+      "EasyFind_Header_Sport": "Sport",
+      "EasyFind_Header_Fashion": "Fashion",
+      "EasyFind_Header_Health": "Beauty and Fashion",
+      "EasyFind_Header_Household": "Household",
       "EasyFind_CategotyGrid_Technology": "Technology",
       "EasyFind_CategotyGrid_Computers": "COMPUTERS",
       "EasyFind_CategotyGrid_Computer_Equipment": "COMPUTER EQUIPMENT",

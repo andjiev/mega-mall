@@ -29,9 +29,10 @@ const StyledPicker = styled(Box)`
 // this is for showing the border-bottom of the StyledDiplay
 
 const StyledBox = styled(Box)`
-  color: #ffffff;
+  color: ${props => props.theme.palette.primary.main};
   cursor: pointer;
   transition: 0.3s;
+  display: inline-block;
 
   &:hover {
     color: ${props => props.theme.palette.secondary.main};

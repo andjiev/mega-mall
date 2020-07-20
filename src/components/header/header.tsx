@@ -10,6 +10,9 @@ import { TopBar } from './components/top-bar';
 import { Menu } from './components/menu';
 import { SubMenu } from './components/sub-menu';
 import { CategoryTypes } from 'lib/enums';
+import MainLogo from './components/logo/logo';
+import { Grid, Container } from '@material-ui/core';
+import { SearchBarContainer } from './containers/search-bar';
 
 interface IHeaderProps {
   categoryType?: CategoryTypes;
@@ -24,10 +27,20 @@ const Header = (props: IHeaderProps) => {
   return (
     <>
       <StyledHeader>
-        <TopBar />
-        <Menu isActive={props.isActive} onCategoryChange={props.onCategoryChange} onHideSubmenuChange={props.onHideSubmenuChange} />
+        <Container fixed>
+          <TopBar />
+          <Grid container>
+            <Grid item sm={2}>
+              <MainLogo />
+            </Grid>
+            <Grid item sm={10}>
+              <SearchBarContainer />
+              <Menu isActive={props.isActive} onCategoryChange={props.onCategoryChange} onHideSubmenuChange={props.onHideSubmenuChange} />
+            </Grid>
+          </Grid>
+        </Container>
       </StyledHeader>
-      {props.isActive && <SubMenu categoryType={props.categoryType} onSubmenuChange={props.onSubmenuChange} />}
+      {props.isActive && <SubMenu categoryType={props.categoryType} onSubmenuChange={props.onSubmenuChange} onCategoryChange={props.onCategoryChange} />}
     </>
   );
 };

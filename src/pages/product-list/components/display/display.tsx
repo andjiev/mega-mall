@@ -2,7 +2,6 @@ import React from 'react';
 import { Box } from '@material-ui/core';
 import { TopBar } from '../top-bar';
 import ProductItemList from './../product-item-list/product-item-list';
-import ShopsList from './../shops-list/shops-list';
 
 const Display = () => {
   return (
@@ -12,7 +11,7 @@ const Display = () => {
           <TopBar />
         </Box>
         <Box mt={3}>
-          <ProductItemList></ProductItemList>
+          <ProductItemList isPaging="prodList"></ProductItemList>
         </Box>
         {/* <Box mt={3}>
           <ShopsList></ShopsList>
