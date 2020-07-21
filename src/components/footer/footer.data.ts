@@ -19,143 +19,143 @@ const footerItems: IFooterItem[] = [
     },
     links: [
       {
-        title: translate('EasyFind_Footer_WebSpot', `ВЕБСПОТ | ТА ВЕБСПОТ ДОО`),
+        title: translate('MegaMall_Footer_WebSpot', `ВЕБСПОТ | ТА ВЕБСПОТ ДОО`),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: translate('EasyFind_Footer_Header', 'Следете не'),
+      title: translate('MegaMall_Footer_Header', 'Следете не'),
       link: '#'
     },
     links: [
       {
-        title: translate('EasyFind_Footer_Facebook', 'Facebook'),
+        title: translate('MegaMall_Footer_Facebook', 'Facebook'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Instagram', 'Instagram'),
+        title: translate('MegaMall_Footer_Instagram', 'Instagram'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Footer_LinkedIn', 'LinkedIn'),
+        title: translate('MegaMall_Footer_LinkedIn', 'LinkedIn'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: translate('EasyFind_Footer_Technology', 'Технологија'),
+      title: translate('MegaMall_Footer_Technology', 'Технологија'),
       link: '#'
     },
     links: [
       {
-        title: translate('EasyFind_Footer_Computer', 'Компјутери'),
+        title: translate('MegaMall_Footer_Computer', 'Компјутери'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Computer_Equipment', 'Компјутерска опрема'),
+        title: translate('MegaMall_Footer_Computer_Equipment', 'Компјутерска опрема'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Mobile', 'Мобилни телефони'),
+        title: translate('MegaMall_Footer_Mobile', 'Мобилни телефони'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: translate('EasyFind_Footer_Sport', 'Спорт'),
+      title: translate('MegaMall_Footer_Sport', 'Спорт'),
       link: '#'
     },
     links: [
       {
-        title: translate('EasyFind_Footer_Male_Clothes', 'Машка облека'),
+        title: translate('MegaMall_Footer_Male_Clothes', 'Машка облека'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Female_Clothes', 'Женска облека'),
+        title: translate('MegaMall_Footer_Female_Clothes', 'Женска облека'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Sport_Wear', 'Спортска опрема'),
+        title: translate('MegaMall_Footer_Sport_Wear', 'Спортска опрема'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: translate('EasyFind_Footer_Fashion', 'Мода'),
+      title: translate('MegaMall_Footer_Fashion', 'Мода'),
       link: '#'
     },
     links: [
       {
-        title: translate('EasyFind_Footer_Male', 'Машка облека'),
+        title: translate('MegaMall_Footer_Male', 'Машка облека'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Female', 'Женска облека'),
+        title: translate('MegaMall_Footer_Female', 'Женска облека'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Shoes', 'Обувки'),
+        title: translate('MegaMall_Footer_Shoes', 'Обувки'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: translate('EasyFind_Footer_Beauty_Health', 'Убавина и здравје'),
+      title: translate('MegaMall_Footer_Beauty_Health', 'Убавина и здравје'),
       link: '#'
     },
     links: [
       {
-        title: translate('EasyFind_Footer_Cosmetics', 'Козметика'),
+        title: translate('MegaMall_Footer_Cosmetics', 'Козметика'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Perfumes', 'Парфеми'),
+        title: translate('MegaMall_Footer_Perfumes', 'Парфеми'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: translate('EasyFind_Footer_Household', 'Домаќинство'),
+      title: translate('MegaMall_Footer_Household', 'Домаќинство'),
       link: '#'
     },
     links: [
       {
-        title: translate('EasyFind_Footer_Home_Equipment', 'Апарати за домаќинство'),
+        title: translate('MegaMall_Footer_Home_Equipment', 'Апарати за домаќинство'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Home_Enviroment', 'Бела техника'),
+        title: translate('MegaMall_Footer_Home_Enviroment', 'Бела техника'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Home_Garden', 'Дом и градина'),
+        title: translate('MegaMall_Footer_Home_Garden', 'Дом и градина'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: translate('EasyFind_Footer_Services', 'Услуги'),
+      title: translate('MegaMall_Footer_Services', 'Услуги'),
       link: '#'
     },
     links: [
       {
-        title: translate('EasyFind_Footer_Food_Drinks', 'Храна и пијалоци'),
+        title: translate('MegaMall_Footer_Food_Drinks', 'Храна и пијалоци'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Education', 'Едукација'),
+        title: translate('MegaMall_Footer_Education', 'Едукација'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Footer_Culture_Events', 'Култура и настани'),
+        title: translate('MegaMall_Footer_Culture_Events', 'Култура и настани'),
         link: '#'
       }
     ]

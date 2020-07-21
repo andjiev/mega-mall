@@ -12,113 +12,113 @@ interface ILinkItem {
 const filterData: IFilterItem[] = [
   {
     header: {
-      title: translate('EasyFind_Mobile_Filter_Sort', 'Сортирај')
+      title: translate('MegaMall_Mobile_Filter_Sort', 'Сортирај')
     },
     links: [
       {
-        title: translate('EasyFind_Mobile_Filter_High', 'Висока > ниска'),
+        title: translate('MegaMall_Mobile_Filter_High', 'Висока > ниска'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_Low', 'Ниска > висока'),
+        title: translate('MegaMall_Mobile_Filter_Low', 'Ниска > висока'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: translate('EasyFind_Mobile_Filter_Manufacturer', 'Производител')
+      title: translate('MegaMall_Mobile_Filter_Manufacturer', 'Производител')
     },
     links: [
       {
-        title: translate('EasyFind_Mobile_Filter_Acer', 'Acer'),
+        title: translate('MegaMall_Mobile_Filter_Acer', 'Acer'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_Apple', 'Apple'),
+        title: translate('MegaMall_Mobile_Filter_Apple', 'Apple'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_Allienware', 'Allienware'),
+        title: translate('MegaMall_Mobile_Filter_Allienware', 'Allienware'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_Dell', 'Dell'),
+        title: translate('MegaMall_Mobile_Filter_Dell', 'Dell'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_HP', 'HP'),
+        title: translate('MegaMall_Mobile_Filter_HP', 'HP'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_Lenovo', 'Lenovo'),
+        title: translate('MegaMall_Mobile_Filter_Lenovo', 'Lenovo'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_Skytech', 'Skytech Gaming'),
+        title: translate('MegaMall_Mobile_Filter_Skytech', 'Skytech Gaming'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_Samsung', 'Samsung'),
+        title: translate('MegaMall_Mobile_Filter_Samsung', 'Samsung'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_Toshiba', 'Toshiba'),
+        title: translate('MegaMall_Mobile_Filter_Toshiba', 'Toshiba'),
         link: '#'
       }
     ]
   },
   {
     header: {
-      title: translate('EasyFind_Mobile_Filter_Shops', 'Продавници')
+      title: translate('MegaMall_Mobile_Filter_Shops', 'Продавници')
     },
     links: [
       {
-        title: translate('EasyFind_Mobile_Filter_Anhoch', 'Анхоч'),
+        title: translate('MegaMall_Mobile_Filter_Anhoch', 'Анхоч'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_Setec', 'Сетек'),
+        title: translate('MegaMall_Mobile_Filter_Setec', 'Сетек'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_Neptun', 'Нептун'),
+        title: translate('MegaMall_Mobile_Filter_Neptun', 'Нептун'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_Niko', 'Нико компјутери'),
+        title: translate('MegaMall_Mobile_Filter_Niko', 'Нико компјутери'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_Makpetrol', 'Макпетрол Dell'),
+        title: translate('MegaMall_Mobile_Filter_Makpetrol', 'Макпетрол Dell'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_Techno', 'Техно маркет'),
+        title: translate('MegaMall_Mobile_Filter_Techno', 'Техно маркет'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_Premium', 'Премиум компјутери'),
+        title: translate('MegaMall_Mobile_Filter_Premium', 'Премиум компјутери'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_Wort', 'Вортекс компјутери'),
+        title: translate('MegaMall_Mobile_Filter_Wort', 'Вортекс компјутери'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_Deka', 'Дека електроникс'),
+        title: translate('MegaMall_Mobile_Filter_Deka', 'Дека електроникс'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_Maks', 'Макс компјутери'),
+        title: translate('MegaMall_Mobile_Filter_Maks', 'Макс компјутери'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_Elektro', 'Електро Механика'),
+        title: translate('MegaMall_Mobile_Filter_Elektro', 'Електро Механика'),
         link: '#'
       },
       {
-        title: translate('EasyFind_Mobile_Filter_DDStore', 'DDStore LTD'),
+        title: translate('MegaMall_Mobile_Filter_DDStore', 'DDStore LTD'),
         link: '#'
       }
     ]

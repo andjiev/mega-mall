@@ -107,7 +107,7 @@ const SubMenu = (props: ISubMenuProps) => {
 
   return (
     <>
-      <div className={classes.root}>
+      <Box className={classes.root} onMouseEnter={() => props.onSubmenuChange(true)} onMouseLeave={() => props.onSubmenuChange(false)}>
         <Tabs orientation="vertical" value={props.categoryType} onChange={(event, value) => onCategoryChange(value)} aria-label="Main Categories" className={classes.tabs}>
           {menuItems.map((item, index) => {
             //Make Tab with styledcomponents
@@ -122,7 +122,7 @@ const SubMenu = (props: ISubMenuProps) => {
                 <Box>
                   <Grid container>
                     <Grid item xs={8}>
-                      <Grid container item xs={12} spacing={10} onMouseEnter={() => props.onSubmenuChange(true)} onMouseLeave={() => props.onSubmenuChange(false)}>
+                      <Grid container item xs={12} spacing={10}>
                         <Grid item xs={4}>
                           <List>
                             <ListItem disableGutters>
@@ -183,7 +183,7 @@ const SubMenu = (props: ISubMenuProps) => {
             </StyledSubMenu>
           )}
         </TabPanel>
-      </div>
+      </Box>
     </>
   );
 };

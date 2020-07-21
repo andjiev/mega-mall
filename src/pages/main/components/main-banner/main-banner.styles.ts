@@ -10,7 +10,7 @@ const MainBannerImage = styled(Box)`
   background-image: url(${(props: IMainBanner) => props.url});
   background-repeat: no-repeat;
   background-size: cover;
-  height: 350px;
+  height: 35vh;
   width: 100%;
 
   ${props => props.theme.breakpoints.down('md')} {
