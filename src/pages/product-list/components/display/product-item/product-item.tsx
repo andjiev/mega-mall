@@ -3,7 +3,7 @@ import { Typography, Grid } from '@material-ui/core';
 import { Box } from '@material-ui/core';
 import { StyledImage, StyledGrid, StyledGridLogo, StyledLogo, StyledLogoBox, StyledFlexGrid } from './product-item.styles';
 
-interface ProductItemProps {
+export interface IProductItem {
   img: string;
   link?: string;
   title: string;
@@ -12,10 +12,10 @@ interface ProductItemProps {
   logo: string;
 }
 
-const ProductItem = (props: ProductItemProps) => {
+const ProductItem = (props: IProductItem) => {
   return (
     <>
-      <StyledGrid container direction="row" justify="flex-start" alignItems="flex-start" spacing={2} onClick={() => (window.location.href = props.link!)}>
+      <StyledGrid container direction="row" justify="flex-start" alignItems="flex-start" spacing={2}>
         <Grid item xs={2}>
           <Box>
             <StyledImage src={props.img} />

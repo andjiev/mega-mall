@@ -1,14 +1,15 @@
 import React from 'react';
 import { Box } from '@material-ui/core';
-import { TopBar } from '../top-bar';
-import ProductItemList from './../product-item-list/product-item-list';
+
+import DisplayHeader from './components/display-header/display-header';
+import { ProductItemList } from './product-item-list';
 
 const Display = () => {
   return (
     <>
       <Box p={3}>
         <Box>
-          <TopBar />
+          <DisplayHeader />
         </Box>
         <Box mt={3}>
           <ProductItemList isPaging="prodList"></ProductItemList>

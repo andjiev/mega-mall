@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
 import { Grid, ButtonGroup, FormControl, Hidden, Typography } from '@material-ui/core';
-import { StyledButton, StyledSelect } from './filter-bar.styles';
+import { StyledButton, StyledSelect } from './desktop-filter.styles';
 import { OrderTypes } from 'lib/enums';
-import { getTextForOrderType } from './filter-bar.utils';
+import { getTextForOrderType } from './desktop-filter.utils';
 
-const FilterBar = () => {
+const DesktopFilter = () => {
   const [orderType, setOrderType] = React.useState(OrderTypes.PriceAscending);
   const [isToggled, setToggled] = useState(false);
 
@@ -59,4 +59,4 @@ const FilterBar = () => {
   );
 };
 
-export default FilterBar;
+export default DesktopFilter;

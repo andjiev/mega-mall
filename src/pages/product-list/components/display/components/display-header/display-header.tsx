@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { Typography, Box, Grid, Hidden } from '@material-ui/core';
-import { FilterBar } from '../filter-bar';
-import { MobileFilter } from '../mobile-filter';
+import { DesktopFilter } from './components/desktop-filter';
+import MobileFilter from './components/mobile-filter/mobile-filter';
 
-const TopBar = () => {
+const DisplayHeader = () => {
   return (
     <>
       <Box>
@@ -21,7 +21,7 @@ const TopBar = () => {
               </Box>
             </Hidden>
             <Grid container>
-              <FilterBar />
+              <DesktopFilter />
             </Grid>
           </Grid>
         </Grid>
@@ -30,4 +30,4 @@ const TopBar = () => {
   );
 };
 
-export default TopBar;
+export default DisplayHeader;
