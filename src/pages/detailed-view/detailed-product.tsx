@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { BreadCrumbs } from 'components/breadcrumbs';
+import { BreadCrumbs } from './../../components/breadcrumbs';
 import { RouteComponentProps } from 'react-router';
-import { AppDispatch } from 'index';
-import ApplicationState from 'store/application-store';
+import { AppDispatch } from './../../index';
+import ApplicationState from './../../store/application-store';
 import { connect } from 'react-redux';
 import DetailedProductView from './components/detailed-view/detailed-product-view';
 import { Box, Grid, List, ListItem, Button, Typography, Link, Container } from '@material-ui/core';
 import { displayData } from '../product-list/components/display/product-item-list/product-item-list.data';
-import { CardSlider } from 'pages/main/components/card-slider';
+import { CardSlider } from './../main/components/card-slider';
 import { cardData } from './../main/components/card-slider/card-slider.data';
-import { MainBanner } from 'pages/main/components/main-banner';
+import { MainBanner } from './../main/components/main-banner';
 
 interface DetailedProductProps extends RouteComponentProps {}
 
@@ -20,12 +20,6 @@ const _DetailedProductPage = (props: DetailedProductProps) => {
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
   const currentPost = posts.slice(indexOfFirstPost, indexOfLastPost);
-
-  // const useStyles = makeStyles((theme: Theme) => ({
-  //  ul: {
-  //    justifyContent: ''
-  //  }
-  // }));
 
   var pages = 0;
   if (posts.length % postPerPage == 0) {

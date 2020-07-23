@@ -5,7 +5,7 @@ import { StyledImage, StyledStickyGridItem, StyledGridContainer, StyledCardConte
 import ProductItemList from 'pages/product-list/components/display/product-item-list/product-item-list';
 import { IProductItem } from 'pages/product-list/components/display/product-item/product-item';
 
-const DetailedProductView = (item: IProductItem) => {
+const DetailedProductView = () => {
   return (
     <>
       <StyledGridContainer container>
