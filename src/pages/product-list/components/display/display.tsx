@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@material-ui/core';
 
 import DisplayHeader from './components/display-header/display-header';
-import ProductItemList from './product-item-list/product-item-list';
+import { ProductItemList } from './product-item-list';
 
 const Display = () => {
   return (

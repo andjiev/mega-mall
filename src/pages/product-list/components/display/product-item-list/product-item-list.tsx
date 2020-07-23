@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { List, ListItem, Button } from '@material-ui/core';
-import ProductItem from './../product-item/product-item';
 import { displayData } from './product-item-list.data';
 import { StyledButton } from './product-item-list.styles';
 import { StyledPagination, StyledBox } from '../display.styles';
+import { ProductItem } from './../product-item';
 import { generatePath } from 'react-router';
-import { ROUTES } from 'consts/routes';
+import { ROUTES } from '../../../../../consts';
 
 interface ShopsListProps {
   isPaging: 'prodList' | 'detailList';

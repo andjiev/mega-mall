@@ -2,8 +2,7 @@ import React from 'react';
 import { Grid, Typography, Card, CardContent, Button, CardActions, Box, Hidden, List, ListItem } from '@material-ui/core';
 import { Detailedproduct } from './detailed-product-view.data';
 import { StyledImage, StyledStickyGridItem, StyledGridContainer, StyledCardContent, StyledBox } from './detailed-product-view.styles';
-import ProductItemList from 'pages/product-list/components/display/product-item-list/product-item-list';
-import { IProductItem } from 'pages/product-list/components/display/product-item/product-item';
+import ProductItemList from '../../../product-list/components/display/product-item-list/product-item-list';
 
 const DetailedProductView = () => {
   return (

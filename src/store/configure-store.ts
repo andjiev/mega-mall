@@ -4,7 +4,7 @@ import { History } from 'history';
 import { reducers } from './root-reducer';
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 
-function configureEasyFindStore(history: History) {
+function configureMegaMallStore(history: History) {
   const middleware = [...getDefaultMiddleware(), routerMiddleware(history)];
 
   const store = configureStore({
@@ -21,4 +21,4 @@ function getRootReducer(history: History) {
   });
 }
 
-export default configureEasyFindStore;
+export default configureMegaMallStore;
