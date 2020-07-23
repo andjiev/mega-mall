@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 import { Card, CardMedia, CardContent, Typography, Grid } from '@material-ui/core';
-import SubcategoryCard from '../../../category/components/subcategory-card/subcategory-card';
 import { shopsData } from './shops-list.data';
 import Pagination from '@material-ui/lab/Pagination';
-import { StyledPagination } from './../display/display.styles';
+import SubcategoryCard from 'pages/category/components/subcategory-card/subcategory-card';
+import { StyledPagination } from '../display.styles';
 
 interface ShopsListProps {}
 
