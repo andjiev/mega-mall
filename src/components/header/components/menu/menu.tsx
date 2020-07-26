@@ -24,21 +24,19 @@ const HomeCenterMenu = (props: IMenuProps) => {
   };
 
   return (
-    <Container>
-      <Box>
-        <Grid container justify="space-between">
-          {menuItems.map(item => (
-            <Grid key={item.type} item>
-              <StyledBox pt={2} pb={2} isActive={props.isActive && categoryType === item.type} onMouseEnter={() => onCategoryChange(item.type)} onMouseLeave={() => props.onHideSubmenuChange()}>
-                <Typography variant="h6">
-                  <StyledLink href={item.link}>{item.title}</StyledLink>
-                </Typography>
-              </StyledBox>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-    </Container>
+    <Box>
+      <Grid container justify="flex-start" spacing={2}>
+        {menuItems.map(item => (
+          <Grid key={item.type} item>
+            <StyledBox pt={1} pb={1} isActive={props.isActive && categoryType === item.type} onMouseEnter={() => onCategoryChange(item.type)} onMouseLeave={() => props.onHideSubmenuChange()}>
+              <Typography variant="h6">
+                <StyledLink href={item.link}>{item.title}</StyledLink>
+              </Typography>
+            </StyledBox>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
   );
 };
 

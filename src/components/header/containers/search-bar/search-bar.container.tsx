@@ -24,7 +24,6 @@ const SearchBar = (props: IProps) => {
           {/* TODO: Center text in textField */}
           <StyledTextField
             fullWidth
-            variant="filled"
             type="text"
             placeholder="Пребарај"
             value={props.searchText}
@@ -34,7 +33,9 @@ const SearchBar = (props: IProps) => {
             InputProps={{
               disableUnderline: true
             }}
-          ></StyledTextField>
+          >
+            <StyledButton>ButtonChe</StyledButton>
+          </StyledTextField>
         </Grid>
       </Grid>
     </>

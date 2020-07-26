@@ -9,15 +9,15 @@ const StyledImage = styled(Box)`
   background-image: url(${(props: IBox) => props.src});
   background-size: cover;
   width: 100%;
-  height: 700px;
+  height: 60vh;
 
   ${props => props.theme.breakpoints.down('sm')} {
-    height: 500px;
+    height: 40vh;
   }
 `;
 
 const StyledButton = styled(Button)`
-  height: 54px;
+  height: 50px;
 `;
 
 const StyledContainer = styled(Container)`

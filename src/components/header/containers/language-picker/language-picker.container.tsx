@@ -5,7 +5,7 @@ import { AppDispatch } from 'index';
 import ApplicationState from 'store/application-store';
 import * as HeaderStore from 'store/header-store';
 
-import { Box, List, ListItem } from '@material-ui/core';
+import { Box, List, ListItem, Typography } from '@material-ui/core';
 import { formatCulture, formatLanguage } from './language-picker.utils';
 import { StyledPicker, StyledImage, StyledDisplay, StyledBox } from './language-picker.styles';
 import { languages } from './language-picker.data';
@@ -23,29 +23,11 @@ export const LanguagePicker = (props: ILanguagePickerProps) => {
   return (
     <>
       <Box>
-        <Box pt={1} pb={1} onMouseEnter={() => setShowPicker(true)} onMouseLeave={() => setShowPicker(false)}>
-          <StyledDisplay pb={1} component="span" color="white" isActive={showPicker || pickerActive}>
-            {props.language}
-          </StyledDisplay>
-        </Box>
-        {(showPicker || pickerActive) && (
-          <Box onMouseEnter={() => setPickerActive(true)} onMouseLeave={() => setPickerActive(false)}>
-            <StyledPicker>
-              <List disablePadding>
-                {languages.map((lang, index) => (
-                  <StyledBox key={index} onClick={() => props.onLanguageChange(lang.name)}>
-                    <ListItem>
-                      <StyledImage src={lang.imageSrc} />
-                      <Box pl={2} component="span">
-                        {lang.name}
-                      </Box>
-                    </ListItem>
-                  </StyledBox>
-                ))}
-              </List>
-            </StyledPicker>
-          </Box>
-        )}
+        {languages.map((lang, index) => (
+          <StyledBox key={index} onClick={() => props.onLanguageChange(lang.name)}>
+            <Typography variant="h6">{index === 0 ? `${lang.name + ' | '}` : lang.name}</Typography>
+          </StyledBox>
+        ))}
       </Box>
     </>
   );
