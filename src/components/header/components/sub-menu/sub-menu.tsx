@@ -9,6 +9,7 @@ import { submenuItems, ISubmenuItem } from './sub-menu.data';
 import { StyledLink } from 'components/styled-link';
 import { CategoryTypes } from 'lib/enums';
 import { menuItems } from './../menu/menu.data';
+import MainBanner from 'pages/main/components/main-banner/main-banner';
 
 //Tab panels
 
@@ -167,16 +168,10 @@ const SubMenu = (props: ISubMenuProps) => {
                         </Grid>
                       </Grid>
                     </Grid>
-                    {/* TODO: replace the SubmenyImage component with the banner component */}
-                    {/* <Grid item xs={4}>
-                      {submenuContent.data.side.items.map(item => {
-                        return (
-                          <Box key={item.id}>
-                            <SubmenuImage key={item.id} url={item.url}></SubmenuImage>
-                          </Box>
-                        );
-                      })}
-                    </Grid> */}
+
+                    <Grid item xs={4}>
+                      <MainBanner size="menu" bgColor="#FEF3F4" imgSource="/assets/images/main/Najnovite-patiki-na-nike.jpg" />
+                    </Grid>
                   </Grid>
                 </Box>
               </Container>
