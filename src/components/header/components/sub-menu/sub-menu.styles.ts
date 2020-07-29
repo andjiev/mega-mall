@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { ListItemText, Box } from '@material-ui/core';
 
 const StyledSubMenu = styled(Box)`
-  // background-color: ${props => props.theme.palette.primary.dark};
-  // background-color: #fef3f4;
+  background-color: #f0f5ff;
   width: 100%;
   height: auto;
   overflow: hidden;
@@ -27,5 +26,8 @@ const SubmenuImage = styled(Box)`
   background-repeat: no-repeat;
   margin-top: 5%;
 `;
+const StyledBox = styled(Box)`
+  background-color: #f0f5ff;
+`;
 
-export { StyledSubMenu, StyledListItemText, SubmenuImage };
+export { StyledSubMenu, StyledListItemText, SubmenuImage, StyledBox };
