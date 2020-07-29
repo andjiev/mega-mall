@@ -12,7 +12,7 @@ const StyledCopyright = styled(Box)`
 `;
 
 const StyledFooter = styled(Box)`
-  background: #355c7c;
+  background: #193364;
 `;
 
 const StyledDivider = styled(Divider)`
