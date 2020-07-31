@@ -18,7 +18,7 @@ const StyledStickyGridItem = styled(Grid)`
   position: sticky;
   top: 0;
   height: 100%;
-  z-index: 999;
+  z-index: 4;
 `;
 const StyledCardContent = styled(CardContent)`
   display: flex;

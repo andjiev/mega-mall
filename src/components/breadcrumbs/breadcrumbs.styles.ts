@@ -7,7 +7,7 @@ const StyledBox = styled(Box)`
   position: absolute;
   width: 100%;
   height: 45px;
-  z-index: 800;
+  z-index: 4;
 `;
 
 export { StyledBox };
