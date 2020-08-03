@@ -19,6 +19,9 @@ const StyledStickyGridItem = styled(Grid)`
   top: 0;
   height: 100%;
   z-index: 4;
+  ${props => props.theme.breakpoints.down('sm')} {
+    padding: 0 !important;
+  }
 `;
 const StyledCardContent = styled(CardContent)`
   display: flex;
