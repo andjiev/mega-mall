@@ -9,7 +9,7 @@ import { submenuItems, ISubmenuItem } from './sub-menu.data';
 import { StyledLink } from 'components/styled-link';
 import { CategoryTypes } from 'lib/enums';
 import { menuItems } from './../menu/menu.data';
-import MainBanner from 'pages/main/components/main-banner/main-banner';
+import Banner from 'components/banner/banner';
 
 //Tab panels
 
@@ -44,7 +44,7 @@ function a11yProps(index: any) {
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: '#fef3f4',
+    backgroundColor: '#F0F5FF',
     display: 'flex',
     flexDirecation: 'row',
     height: 300,
@@ -55,9 +55,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     position: 'absolute',
     textAlign: 'left'
   },
+  wrapper: {
+    alignItems: 'left'
+  },
   tabs: {
     borderRight: `1px solid #355C7C`,
-    overflow: 'visible'
+    overflow: 'visible',
+    justifyContent: 'flex-start'
   },
   tabPanel: {
     padding: 0,
@@ -112,7 +116,12 @@ const SubMenu = (props: ISubMenuProps) => {
         <Tabs orientation="vertical" value={props.categoryType} onChange={(event, value) => onCategoryChange(value)} aria-label="Main Categories" className={classes.tabs}>
           {menuItems.map((item, index) => {
             //Make Tab with styledcomponents
-            return <Tab key={index} value={item.type} className={classes.tabLabel} label={item.title} {...a11yProps(index)} />;
+            return (
+              <>
+                {/* TODO: Insert tab icons from Invision && align labels to the left*/}
+                <Tab key={index} value={item.type} className={classes.tabLabel} label={item.title} {...a11yProps(index)} style={{ alignItems: 'left' }} />
+              </>
+            );
           })}
         </Tabs>
 
@@ -170,7 +179,9 @@ const SubMenu = (props: ISubMenuProps) => {
                     </Grid>
 
                     <Grid item xs={4}>
-                      <MainBanner size="menu" bgColor="#FEF3F4" imgSource="/assets/images/main/Najnovite-patiki-na-nike.jpg" />
+                      <Box mt={4}>
+                        <Banner size="menu" bgColor="#F0F5FF" imgSource="/assets/images/main/Najnovite-patiki-na-nike.jpg" />
+                      </Box>
                     </Grid>
                   </Grid>
                 </Box>

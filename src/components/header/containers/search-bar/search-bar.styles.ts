@@ -8,6 +8,10 @@ const StyledTextField = styled(TextField)`
   min-height: 50px;
   border-radius: 5px;
   border: 1px solid #355c7c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
 `;
 
 const StyledButton = styled(Button)`

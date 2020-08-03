@@ -31,7 +31,6 @@ const CardSlider = () => {
       <Box mt={3} pb={3}>
         <Carousel
           arrows
-          partialVisbile
           infinite
           minimumTouchDrag={80}
           swipeable
@@ -41,7 +40,7 @@ const CardSlider = () => {
                 max: 3000,
                 min: 1024
               },
-              items: 4,
+              items: 5,
               partialVisibilityGutter: 40,
               slidesToSlide: 1
             },

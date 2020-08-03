@@ -6,7 +6,7 @@ import ApplicationState from '../../../../store/application-store';
 import * as SharedStore from '../../../../store/shared-store';
 
 import { StyledTextField } from './search-bar.styles';
-import { Grid, makeStyles } from '@material-ui/core';
+import { Grid, makeStyles, InputAdornment, IconButton } from '@material-ui/core';
 import { StyledButton } from './search-bar.styles';
 import SearchIcon from '@material-ui/icons/Search';
 
@@ -20,22 +20,29 @@ const SearchBar = (props: IProps) => {
   return (
     <>
       <Grid container>
-        <Grid item sm>
+        <Grid item xs={12}>
           {/* TODO: Center text in textField */}
           <StyledTextField
             fullWidth
             type="text"
             placeholder="Пребарај"
+            size="medium"
+            margin="none"
             value={props.searchText}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               props.onSearchTextChange(event.target.value);
             }}
             InputProps={{
-              disableUnderline: true
+              disableUnderline: true,
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton>
+                    <SearchIcon />
+                  </IconButton>
+                </InputAdornment>
+              )
             }}
-          >
-            <StyledButton>ButtonChe</StyledButton>
-          </StyledTextField>
+          ></StyledTextField>
         </Grid>
       </Grid>
     </>
