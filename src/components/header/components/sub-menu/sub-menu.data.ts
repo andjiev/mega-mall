@@ -8,7 +8,7 @@ export interface ISubmenuItem {
 interface IData {
   left: IBoxItem;
   right: IBoxItem;
-  side: IBoxItem;
+  center: IBoxItem;
 }
 
 interface IBoxItem {
@@ -56,8 +56,21 @@ const submenuItems: ISubmenuItem[] = [
           }
         ]
       },
+      center: {
+        title: 'Мобилни телефони 2',
+        items: [
+          {
+            id: 1,
+            title: 'Тест'
+          },
+          {
+            id: 2,
+            title: 'Тест'
+          }
+        ]
+      },
       right: {
-        title: 'Мобилни телефони',
+        title: 'Мобилни телефони 3',
         items: [
           {
             id: 1,
@@ -84,16 +97,6 @@ const submenuItems: ISubmenuItem[] = [
             title: 'Задни капачиња'
           }
         ]
-      },
-      side: {
-        title: 'Slika1',
-        items: [
-          {
-            id: 1,
-            title: 'Slika1',
-            url: '/assets/images/main/Najnovite-patiki-na-nike.jpg'
-          }
-        ]
       }
     }
   },
@@ -113,8 +116,8 @@ const submenuItems: ISubmenuItem[] = [
           }
         ]
       },
-      right: {
-        title: 'Спорт2',
+      center: {
+        title: 'Спорт 2',
         items: [
           {
             id: 1,
@@ -126,13 +129,16 @@ const submenuItems: ISubmenuItem[] = [
           }
         ]
       },
-      side: {
-        title: 'Slika2',
+      right: {
+        title: 'Спорт 3',
         items: [
           {
             id: 1,
-            title: 'Slika2',
-            url: 'assets/images/main/Najnovite-patiki-na-nike.jpg'
+            title: 'Тест'
+          },
+          {
+            id: 2,
+            title: 'Тест'
           }
         ]
       }
@@ -154,8 +160,8 @@ const submenuItems: ISubmenuItem[] = [
           }
         ]
       },
-      right: {
-        title: 'Мода2',
+      center: {
+        title: 'Мода 2',
         items: [
           {
             id: 1,
@@ -167,13 +173,16 @@ const submenuItems: ISubmenuItem[] = [
           }
         ]
       },
-      side: {
-        title: 'Slika2',
+      right: {
+        title: 'Мода 3',
         items: [
           {
             id: 1,
-            title: 'Slika2',
-            url: 'assets/images/main/Najnovite-patiki-na-nike.jpg'
+            title: 'Тест'
+          },
+          {
+            id: 2,
+            title: 'Тест'
           }
         ]
       }
@@ -183,7 +192,20 @@ const submenuItems: ISubmenuItem[] = [
     type: CategoryTypes.Beauty,
     data: {
       left: {
-        title: 'Здравје и убавина',
+        title: 'Здравје и убавина 1',
+        items: [
+          {
+            id: 1,
+            title: 'Тест'
+          },
+          {
+            id: 2,
+            title: 'Тест'
+          }
+        ]
+      },
+      center: {
+        title: 'Здравје и убавина 2',
         items: [
           {
             id: 1,
@@ -196,7 +218,7 @@ const submenuItems: ISubmenuItem[] = [
         ]
       },
       right: {
-        title: 'Здравје и убавина',
+        title: 'Здравје и убавина 3',
         items: [
           {
             id: 1,
@@ -205,16 +227,6 @@ const submenuItems: ISubmenuItem[] = [
           {
             id: 2,
             title: 'Тест'
-          }
-        ]
-      },
-      side: {
-        title: 'Slika2',
-        items: [
-          {
-            id: 1,
-            title: 'Slika2',
-            url: 'assets/images/main/Najnovite-patiki-na-nike.jpg'
           }
         ]
       }
@@ -224,7 +236,7 @@ const submenuItems: ISubmenuItem[] = [
     type: CategoryTypes.Home,
     data: {
       left: {
-        title: 'Домакинство',
+        title: 'Домаќинство 1',
         items: [
           {
             id: 1,
@@ -236,8 +248,22 @@ const submenuItems: ISubmenuItem[] = [
           }
         ]
       },
+      center: {
+        title: 'Домаќинство 2',
+        items: [
+          {
+            id: 1,
+            title: 'Тест'
+          },
+          {
+            id: 2,
+            title: 'Тест'
+          }
+        ]
+      },
+
       right: {
-        title: 'Домакинство',
+        title: 'Домаќинство 3',
         items: [
           {
             id: 1,
@@ -246,16 +272,6 @@ const submenuItems: ISubmenuItem[] = [
           {
             id: 2,
             title: 'Тест'
-          }
-        ]
-      },
-      side: {
-        title: 'Slika2',
-        items: [
-          {
-            id: 1,
-            title: 'Slika2',
-            url: 'assets/images/main/Najnovite-patiki-na-nike.jpg'
           }
         ]
       }
@@ -265,7 +281,20 @@ const submenuItems: ISubmenuItem[] = [
     type: CategoryTypes.Services,
     data: {
       left: {
-        title: 'Услуги',
+        title: 'Услуги 1',
+        items: [
+          {
+            id: 1,
+            title: 'Тест'
+          },
+          {
+            id: 2,
+            title: 'Тест'
+          }
+        ]
+      },
+      center: {
+        title: 'Услуги 2',
         items: [
           {
             id: 1,
@@ -278,7 +307,7 @@ const submenuItems: ISubmenuItem[] = [
         ]
       },
       right: {
-        title: 'Услуги',
+        title: 'Услуги 3',
         items: [
           {
             id: 1,
@@ -287,16 +316,6 @@ const submenuItems: ISubmenuItem[] = [
           {
             id: 2,
             title: 'Тест'
-          }
-        ]
-      },
-      side: {
-        title: 'Slika2',
-        items: [
-          {
-            id: 1,
-            title: 'Slika2',
-            url: 'assets/images/main/Najnovite-patiki-na-nike.jpg'
           }
         ]
       }

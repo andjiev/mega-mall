@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import { Link } from '@material-ui/core';
 
 const StyledHoverLink = styled(Link)`
+  height: 15px;
+  width: 92px;
   color: #355c7c;
-  transition: 0.3s;
+  font-size: 14px;
 
   &:hover {
     color: ${props => props.theme.palette.secondary.main};

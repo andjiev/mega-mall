@@ -12,13 +12,13 @@ import { createBrowserHistory } from 'history';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
-import configureEasyFindStore from './store/configure-store';
+import configureMegaMallStore from './store/configure-store';
 import { MuiThemeProvider, StylesProvider } from '@material-ui/core';
 import { ThemeProvider as SCThemeProvider } from 'styled-components';
 import { theme } from './theme';
 
 const history = createBrowserHistory({ basename: ROOT });
-const store = configureEasyFindStore(history);
+const store = configureMegaMallStore(history);
 
 export type AppDispatch = ThunkDispatch<ApplicationState, null, Action<string>>;
 const render = (Component: any) => {

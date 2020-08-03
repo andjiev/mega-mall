@@ -13,6 +13,7 @@ import { CategoryTypes } from 'lib/enums';
 import MainLogo from './components/logo/logo';
 import { Grid, Container } from '@material-ui/core';
 import { SearchBarContainer } from './containers/search-bar';
+import { StyledLink } from 'components/styled-link';
 
 interface IHeaderProps {
   categoryType?: CategoryTypes;
@@ -31,7 +32,9 @@ const Header = (props: IHeaderProps) => {
           <TopBar />
           <Grid container>
             <Grid item sm={2}>
-              <MainLogo />
+              <StyledLink href={'/'}>
+                <MainLogo />
+              </StyledLink>
             </Grid>
             <Grid item sm={10}>
               <SearchBarContainer />
@@ -40,7 +43,7 @@ const Header = (props: IHeaderProps) => {
           </Grid>
         </Container>
       </StyledHeader>
-      {props.isActive && <SubMenu categoryType={props.categoryType} onSubmenuChange={props.onSubmenuChange} />}
+      {props.isActive && <SubMenu categoryType={props.categoryType} onSubmenuChange={props.onSubmenuChange} onCategoryChange={props.onCategoryChange} />}
     </>
   );
 };
