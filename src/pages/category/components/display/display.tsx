@@ -15,7 +15,7 @@ const Display = () => {
         <Box mt={3}>
           <Grid container justify="space-between" spacing={2}>
             {cardData.map(value => (
-              <Grid item key={value.id} xs={12} sm={6} md={6} lg={3} component={RouterLink} to={generatePath(location.pathname, { id: value.id })}>
+              <Grid item key={value.id} xs={12} sm={6} md={6} lg={3} component={RouterLink} to={generatePath(window.location.pathname, { id: value.id })}>
                 <Box p={1}>
                   <SubcategoryCard key={value.id} url={value.url} title={value.title} link={value.link}></SubcategoryCard>
                 </Box>
