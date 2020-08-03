@@ -14,7 +14,9 @@ const Footer = () => {
             {item.header.src ? (
               <StyledImage src={item.header.src}></StyledImage>
             ) : item.header.title ? (
-              <StyledLink href={item.header.link}>{item.header.title}</StyledLink>
+              <StyledLink placeToRender="footer" href={item.header.link}>
+                {item.header.title}
+              </StyledLink>
             ) : (
               <Box component="span">{item.header.title}</Box>
             )}
@@ -24,7 +26,9 @@ const Footer = () => {
               return (
                 <ListItem key={index} disableGutters>
                   <Typography variant="body2">
-                    <StyledLink href={linkItem.link}>{linkItem.title}</StyledLink>
+                    <StyledLink placeToRender="footer" href={linkItem.link}>
+                      {linkItem.title}
+                    </StyledLink>
                   </Typography>
                 </ListItem>
               );
