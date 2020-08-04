@@ -1,4 +1,3 @@
-import { translate } from 'lib/translate';
 import { ProductTypes } from 'lib/enums';
 
 const displayData = [
