@@ -115,7 +115,25 @@
       "MegaMall_Submenu_Equimpment": "Опрема за лаптоп",
       "MegaMall_Submenu_Mouse": "Глувчиња",
       "MegaMall_Submenu_Keyboard": "Тастатури",
-      "MegaMall_Submenu_Speakers": "Компјутерски звучници"
+      "MegaMall_Submenu_Speakers": "Компјутерски звучници",
+      "MegaMall_Subcategory_Mobile": "Мобилни телефони",
+      "MegaMall_Subcategory_PC": "Преносни компјутери",
+      "MegaMall_Subcategory_Speakers": "Компјутерски звучници",
+      "MegaMall_Subcategory_Mice": "Глувчиња",
+      "MegaMall_Subcategory_Keyboards": "Тастатури",
+      "MegaMall_Subcategory_Backpacks": "Торби и ранци",
+      "MegaMall_Subcategory_Headsets": "Слушалки",
+      "MegaMall_Subcategory_Cases": "Футроли и заштита",
+      "MegaMall_Subcategory_Laptop": "Персонални компјутери",
+      "MegaMall_Subcategory_Tablets": "Таблети",
+      "MegaMall_Subcategory_Gaming": "Gaming конзоли",
+      "MegaMall_Subcategory_HDD": "Екстерни HDD",
+      "MegaMall_Cardslider_Mobile": "Мобилен Телефон",
+      "MegaMall_Cardslider_TV": "Смарт Телевизор",
+      "MegaMall_Cardslider_Cosmetics": "Козметика",
+      "MegaMall_Cardslider_Washer": "Машина за перење",
+      "MegaMall_Cardslider_Drill": "Бормашина",
+      "MegaMall_Cardslider_Laptop": "Лаптоп"
     }
   },
   "en-GB": {
@@ -230,7 +248,25 @@
       "MegaMall_Submenu_Equimpment": "Laptop equipment",
       "MegaMall_Submenu_Mouse": "Mice",
       "MegaMall_Submenu_Keyboard": "Keyboards",
-      "MegaMall_Submenu_Speakers": "Computer speakers"
+      "MegaMall_Submenu_Speakers": "Computer speakers",
+      "MegaMall_Subcategory_Mobile": "Mobile phones",
+      "MegaMall_Subcategory_PC": "Notebooks",
+      "MegaMall_Subcategory_Speakers": "Computer speakers",
+      "MegaMall_Subcategory_Mice": "Mice",
+      "MegaMall_Subcategory_Keyboards": "Keyboards",
+      "MegaMall_Subcategory_Backpacks": "Bags & backpacks",
+      "MegaMall_Subcategory_Headsets": "Headphones",
+      "MegaMall_Subcategory_Cases": "Cases & protection",
+      "MegaMall_Subcategory_Laptop": "Laptops",
+      "MegaMall_Subcategory_Tablets": "Tablets",
+      "MegaMall_Subcategory_Gaming": "Gaming consoles",
+      "MegaMall_Subcategory_HDD": "External HDD",
+      "MegaMall_Cardslider_Mobile": "Mobile phone",
+      "MegaMall_Cardslider_TV": "Smart TV",
+      "MegaMall_Cardslider_Cosmetics": "Cosmetics",
+      "MegaMall_Cardslider_Washer": "Washing machine",
+      "MegaMall_Cardslider_Drill": "Drill",
+      "MegaMall_Cardslider_Laptop": "Laptop"
     }
   }
 }
