@@ -2,13 +2,14 @@ import React from 'react';
 import SubcategoryCard from '../subcategory-card/subcategory-card';
 import { Box, Typography, Grid } from '@material-ui/core';
 import { cardData } from '../subcategory-card/subcategory-card.data';
+import { translate } from 'lib/translate';
 
 const Display = () => {
   return (
     <>
       <Box p={3}>
         <Box>
-          <Typography variant="h3">Технологија</Typography>
+          <Typography variant="h3">{translate('MegaMall_Display_Technology', 'Технологија')}</Typography>
         </Box>
         <Box mt={3}>
           <Grid container justify="space-between" spacing={2}>

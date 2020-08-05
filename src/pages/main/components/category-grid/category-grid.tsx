@@ -4,6 +4,7 @@ import { Grid, Box, Typography, Hidden } from '@material-ui/core';
 import Card from './../../../../components/card/card';
 import { StyledLink } from 'components/styled-link';
 import { cards } from './category-grid.data';
+import { translate } from 'lib/translate';
 
 const CategoryGrid = () => {
   return (
@@ -11,18 +12,18 @@ const CategoryGrid = () => {
       <Box>
         <Grid container justify="space-between">
           <Grid item sm={6} xs={12}>
-            <Typography variant="h3">Пребарај по категорија</Typography>
+            <Typography variant="h3">{translate('MegaMall_Categorygrid_Search', 'Пребарај по категорија')}</Typography>
           </Grid>
           <Hidden xsDown>
             <Grid container item xs={6} justify="flex-end" alignItems="flex-end">
-              <Box component="span">прикажи ги сите {' >'}</Box>
+              <Box component="span">{translate('MegaMall_Categorygrid_Show', 'прикажи ги сите >')}</Box>
             </Grid>
           </Hidden>
 
           <Hidden smUp>
             <Grid container item xs={12} alignItems="flex-end">
               <Box component="span" mt={1}>
-                прикажи ги сите {' >'}
+                {translate('MegaMall_Categorygrid_Show', 'прикажи ги сите >')}
               </Box>
             </Grid>
           </Hidden>
