@@ -323,4 +323,25 @@ const submenuItems: ISubmenuItem[] = [
   }
 ];
 
-export { submenuItems };
+const submenuIcons = [
+  {
+    url: '/assets/images/header/icons/tehnologija.svg'
+  },
+  {
+    url: '/assets/images/header/icons/sport.svg'
+  },
+  {
+    url: '/assets/images/header/icons/uslugi.svg'
+  },
+  {
+    url: '/assets/images/header/icons/ubavina.svg'
+  },
+  {
+    url: '/assets/images/header/icons/domakinstvo.svg'
+  },
+  {
+    url: '/assets/images/header/icons/uslugi.svg'
+  }
+];
+
+export { submenuItems, submenuIcons };

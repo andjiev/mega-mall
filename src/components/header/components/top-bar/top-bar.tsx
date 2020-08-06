@@ -11,28 +11,26 @@ import { StyledImage, StyledTypography } from './top-bar.styles';
 const TopBar = () => {
   return (
     <>
-      <Container fixed>
-        <Box>
-          <Grid container justify="flex-end" alignItems="flex-end" spacing={2}>
-            <Grid item>
-              <StyledTypography variant="h6">Продавници</StyledTypography>
-            </Grid>
-            <Grid item>
-              <Link href="https://www.facebook.com">
-                <FacebookIcon fontSize="small" htmlColor="#193364" />
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="https://www.instagram.com">
-                <InstagramIcon fontSize="small" htmlColor="#193364" />
-              </Link>
-            </Grid>
-            <Grid item>
-              <LanguagePickerContainer />
-            </Grid>
+      <Box>
+        <Grid container justify="flex-end" alignItems="flex-end" spacing={2}>
+          <Grid item>
+            <StyledTypography variant="h6">Продавници</StyledTypography>
           </Grid>
-        </Box>
-      </Container>
+          <Grid item>
+            <Link href="https://www.facebook.com">
+              <FacebookIcon fontSize="small" htmlColor="#193364" />
+            </Link>
+          </Grid>
+          <Grid item>
+            <Link href="https://www.instagram.com">
+              <InstagramIcon fontSize="small" htmlColor="#193364" />
+            </Link>
+          </Grid>
+          <Grid item>
+            <LanguagePickerContainer />
+          </Grid>
+        </Grid>
+      </Box>
     </>
   );
 };

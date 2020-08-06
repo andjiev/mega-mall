@@ -28,20 +28,18 @@ const Header = (props: IHeaderProps) => {
   return (
     <>
       <StyledHeader>
-        <Container fixed>
-          <TopBar />
-          <Grid container>
-            <Grid item sm={2}>
-              <StyledLink href={'/'}>
-                <MainLogo />
-              </StyledLink>
-            </Grid>
-            <Grid item sm={10}>
-              <SearchBarContainer />
-              <Menu isActive={props.isActive} onCategoryChange={props.onCategoryChange} onHideSubmenuChange={props.onHideSubmenuChange} />
-            </Grid>
+        <TopBar />
+        <Grid container>
+          <Grid item sm={2}>
+            <StyledLink href={'/'}>
+              <MainLogo />
+            </StyledLink>
           </Grid>
-        </Container>
+          <Grid item sm={10}>
+            <SearchBarContainer />
+            <Menu isActive={props.isActive} onCategoryChange={props.onCategoryChange} onHideSubmenuChange={props.onHideSubmenuChange} />
+          </Grid>
+        </Grid>
       </StyledHeader>
       {props.isActive && <SubMenu categoryType={props.categoryType} onSubmenuChange={props.onSubmenuChange} onCategoryChange={props.onCategoryChange} />}
     </>

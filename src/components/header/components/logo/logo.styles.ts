@@ -3,8 +3,9 @@ import styled from 'styled-components';
 const StyledLogo = styled.div`
   background-image: url('/assets/images/header/MMLogo.svg');
   background-repeat: no-repeat;
-  min-height: 45px;
+  height: 60%;
   width: 100%;
+  background-position: right;
 `;
 
 export { StyledLogo };

@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { makeStyles, ThemeProvider } from '@material-ui/styles';
 import { List, Grid, Container, ListItem, Box, Typography, Theme, Tabs, Tab } from '@material-ui/core';
 
-import { StyledSubMenu, StyledListItemText, SubmenuImage } from './sub-menu.styles';
+import { StyledSubMenu, StyledListItemText, SubmenuImage, StyledTab, StyledIcons } from './sub-menu.styles';
 import Link from '@material-ui/core/Link';
 
-import { submenuItems, ISubmenuItem } from './sub-menu.data';
+import { submenuItems, ISubmenuItem, submenuIcons } from './sub-menu.data';
 import { StyledLink } from 'components/styled-link';
 import { CategoryTypes } from 'lib/enums';
 import { menuItems } from './../menu/menu.data';
@@ -52,11 +52,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     overflowY: 'hidden',
     width: '100%',
     zIndex: 10,
-    position: 'absolute',
-    textAlign: 'left'
-  },
-  wrapper: {
-    alignItems: 'left'
+    position: 'absolute'
   },
   tabs: {
     borderRight: `1px solid #355C7C`,
@@ -69,9 +65,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   tabLabel: {
     fontFamily: 'OswaldBold',
-    fontSize: '14px',
-    textAlign: 'left',
-    alignItems: 'left'
+    fontSize: '14px'
   },
   subContainer: {
     maxWidth: '1600px',
@@ -118,8 +112,11 @@ const SubMenu = (props: ISubMenuProps) => {
             //Make Tab with styledcomponents
             return (
               <>
-                {/* TODO: Insert tab icons from Invision && align labels to the left*/}
-                <Tab key={index} value={item.type} className={classes.tabLabel} label={item.title} {...a11yProps(index)} style={{ alignItems: 'left' }} />
+                <span>
+                  {' '}
+                  <StyledIcons src={submenuIcons[index].url} />
+                  <StyledTab key={index} value={item.type} className={classes.tabLabel} label={item.title} {...a11yProps(index - 1)} />
+                </span>
               </>
             );
           })}
