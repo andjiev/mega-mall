@@ -11,7 +11,7 @@ const CardSlider = () => {
       <Box>
         <Grid container justify="space-between">
           <Grid item sm={6} xs={12}>
-            <Typography variant="h3">Најпосетени производи</Typography>
+            <Typography variant="h4">Најпосетени производи</Typography>
           </Grid>
           <Hidden xsDown>
             <Grid container item xs={6} justify="flex-end" alignItems="flex-end">

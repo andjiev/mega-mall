@@ -9,7 +9,7 @@ const ProductGrid = () => {
       <Box>
         <Grid container justify="space-between">
           <Grid item sm={6} xs={12}>
-            <Typography variant="h3">Најнови производи</Typography>
+            <Typography variant="h4">Најнови производи</Typography>
           </Grid>
           <Hidden xsDown>
             <Grid container item xs={6} justify="flex-end" alignItems="flex-end">

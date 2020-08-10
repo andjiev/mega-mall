@@ -10,7 +10,7 @@ const Display = () => {
     <>
       <Box p={3}>
         <Box>
-          <Typography variant="h3">Технологија</Typography>
+          <Typography variant="h4">Технологија</Typography>
         </Box>
         <Box mt={3}>
           <Grid container justify="space-between" spacing={2}>

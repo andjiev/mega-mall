@@ -20,7 +20,7 @@ const theme = createMuiTheme({
     h1: {
       fontFamily: ['OswaldBold', 'sans-serif'].join(','),
       fontWeight: 700,
-      fontSize: '72px'
+      fontSize: '48px'
     },
     h2: {
       fontFamily: ['OswaldBold', 'sans-serif'].join(','),
@@ -28,35 +28,35 @@ const theme = createMuiTheme({
       fontSize: '40px'
     },
     h3: {
+      fontFamily: ['OswaldBold', 'sans-serif'].join(','),
+      fontWeight: 700,
+      fontSize: '24px'
+    },
+    h4: {
       fontFamily: ['OswaldRegular', 'sans-serif'].join(','),
       fontWeight: 400,
       fontSize: '22px'
     },
-    h4: {
+    h5: {
       fontFamily: ['OswaldMedium', 'sans-serif'].join(','),
       fontWeight: 500,
       fontSize: '18px'
     },
-    h5: {
-      fontFamily: ['OswaldRegular', 'sans-serif'].join(','),
-      fontWeight: 400,
-      fontSize: '16px'
-    },
     h6: {
       fontFamily: ['OswaldRegular', 'sans-serif'].join(','),
       fontWeight: 400,
-      fontSize: '14px'
+      fontSize: '16px'
     },
     subtitle1: {
-      fontFamily: ['RobotoMedium', 'sans-serif'].join(','),
+      fontFamily: ['OswaldMedium', 'sans-serif'].join(','),
       fontWeight: 500,
-      fontSize: '18px'
-    }, // subtitle 1 is for the links with in the cards. . .
+      fontSize: '36px'
+    }, // subtitle 1 is for the price displayed in the detailed window card slide.
     subtitle2: {
-      fontFamily: ['RobotoRegular', 'sans-serif'].join(','),
+      fontFamily: ['OswaldMedium', 'sans-serif'].join(','),
       fontWeight: 400,
-      fontSize: '16px'
-    }, //for the titles in the card-slider and category grid . . .
+      fontSize: '24px'
+    }, //subtitle 2 is for the price in the cards on the slider in main page for the price in product-list-item and for the price in most_popular products on main page
     body1: {
       fontFamily: ['RobotoRegular', 'sans-serif'].join(','),
       fontWeight: 400,
