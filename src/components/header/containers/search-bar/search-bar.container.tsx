@@ -50,7 +50,7 @@ const mapDispatchToProps = (dispatch: AppDispatch) => ({
 
 const mapStateToProps = (state: ApplicationState) => {
   return {
-    searchText: state.sharedStore.searchText
+    searchText: state.shared.searchText
   };
 };
 

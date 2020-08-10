@@ -41,7 +41,7 @@ const mapDispatchToProps = (dispatch: AppDispatch) => ({
 
 const mapStateToProps = (state: ApplicationState) => {
   return {
-    language: formatCulture(state.headerStore.culture)
+    language: formatCulture(state.header.culture)
   };
 };
 
