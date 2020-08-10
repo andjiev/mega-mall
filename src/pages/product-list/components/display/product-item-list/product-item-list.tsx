@@ -49,7 +49,7 @@ const ProductItemList = (props: ShopsListProps) => {
   const renderShowMoreButton = () => {
     return (
       <>
-        <StyledButton variant="contained" color="secondary" onClick={showMorePosts}>
+        <StyledButton variant="contained" onClick={showMorePosts}>
           види повеќе
         </StyledButton>
       </>

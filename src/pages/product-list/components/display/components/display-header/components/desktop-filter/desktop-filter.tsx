@@ -4,6 +4,7 @@ import { Grid, ButtonGroup, FormControl, Hidden, Typography } from '@material-ui
 import { StyledButton, StyledSelect } from './desktop-filter.styles';
 import { OrderTypes } from 'lib/enums';
 import { getTextForOrderType } from './desktop-filter.utils';
+import { translate } from 'lib/translate';
 
 const DesktopFilter = () => {
   const [orderType, setOrderType] = React.useState(OrderTypes.PriceAscending);
@@ -13,11 +14,10 @@ const DesktopFilter = () => {
     return (
       <ButtonGroup color="secondary">
         <StyledButton isToggled={!isToggled} onClick={() => setToggled(!isToggled)}>
-          <Typography variant="h5">Производи</Typography>
-          {/* ADD TRANSLATION FOR THE BUTTON TEXT !!! */}
+          <Typography variant="h5">{translate('MegaMall_DesktopFilter_Products', 'Производи')}</Typography>
         </StyledButton>
         <StyledButton isToggled={isToggled} onClick={() => setToggled(!isToggled)}>
-          <Typography variant="h5">Продавници</Typography>
+          <Typography variant="h5">{translate('MegaMall_DesktopFilter_Shops', 'Продавници')}</Typography>
         </StyledButton>
       </ButtonGroup>
     );

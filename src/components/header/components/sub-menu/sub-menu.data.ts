@@ -1,4 +1,5 @@
 import { CategoryTypes } from 'lib/enums';
+import { translate } from 'lib/translate';
 
 export interface ISubmenuItem {
   type: CategoryTypes;
@@ -28,31 +29,31 @@ const submenuItems: ISubmenuItem[] = [
     type: CategoryTypes.Technology,
     data: {
       left: {
-        title: 'Компјутери и опрема',
+        title: translate('MegaMall_Submenu_Computer', 'Компјутери и опрема'),
         items: [
           {
             id: 1,
-            title: 'Персонални компјутери'
+            title: translate('MegaMall_Submenu_PC', 'Персонални компјутери')
           },
           {
             id: 2,
-            title: 'Преносни компјутери'
+            title: translate('MegaMall_Submenu_PC_Movable', 'Преносни компјутери')
           },
           {
             id: 3,
-            title: 'Опрема за лаптоп'
+            title: translate('MegaMall_Submenu_Equimpment', 'Опрема за лаптоп')
           },
           {
             id: 4,
-            title: 'Глувчиња'
+            title: translate('MegaMall_Submenu_Mouse', 'Глувчиња')
           },
           {
             id: 5,
-            title: 'Тастатури'
+            title: translate('MegaMall_Submenu_Keyboard', 'Тастатури')
           },
           {
             id: 6,
-            title: 'Компјутерски звучници'
+            title: translate('MegaMall_Submenu_Speakers', 'Компјутерски звучници')
           }
         ]
       },

@@ -4,6 +4,7 @@ import { StyledList, StyledFooter, StyledCopyright, StyledDivider, StyledImage }
 import { Container, Grid, Box, Typography, ListItem, Hidden } from '@material-ui/core';
 import { StyledLink } from 'components/styled-link';
 import { footerItems, IFooterItem } from './footer.data';
+import { translate } from 'lib/translate';
 
 const Footer = () => {
   const renderItem = (item: IFooterItem) => {
@@ -97,7 +98,7 @@ const Footer = () => {
         <StyledDivider />
         <Box mt={2}>
           <Grid container justify="center" alignItems="center">
-            <StyledCopyright component="span">&copy;2020-2020 E-commerce Сите права задржани.</StyledCopyright>
+            <StyledCopyright component="span">{translate('MegaMall_Footer_Copyright', '&copy;2020-2020 E-commerce Сите права задржани.')}</StyledCopyright>
           </Grid>
         </Box>
       </StyledFooter>

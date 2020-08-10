@@ -18,6 +18,8 @@ const StyledImage = styled(Box)`
 
 const StyledButton = styled(Button)`
   height: 50px;
+  color: white;
+  background-color: #193364;
 `;
 
 const StyledContainer = styled(Container)`

@@ -3,6 +3,7 @@ import React from 'react';
 import { StyledNavigation, StyledButton } from './navigation.styles';
 import { Box, List, ListItem, Typography, Checkbox, Grid, FormControlLabel } from '@material-ui/core';
 import { INavItem, navigationData } from './navigation.data';
+import { translate } from 'lib/translate';
 
 interface NavigationProps {}
 
@@ -35,14 +36,14 @@ const Navigation = (props: NavigationProps) => {
       <StyledNavigation>
         <Box p={3} pt={2}>
           <List>
-            <Typography variant="h6">Технологија</Typography>
-            <List>Компјутери и опрема</List>
-            <ListItem>Персонални компјутери</ListItem>
-            <ListItem>Преносни компјутери</ListItem>
-            <ListItem>Опрема за компјутери</ListItem>
-            <ListItem>Глувчиња</ListItem>
-            <ListItem>Тастатури</ListItem>
-            <List>Мобилни телефони</List>
+            <Typography variant="h6">{translate('MegaMall_Navigation_Technolopgy', 'Технологија')}</Typography>
+            <List>{translate('MegaMall_Navigation_Computers', 'Компјутери и опрема')}</List>
+            <ListItem>{translate('MegaMall_Navigation_PC', 'Персонални компјутери')}</ListItem>
+            <ListItem>{translate('MegaMall_Navigation_Laptop', 'Преносни компјутери')}</ListItem>
+            <ListItem>{translate('MegaMall_Navigation_Equipment', 'Опрема за компјутери')}</ListItem>
+            <ListItem>{translate('MegaMall_Navigation_Mice', 'Глувчиња')}</ListItem>
+            <ListItem>{translate('MegaMall_Navigation_Keyboards', 'Тастатури')}</ListItem>
+            <List>{translate('MegaMall_Navigation_Mobile', 'Мобилни телефони')}</List>
           </List>
 
           <Grid container>
@@ -50,7 +51,7 @@ const Navigation = (props: NavigationProps) => {
               <Grid item>{navigationData.map(val => renderItem(val))}</Grid>
             </Grid>
 
-            <StyledButton variant="outlined">види ги сите</StyledButton>
+            <StyledButton variant="outlined">{translate('MegaMall_Navigation_Show', 'види ги сите')}</StyledButton>
           </Grid>
         </Box>
       </StyledNavigation>

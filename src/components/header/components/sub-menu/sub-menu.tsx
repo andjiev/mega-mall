@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { makeStyles, ThemeProvider } from '@material-ui/styles';
 import { List, Grid, Container, ListItem, Box, Typography, Theme, Tabs, Tab } from '@material-ui/core';
 
-import { StyledSubMenu, StyledListItemText, SubmenuImage } from './sub-menu.styles';
+import { StyledSubMenu, StyledListItemText, SubmenuImage, StyledBox } from './sub-menu.styles';
 import Link from '@material-ui/core/Link';
 
 import { submenuItems, ISubmenuItem } from './sub-menu.data';
@@ -107,7 +107,7 @@ const SubMenu = (props: ISubMenuProps) => {
 
   return (
     <>
-      <Box className={classes.root} onMouseEnter={() => props.onSubmenuChange(true)} onMouseLeave={() => props.onSubmenuChange(false)}>
+      <StyledBox className={classes.root} onMouseEnter={() => props.onSubmenuChange(true)} onMouseLeave={() => props.onSubmenuChange(false)}>
         <Tabs orientation="vertical" value={props.categoryType} onChange={(event, value) => onCategoryChange(value)} aria-label="Main Categories" className={classes.tabs}>
           {menuItems.map((item, index) => {
             //Make Tab with styledcomponents
@@ -183,7 +183,7 @@ const SubMenu = (props: ISubMenuProps) => {
             </StyledSubMenu>
           )}
         </TabPanel>
-      </Box>
+      </StyledBox>
     </>
   );
 };

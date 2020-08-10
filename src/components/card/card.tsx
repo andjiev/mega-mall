@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyledImage, StyledGrid, StyledMaterialCard, StyledCardMedia, GiftCardImage } from 'components/card/card.styles';
 import { Card, Box, Typography, Hidden, Grid, CardMedia, makeStyles, Theme, createStyles, CardContent } from '@material-ui/core';
+import { translate } from 'lib/translate';
 
 interface CardProps {
   size: 'small' | 'medium' | 'large';
@@ -69,13 +70,13 @@ const _Card = (props: CardProps) => {
                     {props.children}
                     <Box mt={3}>
                       <Box color="white" component="span">
-                        прикажи ги сите {' >'}
+                        {translate('MegaMall_Card_Show', 'прикажи ги сите >')}
                       </Box>
                     </Box>
                   </Hidden>
                   <Hidden lgUp>
                     <Box color="white" component="span">
-                      прикажи ги сите {' >'}
+                      {translate('MegaMall_Card_Show', 'прикажи ги сите >')}
                     </Box>
                   </Hidden>
                 </Box>
