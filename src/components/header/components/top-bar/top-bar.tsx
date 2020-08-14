@@ -7,6 +7,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 
 import { StyledImage, StyledTypography } from './top-bar.styles';
+import { translate } from 'lib/translate';
 
 const TopBar = () => {
   return (
@@ -14,7 +15,7 @@ const TopBar = () => {
       <Box>
         <Grid container justify="flex-end" alignItems="flex-end" spacing={2}>
           <Grid item>
-            <StyledTypography variant="h6">Продавници</StyledTypography>
+            <StyledTypography variant="h6">{translate('MegaMall_Topbar_Shops', 'Продавници')}</StyledTypography>
           </Grid>
           <Grid item>
             <Link href="https://www.facebook.com">

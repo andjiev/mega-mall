@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { ListItemText, Box, Tab } from '@material-ui/core';
 
 const StyledSubMenu = styled(Box)`
-  // background-color: ${props => props.theme.palette.primary.dark};
-  // background-color: #fef3f4;
+  background-color: #f0f5ff;
   width: 100%;
   height: auto;
   overflow: hidden;
@@ -27,6 +26,9 @@ const SubmenuImage = styled(Box)`
   background-repeat: no-repeat;
   margin-top: 5%;
 `;
+const StyledBox = styled(Box)`
+  background-color: #f0f5ff;
+`;
 
 const StyledTab = styled(Tab)`
   width: 500px;
@@ -43,4 +45,4 @@ const StyledIcons = styled.img`
   opacity: 0.7;
 `;
 
-export { StyledSubMenu, StyledListItemText, SubmenuImage, StyledTab, StyledIcons };
+export { StyledSubMenu, StyledListItemText, SubmenuImage, StyledTab, StyledIcons, StyledBox };

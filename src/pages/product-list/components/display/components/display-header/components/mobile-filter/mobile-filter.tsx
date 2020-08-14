@@ -3,6 +3,7 @@ import React from 'react';
 import { Box, Grid, ExpansionPanel, ExpansionPanelSummary, Typography, ExpansionPanelDetails, Button } from '@material-ui/core';
 import { StyledDetails, StyledBox, StyledGrid, StyledButton } from './mobile-filter.styles';
 import { filterData, IFilterItem } from './mobile-filter.data';
+import { translate } from 'lib/translate';
 
 const MobileFilter = () => {
   const renderItem = (item: IFilterItem) => {
@@ -32,7 +33,7 @@ const MobileFilter = () => {
         <ExpansionPanel>
           <ExpansionPanelSummary>
             <StyledBox>
-              <Typography>Филтри</Typography>
+              <Typography>{translate('MegaMall_MobileFilter_Filters', 'Филтри')}</Typography>
             </StyledBox>
           </ExpansionPanelSummary>
           <StyledDetails>
@@ -40,9 +41,7 @@ const MobileFilter = () => {
               <Grid item alignContent="space-between">
                 <Grid item>{filterData.map(val => renderItem(val))}</Grid>
               </Grid>
-              <StyledButton variant="contained" color="secondary">
-                Филтрирај
-              </StyledButton>
+              <StyledButton variant="contained">{translate('MegaMall_MobileFilter_Filter', 'Филтрирај')}</StyledButton>
             </Grid>
           </StyledDetails>
         </ExpansionPanel>

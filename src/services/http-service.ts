@@ -1,6 +1,6 @@
 import axios, { AxiosResponse, AxiosError } from 'axios';
 
-// axios.defaults.baseURL = webGlobal.url.api;
+axios.defaults.baseURL = API_URL;
 // axios.defaults.headers = { Authorization: webGlobal.token };
 
 axios.interceptors.response.use(

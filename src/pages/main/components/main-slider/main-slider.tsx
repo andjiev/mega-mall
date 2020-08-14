@@ -23,7 +23,7 @@ const MainSlider = () => {
             </Box>
             <Grid item>
               <Box mt={3}>
-                <StyledButton variant="contained" color="secondary" size="large">
+                <StyledButton variant="contained" size="large">
                   {item.buttonText}
                 </StyledButton>
               </Box>

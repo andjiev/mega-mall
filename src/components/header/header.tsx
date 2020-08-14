@@ -60,8 +60,8 @@ const mapDispatchToProps = (dispatch: AppDispatch) => ({
 
 const mapStateToProps = (state: ApplicationState) => {
   return {
-    categoryType: state.headerStore.categoryType,
-    isActive: state.headerStore.showSubmenu || state.headerStore.isOnSubmenu
+    categoryType: state.header.categoryType,
+    isActive: state.header.showSubmenu || state.header.isOnSubmenu
   };
 };
 

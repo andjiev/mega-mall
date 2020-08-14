@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { CardMedia, Box, Grid } from '@material-ui/core';
+import { CardMedia, Box, Grid, Typography } from '@material-ui/core';
 import { Card as MaterialCard } from '@material-ui/core';
 
 //Large Cards

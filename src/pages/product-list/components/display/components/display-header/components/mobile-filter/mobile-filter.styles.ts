@@ -10,6 +10,8 @@ const StyledGrid = styled(Grid)`
 `;
 const StyledButton = styled(Button)`
   width: inherit;
+  background-color: #193364;
+  color: white;
 `;
 
 const StyledDetails = styled(ExpansionPanelDetails)`

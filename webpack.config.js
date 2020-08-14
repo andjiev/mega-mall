@@ -48,8 +48,7 @@ const baseConfig = {
     }),
     new webpack.DefinePlugin({
       ROOT: JSON.stringify('/'),
-      // TODO: change this when api is up and running
-      API_URL: JSON.stringify('http://localhost:5501/')
+      API_URL: JSON.stringify('http://localhost:6401/')
     }),
     new CopyWebpackPlugin([
       { from: 'public/manifest.json', to: '' },
