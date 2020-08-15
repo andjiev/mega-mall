@@ -5,7 +5,7 @@ import { XLBannerImage, LBannerImage, MenuBannerImage } from './banner.styles';
 interface BannerProps {
   size?: 'xl' | 'l' | 'menu';
   url?: string;
-  imgSource?: string;
+  imagesource?: string;
   bgColor?: string;
 }
 
@@ -16,7 +16,7 @@ const Banner = (props: BannerProps) => {
         <Link href={props.url}>
           <Card>
             <CardMedia>
-              <XLBannerImage imgSource={props.imgSource}></XLBannerImage>
+              <XLBannerImage imagesource={props.imagesource}></XLBannerImage>
             </CardMedia>
           </Card>
         </Link>
@@ -28,7 +28,7 @@ const Banner = (props: BannerProps) => {
         <Link href={props.url}>
           <Card>
             <CardMedia>
-              <LBannerImage imgSource={props.imgSource}></LBannerImage>
+              <LBannerImage imagesource={props.imagesource}></LBannerImage>
             </CardMedia>
           </Card>
         </Link>
@@ -40,7 +40,7 @@ const Banner = (props: BannerProps) => {
         <Link href={props.url}>
           <Card>
             <CardMedia>
-              <MenuBannerImage imgSource={props.imgSource}></MenuBannerImage>
+              <MenuBannerImage imagesource={props.imagesource}></MenuBannerImage>
             </CardMedia>
           </Card>
         </Link>
@@ -52,7 +52,7 @@ const Banner = (props: BannerProps) => {
       <Link href={props.url}>
         <Card>
           <CardMedia>
-            <MenuBannerImage imgSource={props.imgSource}></MenuBannerImage>
+            <MenuBannerImage imagesource={props.imagesource}></MenuBannerImage>
           </CardMedia>
         </Card>
       </Link>

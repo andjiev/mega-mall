@@ -1,6 +1,5 @@
 import React from 'react';
-import { SearchBarContainer } from 'components/header/containers/search-bar';
-import { StyledLogo } from './logo.styles.ts';
+import { StyledLogo } from './logo.styles';
 
 const MainLogo = () => {
   return <StyledLogo />;

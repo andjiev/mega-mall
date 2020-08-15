@@ -54,6 +54,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     zIndex: 10,
     position: 'absolute'
   },
+  wrapper: {
+    alignItems: 'baseline'
+  },
   tabs: {
     borderRight: `1px solid #355C7C`,
     overflow: 'visible',
@@ -65,7 +68,13 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   tabLabel: {
     fontFamily: 'OswaldBold',
-    fontSize: '14px'
+    fontSize: '14px',
+    textAlign: 'left',
+    width: '500px',
+    '& > span': {
+      alignItems: 'baseline',
+      textAlign: 'left'
+    }
   },
   subContainer: {
     maxWidth: '1600px',
@@ -109,13 +118,12 @@ const SubMenu = (props: ISubMenuProps) => {
       <Box className={classes.root} onMouseEnter={() => props.onSubmenuChange(true)} onMouseLeave={() => props.onSubmenuChange(false)}>
         <Tabs orientation="vertical" value={props.categoryType} onChange={(event, value) => onCategoryChange(value)} aria-label="Main Categories" className={classes.tabs}>
           {menuItems.map((item, index) => {
-            //Make Tab with styledcomponents
             return (
               <>
                 <span>
-                  {' '}
                   <StyledIcons src={submenuIcons[index].url} />
-                  <StyledTab key={index} value={item.type} className={classes.tabLabel} label={item.title} {...a11yProps(index - 1)} />
+                  <Tab key={index} value={item.type} className={classes.tabLabel} label={item.title} {...a11yProps(index)} />
+                  {console.log('INDEX', index)}
                 </span>
               </>
             );
@@ -177,7 +185,7 @@ const SubMenu = (props: ISubMenuProps) => {
 
                     <Grid item xs={4}>
                       <Box mt={4}>
-                        <Banner size="menu" bgColor="#F0F5FF" imgSource="/assets/images/main/Najnovite-patiki-na-nike.jpg" />
+                        <Banner size="menu" bgColor="#F0F5FF" imagesource="/assets/images/main/Najnovite-patiki-na-nike.jpg" />
                       </Box>
                     </Grid>
                   </Grid>

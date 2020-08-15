@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { Box, Grid } from '@material-ui/core';
 
 interface IMainBanner {
-  imgSource?: string;
+  imagesource?: string;
   bgColor?: string;
 }
 const XLBannerImage = styled(Box)`
   background-color: ${(props: IMainBanner) => props.bgColor};
-  background-image: url(${(props: IMainBanner) => props.imgSource});
+  background-image: url(${(props: IMainBanner) => props.imagesource});
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -21,7 +21,7 @@ const XLBannerImage = styled(Box)`
 
 const LBannerImage = styled(Box)`
   background-color: ${(props: IMainBanner) => props.bgColor};
-  background-image: url(${(props: IMainBanner) => props.imgSource});
+  background-image: url(${(props: IMainBanner) => props.imagesource});
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -34,7 +34,7 @@ const LBannerImage = styled(Box)`
 
 const MenuBannerImage = styled(Box)`
   background-color: ${(props: IMainBanner) => props.bgColor};
-  background-image: url(${(props: IMainBanner) => props.imgSource});
+  background-image: url(${(props: IMainBanner) => props.imagesource});
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
