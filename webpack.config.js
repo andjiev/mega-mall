@@ -48,8 +48,7 @@ const baseConfig = {
     }),
     new webpack.DefinePlugin({
       ROOT: JSON.stringify('/'),
-      // TODO: change this when api is up and running
-      API_URL: JSON.stringify('http://localhost:5501/')
+      API_URL: JSON.stringify('http://localhost:6401/')
     }),
     new CopyWebpackPlugin([
       { from: 'public/manifest.json', to: '' },
@@ -95,11 +94,11 @@ module.exports = (env, argv) => {
   let environment = (process.env.APP_ENV || 'development').toLowerCase();
 
   if (environment === 'production') {
-    return merge.smart(baseConfig, require('./webpack.config.production.js').apply(this, [env, argv]));
+    return merge.smartStrategy({ plugins: 'replace' })(baseConfig, require('./webpack.config.production.js').apply(this, [env, argv]));
   }
 
   if (environment === 'demo') {
-    return merge.smart(baseConfig, require('./webpack.config.demo.js').apply(this, [env, argv]));
+    return merge.smartStrategy({ plugins: 'replace' })(baseConfig, require('./webpack.config.demo.js').apply(this, [env, argv]));
   }
 
   return baseConfig;

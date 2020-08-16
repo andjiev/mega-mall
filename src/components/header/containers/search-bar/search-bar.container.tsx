@@ -9,6 +9,7 @@ import { StyledTextField } from './search-bar.styles';
 import { Grid, makeStyles } from '@material-ui/core';
 import { StyledButton } from './search-bar.styles';
 import SearchIcon from '@material-ui/icons/Search';
+import { translate } from 'lib/translate';
 
 interface IProps {
   searchText: string;
@@ -25,7 +26,7 @@ const SearchBar = (props: IProps) => {
           <StyledTextField
             fullWidth
             type="text"
-            placeholder="Пребарај"
+            placeholder={translate('MegaMall_Searchbar_Search', 'Пребарај')}
             value={props.searchText}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               props.onSearchTextChange(event.target.value);
@@ -50,7 +51,7 @@ const mapDispatchToProps = (dispatch: AppDispatch) => ({
 
 const mapStateToProps = (state: ApplicationState) => {
   return {
-    searchText: state.sharedStore.searchText
+    searchText: state.shared.searchText
   };
 };
 

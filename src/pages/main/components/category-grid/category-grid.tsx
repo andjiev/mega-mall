@@ -4,6 +4,7 @@ import { Grid, Box, Typography, Hidden } from '@material-ui/core';
 import Card from './../../../../components/card/card';
 import { StyledLink } from 'components/styled-link';
 import { cards } from './category-grid.data';
+import { translate } from 'lib/translate';
 
 const CategoryGrid = () => {
   return (
@@ -11,7 +12,7 @@ const CategoryGrid = () => {
       <Box>
         <Grid container justify="space-between">
           <Grid item sm={6} xs={12}>
-            <Typography variant="h5">Пребарај по категорија</Typography>
+            <Typography variant="h5">{translate('MegaMall_Categorygrid_Search', 'Пребарај по категорија')}</Typography>
           </Grid>
           <Hidden xsDown>
             <Grid container item xs={6} justify="flex-end" alignItems="flex-end">
@@ -19,7 +20,7 @@ const CategoryGrid = () => {
                 {' '}
                 <Typography variant="body2">
                   {/* TODO here prikazi gi site needs to be #355C7C this color */}
-                  прикажи ги сите {' >'}
+                  {translate('MegaMall_Categorygrid_Show', 'прикажи ги сите >')}
                 </Typography>
               </Box>
             </Grid>
@@ -30,7 +31,7 @@ const CategoryGrid = () => {
               <Box component="span" mt={1}>
                 <Typography variant="body2">
                   {/* TODO here prikazi gi site needs to be #355C7C this color */}
-                  прикажи ги сите {' >'}
+                  {translate('MegaMall_Categorygrid_Show', 'прикажи ги сите >')}
                 </Typography>
               </Box>
             </Grid>
@@ -40,7 +41,7 @@ const CategoryGrid = () => {
       <Box mt={3}>
         <Grid container spacing={3}>
           {cards.map(value => (
-            <Grid item key={value.id} xs={6} md={6} lg={4}>
+            <Grid item key={value.id} xs={12} md={6} lg={4}>
               <Card key={value.id} title={value.title} url={value.url} size="large">
                 <Box>
                   <Typography variant="subtitle1">

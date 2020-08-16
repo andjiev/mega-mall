@@ -1,15 +1,25 @@
 'use strict';
 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = (env, argv) => ({
   mode: 'production',
   devtool: 'source-map',
   plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      favicon: './public/favicon.ico'
+    }),
     new webpack.DefinePlugin({
       ROOT: JSON.stringify('/'),
-      // TODO: change this when api is up and running on demo server
-      API_URL: JSON.stringify('http://localhost:5501/')
-    })
+      API_URL: JSON.stringify('https://mega-mall-api-demo.herokuapp.com/')
+    }),
+    new CopyWebpackPlugin([
+      { from: 'public/manifest.json', to: '' },
+      { from: 'public/translations.json', to: 'static' },
+      { from: 'src/assets', to: 'assets' }
+    ])
   ]
 });

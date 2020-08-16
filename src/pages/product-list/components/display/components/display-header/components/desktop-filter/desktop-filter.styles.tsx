@@ -15,7 +15,8 @@ const StyledButton = styled(props => {
   height: 40px;
   width: 111px;
   color: ${(props: IStyledButton) => (props.isToggled ? 'white' : 'black')};
-  background-color: ${(props: IStyledButton) => (props.isToggled ? props.theme.palette.secondary.main : 'white')};
+  background-color: ${(props: IStyledButton) => (props.isToggled ? '#193364' : 'white')};
+  border: 1px solid #193364;
 
   ${props => props.theme.breakpoints.down('sm')} {
     width: 100%;
@@ -25,7 +26,6 @@ const StyledButton = styled(props => {
 const StyledSelect = styled(NativeSelect)`
   width: 176px;
   height: 40px;
-  border: 1px solid #0d1440;
   margin: 0 auto;
 `;
 

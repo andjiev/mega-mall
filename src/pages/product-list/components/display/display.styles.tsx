@@ -5,9 +5,11 @@ import { Pagination } from '@material-ui/lab';
 const StyledBox = styled(Box)`
   width: 100%;
 `;
+
 const StyledPagination = styled(Pagination)`
   & ul {
     justify-content: center;
   }
 `;
+
 export { StyledBox, StyledPagination };

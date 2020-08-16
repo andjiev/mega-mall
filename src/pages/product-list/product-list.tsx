@@ -5,7 +5,7 @@ import { AppDispatch } from '../..';
 import ApplicationState from '../../store/application-store';
 import { BreadCrumbs } from 'components/breadcrumbs';
 import { Grid, Box } from '@material-ui/core';
-import { Display } from './components/display';
+import { DisplayContainer } from './components/display';
 import Navigation from 'pages/category/components/navigation/navigation';
 
 interface IProps extends RouteComponentProps {}
@@ -20,7 +20,7 @@ const ProductList = (props: IProps) => {
             <Navigation />
           </Grid>
           <Grid item xs={12} md={8} lg={9} xl={10}>
-            <Display />
+            <DisplayContainer />
           </Grid>
         </Grid>
       </Box>
