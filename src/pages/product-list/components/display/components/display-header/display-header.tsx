@@ -11,7 +11,7 @@ const DisplayHeader = () => {
         <Grid container>
           <Grid item xs={12} md={5}>
             <Box mt={2} mb={2}>
-              <Typography variant="h4">Преносни компјутери</Typography>
+              <Typography variant="h5">Преносни компјутери</Typography>
             </Box>
           </Grid>
           <Grid item xs={12} md={7}>

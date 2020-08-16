@@ -29,7 +29,7 @@ const HomeCenterMenu = (props: IMenuProps) => {
         {menuItems.map(item => (
           <Grid key={item.type} item>
             <StyledBox pt={1} pb={1} isActive={props.isActive && categoryType === item.type} onMouseEnter={() => onCategoryChange(item.type)} onMouseLeave={() => props.onHideSubmenuChange()}>
-              <Typography variant="h6">
+              <Typography variant="subtitle2">
                 <StyledLink href={item.link}>{item.title}</StyledLink>
               </Typography>
             </StyledBox>

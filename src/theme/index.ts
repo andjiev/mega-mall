@@ -15,7 +15,6 @@ const theme = createMuiTheme({
     fontWeightRegular: 400,
     fontWeightMedium: 500,
     fontWeightBold: 700,
-
     // fontFamily: ['OswaldRegular', 'sans-serif'].join(','),
     h1: {
       fontFamily: ['OswaldBold', 'sans-serif'].join(','),
@@ -28,45 +27,50 @@ const theme = createMuiTheme({
       fontSize: '40px'
     },
     h3: {
-      fontFamily: ['OswaldBold', 'sans-serif'].join(','),
-      fontWeight: 700,
-      fontSize: '24px'
-    },
-    h4: {
-      fontFamily: ['OswaldRegular', 'sans-serif'].join(','),
-      fontWeight: 400,
-      fontSize: '22px'
-    },
-    h5: {
-      fontFamily: ['OswaldMedium', 'sans-serif'].join(','),
-      fontWeight: 500,
-      fontSize: '18px'
-    },
-    h6: {
-      fontFamily: ['OswaldRegular', 'sans-serif'].join(','),
-      fontWeight: 400,
-      fontSize: '16px'
-    },
-    subtitle1: {
       fontFamily: ['OswaldMedium', 'sans-serif'].join(','),
       fontWeight: 500,
       fontSize: '36px'
-    }, // subtitle 1 is for the price displayed in the detailed window card slide.
-    subtitle2: {
+    },
+    h4: {
+      fontFamily: ['OswaldMedium', 'sans-serif'].join(','),
+      fontWeight: 500,
+      fontSize: '24px'
+    },
+    h5: {
+      fontFamily: ['OswaldRegular ', 'sans-serif'].join(','),
+      fontWeight: 400,
+      fontSize: '22px'
+    },
+    h6: {
       fontFamily: ['OswaldMedium', 'sans-serif'].join(','),
       fontWeight: 400,
-      fontSize: '24px'
-    }, //subtitle 2 is for the price in the cards on the slider in main page for the price in product-list-item and for the price in most_popular products on main page
-    body1: {
-      fontFamily: ['RobotoRegular', 'sans-serif'].join(','),
+      fontSize: '18px'
+    },
+    subtitle1: {
+      fontFamily: ['RobotoMedium ', 'sans-serif'].join(','),
+      fontWeight: 500,
+      fontSize: '18px'
+    },
+    subtitle2: {
+      fontFamily: ['OswaldRegular ', 'sans-serif'].join(','),
       fontWeight: 400,
       fontSize: '14px'
     },
+    body1: {
+      fontFamily: ['RobotoRegular ', 'sans-serif'].join(','),
+      fontWeight: 400,
+      fontSize: '16px'
+    },
     body2: {
-      fontFamily: ['RobotoThin', 'sans-serif'].join(','),
-      fontWeight: 200,
+      fontFamily: ['RobotoRegular ', 'sans-serif'].join(','),
+      fontWeight: 400,
       fontSize: '14px'
-    } //for the footer text
+    },
+    button: {
+      fontFamily: ['RobotoRegular ', 'sans-serif'].join(','),
+      fontSize: '14px',
+      textTransform: 'uppercase'
+    }
   },
   palette: {
     primary: {

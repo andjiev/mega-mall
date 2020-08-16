@@ -26,11 +26,9 @@ const SliderCard = (props: CardProps) => {
       <StyledCardMedia className={classes.media} image={props.url} />
       <CardContent>
         <Box>
-          <Typography variant="subtitle2">{props.title}</Typography>
+          <Typography variant="body1">{props.title}</Typography>
         </Box>
-        <Box fontWeight="fontWeightBold" fontFamily="OswaldMedium" fontSize="24px">
-          <Typography variant="subtitle2">{props.children}</Typography> {/*TODO h3 for now is 22px and this needs to be 24px as in the design and the weight is regular at 400 value it needs to be Medium ... */}
-        </Box>
+        <Box>{props.children}</Box>
       </CardContent>
     </StyledMaterialCard>
   );

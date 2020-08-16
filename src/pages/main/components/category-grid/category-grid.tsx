@@ -11,18 +11,27 @@ const CategoryGrid = () => {
       <Box>
         <Grid container justify="space-between">
           <Grid item sm={6} xs={12}>
-            <Typography variant="h4">Пребарај по категорија</Typography>
+            <Typography variant="h5">Пребарај по категорија</Typography>
           </Grid>
           <Hidden xsDown>
             <Grid container item xs={6} justify="flex-end" alignItems="flex-end">
-              <Box component="span">прикажи ги сите {' >'}</Box>
+              <Box component="span">
+                {' '}
+                <Typography variant="body2">
+                  {/* TODO here prikazi gi site needs to be #355C7C this color */}
+                  прикажи ги сите {' >'}
+                </Typography>
+              </Box>
             </Grid>
           </Hidden>
 
           <Hidden smUp>
             <Grid container item xs={12} alignItems="flex-end">
               <Box component="span" mt={1}>
-                прикажи ги сите {' >'}
+                <Typography variant="body2">
+                  {/* TODO here prikazi gi site needs to be #355C7C this color */}
+                  прикажи ги сите {' >'}
+                </Typography>
               </Box>
             </Grid>
           </Hidden>
@@ -34,17 +43,17 @@ const CategoryGrid = () => {
             <Grid item key={value.id} xs={6} md={6} lg={4}>
               <Card key={value.id} title={value.title} url={value.url} size="large">
                 <Box>
-                  <Typography variant="h5">
+                  <Typography variant="subtitle1">
                     <StyledLink href={'#'}>{value.link1}</StyledLink>
                   </Typography>
                 </Box>
                 <Box mt={2}>
-                  <Typography variant="h5">
+                  <Typography variant="subtitle1">
                     <StyledLink href={'#'}>{value.link2}</StyledLink>
                   </Typography>
                 </Box>
                 <Box mt={2}>
-                  <Typography variant="h5">
+                  <Typography variant="subtitle1">
                     <StyledLink href={'#'}>{value.link3}</StyledLink>
                   </Typography>
                 </Box>

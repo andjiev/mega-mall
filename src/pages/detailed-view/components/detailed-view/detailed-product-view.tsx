@@ -25,7 +25,7 @@ const DetailedProductView = () => {
             <Card raised={true}>
               <StyledCardContent>
                 <Box pb={1}>
-                  <Typography variant="h3" gutterBottom>
+                  <Typography variant="h4" gutterBottom>
                     1Notebook Apple MacBook Air i5 2.9Ghz/8GB/256GB SSD/IntelHD6000/13.3 LED Retina MREC2
                   </Typography>
                 </Box>
@@ -36,7 +36,7 @@ const DetailedProductView = () => {
                   <hr></hr>
                 </Box>
                 <StyledBox>
-                  <Typography variant="h2" gutterBottom>
+                  <Typography variant="h3" gutterBottom>
                     45.000 ден
                   </Typography>
                   <img src="/src/assets/images/product-list/logo-btns/Anhoch.png" height={40}></img>
@@ -45,15 +45,11 @@ const DetailedProductView = () => {
             </Card>
           </Box>
         </StyledStickyGridItem>
-        {/* Now its done with z-index to go over the other list products for mobile so that way when we scroll downwards
-        we still can compare the components stinn needs minor fixes has space on the top :)  */}
         <Grid item xs={12} md={7} lg={7}>
           <Box>{/* TODO add FILTER COMPONENT FOR DETAILED VIEW */}</Box>
           <Box>
             <ProductItemList isPaging="detailList" />
           </Box>
-          {/* This later should be updated by Davor in Display component to render differently on different pages, here we need
-          a button "show more not pagination" */}
         </Grid>
       </StyledGridContainer>
     </>

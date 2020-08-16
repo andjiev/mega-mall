@@ -17,14 +17,16 @@ const MainSlider = () => {
               </Grid>
               <Box mt={2}>
                 <Grid item>
-                  <Box component="span">{item.subTitle}</Box>
+                  <Box component="span">
+                    <Typography variant="body1">{item.subTitle}</Typography>
+                  </Box>
                 </Grid>
               </Box>
             </Box>
             <Grid item>
               <Box mt={3}>
                 <StyledButton variant="contained" color="secondary" size="large">
-                  {item.buttonText}
+                  <Typography variant="button">{item.buttonText}</Typography>
                 </StyledButton>
               </Box>
             </Grid>

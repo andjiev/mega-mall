@@ -12,13 +12,13 @@ const TopBar = () => {
         <Box>
           <Grid container justify="flex-end" alignItems="flex-end" spacing={2}>
             <Grid item>
-              <StyledTypography variant="h6">Продавници</StyledTypography>
+              <StyledTypography variant="subtitle2">Продавници</StyledTypography>
             </Grid>
             <Grid item>
-              <StyledTypography variant="h6">Fb</StyledTypography>
+              <StyledTypography variant="subtitle2">Fb</StyledTypography>
             </Grid>
             <Grid item>
-              <StyledTypography variant="h6">Insta</StyledTypography>
+              <StyledTypography variant="subtitle2">Insta</StyledTypography>
             </Grid>
             <Grid item>
               <LanguagePickerContainer />

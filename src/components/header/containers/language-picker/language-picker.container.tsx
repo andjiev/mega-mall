@@ -25,7 +25,7 @@ export const LanguagePicker = (props: ILanguagePickerProps) => {
       <Box>
         {languages.map((lang, index) => (
           <StyledBox key={index} onClick={() => props.onLanguageChange(lang.name)}>
-            <Typography variant="h6">{index === 0 ? `${lang.name + ' | '}` : lang.name}</Typography>
+            <Typography variant="subtitle2">{index === 0 ? `${lang.name + ' | '}` : lang.name}</Typography>
           </StyledBox>
         ))}
       </Box>

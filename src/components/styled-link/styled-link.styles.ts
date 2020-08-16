@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 
 import { Link } from '@material-ui/core';
@@ -10,6 +11,7 @@ const StyledHoverLink = styled(Link)`
   width: 92px;
   font-size: 14px;
   color: ${(props: IStyledHoverLink) => (props.placeToRender === 'footer' ? '#ffffff' : props.placeToRender === 'menu' ? '#355c7c' : '#355c7c')};
+
   &:hover {
     color: ${props => props.theme.palette.secondary.main};
   }

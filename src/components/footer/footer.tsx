@@ -10,7 +10,7 @@ const Footer = () => {
     return (
       <Box>
         <StyledList>
-          <Typography variant="body1">
+          <Typography variant="body2">
             {item.header.src ? (
               <StyledImage src={item.header.src}></StyledImage>
             ) : item.header.title ? (
@@ -25,11 +25,11 @@ const Footer = () => {
             {item.links.map((linkItem, index) => {
               return (
                 <ListItem key={index} disableGutters>
-                  <Typography variant="body2">
+                  <Box fontFamily="RobotoThin" fontWeight="300" fontSize="14px">
                     <StyledLink placeToRender="footer" href={linkItem.link}>
                       {linkItem.title}
                     </StyledLink>
-                  </Typography>
+                  </Box>
                 </ListItem>
               );
             })}
