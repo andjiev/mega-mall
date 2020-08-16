@@ -119,13 +119,10 @@ const SubMenu = (props: ISubMenuProps) => {
         <Tabs orientation="vertical" value={props.categoryType} onChange={(event, value) => onCategoryChange(value)} aria-label="Main Categories" className={classes.tabs}>
           {menuItems.map((item, index) => {
             return (
-              <>
-                <span>
-                  <StyledIcons src={submenuIcons[index].url} />
-                  <Tab key={index} value={item.type} className={classes.tabLabel} label={item.title} {...a11yProps(index)} />
-                  {console.log('INDEX', index)}
-                </span>
-              </>
+              <span key={index}>
+                <StyledIcons src={submenuIcons[index].url} />
+                <Tab key={index} value={item.type} className={classes.tabLabel} label={item.title} {...a11yProps(index)} />
+              </span>
             );
           })}
         </Tabs>
