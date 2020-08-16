@@ -94,11 +94,11 @@ module.exports = (env, argv) => {
   let environment = (process.env.APP_ENV || 'development').toLowerCase();
 
   if (environment === 'production') {
-    return merge.smart(baseConfig, require('./webpack.config.production.js').apply(this, [env, argv]));
+    return merge.smartStrategy({ plugins: 'replace' })(baseConfig, require('./webpack.config.production.js').apply(this, [env, argv]));
   }
 
   if (environment === 'demo') {
-    return merge.smart(baseConfig, require('./webpack.config.demo.js').apply(this, [env, argv]));
+    return merge.smartStrategy({ plugins: 'replace' })(baseConfig, require('./webpack.config.demo.js').apply(this, [env, argv]));
   }
 
   return baseConfig;
