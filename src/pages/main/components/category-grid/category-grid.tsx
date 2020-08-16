@@ -45,17 +45,23 @@ const CategoryGrid = () => {
               <Card key={value.id} title={value.title} url={value.url} size="large">
                 <Box>
                   <Typography variant="subtitle1">
-                    <StyledLink href={'#'}>{value.link1}</StyledLink>
+                    <StyledLink placeToRender="card" href={'#'}>
+                      {value.link1}
+                    </StyledLink>
                   </Typography>
                 </Box>
                 <Box mt={2}>
                   <Typography variant="subtitle1">
-                    <StyledLink href={'#'}>{value.link2}</StyledLink>
+                    <StyledLink placeToRender="card" href={'#'}>
+                      {value.link2}
+                    </StyledLink>
                   </Typography>
                 </Box>
                 <Box mt={2}>
                   <Typography variant="subtitle1">
-                    <StyledLink href={'#'}>{value.link3}</StyledLink>
+                    <StyledLink placeToRender="card" href={'#'}>
+                      {value.link3}
+                    </StyledLink>
                   </Typography>
                 </Box>
               </Card>
