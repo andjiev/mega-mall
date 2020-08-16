@@ -9,18 +9,19 @@ const ProductGrid = () => {
       <Box>
         <Grid container justify="space-between">
           <Grid item sm={6} xs={12}>
-            <Typography variant="h3">Најнови производи</Typography>
+            <Typography variant="h5">Најнови производи</Typography>
           </Grid>
           <Hidden xsDown>
             <Grid container item xs={6} justify="flex-end" alignItems="flex-end">
-              <Box component="span">прикажи ги сите {' >'}</Box>
+              <Box component="span">
+                <Typography variant="body2">прикажи ги сите {' >'}</Typography>
+              </Box>
             </Grid>
           </Hidden>
-
           <Hidden smUp>
             <Grid container item xs={12} alignItems="flex-end">
               <Box component="span" mt={1}>
-                прикажи ги сите {' >'}
+                <Typography variant="body2">прикажи ги сите {' >'}</Typography>
               </Box>
             </Grid>
           </Hidden>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { List, ListItem, Button } from '@material-ui/core';
+import { List, ListItem, Button, Typography } from '@material-ui/core';
 import { displayData } from './product-item-list.data';
 import { StyledButton } from './product-item-list.styles';
 import { StyledPagination, StyledBox } from '../display.styles';
@@ -49,8 +49,8 @@ const ProductItemList = (props: ShopsListProps) => {
   const renderShowMoreButton = () => {
     return (
       <>
-        <StyledButton variant="contained" onClick={showMorePosts}>
-          види повеќе
+        <StyledButton variant="contained" color="secondary" onClick={showMorePosts}>
+          <Typography variant="button">види повеќе</Typography>
         </StyledButton>
       </>
     );

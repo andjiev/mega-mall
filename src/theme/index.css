@@ -42,8 +42,10 @@ body {
 .carousel .control-dots .dot {
   width: 12px;
   height: 12px;
+  background-color: #ffffff;
+  opacity: 1;
 }
 
 .carousel .control-dots .dot.selected {
-  background-color: #bf1736;
+  background-color: #193364;
 }

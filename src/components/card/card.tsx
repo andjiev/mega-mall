@@ -29,10 +29,10 @@ const _Card = (props: CardProps) => {
         <StyledCardMedia className={classes.media} image={props.url} />
         <CardContent>
           <Box>
-            <Typography variant="subtitle2">{props.title}</Typography>
+            <Typography variant="body1">{props.title}</Typography>
           </Box>
           <Box>
-            <Typography variant="h3">{props.children}</Typography> {/*Same her varian h3 is 22px and its Regular not medium weight it needs to be 24px and fontweightmedium*/}
+            <Typography variant="h4">{props.children}</Typography>
           </Box>
         </CardContent>
       </StyledMaterialCard>
@@ -70,13 +70,16 @@ const _Card = (props: CardProps) => {
                     {props.children}
                     <Box mt={3}>
                       <Box color="white" component="span">
-                        {translate('MegaMall_Card_Show', 'прикажи ги сите >')}
+                        <Typography variant="body2">{translate('MegaMall_Card_Show', 'прикажи ги сите >')}</Typography>
                       </Box>
                     </Box>
                   </Hidden>
                   <Hidden lgUp>
                     <Box color="white" component="span">
-                      {translate('MegaMall_Card_Show', 'прикажи ги сите >')}
+                      <Typography variant="body2">
+                        {' '}
+                        {translate('MegaMall_Card_Show', 'прикажи ги сите >')} {' >'}
+                      </Typography>
                     </Box>
                   </Hidden>
                 </Box>

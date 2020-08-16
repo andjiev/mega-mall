@@ -16,7 +16,7 @@ const _CategoryPage = (props: CategoryPageProps) => {
   return (
     <>
       <BreadCrumbs />
-      <Box mt={5}>
+      <Box>
         <Grid container>
           <Grid item xs={12} md={4} lg={3} xl={2}>
             <Navigation />
