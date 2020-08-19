@@ -36,11 +36,11 @@ const _DetailedProductPage = (props: DetailedProductProps) => {
   return (
     <>
       <BreadCrumbs />
-      <Container maxWidth={false} disableGutters={true}>
+      <Container maxWidth={false}>
+        {/* TODO because of the container the card in DetailedProductVied is not fullWidth */}
         <Box mt={5}>
           <DetailedProductView />
         </Box>
-
         <Box m={5}>
           <CardSlider />
         </Box>

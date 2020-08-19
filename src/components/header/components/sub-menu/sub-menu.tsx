@@ -139,11 +139,14 @@ const SubMenu = (props: ISubMenuProps) => {
                           <List>
                             <ListItem disableGutters>
                               <StyledListItemText primary={submenuContent.data.left.title}></StyledListItemText>
+                              {/* TODO help here with the font */}
                             </ListItem>
                             {submenuContent.data.left.items.map(item => {
                               return (
                                 <ListItem key={item.id} disableGutters>
-                                  <Link href="#">{item.title}</Link>
+                                  <Link href="#">
+                                    <Typography variant="subtitle2">{item.title}</Typography>
+                                  </Link>
                                 </ListItem>
                               );
                             })}
@@ -157,7 +160,9 @@ const SubMenu = (props: ISubMenuProps) => {
                             {submenuContent.data.right.items.map(item => {
                               return (
                                 <ListItem key={item.id} disableGutters>
-                                  <Link href="#">{item.title}</Link>
+                                  <Link href="#">
+                                    <Typography variant="subtitle2">{item.title}</Typography>
+                                  </Link>
                                 </ListItem>
                               );
                             })}
@@ -171,7 +176,9 @@ const SubMenu = (props: ISubMenuProps) => {
                             {submenuContent.data.right.items.map(item => {
                               return (
                                 <ListItem key={item.id} disableGutters>
-                                  <Link href="#">{item.title}</Link>
+                                  <Link href="#">
+                                    <Typography variant="subtitle2">{item.title}</Typography>
+                                  </Link>
                                 </ListItem>
                               );
                             })}

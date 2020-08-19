@@ -11,9 +11,11 @@ const StyledSubMenu = styled(Box)`
 
 const StyledListItemText = styled(ListItemText)`
   color: black;
-  font-size: 16px;
+  font-size: 14px;
   border-bottom: 2px solid #101a50;
   padding-bottom: 3%;
+  font-family: 'OswaldRegular', sans-serif;
+  font-weight: 700;
 `;
 interface ISubmenuImage {
   url?: string;

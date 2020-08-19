@@ -15,12 +15,11 @@ const theme = createMuiTheme({
     fontWeightRegular: 400,
     fontWeightMedium: 500,
     fontWeightBold: 700,
-
     // fontFamily: ['OswaldRegular', 'sans-serif'].join(','),
     h1: {
       fontFamily: ['OswaldBold', 'sans-serif'].join(','),
       fontWeight: 700,
-      fontSize: '72px'
+      fontSize: '48px'
     },
     h2: {
       fontFamily: ['OswaldBold', 'sans-serif'].join(','),
@@ -28,53 +27,58 @@ const theme = createMuiTheme({
       fontSize: '40px'
     },
     h3: {
-      fontFamily: ['OswaldRegular', 'sans-serif'].join(','),
-      fontWeight: 400,
-      fontSize: '22px'
+      fontFamily: ['OswaldMedium', 'sans-serif'].join(','),
+      fontWeight: 500,
+      fontSize: '36px'
     },
     h4: {
       fontFamily: ['OswaldMedium', 'sans-serif'].join(','),
       fontWeight: 500,
-      fontSize: '18px'
+      fontSize: '24px'
     },
     h5: {
-      fontFamily: ['OswaldRegular', 'sans-serif'].join(','),
+      fontFamily: ['OswaldRegular ', 'sans-serif'].join(','),
       fontWeight: 400,
-      fontSize: '16px'
+      fontSize: '22px'
     },
     h6: {
-      fontFamily: ['OswaldRegular', 'sans-serif'].join(','),
+      fontFamily: ['OswaldMedium', 'sans-serif'].join(','),
       fontWeight: 400,
-      fontSize: '14px'
+      fontSize: '18px'
     },
     subtitle1: {
-      fontFamily: ['RobotoMedium', 'sans-serif'].join(','),
+      fontFamily: ['RobotoMedium ', 'sans-serif'].join(','),
       fontWeight: 500,
       fontSize: '18px'
-    }, // subtitle 1 is for the links with in the cards. . .
+    },
     subtitle2: {
-      fontFamily: ['RobotoRegular', 'sans-serif'].join(','),
-      fontWeight: 400,
-      fontSize: '16px'
-    }, //for the titles in the card-slider and category grid . . .
-    body1: {
-      fontFamily: ['RobotoRegular', 'sans-serif'].join(','),
+      fontFamily: ['OswaldRegular ', 'sans-serif'].join(','),
       fontWeight: 400,
       fontSize: '14px'
     },
+    body1: {
+      fontFamily: ['RobotoRegular ', 'sans-serif'].join(','),
+      fontWeight: 400,
+      fontSize: '16px'
+    },
     body2: {
-      fontFamily: ['RobotoThin', 'sans-serif'].join(','),
-      fontWeight: 200,
+      fontFamily: ['RobotoRegular ', 'sans-serif'].join(','),
+      fontWeight: 400,
       fontSize: '14px'
-    } //for the footer text
+    },
+    button: {
+      fontFamily: ['RobotoRegular ', 'sans-serif'].join(','),
+      fontSize: '14px',
+      textTransform: 'uppercase'
+    }
   },
   palette: {
     primary: {
-      main: '#0D1440',
-      dark: '#0a1033'
+      main: '#193364',
+      dark: '#0D1440'
     },
     secondary: {
-      main: '#BF1736'
+      main: '#FDBC00'
     },
     grey: {
       300: '#E1E1E1'

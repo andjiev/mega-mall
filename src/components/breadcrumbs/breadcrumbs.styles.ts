@@ -4,10 +4,10 @@ import { Box } from '@material-ui/core';
 
 const StyledBox = styled(Box)`
   background-color: #ffffff;
-  position: absolute;
+  // position: absolute;
   width: 100%;
   height: 45px;
-  z-index: 800;
+  z-index: 4;
 `;
 
 export { StyledBox };

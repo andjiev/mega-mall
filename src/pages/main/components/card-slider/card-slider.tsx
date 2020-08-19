@@ -11,18 +11,21 @@ const CardSlider = () => {
       <Box>
         <Grid container justify="space-between">
           <Grid item sm={6} xs={12}>
-            <Typography variant="h3">Најпосетени производи</Typography>
+            <Typography variant="h5">Најпосетени производи</Typography>
           </Grid>
           <Hidden xsDown>
             <Grid container item xs={6} justify="flex-end" alignItems="flex-end">
-              <Box component="span">прикажи ги сите {' >'}</Box>
+              <Box component="span">
+                {' '}
+                <Typography variant="body2">прикажи ги сите {' >'}</Typography>
+              </Box>
             </Grid>
           </Hidden>
 
           <Hidden smUp>
             <Grid container item xs={12} alignItems="flex-end">
               <Box component="span" mt={1}>
-                прикажи ги сите {' >'}
+                <Typography variant="body2">прикажи ги сите {' >'}</Typography>
               </Box>
             </Grid>
           </Hidden>
@@ -70,7 +73,7 @@ const CardSlider = () => {
             <Link key={res.id} href={res.img}>
               <SliderCard title={res.title} url={res.img}>
                 {/* TODO: maybe span would be better */}
-                <span>{res.price}</span>
+                <Typography variant="h4">{res.price}</Typography>
               </SliderCard>
             </Link>
           ))}

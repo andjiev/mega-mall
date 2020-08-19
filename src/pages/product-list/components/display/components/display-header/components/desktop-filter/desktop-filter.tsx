@@ -14,10 +14,11 @@ const DesktopFilter = () => {
     return (
       <ButtonGroup color="secondary">
         <StyledButton isToggled={!isToggled} onClick={() => setToggled(!isToggled)}>
-          <Typography variant="h5">{translate('MegaMall_DesktopFilter_Products', 'Производи')}</Typography>
+          <Typography variant="button">{translate('MegaMall_DesktopFilter_Products', 'Производи')}</Typography>
+          {/* ADD TRANSLATION FOR THE BUTTON TEXT !!! */}
         </StyledButton>
         <StyledButton isToggled={isToggled} onClick={() => setToggled(!isToggled)}>
-          <Typography variant="h5">{translate('MegaMall_DesktopFilter_Shops', 'Продавници')}</Typography>
+          <Typography variant="button">{translate('MegaMall_DesktopFilter_Shops', 'Продавници')}</Typography>
         </StyledButton>
       </ButtonGroup>
     );

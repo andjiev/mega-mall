@@ -20,6 +20,10 @@ const StyledButton = styled(Button)`
   height: 50px;
   color: white;
   background-color: #193364;
+
+  &:hover {
+    background-color: #0d1440;
+  }
 `;
 
 const StyledContainer = styled(Container)`
