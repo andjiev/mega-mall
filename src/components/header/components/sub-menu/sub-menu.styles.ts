@@ -41,9 +41,6 @@ const StyledTab = styled(Tab)`
 
 const StyledIcons = styled.img`
   width: 25px;
-  height: 100%;
-  vertical-align: middle;
-  margin-left: 5%;
   opacity: 0.7;
 `;
 

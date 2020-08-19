@@ -1,8 +1,7 @@
 import React from 'react';
-import { StyledLogo } from './logo.styles';
 
 const MainLogo = () => {
-  return <StyledLogo />;
+  return <img src="/assets/images/header/MMLogo.svg" />;
 };
 
 export default MainLogo;

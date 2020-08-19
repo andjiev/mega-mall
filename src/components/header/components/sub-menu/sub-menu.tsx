@@ -70,11 +70,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontFamily: 'OswaldBold',
     fontSize: '14px',
     textAlign: 'left',
-    width: '500px',
-    '& > span': {
-      alignItems: 'baseline',
-      textAlign: 'left'
-    }
+    width: '500px'
   },
   subContainer: {
     maxWidth: '1600px',
@@ -115,14 +111,26 @@ const SubMenu = (props: ISubMenuProps) => {
 
   return (
     <>
-      <Box className={classes.root} onMouseEnter={() => props.onSubmenuChange(true)} onMouseLeave={() => props.onSubmenuChange(false)}>
+      <Box className={classes.root} onMouseEnter={() => props.onSubmenuChange(true)} onMouseLeave={() => props.onSubmenuChange(false)} boxShadow={3}>
         <Tabs orientation="vertical" value={props.categoryType} onChange={(event, value) => onCategoryChange(value)} aria-label="Main Categories" className={classes.tabs}>
           {menuItems.map((item, index) => {
             return (
-              <span key={index}>
-                <StyledIcons src={submenuIcons[index].url} />
-                <Tab key={index} value={item.type} className={classes.tabLabel} label={item.title} {...a11yProps(index)} />
-              </span>
+              <Box key={index}>
+                <Tab
+                  key={index}
+                  value={item.type}
+                  className={classes.tabLabel}
+                  label={
+                    <Grid container spacing={2} alignItems="center">
+                      <Grid item>
+                        <StyledIcons src={submenuIcons[index].url} />
+                      </Grid>
+                      <Grid item>{item.title}</Grid>
+                    </Grid>
+                  }
+                  {...a11yProps(index)}
+                />
+              </Box>
             );
           })}
         </Tabs>

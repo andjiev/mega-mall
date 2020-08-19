@@ -1,12 +1,11 @@
 import React from 'react';
 
-import { Grid, Box, Container, Link } from '@material-ui/core';
-import { SearchBarContainer } from 'components/header/containers/search-bar';
+import { Grid, Box, Link } from '@material-ui/core';
 import { LanguagePickerContainer } from 'components/header/containers/language-picker';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 
-import { StyledImage, StyledTypography } from './top-bar.styles';
+import { StyledTypography } from './top-bar.styles';
 import { translate } from 'lib/translate';
 
 const TopBar = () => {
@@ -17,12 +16,10 @@ const TopBar = () => {
           <Grid item>
             <StyledTypography variant="subtitle2">{translate('MegaMall_Topbar_Shops', 'Продавници')}</StyledTypography>
           </Grid>
-          <Grid item>
+          <Grid item style={{ padding: 0 }}>
             <Link href="https://www.facebook.com">
               <FacebookIcon fontSize="small" htmlColor="#193364" />
             </Link>
-          </Grid>
-          <Grid item>
             <Link href="https://www.instagram.com">
               <InstagramIcon fontSize="small" htmlColor="#193364" />
             </Link>
