@@ -34,7 +34,6 @@ const CardSlider = () => {
       <Box mt={3} pb={3}>
         <Carousel
           arrows
-          partialVisbile
           infinite
           minimumTouchDrag={80}
           swipeable
@@ -71,7 +70,7 @@ const CardSlider = () => {
         >
           {/* TODO: Add destination product url to the interface*/}
           {cardData.map(res => (
-            <Link key={res.id} href={res.img}>
+            <Link key={res.id}>
               <SliderCard title={res.title} url={res.img}>
                 {/* TODO: maybe span would be better */}
                 <Typography variant="h4">{res.price}</Typography>

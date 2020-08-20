@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { makeStyles, ThemeProvider } from '@material-ui/styles';
 import { List, Grid, Container, ListItem, Box, Typography, Theme, Tabs, Tab } from '@material-ui/core';
 
-import { StyledSubMenu, StyledListItemText, SubmenuImage, StyledBox } from './sub-menu.styles';
+import { StyledSubMenu, StyledListItemText, SubmenuImage, StyledTab, StyledIcons } from './sub-menu.styles';
 import Link from '@material-ui/core/Link';
 
-import { submenuItems, ISubmenuItem } from './sub-menu.data';
+import { submenuItems, ISubmenuItem, submenuIcons } from './sub-menu.data';
 import { StyledLink } from 'components/styled-link';
 import { CategoryTypes } from 'lib/enums';
 import { menuItems } from './../menu/menu.data';
+import Banner from 'components/banner/banner';
 
 //Tab panels
 
@@ -43,7 +44,7 @@ function a11yProps(index: any) {
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: '#fef3f4',
+    backgroundColor: '#F0F5FF',
     display: 'flex',
     flexDirecation: 'row',
     height: 300,
@@ -51,12 +52,15 @@ const useStyles = makeStyles((theme: Theme) => ({
     overflowY: 'hidden',
     width: '100%',
     zIndex: 10,
-    position: 'absolute',
-    textAlign: 'left'
+    position: 'absolute'
+  },
+  wrapper: {
+    alignItems: 'baseline'
   },
   tabs: {
     borderRight: `1px solid #355C7C`,
-    overflow: 'visible'
+    overflow: 'visible',
+    justifyContent: 'flex-start'
   },
   tabPanel: {
     padding: 0,
@@ -66,7 +70,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontFamily: 'OswaldBold',
     fontSize: '14px',
     textAlign: 'left',
-    alignItems: 'left'
+    width: '500px'
   },
   subContainer: {
     maxWidth: '1600px',
@@ -107,15 +111,28 @@ const SubMenu = (props: ISubMenuProps) => {
 
   return (
     <>
-      <StyledBox className={classes.root} onMouseEnter={() => props.onSubmenuChange(true)} onMouseLeave={() => props.onSubmenuChange(false)}>
-        <Tabs orientation="vertical" value={props.categoryType} onChange={(event, value) => onCategoryChange(value)} aria-label="Main Categories" className={classes.tabs}>
+      <Box className={classes.root} onMouseEnter={() => props.onSubmenuChange(true)} onMouseLeave={() => props.onSubmenuChange(false)} boxShadow={3}>
+        <Tabs orientation="vertical" value={props.categoryType && props.categoryType - 1} aria-label="Main Categories" className={classes.tabs}>
           {menuItems.map((item, index) => {
-            //Make Tab with styledcomponents
-            return <Tab key={index} value={item.type} className={classes.tabLabel} label={item.title} {...a11yProps(index)} />;
-            // TODO tabs don't have the proper font
+            return (
+              <Box key={index}>
+                <Tab
+                  value={item.type}
+                  className={classes.tabLabel}
+                  label={
+                    <Grid container spacing={2} alignItems="center">
+                      <Grid item>
+                        <StyledIcons src={submenuIcons[index].url} />
+                      </Grid>
+                      <Grid item>{item.title}</Grid>
+                    </Grid>
+                  }
+                  onMouseEnter={() => onCategoryChange(item.type)}
+                />
+              </Box>
+            );
           })}
         </Tabs>
-
         <TabPanel className={classes.tabPanel} value={props.categoryType} index={props.categoryType}>
           {submenuContent && (
             <StyledSubMenu>
@@ -175,23 +192,19 @@ const SubMenu = (props: ISubMenuProps) => {
                         </Grid>
                       </Grid>
                     </Grid>
-                    {/* TODO: replace the SubmenyImage component with the banner component */}
-                    {/* <Grid item xs={4}>
-                      {submenuContent.data.side.items.map(item => {
-                        return (
-                          <Box key={item.id}>
-                            <SubmenuImage key={item.id} url={item.url}></SubmenuImage>
-                          </Box>
-                        );
-                      })}
-                    </Grid> */}
+
+                    <Grid item xs={4}>
+                      <Box mt={4}>
+                        <Banner size="menu" bgColor="#F0F5FF" imagesource="/assets/images/main/Najnovite-patiki-na-nike.jpg" />
+                      </Box>
+                    </Grid>
                   </Grid>
                 </Box>
               </Container>
             </StyledSubMenu>
           )}
         </TabPanel>
-      </StyledBox>
+      </Box>
     </>
   );
 };

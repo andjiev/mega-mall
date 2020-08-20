@@ -6,8 +6,7 @@ import ApplicationState from '../../../../store/application-store';
 import * as SharedStore from '../../../../store/shared-store';
 
 import { StyledTextField } from './search-bar.styles';
-import { Grid, makeStyles } from '@material-ui/core';
-import { StyledButton } from './search-bar.styles';
+import { InputAdornment, IconButton } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import { translate } from 'lib/translate';
 
@@ -20,25 +19,32 @@ interface IProps {
 const SearchBar = (props: IProps) => {
   return (
     <>
-      <Grid container>
-        <Grid item sm>
-          {/* TODO: Center text in textField */}
-          <StyledTextField
-            fullWidth
-            type="text"
-            placeholder={translate('MegaMall_Searchbar_Search', 'Пребарај')}
-            value={props.searchText}
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-              props.onSearchTextChange(event.target.value);
-            }}
-            InputProps={{
-              disableUnderline: true
-            }}
-          >
-            <StyledButton>ButtonChe</StyledButton>
-          </StyledTextField>
-        </Grid>
-      </Grid>
+      <StyledTextField
+        fullWidth
+        type="text"
+        placeholder={translate('MegaMall_Searchbar_Search', 'Пребарај')}
+        size="medium"
+        margin="none"
+        value={props.searchText}
+        onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+          props.onSearchTextChange(event.target.value);
+        }}
+        inputProps={{
+          style: {
+            paddingLeft: 10
+          }
+        }}
+        InputProps={{
+          disableUnderline: true,
+          endAdornment: (
+            <InputAdornment position="end">
+              <IconButton>
+                <SearchIcon />
+              </IconButton>
+            </InputAdornment>
+          )
+        }}
+      ></StyledTextField>
     </>
   );
 };

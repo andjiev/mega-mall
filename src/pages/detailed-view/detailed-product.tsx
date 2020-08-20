@@ -9,7 +9,7 @@ import { Box, Grid, List, ListItem, Button, Typography, Link, Container } from '
 import { displayData } from '../product-list/components/display/product-item-list/product-item-list.data';
 import { CardSlider } from './../main/components/card-slider';
 import { cardData } from './../main/components/card-slider/card-slider.data';
-import { MainBanner } from './../main/components/main-banner';
+import { Banner } from '../../components/banner';
 
 interface DetailedProductProps extends RouteComponentProps {}
 
@@ -45,7 +45,11 @@ const _DetailedProductPage = (props: DetailedProductProps) => {
           <CardSlider />
         </Box>
         <Box m={5}>
-          <MainBanner />
+          <Grid container justify="center">
+            <Grid item xs={8}>
+              <Banner size="l" imgSource="/assets/images/main/Banner2.png" />
+            </Grid>
+          </Grid>
         </Box>
       </Container>
     </>
