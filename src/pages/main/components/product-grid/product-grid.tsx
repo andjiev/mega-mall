@@ -9,7 +9,6 @@ import { connect } from 'react-redux';
 
 interface IProps {
   data: Models.Product.Model[];
-  count: number;
   onInit: () => void;
 }
 

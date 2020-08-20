@@ -10,8 +10,8 @@ import { MainSlider } from './components/main-slider';
 import { CategoryGrid } from './components/category-grid';
 import { CardSlider } from './components/card-slider';
 import { MainBanner } from './components/main-banner';
-import { ProductGrid } from './components/product-grid';
 import { GiftCardGrid } from './components/gift-card-grid';
+import LatestProductContainer from './components/product-grid/product-grid';
 
 interface MainPageProps extends RouteComponentProps {}
 
@@ -30,11 +30,10 @@ const _MainPage = (props: MainPageProps) => {
         <Box mt={5} mb={5}>
           <MainBanner />
         </Box>
-        <ProductGrid />
+        <LatestProductContainer />
         <Box mt={5} mb={5}>
           <GiftCardGrid />
         </Box>
-
       </Container>
     </>
   );
