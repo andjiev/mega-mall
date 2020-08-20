@@ -112,12 +112,12 @@ const SubMenu = (props: ISubMenuProps) => {
   return (
     <>
       <Box className={classes.root} onMouseEnter={() => props.onSubmenuChange(true)} onMouseLeave={() => props.onSubmenuChange(false)} boxShadow={3}>
-        <Tabs orientation="vertical" value={props.categoryType} onChange={(event, value) => onCategoryChange(value)} aria-label="Main Categories" className={classes.tabs}>
+        // value of the tab is not set to correct value of the category type // it ends up setting it from 0 to length - 1
+        <Tabs orientation="vertical" value={props.categoryType && props.categoryType - 1} aria-label="Main Categories" className={classes.tabs}>
           {menuItems.map((item, index) => {
             return (
               <Box key={index}>
                 <Tab
-                  key={index}
                   value={item.type}
                   className={classes.tabLabel}
                   label={
@@ -128,13 +128,12 @@ const SubMenu = (props: ISubMenuProps) => {
                       <Grid item>{item.title}</Grid>
                     </Grid>
                   }
-                  {...a11yProps(index)}
+                  onMouseEnter={() => onCategoryChange(item.type)}
                 />
               </Box>
             );
           })}
         </Tabs>
-
         <TabPanel className={classes.tabPanel} value={props.categoryType} index={props.categoryType}>
           {submenuContent && (
             <StyledSubMenu>

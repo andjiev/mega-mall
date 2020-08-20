@@ -53,6 +53,10 @@ const mapDispatchToProps = (dispatch: AppDispatch) => ({
   },
   onSubmenuChange: (value: boolean) => {
     dispatch(HeaderStore.setIsOnSubmenu(value));
+
+    if (!value) {
+      dispatch(HeaderStore.setShowSubmenu(false));
+    }
   },
   onHideSubmenuChange: () => {
     dispatch(HeaderStore.setShowSubmenu(false));
