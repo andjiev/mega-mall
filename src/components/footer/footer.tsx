@@ -102,7 +102,7 @@ const Footer = () => {
         <StyledDivider />
         <Box mt={2}>
           <Grid container justify="center" alignItems="center">
-            <StyledCopyright component="span">{translate('MegaMall_Footer_Copyright', '&copy;2020-2020 E-commerce Сите права задржани.')}</StyledCopyright>
+            <StyledCopyright component="span">&copy;2020-2020 {translate('MegaMall_Footer_Copyright', 'E-commerce Сите права задржани.')}</StyledCopyright>
           </Grid>
         </Box>
       </StyledFooter>
