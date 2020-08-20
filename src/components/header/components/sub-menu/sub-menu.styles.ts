@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ListItemText, Box } from '@material-ui/core';
+import { ListItemText, Box, Tab } from '@material-ui/core';
 
 const StyledSubMenu = styled(Box)`
   background-color: #f0f5ff;
@@ -32,4 +32,16 @@ const StyledBox = styled(Box)`
   background-color: #f0f5ff;
 `;
 
-export { StyledSubMenu, StyledListItemText, SubmenuImage, StyledBox };
+const StyledTab = styled(Tab)`
+  width: 500px;
+  span {
+    align-items: baseline;
+  }
+`;
+
+const StyledIcons = styled.img`
+  width: 25px;
+  opacity: 0.7;
+`;
+
+export { StyledSubMenu, StyledListItemText, SubmenuImage, StyledTab, StyledIcons, StyledBox };

@@ -5,9 +5,9 @@ import { AppDispatch } from 'index';
 import ApplicationState from 'store/application-store';
 import * as HeaderStore from 'store/header-store';
 
-import { Box, List, ListItem, Typography } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 import { formatCulture, formatLanguage } from './language-picker.utils';
-import { StyledPicker, StyledImage, StyledDisplay, StyledBox } from './language-picker.styles';
+import { StyledBox } from './language-picker.styles';
 import { languages } from './language-picker.data';
 
 interface ILanguagePickerProps {
@@ -17,16 +17,16 @@ interface ILanguagePickerProps {
 }
 
 export const LanguagePicker = (props: ILanguagePickerProps) => {
-  const [showPicker, setShowPicker] = useState(false);
-  const [pickerActive, setPickerActive] = useState(false);
-
   return (
     <>
       <Box>
         {languages.map((lang, index) => (
-          <StyledBox key={index} onClick={() => props.onLanguageChange(lang.name)}>
-            <Typography variant="subtitle2">{index === 0 ? `${lang.name + ' | '}` : lang.name}</Typography>
-          </StyledBox>
+          <>
+            <StyledBox key={index} onClick={() => props.onLanguageChange(lang.name)}>
+              <Typography variant="subtitle2">{lang.name}</Typography>
+            </StyledBox>
+            {languages.length - 1 !== index && ' | '}
+          </>
         ))}
       </Box>
     </>
