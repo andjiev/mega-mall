@@ -27,6 +27,12 @@ const StyledSelect = styled(NativeSelect)`
   width: 176px;
   height: 40px;
   margin: 0 auto;
+  text-decoration: none;
+  border: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 `;
 
 export { StyledButton, StyledSelect };
