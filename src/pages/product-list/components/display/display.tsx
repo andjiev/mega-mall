@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { AppDispatch } from 'index';
 import ApplicationState from 'store/application-store';
 
-import { Box, ListItem, List } from '@material-ui/core';
+import { Box, ListItem, List, Link } from '@material-ui/core';
 import DisplayHeader from './components/display-header/display-header';
 
 import { ProductItem } from './product-item';
@@ -40,11 +39,13 @@ const Display = (props: IProps) => {
             <List component={'ul'}>
               {props.data.map(product => {
                 return (
-                  <ListItem key={product.id} button component={RouterLink} to={generatePath(ROUTES.PRODUCT, { id: product.id })} disableGutters={true} divider={true}>
-                    <StyledBox mt={1} mb={1}>
-                      <ProductItem key={product.id} img={product.imageSource} title={product.name} price={product.price} description={''} logo={''} link={product.link} />
-                    </StyledBox>
-                  </ListItem>
+                  <Link key={product.id} href={generatePath(ROUTES.PRODUCT, { id: product.id })}>
+                    <ListItem button disableGutters={true} divider={true}>
+                      <StyledBox mt={1} mb={1}>
+                        <ProductItem key={product.id} img={product.imageSource} title={product.name} price={product.price} description={''} logo={''} link={product.link} />
+                      </StyledBox>
+                    </ListItem>
+                  </Link>
                 );
               })}
             </List>
