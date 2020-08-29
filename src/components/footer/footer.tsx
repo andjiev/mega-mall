@@ -27,7 +27,7 @@ const Footer = () => {
               return (
                 <ListItem key={index} disableGutters>
                   <Box fontFamily="RobotoThin" fontWeight="300" fontSize="14px">
-                    <StyledLink placeToRender="footer" href={linkItem.link}>
+                    <StyledLink placeToRender="footer-link" href={linkItem.link}>
                       {linkItem.title}
                     </StyledLink>
                   </Box>
@@ -76,7 +76,9 @@ const Footer = () => {
                       <Grid key={index} item xs={6}>
                         <Box mt={1} mb={1}>
                           <Typography variant="h6">
-                            <StyledLink href={item.header.link}>{item.header.title}</StyledLink>
+                            <StyledLink placeToRender="footer" href={item.header.link}>
+                              {item.header.title}
+                            </StyledLink>
                           </Typography>
                         </Box>
                       </Grid>

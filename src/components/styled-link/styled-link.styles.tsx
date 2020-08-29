@@ -16,6 +16,7 @@ const StyledHoverLink = styled(props => {
   color: ${(props: IStyledHoverLink) => (props.placeToRender === 'footer' ? '#ffffff' : props.placeToRender === 'menu' ? '#355c7c' : '#ffffff')};
   border-bottom: ${(props: IStyledHoverLink) => (props.placeToRender === 'card' ? '2px solid #ffffff' : '0px')};
   padding-bottom: ${(props: IStyledHoverLink) => (props.placeToRender === 'card' ? '5px' : '0px')};
+  font-family: ${(props: IStyledHoverLink) => (props.placeToRender === 'footer' ? 'OswaldRegular, sans-serif' : 'RobotoThin, sans-serif')};
 
   &:hover {
     color: ${(props: IStyledHoverLink) => (props.placeToRender === 'card' ? '#ffffff' : props.theme.palette.main)};
