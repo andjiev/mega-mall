@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { TextField } from '@material-ui/core';
+import SearchIcon from '@material-ui/icons/Search';
 
 const StyledTextField = styled(TextField)`
   background-color: transparent;
@@ -11,4 +12,8 @@ const StyledTextField = styled(TextField)`
   justify-content: center;
 `;
 
-export { StyledTextField };
+const StyledSearchIcon = styled(SearchIcon)`
+  color: ${props => props.theme.palette.primary.main};
+`;
+
+export { StyledTextField, StyledSearchIcon };

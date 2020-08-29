@@ -10,9 +10,10 @@ import { Menu } from './components/menu';
 import { SubMenu } from './components/sub-menu';
 import { CategoryTypes } from 'lib/enums';
 import MainLogo from './components/logo/logo';
-import { Grid, Container, Box } from '@material-ui/core';
+import { Grid, Container, Box, Hidden } from '@material-ui/core';
 import { SearchBarContainer } from './containers/search-bar';
 import { StyledLink } from 'components/styled-link';
+import { StyledMenuIcon } from './header.styles';
 
 interface IHeaderProps {
   categoryType?: CategoryTypes;
@@ -27,18 +28,45 @@ const Header = (props: IHeaderProps) => {
   return (
     <>
       <Container maxWidth={false}>
-        <Box mt={1}>
-          <TopBar />
-        </Box>
+        <Hidden smDown>
+          <Box mt={1}>
+            <TopBar />
+          </Box>
+        </Hidden>
+        <Hidden smUp>
+          <Box mt={2} mb={1}>
+            <Grid container spacing={2} alignItems="center">
+              <Grid item xs={4}>
+                <StyledLink href={'/'}>
+                  <MainLogo />
+                </StyledLink>
+              </Grid>
+              <Grid item xs={8} container justify="flex-end">
+                <Grid item>
+                  <StyledMenuIcon fontSize="large" />
+                </Grid>
+              </Grid>
+            </Grid>
+          </Box>
+        </Hidden>
         <Grid container spacing={2}>
-          <Grid item sm={1}>
-            <StyledLink href={'/'}>
-              <MainLogo />
-            </StyledLink>
-          </Grid>
-          <Grid item sm={11}>
-            <SearchBarContainer />
-            <Menu isActive={props.isActive} onCategoryChange={props.onCategoryChange} onHideSubmenuChange={props.onHideSubmenuChange} />
+          <Hidden smDown>
+            <Grid item sm={1}>
+              <StyledLink href={'/'}>
+                <MainLogo />
+              </StyledLink>
+            </Grid>
+          </Hidden>
+          <Grid item sm={11} xs={12}>
+            <Hidden smUp>
+              <Box mb={2}>
+                <SearchBarContainer />
+              </Box>
+            </Hidden>
+            <Hidden smDown>
+              <SearchBarContainer />
+              <Menu isActive={props.isActive} onCategoryChange={props.onCategoryChange} onHideSubmenuChange={props.onHideSubmenuChange} />
+            </Hidden>
           </Grid>
         </Grid>
       </Container>
