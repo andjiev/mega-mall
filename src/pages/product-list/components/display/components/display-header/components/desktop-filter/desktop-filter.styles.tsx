@@ -14,9 +14,15 @@ const StyledButton = styled(props => {
 })`
   height: 40px;
   width: 111px;
-  color: ${(props: IStyledButton) => (props.isToggled ? 'white' : 'black')};
+  color: ${(props: IStyledButton) => (props.isToggled ? 'white' : '#193364')};
   background-color: ${(props: IStyledButton) => (props.isToggled ? '#193364' : 'white')};
   border: 1px solid #193364;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: ${(props: IStyledButton) => (props.isToggled ? '#385ea7' : '')};
+    border: ${(props: IStyledButton) => (props.isToggled ? '#193364' : '')};
+  }
 
   ${props => props.theme.breakpoints.down('sm')} {
     width: 100%;
@@ -27,6 +33,12 @@ const StyledSelect = styled(NativeSelect)`
   width: 176px;
   height: 40px;
   margin: 0 auto;
+  font-family: 'Roboto Regular', sans-serif;
+  font-size: 14px;
+
+  option {
+    font-family: 'Roboto Regular', sans-serif;
+  }
 `;
 
 export { StyledButton, StyledSelect };
