@@ -21,7 +21,6 @@ const StyledButton = styled(props => {
 
   &:hover {
     background-color: ${(props: IStyledButton) => (props.isToggled ? '#385ea7' : '')};
-    border: ${(props: IStyledButton) => (props.isToggled ? '#193364' : '')};
   }
 
   ${props => props.theme.breakpoints.down('sm')} {

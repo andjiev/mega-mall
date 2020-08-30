@@ -12,7 +12,7 @@ const DesktopFilter = () => {
 
   const renderBar = () => {
     return (
-      <ButtonGroup color="secondary">
+      <ButtonGroup color="primary">
         <StyledButton isToggled={!isToggled} onClick={() => setToggled(!isToggled)}>
           <Typography variant="button">{translate('MegaMall_DesktopFilter_Products', 'Производи')}</Typography>
           {/* ADD TRANSLATION FOR THE BUTTON TEXT !!! */}
@@ -32,6 +32,7 @@ const DesktopFilter = () => {
           <Grid item>
             <FormControl>
               <StyledSelect
+                disableUnderline
                 value={orderType}
                 onChange={(event: React.ChangeEvent<{ value: string }>) => {
                   setOrderType(+event.target.value);
