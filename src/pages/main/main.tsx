@@ -31,7 +31,7 @@ const _MainPage = (props: MainPageProps) => {
         <Box mt={5} mb={5}>
           <Grid container justify="center">
             <Grid item xs={6}>
-              <Banner size="xl" url="https://www.facebook.com" />
+              <Banner size="xl" url="https://www.facebook.com" imagesource="/assets/images/main/Baner.jpg" />
             </Grid>
           </Grid>
         </Box>
