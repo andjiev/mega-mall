@@ -7,8 +7,6 @@ const StyledImage = styled.img`
 `;
 
 const StyledGridContainer = styled(Grid)`
-  max-width: 98%;
-  margin: 0 auto;
   & container {
     display: flex;
     justify-content: space-around;
