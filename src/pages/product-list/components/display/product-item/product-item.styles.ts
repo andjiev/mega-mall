@@ -29,4 +29,12 @@ const StyledLogo = styled.img`
   }
 `;
 
-export { StyledImage, StyledLogo };
+const StyledGrid = styled(Grid)`
+  min-height: 140px;
+
+  @media (max-width: 768px) {
+    min-height: 170px;
+  }
+`;
+
+export { StyledImage, StyledLogo, StyledGrid };

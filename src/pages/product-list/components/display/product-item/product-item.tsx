@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Grid, Hidden } from '@material-ui/core';
 import { Box } from '@material-ui/core';
-import { StyledImage, StyledLogo } from './product-item.styles';
+import { StyledImage, StyledLogo, StyledGrid } from './product-item.styles';
 
 export interface IProductItem {
   img?: string;
@@ -15,7 +15,7 @@ export interface IProductItem {
 const ProductItem = (props: IProductItem) => {
   return (
     <>
-      <Grid container spacing={2}>
+      <StyledGrid container spacing={2}>
         {props.img && (
           <>
             <Hidden mdDown>
@@ -83,7 +83,7 @@ const ProductItem = (props: IProductItem) => {
             </Box>
           </Grid>
         </Hidden>
-      </Grid>
+      </StyledGrid>
     </>
   );
 };
