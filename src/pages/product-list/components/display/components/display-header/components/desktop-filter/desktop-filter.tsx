@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Grid, ButtonGroup, FormControl, Hidden, Typography } from '@material-ui/core';
-import { StyledButton, StyledSelect } from './desktop-filter.styles';
+import { StyledButton, StyledSelect, StyledButtonGroup } from './desktop-filter.styles';
 import { OrderTypes } from 'lib/enums';
 import { getTextForOrderType } from './desktop-filter.utils';
 import { translate } from 'lib/translate';
@@ -12,7 +12,7 @@ const DesktopFilter = () => {
 
   const renderBar = () => {
     return (
-      <ButtonGroup color="primary">
+      <StyledButtonGroup color="primary">
         <StyledButton isToggled={!isToggled} onClick={() => setToggled(!isToggled)}>
           <Typography variant="button">{translate('MegaMall_DesktopFilter_Products', 'Производи')}</Typography>
           {/* ADD TRANSLATION FOR THE BUTTON TEXT !!! */}
@@ -20,7 +20,7 @@ const DesktopFilter = () => {
         <StyledButton isToggled={isToggled} onClick={() => setToggled(!isToggled)}>
           <Typography variant="button">{translate('MegaMall_DesktopFilter_Shops', 'Продавници')}</Typography>
         </StyledButton>
-      </ButtonGroup>
+      </StyledButtonGroup>
     );
   };
 
@@ -54,7 +54,9 @@ const DesktopFilter = () => {
       </Hidden>
       <Hidden smUp>
         <Grid container justify="center" alignItems="center" alignContent="center" spacing={1}>
-          <Grid item>{renderBar()}</Grid>
+          <Grid item xs={12}>
+            {renderBar()}
+          </Grid>
         </Grid>
       </Hidden>
     </>

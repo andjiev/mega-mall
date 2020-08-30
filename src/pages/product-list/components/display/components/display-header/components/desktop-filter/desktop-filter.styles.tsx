@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Button, NativeSelect } from '@material-ui/core';
+import { Button, NativeSelect, ButtonGroup } from '@material-ui/core';
 
 interface IStyledButton {
   isToggled: boolean;
@@ -13,7 +13,8 @@ const StyledButton = styled(props => {
   return <Button {...props} />;
 })`
   height: 40px;
-  width: 111px;
+  max-width: 111px;
+  width:100%;
   color: ${(props: IStyledButton) => (props.isToggled ? 'white' : '#193364')};
   background-color: ${(props: IStyledButton) => (props.isToggled ? '#193364' : 'white')};
   border: 1px solid #193364;
@@ -23,8 +24,12 @@ const StyledButton = styled(props => {
     background-color: ${(props: IStyledButton) => (props.isToggled ? '#385ea7' : '')};
   }
 
-  ${props => props.theme.breakpoints.down('sm')} {
-    width: 100%;
+  // ${props => props.theme.breakpoints.down('sm')} {
+  //   max-width: 100%;
+  // }
+
+  @media (max-width: 768px) {
+    max-width:100%;
   }
 `;
 
@@ -40,4 +45,10 @@ const StyledSelect = styled(NativeSelect)`
   }
 `;
 
-export { StyledButton, StyledSelect };
+const StyledButtonGroup = styled(ButtonGroup)`
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`;
+
+export { StyledButton, StyledSelect, StyledButtonGroup };

@@ -37,14 +37,33 @@ const CardSlider = () => {
           infinite
           minimumTouchDrag={80}
           swipeable
+          partialVisbile={true}
           responsive={{
+            superLargeDesktop: {
+              breakpoint: {
+                max: 10000,
+                min: 3000
+              },
+              items: 4,
+              slidesToSlide: 1,
+              partialVisibilityGutter: 50
+            },
             desktop: {
               breakpoint: {
                 max: 3000,
                 min: 1024
               },
               items: 4,
-              partialVisibilityGutter: 40,
+              partialVisibilityGutter: 0,
+              slidesToSlide: 1
+            },
+            tablet: {
+              breakpoint: {
+                max: 1024,
+                min: 464
+              },
+              items: 3,
+              partialVisibilityGutter: 20,
               slidesToSlide: 1
             },
             mobile: {
@@ -53,29 +72,21 @@ const CardSlider = () => {
                 min: 0
               },
               items: 1,
-              partialVisibilityGutter: 90,
-              slidesToSlide: 1
-            },
-
-            tablet: {
-              breakpoint: {
-                max: 1024,
-                min: 464
-              },
-              items: 3,
-              partialVisibilityGutter: 10,
+              partialVisibilityGutter: 60,
               slidesToSlide: 1
             }
           }}
         >
           {/* TODO: Add destination product url to the interface*/}
           {cardData.map(res => (
-            <Link key={res.id}>
-              <SliderCard title={res.title} url={res.img}>
-                {/* TODO: maybe span would be better */}
-                <Typography variant="h4">{res.price}</Typography>
-              </SliderCard>
-            </Link>
+            <Box key={res.id}>
+              <Link>
+                <SliderCard title={res.title} url={res.img}>
+                  {/* TODO: maybe span would be better */}
+                  <Typography variant="h4">{res.price}</Typography>
+                </SliderCard>
+              </Link>
+            </Box>
           ))}
         </Carousel>
       </Box>
