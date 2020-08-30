@@ -30,7 +30,7 @@ const _App: React.FC<IApp> = (props: IApp) => {
 
   const renderLoader = () => {
     return (
-      <LoadingScreen loading bgColor="#0d1440" spinnerColor="#BF1736">
+      <LoadingScreen loading bgColor="#193364" spinnerColor="#FDBC00">
         <Box component="span">Default loading text to fix the children? error</Box>
       </LoadingScreen>
     );
