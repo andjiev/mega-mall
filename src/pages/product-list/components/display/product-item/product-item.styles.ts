@@ -2,40 +2,31 @@ import styled from 'styled-components';
 import { Grid, Box } from '@material-ui/core';
 
 const StyledImage = styled.img`
-  max-width: 218px;
+  max-width: 217px;
+  width: 100%;
   max-height: 190px;
-`;
 
-const StyledGrid = styled(Grid)`
-  height: 100%;
-`;
-
-const StyledGridLogo = styled(Grid)`
-  height: 100%;
-  align-self: flex-end;
-  align-content: end;
+  @media (max-width: 768px) {
+    max-width: 71px;
+    width: 100%;
+  }
 `;
 
 const StyledLogo = styled.img`
-  display: block;
-  width: 100%;
   max-width: 120px;
-  height: 100%;
+  width: 100%;
   max-height: 40px;
+  bottom: 15px;
+  right: 0;
+  border: 1px solid #d3d3d3;
+  position: absolute;
+
+  @media (max-width: 768px) {
+    max-width: 98px;
+    max-height: 30px;
+    width: 100%;
+    position: initial;
+  }
 `;
 
-const StyledLogoBox = styled(Box)`
-  display: flex;
-  justify-content: flex-end;
-`;
-
-const StyledFlexGrid = styled(Grid)`
-  height: 100%;
-  min-height: 140px;
-  max-height: 140%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
-export { StyledImage, StyledGrid, StyledGridLogo, StyledLogo, StyledLogoBox, StyledFlexGrid };
+export { StyledImage, StyledLogo };
