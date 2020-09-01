@@ -9,19 +9,21 @@ interface IStyledHoverLink {
 const StyledHoverLink = styled(props => {
   const linkProps = { ...props };
   delete linkProps.placeToRender;
+
   return <Link {...linkProps} />;
 })`
   height: 15px;
   width: 92px;
-  color: ${(props: IStyledHoverLink) => (props.placeToRender === 'footer' ? '#ffffff' : props.placeToRender === 'menu' ? '#355c7c' : '#ffffff')};
-  border-bottom: ${(props: IStyledHoverLink) => (props.placeToRender === 'card' ? '2px solid #ffffff' : '0px')};
+  color: ${(props: IStyledHoverLink) =>
+    props.placeToRender === 'footer' ? `${props.theme.palette.primary.contrastText}` : props.placeToRender === 'menu' ? `${props.theme.palette.primary.light}` : `${props.theme.palette.primary.contrastText}`};
+  border-bottom: ${(props: IStyledHoverLink) => (props.placeToRender === 'card' ? `2px solid ${props.theme.palette.primary.contrastText}` : '0px')};
   padding-bottom: ${(props: IStyledHoverLink) => (props.placeToRender === 'card' ? '5px' : '0px')};
   font-family: ${(props: IStyledHoverLink) => (props.placeToRender === 'footer' ? 'OswaldRegular, sans-serif' : '')};
   transition: 0.3s;
 
   &:hover {
-    color: ${(props: IStyledHoverLink) => (props.placeToRender === 'card' ? '#ffffff' : props.theme.palette.main)};
-    border-bottom: ${(props: IStyledHoverLink) => (props.placeToRender === 'card' ? '2px solid yellow' : '0px')};
+    color: ${(props: IStyledHoverLink) => (props.placeToRender === 'card' ? `${props.theme.palette.primary.contrastText}` : `2px solid ${props.theme.palette.primary.main}`)};
+    border-bottom: ${(props: IStyledHoverLink) => (props.placeToRender === 'card' ? `2px solid ${props.theme.palette.secondary.main}` : '0px')};
   }
 `;
 
