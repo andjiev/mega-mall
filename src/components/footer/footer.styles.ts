@@ -9,6 +9,8 @@ const StyledList = styled(List)`
 
 const StyledCopyright = styled(Box)`
   color: white;
+  font-family: RobotoRegular;
+  font-size: 12px;
 `;
 
 const StyledFooter = styled(Box)`

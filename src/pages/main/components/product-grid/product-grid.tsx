@@ -61,7 +61,7 @@ const ProductGrid = (props: IProps) => {
           </Box>
         </>
       ) : (
-        <>Loading data ...</>
+        <>Loading data..</>
       )}
     </>
   );

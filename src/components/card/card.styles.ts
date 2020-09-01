@@ -24,11 +24,19 @@ const StyledMaterialCard = styled(MaterialCard)`
   height: 100%;
   width: 100%;
   box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.24);
+  @media (max-width: 768px) {
+    h4 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
 `;
 
 const StyledCardMedia = styled(CardMedia)`
   top: 0;
-  background-size: cover;
+  background-size: contain;
   background-position: top;
   max-height: 238px;
   height: 100%;

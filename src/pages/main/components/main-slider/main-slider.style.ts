@@ -12,7 +12,7 @@ const StyledImage = styled(Box)`
   height: 60vh;
 
   ${props => props.theme.breakpoints.down('sm')} {
-    height: 40vh;
+    height: 45vh;
   }
 `;
 
@@ -36,6 +36,9 @@ const StyledGrid = styled(Grid)`
 
 const StyledTypography = styled(Typography)`
   white-space: pre-line;
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
 `;
 
 export { StyledGrid, StyledImage, StyledContainer, StyledButton, StyledTypography };
