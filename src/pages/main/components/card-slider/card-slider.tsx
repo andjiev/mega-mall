@@ -37,7 +37,6 @@ const CardSlider = () => {
           infinite
           minimumTouchDrag={80}
           swipeable
-          partialVisbile={true}
           responsive={{
             superLargeDesktop: {
               breakpoint: {

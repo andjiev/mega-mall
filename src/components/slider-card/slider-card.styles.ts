@@ -4,11 +4,9 @@ import { Card as MaterialCard } from '@material-ui/core';
 
 const StyledMaterialCard = styled(MaterialCard)`
   height: 350px;
-  max-width: 220px;
   width: 100%;
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.24);
   margin: 5px;
-  margin-right: 0px;
 `;
 
 const StyledCardMedia = styled(CardMedia)`
