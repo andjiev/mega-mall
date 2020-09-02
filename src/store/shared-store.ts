@@ -7,7 +7,8 @@ import { getTranslations } from 'services/translation-service';
 import { initTranslations } from 'lib/translate';
 import { initMoment } from 'lib/moment';
 import { getCultureFromStorage } from './helpers/language-helper';
-import { MenuItem, menuItems } from 'lib/data';
+import { MenuItem } from 'lib/data';
+import { getMenuItems } from './helpers/menu-helper';
 
 export interface SharedStore {
   searchText: string;
@@ -37,6 +38,7 @@ export const { setSearchText, setMenuItems } = slice.actions;
 export const reducer = slice.reducer;
 
 //thunk
+
 export const bootstrapApp = (): AppThunk => async (dispatch, store) => {
   try {
     dispatch(UiStore.showInitialLoader());
@@ -46,7 +48,8 @@ export const bootstrapApp = (): AppThunk => async (dispatch, store) => {
     initTranslations(translations.data, culture);
     initMoment(culture);
 
-    dispatch(getMenuItems());
+    const menuItems = await getMenuItems();
+    dispatch(setMenuItems(menuItems));
 
     dispatch(HeaderStore.setCulture(culture));
     dispatch(UiStore.hideInitialLoader());
@@ -54,18 +57,3 @@ export const bootstrapApp = (): AppThunk => async (dispatch, store) => {
     dispatch(UiStore.hideInitialLoader());
   }
 };
-
-const getMenuItems = (): AppThunk => async (dispatch, store) => {
-  const flatMenuItems = menuItems();
-
-  const result = flatMenuItems
-    .map(parent => {
-      parent.children = flatMenuItems.filter(child => child.parentId === parent.id);
-      return parent;
-    })
-    .filter(x => !x.parentId);
-
-  dispatch(setMenuItems(result));
-};
-
-export { getMenuItems };
