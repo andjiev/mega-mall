@@ -1,35 +1,33 @@
 import React, { useState } from 'react';
 
 import { StyledLink } from 'components/styled-link';
-import { Box, Container, Typography, Grid } from '@material-ui/core';
-import { menuItems } from './menu.data';
+import { Box, Typography, Grid } from '@material-ui/core';
 import { StyledBox } from './menu.styles';
-import { CategoryTypes } from 'lib/enums';
+import { MenuItem } from 'lib/data';
 
 interface IMenuProps {
   isActive: boolean;
+  menuItems: MenuItem[];
 
-  onCategoryChange: (value: CategoryTypes) => void;
+  onShowSubmenuChange: () => void;
   onHideSubmenuChange: () => void;
 }
 
 const HomeCenterMenu = (props: IMenuProps) => {
-  const [categoryType, setCategoryType] = useState<CategoryTypes | undefined>(undefined);
-
-  const onCategoryChange = (type: CategoryTypes) => {
-    setCategoryType(type);
-
-    // this one indicates the submenu to render the proper content
-    props.onCategoryChange(type);
-  };
-
   return (
     <Box>
       <Grid container justify="flex-start" spacing={2}>
-        {menuItems.map(item => (
-          <Grid key={item.type} item>
-            <StyledBox pt={1} pb={1} isActive={props.isActive && categoryType === item.type} onMouseEnter={() => onCategoryChange(item.type)} onMouseLeave={() => props.onHideSubmenuChange()}>
-              <Typography variant="subtitle2">
+        <Grid item>
+          <StyledBox pt={1} pb={1} isActive={props.isActive} onMouseEnter={props.onShowSubmenuChange} onMouseLeave={props.onHideSubmenuChange}>
+            <Typography variant="subtitle2" style={{ fontSize: '16px' }}>
+              <StyledLink href="#">Сите категории</StyledLink>
+            </Typography>
+          </StyledBox>
+        </Grid>
+        {props.menuItems.slice(0, 3).map(item => (
+          <Grid key={item.id} item>
+            <StyledBox pt={1} pb={1}>
+              <Typography variant="subtitle2" style={{ fontSize: '16px' }}>
                 <StyledLink href={item.link}>{item.title}</StyledLink>
               </Typography>
             </StyledBox>
