@@ -4,7 +4,7 @@ import { RouteComponentProps } from 'react-router-dom';
 import { AppDispatch } from '../..';
 import ApplicationState from '../../store/application-state';
 import { BreadCrumbs } from 'components/breadcrumbs';
-import { Grid, Box } from '@material-ui/core';
+import { Grid, Box, Hidden } from '@material-ui/core';
 import { DisplayContainer } from './components/display';
 import Navigation from 'pages/category/components/navigation/navigation';
 
@@ -16,9 +16,11 @@ const ProductList = (props: IProps) => {
       <BreadCrumbs />
       <Box>
         <Grid container>
-          <Grid item xs={12} md={4} lg={3} xl={2}>
-            <Navigation />
-          </Grid>
+          <Hidden xsDown>
+            <Grid item md={4} lg={3} xl={2}>
+              <Navigation />
+            </Grid>
+          </Hidden>
           <Grid item xs={12} md={8} lg={9} xl={10}>
             <DisplayContainer />
           </Grid>
