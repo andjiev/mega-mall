@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { AppDispatch } from '../../../..';
-import ApplicationState from '../../../../store/application-store';
+import ApplicationState from '../../../../store/application-state';
 import * as SharedStore from '../../../../store/shared-store';
 
 import { StyledTextField, StyledSearchIcon } from './search-bar.styles';

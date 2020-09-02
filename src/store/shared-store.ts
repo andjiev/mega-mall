@@ -7,26 +7,32 @@ import { getTranslations } from 'services/translation-service';
 import { initTranslations } from 'lib/translate';
 import { initMoment } from 'lib/moment';
 import { getCultureFromStorage } from './helpers/language-helper';
+import { MenuItem, menuItems } from 'lib/data';
 
 export interface SharedStore {
   searchText: string;
+  menuItems: MenuItem[];
 }
 
 const initialState: SharedStore = {
-  searchText: ''
+  searchText: '',
+  menuItems: []
 };
 
 const slice = createSlice({
   name: 'shared',
   initialState,
   reducers: {
-    setSearchText: (store: SharedStore, action: PayloadAction<string>) => {
-      store.searchText = action.payload;
+    setSearchText: (state: SharedStore, action: PayloadAction<string>) => {
+      state.searchText = action.payload;
+    },
+    setMenuItems: (state: SharedStore, action: PayloadAction<MenuItem[]>) => {
+      state.menuItems = action.payload;
     }
   }
 });
 
-export const { setSearchText } = slice.actions;
+export const { setSearchText, setMenuItems } = slice.actions;
 
 export const reducer = slice.reducer;
 
@@ -34,16 +40,32 @@ export const reducer = slice.reducer;
 export const bootstrapApp = (): AppThunk => async (dispatch, store) => {
   try {
     dispatch(UiStore.showInitialLoader());
+
     const translations = await getTranslations();
-
     const culture = getCultureFromStorage();
-    dispatch(HeaderStore.setCulture(culture));
-
     initTranslations(translations.data, culture);
     initMoment(culture);
 
+    dispatch(getMenuItems());
+
+    dispatch(HeaderStore.setCulture(culture));
     dispatch(UiStore.hideInitialLoader());
   } catch (err) {
     dispatch(UiStore.hideInitialLoader());
   }
 };
+
+const getMenuItems = (): AppThunk => async (dispatch, store) => {
+  const flatMenuItems = menuItems();
+
+  const result = flatMenuItems
+    .map(parent => {
+      parent.children = flatMenuItems.filter(child => child.parentId === parent.id);
+      return parent;
+    })
+    .filter(x => !x.parentId);
+
+  dispatch(setMenuItems(result));
+};
+
+export { getMenuItems };

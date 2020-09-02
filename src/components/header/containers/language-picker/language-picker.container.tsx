@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import { AppDispatch } from 'index';
-import ApplicationState from 'store/application-store';
+import ApplicationState from 'store/application-state';
 import * as HeaderStore from 'store/header-store';
 
-import { Box, Typography } from '@material-ui/core';
+import { Box, Typography, Divider } from '@material-ui/core';
 import { formatCulture, formatLanguage } from './language-picker.utils';
 import { StyledBox } from './language-picker.styles';
 import { languages } from './language-picker.data';
 
 interface ILanguagePickerProps {
   language: string;
+  size?: 'small' | 'large';
 
   onLanguageChange: (lang: string) => void;
 }
@@ -23,7 +24,7 @@ export const LanguagePicker = (props: ILanguagePickerProps) => {
         {languages.map((lang, index) => (
           <>
             <StyledBox key={index} onClick={() => props.onLanguageChange(lang.name)}>
-              <Typography variant="subtitle2">{lang.name}</Typography>
+              <Typography variant={props.size == 'large' ? 'subtitle1' : 'subtitle2'}>{lang.name}</Typography>
             </StyledBox>
             {languages.length - 1 !== index && ' | '}
           </>

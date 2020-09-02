@@ -2,7 +2,7 @@ import React, { useEffect, lazy, Suspense } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router';
 import { AppDispatch } from 'index';
-import ApplicationState from 'store/application-store';
+import ApplicationState from 'store/application-state';
 import { bootstrapApp } from 'store/shared-store';
 
 import { ROUTES } from './consts';

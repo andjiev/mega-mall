@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles, ThemeProvider } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 import { List, Grid, Container, ListItem, Box, Typography, Theme, Tabs, Tab } from '@material-ui/core';
 
-import { StyledSubMenu, StyledListItemText, SubmenuImage, StyledTab, StyledIcons } from './sub-menu.styles';
+import { StyledSubMenu, StyledListItemText, StyledIcons } from './sub-menu.styles';
 import Link from '@material-ui/core/Link';
 
 import { submenuItems, ISubmenuItem, submenuIcons } from './sub-menu.data';
-import { StyledLink } from 'components/styled-link';
 import { CategoryTypes } from 'lib/enums';
 import { menuItems } from './../menu/menu.data';
 import Banner from 'components/banner/banner';
@@ -32,13 +31,6 @@ function TabPanel(props: TabPanelProps) {
       )}
     </div>
   );
-}
-
-function a11yProps(index: any) {
-  return {
-    id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`
-  };
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -208,4 +200,5 @@ const SubMenu = (props: ISubMenuProps) => {
     </>
   );
 };
+
 export default SubMenu;

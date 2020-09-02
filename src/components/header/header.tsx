@@ -2,18 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { AppDispatch } from 'index';
-import ApplicationState from 'store/application-store';
+import ApplicationState from 'store/application-state';
 import * as HeaderStore from 'store/header-store';
+
+import { Grid, Container, Box, Hidden } from '@material-ui/core';
+import { CategoryTypes } from 'lib/enums';
 
 import { TopBar } from './components/top-bar';
 import { Menu } from './components/menu';
 import { SubMenu } from './components/sub-menu';
-import { CategoryTypes } from 'lib/enums';
 import MainLogo from './components/logo/logo';
-import { Grid, Container, Box, Hidden } from '@material-ui/core';
 import { SearchBarContainer } from './containers/search-bar';
 import { StyledLink } from 'components/styled-link';
-import { StyledMenuIcon } from './header.styles';
+import { MobileTopBar } from './components/mobile-top-bar';
 
 interface IHeaderProps {
   categoryType?: CategoryTypes;
@@ -28,29 +29,18 @@ const Header = (props: IHeaderProps) => {
   return (
     <>
       <Container maxWidth={false}>
-        <Hidden smDown>
+        <Hidden xsDown>
           <Box mt={1}>
             <TopBar />
           </Box>
         </Hidden>
         <Hidden smUp>
           <Box mt={2} mb={1}>
-            <Grid container spacing={2} alignItems="center">
-              <Grid item xs={4}>
-                <StyledLink href={'/'}>
-                  <MainLogo />
-                </StyledLink>
-              </Grid>
-              <Grid item xs={8} container justify="flex-end">
-                <Grid item>
-                  <StyledMenuIcon fontSize="large" />
-                </Grid>
-              </Grid>
-            </Grid>
+            <MobileTopBar />
           </Box>
         </Hidden>
         <Grid container spacing={2}>
-          <Hidden smDown>
+          <Hidden xsDown>
             <Grid item sm={1}>
               <StyledLink href={'/'}>
                 <MainLogo />
@@ -63,7 +53,7 @@ const Header = (props: IHeaderProps) => {
                 <SearchBarContainer />
               </Box>
             </Hidden>
-            <Hidden smDown>
+            <Hidden xsDown>
               <SearchBarContainer />
               <Menu isActive={props.isActive} onCategoryChange={props.onCategoryChange} onHideSubmenuChange={props.onHideSubmenuChange} />
             </Hidden>
