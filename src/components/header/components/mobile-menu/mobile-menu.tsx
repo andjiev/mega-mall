@@ -110,7 +110,7 @@ const MobileMenu = (props: IProps) => {
                 <ListItemText
                   primary={<Typography variant="subtitle1">{item.title}</Typography>}
                   onClick={() => {
-                    props.onClose();
+                    onClose();
                     props.navigateTo(item.link);
                   }}
                 />
