@@ -6,7 +6,6 @@ import ApplicationState from 'store/application-state';
 import * as HeaderStore from 'store/header-store';
 
 import { Grid, Container, Box, Hidden } from '@material-ui/core';
-import { CategoryTypes } from 'lib/enums';
 
 import { TopBar } from './components/top-bar';
 import { Menu } from './components/menu';
@@ -15,13 +14,14 @@ import MainLogo from './components/logo/logo';
 import { SearchBarContainer } from './containers/search-bar';
 import { StyledLink } from 'components/styled-link';
 import { MobileTopBar } from './components/mobile-top-bar';
+import { MenuItem } from 'lib/data';
 
 interface IHeaderProps {
-  categoryType?: CategoryTypes;
+  menuItems: MenuItem[];
   isActive: boolean;
 
-  onCategoryChange: (value: CategoryTypes) => void;
   onSubmenuChange: (value: boolean) => void;
+  onShowSubmenuChange: () => void;
   onHideSubmenuChange: () => void;
 }
 
@@ -55,26 +55,26 @@ const Header = (props: IHeaderProps) => {
             </Hidden>
             <Hidden xsDown>
               <SearchBarContainer />
-              <Menu isActive={props.isActive} onCategoryChange={props.onCategoryChange} onHideSubmenuChange={props.onHideSubmenuChange} />
+              <Menu menuItems={props.menuItems} isActive={props.isActive} onShowSubmenuChange={props.onShowSubmenuChange} onHideSubmenuChange={props.onHideSubmenuChange} />
             </Hidden>
           </Grid>
         </Grid>
       </Container>
-      {props.isActive && <SubMenu categoryType={props.categoryType} onSubmenuChange={props.onSubmenuChange} onCategoryChange={props.onCategoryChange} />}
+      {props.isActive && <SubMenu menuItems={props.menuItems} onSubmenuChange={props.onSubmenuChange} />}
     </>
   );
 };
 
 const mapDispatchToProps = (dispatch: AppDispatch) => ({
-  onCategoryChange: (value: CategoryTypes) => {
-    dispatch(HeaderStore.setCategoryType(value));
-  },
   onSubmenuChange: (value: boolean) => {
     dispatch(HeaderStore.setIsOnSubmenu(value));
 
     if (!value) {
       dispatch(HeaderStore.setShowSubmenu(false));
     }
+  },
+  onShowSubmenuChange: () => {
+    dispatch(HeaderStore.setShowSubmenu(true));
   },
   onHideSubmenuChange: () => {
     dispatch(HeaderStore.setShowSubmenu(false));
@@ -83,8 +83,8 @@ const mapDispatchToProps = (dispatch: AppDispatch) => ({
 
 const mapStateToProps = (state: ApplicationState) => {
   return {
-    categoryType: state.header.categoryType,
-    isActive: state.header.showSubmenu || state.header.isOnSubmenu
+    isActive: state.header.showSubmenu || state.header.isOnSubmenu,
+    menuItems: state.shared.menuItems
   };
 };
 

@@ -22,7 +22,7 @@ const StyledHoverLink = styled(props => {
   transition: 0.3s;
 
   &:hover {
-    color: ${(props: IStyledHoverLink) => (props.placeToRender === 'card' ? `${props.theme.palette.primary.contrastText}` : `2px solid ${props.theme.palette.primary.main}`)};
+    color: ${(props: IStyledHoverLink) => (props.placeToRender === 'card' ? `${props.theme.palette.primary.contrastText}` : `${props.theme.palette.primary.main}`)};
     border-bottom: ${(props: IStyledHoverLink) => (props.placeToRender === 'card' ? `2px solid ${props.theme.palette.secondary.main}` : '0px')};
   }
 `;

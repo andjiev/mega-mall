@@ -4,6 +4,7 @@ interface MenuItem {
   id: number;
   title: string;
   link: string;
+  imageSrc?: string;
   parentId?: number;
   children?: MenuItem[];
 }
@@ -12,32 +13,38 @@ const menuItems = (): MenuItem[] => [
   {
     id: 1,
     title: translate('MegaMall_Header_Technology', 'ТЕХНОЛОГИЈА'),
-    link: `/categories/technology`
+    link: `/categories/technology`,
+    imageSrc: '/assets/images/header/icons/tehnologija.svg'
   },
   {
     id: 2,
     title: translate('MegaMall_Header_Sport', 'СПОРТ'),
-    link: `/categories/sport`
+    link: `/categories/sport`,
+    imageSrc: '/assets/images/header/icons/sport.svg'
   },
   {
     id: 3,
     title: translate('MegaMall_Header_Fashion', 'МОДА'),
-    link: `/categories/fashion`
+    link: `/categories/fashion`,
+    imageSrc: '/assets/images/header/icons/moda.svg'
   },
   {
     id: 4,
     title: translate('MegaMall_Header_Health', 'УБАВИНА И ЗДРАВЈЕ'),
-    link: `/categories/beauty`
+    link: `/categories/beauty`,
+    imageSrc: '/assets/images/header/icons/ubavina.svg'
   },
   {
     id: 5,
     title: translate('MegaMall_Header_Household', 'ДОМАЌИНСТВО'),
-    link: `/categories/home`
+    link: `/categories/home`,
+    imageSrc: '/assets/images/header/icons/domakinstvo.svg'
   },
   {
     id: 6,
     title: translate('MegaMall_Header_Services', 'УСЛУГИ'),
-    link: `/categories/services`
+    link: `/categories/services`,
+    imageSrc: '/assets/images/header/icons/uslugi.svg'
   },
   {
     id: 7,
