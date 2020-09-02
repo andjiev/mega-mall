@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 
 import { AppDispatch } from '../..';
-import ApplicationState from '../../store/application-store';
+import ApplicationState from '../../store/application-state';
 import { Container, Box, Grid, Hidden } from '@material-ui/core';
 
 import { MainSlider } from './components/main-slider';

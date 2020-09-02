@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import ApplicationState from './store/application-store';
+import ApplicationState from './store/application-state';
 import { ThunkDispatch } from 'redux-thunk';
 import { Action } from 'redux';
 

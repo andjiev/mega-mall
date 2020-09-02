@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { StyledGrid, StyledImage, StyledContainer, StyledButton, StyledTypography } from './main-slider.style';
-import { Box, Grid, Typography, makeStyles, Theme, createStyles } from '@material-ui/core';
+import { Box, Grid, Typography, makeStyles, Theme, createStyles, Hidden } from '@material-ui/core';
 import { Carousel } from 'react-responsive-carousel';
 import { ISliderItem, sliderItems } from './main-slider.data';
 
@@ -44,9 +44,12 @@ const MainSlider = () => {
           <StyledContainer>
             <Box color="white">
               <Grid item>
-                <Typography variant="h1" className={classes.carouselTitle}>
-                  {item.title}
-                </Typography>
+                <Hidden xsDown>
+                  <Typography variant="h1">{item.title}</Typography>
+                </Hidden>
+                <Hidden smUp>
+                  <Typography variant="h3">{item.title}</Typography>
+                </Hidden>
               </Grid>
               <Box mt={2}>
                 <Grid item>

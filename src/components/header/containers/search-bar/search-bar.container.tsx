@@ -2,12 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { AppDispatch } from '../../../..';
-import ApplicationState from '../../../../store/application-store';
+import ApplicationState from '../../../../store/application-state';
 import * as SharedStore from '../../../../store/shared-store';
 
-import { StyledTextField } from './search-bar.styles';
+import { StyledTextField, StyledSearchIcon } from './search-bar.styles';
 import { InputAdornment, IconButton } from '@material-ui/core';
-import SearchIcon from '@material-ui/icons/Search';
 import { translate } from 'lib/translate';
 
 interface IProps {
@@ -39,7 +38,7 @@ const SearchBar = (props: IProps) => {
           endAdornment: (
             <InputAdornment position="end">
               <IconButton>
-                <SearchIcon />
+                <StyledSearchIcon />
               </IconButton>
             </InputAdornment>
           )

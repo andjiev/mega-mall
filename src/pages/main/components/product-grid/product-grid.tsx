@@ -4,7 +4,7 @@ import Card from './../../../../components/card/card';
 import { cards } from './product-grid.data';
 import { AppDispatch } from 'index';
 import { getLatestProducts } from 'store/latest-products-store';
-import ApplicationState from 'store/application-store';
+import ApplicationState from 'store/application-state';
 import { connect } from 'react-redux';
 
 interface IProps {

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import { AppDispatch } from 'index';
-import ApplicationState from 'store/application-store';
+import ApplicationState from 'store/application-state';
 
 import { Box, ListItem, List, Link } from '@material-ui/core';
 import DisplayHeader from './components/display-header/display-header';

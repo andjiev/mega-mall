@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BreadCrumbs } from './../../components/breadcrumbs';
 import { RouteComponentProps } from 'react-router';
 import { AppDispatch } from './../../index';
-import ApplicationState from './../../store/application-store';
+import ApplicationState from '../../store/application-state';
 import { connect } from 'react-redux';
 import DetailedProductView from './components/detailed-view/detailed-product-view';
 import { Box, Grid, List, ListItem, Button, Typography, Link, Container } from '@material-ui/core';
