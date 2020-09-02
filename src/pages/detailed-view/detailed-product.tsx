@@ -47,7 +47,7 @@ const _DetailedProductPage = (props: DetailedProductProps) => {
         <Box m={5}>
           <Grid container justify="center">
             <Grid item xs={8}>
-              <Banner size="l" imgSource="/assets/images/main/Banner2.png" />
+              <Banner size="l" imagesource="/assets/images/main/Banner2.png" />
             </Grid>
           </Grid>
         </Box>

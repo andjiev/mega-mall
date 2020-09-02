@@ -27,6 +27,15 @@ const StyledCardContent = styled(CardContent)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    h4 {
+      font-size: 21px;
+    }
+    h3 {
+      font-size: 24px;
+    }
+  }
 `;
 const StyledBox = styled(Box)`
   display: flex;
@@ -34,4 +43,13 @@ const StyledBox = styled(Box)`
   justify-content: space-between;
 `;
 
-export { StyledImage, StyledGridContainer, StyledStickyGridItem, StyledCardContent, StyledBox };
+const StyledLogo = styled.img`
+  max-width: 120px;
+  width: 100%;
+  @media (max-width: 768px) {
+    max-width: 100px;
+    width: 100%;
+  }
+`;
+
+export { StyledImage, StyledGridContainer, StyledStickyGridItem, StyledCardContent, StyledBox, StyledLogo };

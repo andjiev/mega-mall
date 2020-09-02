@@ -14,8 +14,12 @@ const StyledListItemText = styled(ListItemText)`
   font-size: 14px;
   border-bottom: 2px solid #101a50;
   padding-bottom: 3%;
-  font-family: 'OswaldRegular', sans-serif;
+
   font-weight: 700;
+
+  span {
+    font-family: 'OswaldBold', sans-serif;
+  }
 `;
 interface ISubmenuImage {
   url?: string;

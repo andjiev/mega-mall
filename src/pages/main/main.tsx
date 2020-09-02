@@ -4,7 +4,7 @@ import { RouteComponentProps } from 'react-router-dom';
 
 import { AppDispatch } from '../..';
 import ApplicationState from '../../store/application-state';
-import { Container, Box, Grid } from '@material-ui/core';
+import { Container, Box, Grid, Hidden } from '@material-ui/core';
 
 import { MainSlider } from './components/main-slider';
 import { CategoryGrid } from './components/category-grid';
@@ -30,9 +30,17 @@ const _MainPage = (props: MainPageProps) => {
         </Box>
         <Box mt={5} mb={5}>
           <Grid container justify="center">
-            <Grid item xs={6}>
-              <Banner size="xl" url="https://www.facebook.com" />
-            </Grid>
+            <Hidden mdDown>
+              <Grid item xs={6}>
+                <Banner size="xl" imagesource="/assets/images/main/Baner.jpg" />
+              </Grid>
+            </Hidden>
+
+            <Hidden mdUp>
+              <Grid item xs={12}>
+                <Banner size="menu" imagesource="/assets/images/main/Baner.jpg" />
+              </Grid>
+            </Hidden>
           </Grid>
         </Box>
         <LatestProductContainer />

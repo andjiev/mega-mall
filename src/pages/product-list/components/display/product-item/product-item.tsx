@@ -1,10 +1,10 @@
 import React from 'react';
-import { Typography, Grid } from '@material-ui/core';
+import { Typography, Grid, Hidden } from '@material-ui/core';
 import { Box } from '@material-ui/core';
-import { StyledImage, StyledGrid, StyledGridLogo, StyledLogo, StyledLogoBox, StyledFlexGrid } from './product-item.styles';
+import { StyledImage, StyledLogo, StyledGrid } from './product-item.styles';
 
 export interface IProductItem {
-  img: string;
+  img?: string;
   link?: string;
   title: string;
   price: string;
@@ -15,39 +15,74 @@ export interface IProductItem {
 const ProductItem = (props: IProductItem) => {
   return (
     <>
-      <StyledGrid container direction="row" justify="flex-start" alignItems="flex-start" spacing={2}>
-        <Grid item xs={2}>
-          <Box>
-            <StyledImage src={props.img} />
-          </Box>
-        </Grid>
-        <Grid item xs={8}>
-          <Box>
-            <StyledFlexGrid container item xs direction="column" justify="flex-end">
-              {/*TODO THIS ISNT LIKE IN THE DESING NEEDS HEIGHT AND SPACE BETWEEN THE TEXTS */}
-              <Grid item xs={12}>
-                <Typography variant="subtitle1">{props.title}</Typography>
-                {/* TODO this is not lined up to the top of the card :/ FIX IT  */}
-              </Grid>
-              <Grid item xs={12}>
-                <Box mb={1}>
-                  <Typography variant="h4">{props.price}</Typography>
-                </Box>
+      <StyledGrid container spacing={2}>
+        {props.img && (
+          <>
+            <Hidden mdDown>
+              <Grid item xs={2}>
                 <Box>
-                  <Typography variant="body2" noWrap>
-                    {props.description}
-                  </Typography>
+                  <StyledImage src={props.img} />
                 </Box>
               </Grid>
-            </StyledFlexGrid>
-          </Box>
+            </Hidden>
+            <Hidden mdUp>
+              <Grid item xs={3}>
+                <Box>
+                  <StyledImage src={props.img} />
+                </Box>
+              </Grid>
+            </Hidden>
+          </>
+        )}
+
+        <Grid item xs={8}>
+          <Grid container>
+            <Grid item xs={12}>
+              <Typography>
+                <Hidden mdDown>
+                  <Box fontFamily="RobotoBold" fontSize="18px">
+                    {props.title.substring(0, 50) + '...'}
+                  </Box>
+                </Hidden>
+                <Hidden mdUp>
+                  <Box fontFamily="RobotoRegular" fontSize="14px">
+                    {props.title.substring(0, 50) + '...'}
+                  </Box>
+                </Hidden>
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <Typography variant="h4">
+                <Hidden mdDown>
+                  <Box fontFamily="OswaldMedium" fontSize="24px" mt={3}>
+                    {props.price}
+                  </Box>
+                </Hidden>
+                <Hidden mdUp>
+                  <Box fontFamily="OswaldMedium" fontSize="18px" mt={3}>
+                    {props.price}
+                  </Box>
+                </Hidden>
+              </Typography>
+            </Grid>
+          </Grid>
         </Grid>
-        <StyledGridLogo item xs={2}>
-          <StyledLogoBox>
-            <StyledLogo src={props.logo}></StyledLogo>
-          </StyledLogoBox>
-          {/* TODO this needs to be a link and needs borders*/}
-        </StyledGridLogo>
+        <Hidden mdDown>
+          <Grid item xs={2}>
+            <Box>
+              {/* TODO this needs to be a link*/}
+              <StyledLogo src={props.logo} />
+            </Box>
+          </Grid>
+        </Hidden>
+        <Hidden mdUp>
+          <Grid container item xs={12} alignItems="flex-end" justify="flex-end">
+            <Box>
+              {/* TODO this needs to be a link*/}
+              <StyledLogo src={props.logo} />
+            </Box>
+          </Grid>
+        </Hidden>
       </StyledGrid>
     </>
   );

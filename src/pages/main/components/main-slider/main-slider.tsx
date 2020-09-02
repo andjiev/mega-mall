@@ -1,11 +1,42 @@
 import React from 'react';
 
 import { StyledGrid, StyledImage, StyledContainer, StyledButton, StyledTypography } from './main-slider.style';
-import { Box, Grid, Typography, Hidden } from '@material-ui/core';
+import { Box, Grid, Typography, makeStyles, Theme, createStyles, Hidden } from '@material-ui/core';
 import { Carousel } from 'react-responsive-carousel';
 import { ISliderItem, sliderItems } from './main-slider.data';
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    carouselTitle: {
+      fontSize: '48px',
+      color: '#ffffff',
+      fontFamily: 'OswaldBold',
+      whiteSpace: 'pre-line',
+
+      [theme.breakpoints.down('md')]: {
+        fontSize: '36px'
+      }
+    },
+    carouselSubtitle: {
+      fontSize: '16px',
+      color: '#ffffff',
+      fontFamily: 'RobotoRegular',
+      whiteSpace: 'pre-line',
+
+      [theme.breakpoints.down('md')]: {
+        fontSize: '14px'
+      }
+    },
+    carouselButton: {
+      fontSize: '14px',
+      color: '#ffffff',
+      fontFamily: 'RobotoRegular'
+    }
+  })
+);
+
 const MainSlider = () => {
+  const classes = useStyles();
   const renderItem = (item: ISliderItem) => {
     return (
       <StyledImage src={item.imageSrc}>
@@ -14,16 +45,18 @@ const MainSlider = () => {
             <Box color="white">
               <Grid item>
                 <Hidden xsDown>
-                  <StyledTypography variant="h1">{item.title}</StyledTypography>
+                  <Typography variant="h1">{item.title}</Typography>
                 </Hidden>
                 <Hidden smUp>
-                  <StyledTypography variant="h3">{item.title}</StyledTypography>
+                  <Typography variant="h3">{item.title}</Typography>
                 </Hidden>
               </Grid>
               <Box mt={2}>
                 <Grid item>
                   <Box component="span">
-                    <Typography variant="body1">{item.subTitle}</Typography>
+                    <Typography variant="body1" className={classes.carouselSubtitle}>
+                      {item.subTitle}
+                    </Typography>
                   </Box>
                 </Grid>
               </Box>
@@ -31,7 +64,9 @@ const MainSlider = () => {
             <Grid item>
               <Box mt={3}>
                 <StyledButton variant="contained" color="secondary" size="large">
-                  <Typography variant="button">{item.buttonText}</Typography>
+                  <Typography variant="button" className={classes.carouselButton}>
+                    {item.buttonText}
+                  </Typography>
                 </StyledButton>
               </Box>
             </Grid>

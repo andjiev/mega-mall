@@ -13,6 +13,7 @@ import { ROUTES } from 'consts';
 import { StyledBox, StyledPagination } from './display.styles';
 import { getProducts, changePageOptions } from 'store/product-list-store';
 import { PageOptions } from 'lib/models';
+import { displayData } from './product-item-list/product-item-list.data';
 
 interface IProps {
   data: Models.Product.Model[];

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Typography, Card, CardContent, Button, CardActions, Box, Hidden, List, ListItem } from '@material-ui/core';
 import { Detailedproduct } from './detailed-product-view.data';
-import { StyledImage, StyledStickyGridItem, StyledGridContainer, StyledCardContent, StyledBox } from './detailed-product-view.styles';
+import { StyledImage, StyledStickyGridItem, StyledGridContainer, StyledCardContent, StyledBox, StyledLogo } from './detailed-product-view.styles';
 import ProductItemList from '../../../product-list/components/display/product-item-list/product-item-list';
 
 const DetailedProductView = () => {
@@ -30,16 +30,19 @@ const DetailedProductView = () => {
                   </Typography>
                 </Box>
                 <Box pb={2}>
-                  <Typography variant="body1" noWrap paragraph={true}>
-                    Retina display 13.3-inch (diagonal) LED-backlit display with IPS technology; 2560-by-1600 native resolution at 227 pixels per inch with support for millions of colors
-                  </Typography>
+                  <Hidden mdDown>
+                    <Typography variant="body1" noWrap paragraph={true}>
+                      Retina display 13.3-inch (diagonal) LED-backlit display with IPS technology; 2560-by-1600 native resolution at 227 pixels per inch with support for millions of colors
+                    </Typography>
+                  </Hidden>
                   <hr></hr>
                 </Box>
                 <StyledBox>
                   <Typography variant="h3" gutterBottom>
                     45.000 ден
                   </Typography>
-                  <img src="/src/assets/images/product-list/logo-btns/Anhoch.png" height={40}></img>
+                  {/* <img src="/src/assets/images/product-list/logo-btns/Anhoch.png" height={40}></img> */}
+                  <StyledLogo src="/src/assets/images/product-list/logo-btns/Anhoch.png" />
                 </StyledBox>
               </StyledCardContent>
             </Card>
