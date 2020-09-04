@@ -338,6 +338,300 @@ const menuItems = (): MenuItem[] => [
     title: translate('MegaMall_Header_Fitness', 'Фитнес'),
     link: `/categories/sport/fitness`,
     parentId: 2
+  },
+  {
+    id: 57,
+    title: translate('MegaMall_Header_Keyboards', 'Тастатури'),
+    link: `/categories/technology/computer-accessories/keyboards`,
+    parentId: 7
+  },
+  {
+    id: 58,
+    title: translate('MegaMall_Header_Mice', 'Глувчиња'),
+    link: `/categories/technology/computer-accessories/mice`,
+    parentId: 7
+  },
+  {
+    id: 59,
+    title: translate('MegaMall_Header_Substrates', 'Подлоги'),
+    link: `/categories/technology/computer-accessories/substrates`,
+    parentId: 7
+  },
+  {
+    id: 60,
+    title: translate('MegaMall_Header_Speakers', 'Компјутерски звучници'),
+    link: `/categories/technology/computer-accessories/speakers`,
+    parentId: 7
+  },
+  {
+    id: 61,
+    title: translate('MegaMall_Header_Coolers', 'Кулери'),
+    link: `/categories/technology/computer-accessories/coolers`,
+    parentId: 7
+  },
+  {
+    id: 62,
+    title: translate('MegaMall_Header_Webcam', 'Веб камери,микрофони'),
+    link: `/categories/technology/computer-accessories/webcam`,
+    parentId: 7
+  },
+  {
+    id: 63,
+    title: translate('MegaMall_Header_Accessories', 'Додатоци'),
+    link: `/categories/technology/computer-accessories/accessories`,
+    parentId: 7
+  },
+  {
+    id: 64,
+    title: translate('MegaMall_Header_PC', 'Куќишта'),
+    link: `/categories/technology/comuters/PC`,
+    parentId: 9
+  },
+  {
+    id: 65,
+    title: translate('MegaMall_Header_Coolers', 'Кулери'),
+    link: `/categories/technology/computers/coolers`,
+    parentId: 9
+  },
+  {
+    id: 66,
+    title: translate('MegaMall_Header_Graphics', 'Графички карти'),
+    link: `/categories/technology/computers/graphics`,
+    parentId: 9
+  },
+  {
+    id: 67,
+    title: translate('MegaMall_Header_Hard_disk', 'Тврди дискови'),
+    link: `/categories/technology/computers/hard_disk`,
+    parentId: 9
+  },
+  {
+    id: 68,
+    title: translate('MegaMall_Header_Motherboards', 'Матични плочи'),
+    link: `/categories/technology/computers/motherboards`,
+    parentId: 9
+  },
+  {
+    id: 69,
+    title: translate('MegaMall_Header_Optical', 'Оптички уреди'),
+    link: `/categories/technology/computers/optical`,
+    parentId: 9
+  },
+  {
+    id: 70,
+    title: translate('MegaMall_Header_Power', 'Напојувања'),
+    link: `/categories/technology/computers/power`,
+    parentId: 9
+  },
+  {
+    id: 71,
+    title: translate('MegaMall_Header_Processors', 'Процесори'),
+    link: `/categories/technology/computers/processors`,
+    parentId: 9
+  },
+  {
+    id: 72,
+    title: translate('MegaMall_Header_RAM', 'RAM меморија'),
+    link: `/categories/technology/computers/RAM`,
+    parentId: 9
+  },
+  {
+    id: 73,
+    title: translate('MegaMall_Header_TV', 'ТВ и Звучни карти'),
+    link: `/categories/technology/computers/TV`,
+    parentId: 9
+  },
+  {
+    id: 74,
+    title: translate('MegaMall_Header_Consoles', 'Конзоли'),
+    link: `/categories/technology/consoles/consoles`,
+    parentId: 11
+  },
+  {
+    id: 75,
+    title: translate('MegaMall_Header_Games', 'Игри за конзоли'),
+    link: `/categories/technology/consoles/games`,
+    parentId: 11
+  },
+  {
+    id: 76,
+    title: translate('MegaMall_Header_Accessorices', 'Додатоци'),
+    link: `/categories/technology/consoles/accessorices`,
+    parentId: 11
+  },
+  {
+    id: 77,
+    title: translate('MegaMall_Header_Laptops', 'Лаптопи'),
+    link: `/categories/technology/notebooks/laptops`,
+    parentId: 12
+  },
+  {
+    id: 78,
+    title: translate('MegaMall_Header_Pads_coolers', 'Подлоги/кулери'),
+    link: `/categories/technology/notebooks/pads_coolers`,
+    parentId: 12
+  },
+  {
+    id: 79,
+    title: translate('MegaMall_Header_Backpacks', 'Ташни и ранци'),
+    link: `/categories/technology/notebooks/backpacks`,
+    parentId: 12
+  },
+  {
+    id: 80,
+    title: translate('MegaMall_Header_Equipment', 'Опрема'),
+    link: `/categories/technology/notebooks/equipment`,
+    parentId: 12
+  },
+  {
+    id: 81,
+    title: translate('MegaMall_Header_Tablets', 'Таблети'),
+    link: `/categories/technology/tablets/tablets`,
+    parentId: 13
+  },
+  {
+    id: 82,
+    title: translate('MegaMall_Header_Cases', 'Футроли'),
+    link: `/categories/technology/tablets/cases`,
+    parentId: 13
+  },
+  {
+    id: 83,
+    title: translate('MegaMall_Header_Tablet_Equipment', 'Опрема'),
+    link: `/categories/technology/tablets/tablet_equipment`,
+    parentId: 13
+  },
+  {
+    id: 84,
+    title: translate('MegaMall_Header_TVs', 'Телевизори'),
+    link: `/categories/technology/multimedia/TVs`,
+    parentId: 14
+  },
+  {
+    id: 85,
+    title: translate('MegaMall_Header_Music', 'Музички системи'),
+    link: `/categories/technology/multimedia/music`,
+    parentId: 14
+  },
+  {
+    id: 86,
+    title: translate('MegaMall_Header_Cinema', 'Домашно кино'),
+    link: `/categories/technology/multimedia/cinema`,
+    parentId: 14
+  },
+  {
+    id: 87,
+    title: translate('MegaMall_Header_Accessoricess', 'Галантерија'),
+    link: `/categories/technology/multimedia/accessorices`,
+    parentId: 14
+  },
+  {
+    id: 88,
+    title: translate('MegaMall_Header_Portable_speakers', 'Преносни звучници'),
+    link: `/categories/technology/multimedia/portable_speakers`,
+    parentId: 14
+  },
+  {
+    id: 89,
+    title: translate('MegaMall_Header_Mobile_phones', 'Мобилни телефони'),
+    link: `/categories/technology/mobiles/mobile_phones`,
+    parentId: 15
+  },
+  {
+    id: 90,
+    title: translate('MegaMall_Header_Smartwatch', 'Паметни часовници'),
+    link: `/categories/technology/mobiles/smartwatch`,
+    parentId: 15
+  },
+  {
+    id: 91,
+    title: translate('MegaMall_Header_Phonecase', 'Маски за телефони'),
+    link: `/categories/technology/mobiles/phonecase`,
+    parentId: 15
+  },
+  {
+    id: 92,
+    title: translate('MegaMall_Header_Other_equipment', 'Додатна опрема'),
+    link: `/categories/technology/mobiles/other_equipment`,
+    parentId: 15
+  },
+  {
+    id: 93,
+    title: translate('MegaMall_Header_Stoves', 'Шпорети'),
+    link: `/categories/technology/household/stoves`,
+    parentId: 16
+  },
+  {
+    id: 94,
+    title: translate('MegaMall_Header_Refrigerators', 'Фрижидери'),
+    link: `/categories/technology/household/refrigerators`,
+    parentId: 16
+  },
+  {
+    id: 95,
+    title: translate('MegaMall_Header_Microwave', 'Микробранови печки'),
+    link: `/categories/technology/household/microwave`,
+    parentId: 16
+  },
+  {
+    id: 96,
+    title: translate('MegaMall_Header_Freezers', 'Замрзнувачи'),
+    link: `/categories/technology/household/freezers`,
+    parentId: 16
+  },
+  {
+    id: 97,
+    title: translate('MegaMall_Header_Aspirators', 'Аспиратори'),
+    link: `/categories/technology/household/aspirators`,
+    parentId: 16
+  },
+  {
+    id: 98,
+    title: translate('MegaMall_Header_Water_heater', 'Бојлери'),
+    link: `/categories/technology/household/water_heater`,
+    parentId: 16
+  },
+  {
+    id: 99,
+    title: translate('MegaMall_Header_Washing_machine', 'Машини за перење'),
+    link: `/categories/technology/household/washing_machine`,
+    parentId: 16
+  },
+  {
+    id: 100,
+    title: translate('MegaMall_Header_Dishwasher', 'Машини за садови'),
+    link: `/categories/technology/household/dishwasher`,
+    parentId: 16
+  },
+  {
+    id: 101,
+    title: translate('MegaMall_Header_Heating', 'Системи за греење и ладење'),
+    link: `/categories/technology/household/heating`,
+    parentId: 16
+  },
+  {
+    id: 102,
+    title: translate('MegaMall_Header_Photo', 'Фото апарати'),
+    link: `/categories/technology/video/photo`,
+    parentId: 17
+  },
+  {
+    id: 103,
+    title: translate('MegaMall_Header_Camera', 'Камери'),
+    link: `/categories/technology/video/camera`,
+    parentId: 17
+  },
+  {
+    id: 104,
+    title: translate('MegaMall_Header_Drone', 'Дронови'),
+    link: `/categories/technology/video/drone`,
+    parentId: 17
+  },
+  {
+    id: 105,
+    title: translate('MegaMall_Header_Others', 'Опрема'),
+    link: `/categories/technology/video/others`,
+    parentId: 17
   }
 ];
 
