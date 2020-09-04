@@ -15,11 +15,11 @@ const StyledBox = styled(props => {
   border-bottom: 2px solid transparent;
   transition: 0.3s;
 
-  ${(props: IStyledBoxProps) => (props.isActive ? `border-bottom: 2px solid ${props.theme.palette.secondary.main}` : '')};
+  ${(props: IStyledBoxProps) => (props.isActive ? `border-bottom: 2px solid ${props.theme.palette.primary.main}` : '')};
 
   &:hover,
   &:active {
-    border-bottom: 2px solid ${(props: IStyledBoxProps) => props.theme.palette.secondary.main};
+    border-bottom: 2px solid ${(props: IStyledBoxProps) => props.theme.palette.primary.main};
   }
 `;
 

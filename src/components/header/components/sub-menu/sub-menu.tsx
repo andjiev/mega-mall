@@ -1,202 +1,102 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/styles';
-import { List, Grid, Container, ListItem, Box, Typography, Theme, Tabs, Tab } from '@material-ui/core';
+import { List, Grid, Box, Typography, ListItem } from '@material-ui/core';
 
-import { StyledSubMenu, StyledListItemText, StyledIcons } from './sub-menu.styles';
+import { StyledSubMenu, StyledIcons, StyledTab, StyledTabs, StyledListItemText } from './sub-menu.styles';
 import Link from '@material-ui/core/Link';
 
-import { submenuItems, ISubmenuItem, submenuIcons } from './sub-menu.data';
-import { CategoryTypes } from 'lib/enums';
-import { menuItems } from './../menu/menu.data';
 import Banner from 'components/banner/banner';
-
-//Tab panels
-
-interface TabPanelProps {
-  className?: any;
-  children?: React.ReactNode;
-  index: any;
-  value: any;
-}
-
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div role="tabpanel" hidden={value !== index} id={`vertical-tabpanel-${index}`} aria-labelledby={`vertical-tab-${index}`} {...other}>
-      {value === index && (
-        <Box>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-const useStyles = makeStyles((theme: Theme) => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: '#F0F5FF',
-    display: 'flex',
-    flexDirecation: 'row',
-    height: 300,
-    padding: 0,
-    overflowY: 'hidden',
-    width: '100%',
-    zIndex: 10,
-    position: 'absolute'
-  },
-  wrapper: {
-    alignItems: 'baseline'
-  },
-  tabs: {
-    borderRight: `1px solid #355C7C`,
-    overflow: 'visible',
-    justifyContent: 'flex-start'
-  },
-  tabPanel: {
-    padding: 0,
-    width: '100%'
-  },
-  tabLabel: {
-    fontFamily: 'OswaldBold',
-    fontSize: '14px',
-    textAlign: 'left',
-    width: '500px'
-  },
-  subContainer: {
-    maxWidth: '1600px',
-    margin: '0 auto',
-    display: 'block'
-  }
-}));
-
-//===============================
+import { MenuItem } from 'lib/data';
 
 interface ISubMenuProps {
-  categoryType?: CategoryTypes;
+  menuItems: MenuItem[];
 
   onSubmenuChange: (value: boolean) => void;
-  onCategoryChange: (value: CategoryTypes) => void;
 }
 
 const SubMenu = (props: ISubMenuProps) => {
-  // Vertical tabs
-  const classes = useStyles();
-  const [value, setValue] = React.useState(0);
-
-  const [submenuContent, setSubmenuContent] = useState<ISubmenuItem | undefined>(undefined);
+  const [categoryId, setCategoryId] = useState<number | undefined>(1);
+  const [subCategories, setSubCategories] = useState<MenuItem[]>([]);
 
   useEffect(() => {
-    if (props.categoryType) {
-      setSubmenuContent(submenuItems.find(x => x.type === props.categoryType));
+    // set to first category
+    onCategoryChange(1);
+  }, []);
+
+  const onCategoryChange = (value: number) => {
+    const menuItem = props.menuItems.find(x => x.id === value);
+    if (menuItem) {
+      setSubCategories(menuItem.children && menuItem.children.length > 0 ? menuItem.children : []);
     }
-  }, [props.categoryType]);
 
-  const [categoryType, setCategoryType] = useState<CategoryTypes | undefined>(undefined);
-
-  const onCategoryChange = (type: CategoryTypes) => {
-    setCategoryType(type);
-    // this one indicates the submenu to render the proper content
-    props.onCategoryChange(type);
+    setCategoryId(value);
   };
 
   return (
     <>
-      <Box className={classes.root} onMouseEnter={() => props.onSubmenuChange(true)} onMouseLeave={() => props.onSubmenuChange(false)} boxShadow={3}>
-        <Tabs orientation="vertical" value={props.categoryType && props.categoryType - 1} aria-label="Main Categories" className={classes.tabs}>
-          {menuItems.map((item, index) => {
-            return (
-              <Box key={index}>
-                <Tab
-                  value={item.type}
-                  className={classes.tabLabel}
-                  label={
-                    <Grid container spacing={2} alignItems="center">
-                      <Grid item>
-                        <StyledIcons src={submenuIcons[index].url} />
-                      </Grid>
-                      <Grid item>{item.title}</Grid>
-                    </Grid>
-                  }
-                  onMouseEnter={() => onCategoryChange(item.type)}
-                />
-              </Box>
-            );
-          })}
-        </Tabs>
-        <TabPanel className={classes.tabPanel} value={props.categoryType} index={props.categoryType}>
-          {submenuContent && (
-            <StyledSubMenu>
-              <Container className={classes.subContainer}>
-                <Box>
-                  <Grid container>
-                    <Grid item xs={8}>
-                      <Grid container item xs={12} spacing={10}>
-                        <Grid item xs={4}>
-                          <List>
-                            <ListItem disableGutters>
-                              <StyledListItemText primary={submenuContent.data.left.title}></StyledListItemText>
-                              {/* TODO help here with the font */}
-                            </ListItem>
-                            {submenuContent.data.left.items.map(item => {
-                              return (
-                                <ListItem key={item.id} disableGutters>
-                                  <Link href="#">
-                                    <Typography variant="subtitle2">{item.title}</Typography>
-                                  </Link>
-                                </ListItem>
-                              );
-                            })}
-                          </List>
+      <StyledSubMenu boxShadow={3} onMouseEnter={() => props.onSubmenuChange(true)} onMouseLeave={() => props.onSubmenuChange(false)}>
+        <Grid container spacing={2}>
+          <Grid item sm={4} md={3} lg={2} spacing={0}>
+            <StyledTabs value={categoryId} orientation="vertical">
+              {props.menuItems.map((item, index) => {
+                return (
+                  <StyledTab
+                    key={index}
+                    value={item.id}
+                    displayBorder={index < props.menuItems.length - 1}
+                    isActive={item.id === categoryId}
+                    label={
+                      <Box pt={1} pb={1}>
+                        <Grid container spacing={2} alignItems="center">
+                          <Grid item>
+                            <StyledIcons src={item.imageSrc} />
+                          </Grid>
+                          <Grid item>{item.title}</Grid>
                         </Grid>
-                        <Grid item xs={4}>
-                          <List>
-                            <ListItem disableGutters>
-                              <StyledListItemText primary={submenuContent.data.center.title}></StyledListItemText>
-                            </ListItem>
-                            {submenuContent.data.right.items.map(item => {
-                              return (
-                                <ListItem key={item.id} disableGutters>
-                                  <Link href="#">
-                                    <Typography variant="subtitle2">{item.title}</Typography>
-                                  </Link>
-                                </ListItem>
-                              );
-                            })}
-                          </List>
-                        </Grid>
-                        <Grid item xs={4}>
-                          <List>
-                            <ListItem disableGutters>
-                              <StyledListItemText primary={submenuContent.data.right.title}></StyledListItemText>
-                            </ListItem>
-                            {submenuContent.data.right.items.map(item => {
-                              return (
-                                <ListItem key={item.id} disableGutters>
-                                  <Link href="#">
-                                    <Typography variant="subtitle2">{item.title}</Typography>
-                                  </Link>
-                                </ListItem>
-                              );
-                            })}
-                          </List>
-                        </Grid>
-                      </Grid>
-                    </Grid>
-
-                    <Grid item xs={4}>
-                      <Box mt={4}>
-                        <Banner size="menu" bgColor="#F0F5FF" imagesource="/assets/images/main/Najnovite-patiki-na-nike.jpg" />
                       </Box>
-                    </Grid>
-                  </Grid>
-                </Box>
-              </Container>
-            </StyledSubMenu>
-          )}
-        </TabPanel>
-      </Box>
+                    }
+                    onMouseEnter={() => onCategoryChange(item.id)}
+                  />
+                );
+              })}
+            </StyledTabs>
+          </Grid>
+          <Grid item sm={5} md={6} lg={7}>
+            {subCategories.length > 0 && (
+              <Box pl={2} pr={2}>
+                <Grid container spacing={3}>
+                  {subCategories.slice(0, 3).map(subItem => {
+                    return (
+                      <Grid key={subItem.id} item xs={4}>
+                        <List>
+                          <ListItem disableGutters>
+                            <StyledListItemText primary={subItem.title}></StyledListItemText>
+                          </ListItem>
+                          {subItem.children &&
+                            subItem.children.slice(0, 6).map(item => {
+                              return (
+                                <ListItem key={item.id} disableGutters>
+                                  <Link href={item.link}>
+                                    <Typography variant="subtitle2">{item.title}</Typography>
+                                  </Link>
+                                </ListItem>
+                              );
+                            })}
+                        </List>
+                      </Grid>
+                    );
+                  })}
+                </Grid>
+              </Box>
+            )}
+          </Grid>
+          <Grid item sm={3}>
+            <Box p={2}>
+              {/* TODO: this should come from the menu item */}
+              <Banner size="menu" bgColor="#F0F5FF" imagesource="/assets/images/main/Najnovite-patiki-na-nike.jpg" />
+            </Box>
+          </Grid>
+        </Grid>
+      </StyledSubMenu>
     </>
   );
 };
