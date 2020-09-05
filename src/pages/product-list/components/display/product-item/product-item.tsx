@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Typography, Grid, Hidden } from '@material-ui/core';
 import { Box } from '@material-ui/core';
 import { StyledImage, StyledLogo, StyledGrid } from './product-item.styles';
@@ -13,6 +13,14 @@ export interface IProductItem {
 }
 
 const ProductItem = (props: IProductItem) => {
+  const [containerSize, setContainerSize] = useState(8);
+
+  useEffect(() => {
+    if (!props.img) {
+      setContainerSize(12);
+    }
+  }, []);
+
   return (
     <>
       <StyledGrid container spacing={2}>
@@ -35,7 +43,7 @@ const ProductItem = (props: IProductItem) => {
           </>
         )}
 
-        <Grid item xs={8}>
+        <Grid item xs={containerSize}>
           <Grid container>
             <Grid item xs={12}>
               <Typography>

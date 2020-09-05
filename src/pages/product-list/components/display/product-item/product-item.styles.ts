@@ -26,6 +26,7 @@ const StyledLogo = styled.img`
     max-height: 30px;
     width: 100%;
     position: initial;
+    float: right;
   }
 `;
 
