@@ -29,6 +29,7 @@ const LBannerImage = styled(Box)`
 
   ${props => props.theme.breakpoints.down('md')} {
     min-height: 55px;
+    background-position: center center;
   }
 `;
 
