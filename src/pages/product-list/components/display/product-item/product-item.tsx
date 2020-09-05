@@ -13,14 +13,6 @@ export interface IProductItem {
 }
 
 const ProductItem = (props: IProductItem) => {
-  const [containerSize, setContainerSize] = useState(8);
-
-  useEffect(() => {
-    if (!props.img) {
-      setContainerSize(12);
-    }
-  }, []);
-
   return (
     <>
       <StyledGrid container spacing={2}>
@@ -43,54 +35,105 @@ const ProductItem = (props: IProductItem) => {
           </>
         )}
 
-        <Grid item xs={containerSize}>
-          <Grid container>
-            <Grid item xs={12}>
-              <Typography>
-                <Hidden mdDown>
-                  <Box fontFamily="RobotoBold" fontSize="18px">
-                    {props.title.substring(0, 50) + '...'}
-                  </Box>
-                </Hidden>
-                <Hidden mdUp>
-                  <Box fontFamily="RobotoRegular" fontSize="14px">
-                    {props.title.substring(0, 50) + '...'}
-                  </Box>
-                </Hidden>
-              </Typography>
-            </Grid>
-            <Grid container xs={12}>
-              <Grid item xs={6}>
-                <Typography variant="h4">
+        {props.img ? (
+          <Grid item xs={8}>
+            <Grid container>
+              <Grid item xs={12}>
+                <Typography>
                   <Hidden mdDown>
-                    <Box fontFamily="OswaldMedium" fontSize="24px" mt={3}>
-                      {props.price}
+                    <Box fontFamily="RobotoBold" fontSize="18px">
+                      {props.title.substring(0, 50) + '...'}
                     </Box>
                   </Hidden>
                   <Hidden mdUp>
-                    <Box fontFamily="OswaldMedium" fontSize="18px" mt={3}>
-                      {props.price}
+                    <Box fontFamily="RobotoRegular" fontSize="14px">
+                      {props.title.substring(0, 50) + '...'}
                     </Box>
                   </Hidden>
                 </Typography>
               </Grid>
-              <Grid item xs={6}>
-                <Hidden mdDown>
-                  <Box>
-                    {/* TODO this needs to be a link*/}
-                    <StyledLogo src={props.logo} />
-                  </Box>
-                </Hidden>
-                <Hidden mdUp>
-                  <Box mt={3}>
-                    {/* TODO this needs to be a link*/}
-                    <StyledLogo src={props.logo} />
-                  </Box>
-                </Hidden>
+              <Grid container xs={12}>
+                <Grid item xs={6}>
+                  <Typography variant="h4">
+                    <Hidden mdDown>
+                      <Box fontFamily="OswaldMedium" fontSize="24px" mt={3}>
+                        {props.price}
+                      </Box>
+                    </Hidden>
+                    <Hidden mdUp>
+                      <Box fontFamily="OswaldMedium" fontSize="18px" mt={3}>
+                        {props.price}
+                      </Box>
+                    </Hidden>
+                  </Typography>
+                </Grid>
+                <Grid item xs={6}>
+                  <Hidden mdDown>
+                    <Box>
+                      {/* TODO this needs to be a link*/}
+                      <StyledLogo src={props.logo} />
+                    </Box>
+                  </Hidden>
+                  <Hidden mdUp>
+                    <Box mt={3}>
+                      {/* TODO this needs to be a link*/}
+                      <StyledLogo src={props.logo} />
+                    </Box>
+                  </Hidden>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
-        </Grid>
+        ) : (
+          <Grid item xs={12}>
+            <Grid container>
+              <Grid item xs={12}>
+                <Typography>
+                  <Hidden mdDown>
+                    <Box fontFamily="RobotoBold" fontSize="18px">
+                      {props.title.substring(0, 50) + '...'}
+                    </Box>
+                  </Hidden>
+                  <Hidden mdUp>
+                    <Box fontFamily="RobotoRegular" fontSize="14px">
+                      {props.title.substring(0, 50) + '...'}
+                    </Box>
+                  </Hidden>
+                </Typography>
+              </Grid>
+              <Grid container xs={12}>
+                <Grid item xs={6}>
+                  <Typography variant="h4">
+                    <Hidden mdDown>
+                      <Box fontFamily="OswaldMedium" fontSize="24px" mt={3}>
+                        {props.price}
+                      </Box>
+                    </Hidden>
+                    <Hidden mdUp>
+                      <Box fontFamily="OswaldMedium" fontSize="18px" mt={3}>
+                        {props.price}
+                      </Box>
+                    </Hidden>
+                  </Typography>
+                </Grid>
+                <Grid item xs={6}>
+                  <Hidden mdDown>
+                    <Box>
+                      {/* TODO this needs to be a link*/}
+                      <StyledLogo src={props.logo} />
+                    </Box>
+                  </Hidden>
+                  <Hidden mdUp>
+                    <Box mt={3}>
+                      {/* TODO this needs to be a link*/}
+                      <StyledLogo src={props.logo} />
+                    </Box>
+                  </Hidden>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        )}
       </StyledGrid>
     </>
   );
