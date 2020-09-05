@@ -8,6 +8,7 @@ const StyledMaterialCard = styled(MaterialCard)`
   padding: 0;
   min-height: 250px;
   max-height: 380px;
+  cursor: pointer;
 
   ${props => props.theme.breakpoints.down('lg')} {
     height: 100%;

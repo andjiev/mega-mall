@@ -22,4 +22,9 @@ enum OrderTypes {
   Latest = 3
 }
 
-export { Environment, CategoryTypes, OrderTypes, ProductTypes };
+enum ListTypes {
+  Products = 1,
+  Stores = 2
+}
+
+export { Environment, CategoryTypes, OrderTypes, ProductTypes, ListTypes };

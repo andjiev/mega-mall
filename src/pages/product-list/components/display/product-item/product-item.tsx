@@ -51,38 +51,38 @@ const ProductItem = (props: IProductItem) => {
                 </Hidden>
               </Typography>
             </Grid>
-            <Grid item xs={12}>
-              <Typography variant="h4">
+            <Grid container xs={12}>
+              <Grid item xs={6}>
+                <Typography variant="h4">
+                  <Hidden mdDown>
+                    <Box fontFamily="OswaldMedium" fontSize="24px" mt={3}>
+                      {props.price}
+                    </Box>
+                  </Hidden>
+                  <Hidden mdUp>
+                    <Box fontFamily="OswaldMedium" fontSize="18px" mt={3}>
+                      {props.price}
+                    </Box>
+                  </Hidden>
+                </Typography>
+              </Grid>
+              <Grid item xs={6}>
                 <Hidden mdDown>
-                  <Box fontFamily="OswaldMedium" fontSize="24px" mt={3}>
-                    {props.price}
+                  <Box>
+                    {/* TODO this needs to be a link*/}
+                    <StyledLogo src={props.logo} />
                   </Box>
                 </Hidden>
                 <Hidden mdUp>
-                  <Box fontFamily="OswaldMedium" fontSize="18px" mt={3}>
-                    {props.price}
+                  <Box mt={3}>
+                    {/* TODO this needs to be a link*/}
+                    <StyledLogo src={props.logo} />
                   </Box>
                 </Hidden>
-              </Typography>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
-        <Hidden mdDown>
-          <Grid item xs={2}>
-            <Box>
-              {/* TODO this needs to be a link*/}
-              <StyledLogo src={props.logo} />
-            </Box>
-          </Grid>
-        </Hidden>
-        <Hidden mdUp>
-          <Grid container item xs={12} alignItems="flex-end" justify="flex-end">
-            <Box>
-              {/* TODO this needs to be a link*/}
-              <StyledLogo src={props.logo} />
-            </Box>
-          </Grid>
-        </Hidden>
       </StyledGrid>
     </>
   );

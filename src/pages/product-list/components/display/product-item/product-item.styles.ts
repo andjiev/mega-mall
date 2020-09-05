@@ -30,10 +30,10 @@ const StyledLogo = styled.img`
 `;
 
 const StyledGrid = styled(Grid)`
-  min-height: 140px;
+  min-height: 170px;
 
   @media (max-width: 768px) {
-    min-height: 170px;
+    min-height: 140px;
   }
 `;
 
