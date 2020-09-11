@@ -102,7 +102,7 @@ const menuItems = (): MenuItem[] => [
   },
   {
     id: 16,
-    title: translate('MegaMall_Header_Household', 'Бела техника'),
+    title: translate('MegaMall_Header_Household1', 'Бела техника'),
     link: `/categories/technology/household`,
     parentId: 1
   },
@@ -318,7 +318,7 @@ const menuItems = (): MenuItem[] => [
   },
   {
     id: 52,
-    title: translate('MegaMall_Header_Seakers', 'Патики'),
+    title: translate('MegaMall_Header_Sneakers', 'Патики'),
     link: `/categories/sport/sneakers`,
     parentId: 2
   },
@@ -396,7 +396,7 @@ const menuItems = (): MenuItem[] => [
   },
   {
     id: 65,
-    title: translate('MegaMall_Header_Coolers', 'Кулери'),
+    title: translate('MegaMall_Header_Coolers1', 'Кулери'),
     link: `/categories/technology/computers/coolers`,
     parentId: 9
   },
@@ -450,7 +450,7 @@ const menuItems = (): MenuItem[] => [
   },
   {
     id: 74,
-    title: translate('MegaMall_Header_Consoles', 'Конзоли'),
+    title: translate('MegaMall_Header_Consoles1', 'Конзоли'),
     link: `/categories/technology/consoles/consoles`,
     parentId: 11
   },
@@ -492,7 +492,7 @@ const menuItems = (): MenuItem[] => [
   },
   {
     id: 81,
-    title: translate('MegaMall_Header_Tablets', 'Таблети'),
+    title: translate('MegaMall_Header_Tablets1', 'Таблети'),
     link: `/categories/technology/tablets/tablets`,
     parentId: 13
   },
@@ -1117,7 +1117,7 @@ const menuItems = (): MenuItem[] => [
   },
   {
     id: 184,
-    title: translate('MegaMall_Header_Women_Coats', 'Мантили'),
+    title: translate('MegaMall_Header_Women_Coat', 'Мантили'),
     link: `/categories/fashion/female_clothes/coat`,
     parentId: 31
   },
@@ -1309,13 +1309,13 @@ const menuItems = (): MenuItem[] => [
   },
   {
     id: 216,
-    title: translate('MegaMall_Header_Women_Gloves', 'Доручек'),
+    title: translate('MegaMall_Header_Breakfast', 'Доручек'),
     link: `/categories/services/food`,
     parentId: 36
   },
   {
     id: 217,
-    title: translate('MegaMall_Header_Women_Gloves', 'Салати'),
+    title: translate('MegaMall_Header_Salads', 'Салати'),
     link: `/categories/services/food`,
     parentId: 36
   },
