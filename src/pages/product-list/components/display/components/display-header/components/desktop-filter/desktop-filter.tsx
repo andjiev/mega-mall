@@ -8,7 +8,6 @@ import { translate } from 'lib/translate';
 import { AppDispatch } from 'index';
 import ApplicationState from 'store/application-state';
 import { connect } from 'react-redux';
-import { changeListType } from 'store/list-type-store';
 import { listenerCount } from 'process';
 
 interface IProps {
