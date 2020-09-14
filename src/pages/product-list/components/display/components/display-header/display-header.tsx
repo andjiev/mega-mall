@@ -9,10 +9,10 @@ import { ListTypes } from 'lib/enums';
 
 interface IDisplayHeader {
   onListTypeChange: (type: ListTypes) => void;
+  listType: ListTypes;
 }
 
 const DisplayHeader = (props: IDisplayHeader) => {
-  const { onListTypeChange } = props;
   return (
     <>
       <Box>
@@ -29,7 +29,7 @@ const DisplayHeader = (props: IDisplayHeader) => {
               </Box>
             </Hidden>
             <Grid container>
-              <DesktopFilter listType={ListTypes.Products} onListTypeChange={onListTypeChange} />
+              <DesktopFilter listType={props.listType} onListTypeChange={props.onListTypeChange} />
             </Grid>
           </Grid>
         </Grid>

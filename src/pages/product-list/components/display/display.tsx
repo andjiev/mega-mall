@@ -67,7 +67,7 @@ const Display = (props: IProps) => {
       {props.data && props.data.length ? (
         <Box p={3}>
           <Box>
-            <DisplayHeader onListTypeChange={listTypeChange} />
+            <DisplayHeader onListTypeChange={listTypeChange} listType={listType} />
           </Box>
           <Box mt={3}>
             {listType === ListTypes.Products ? (

@@ -18,22 +18,14 @@ interface IProps {
 const DesktopFilter = (props: IProps) => {
   const { onListTypeChange } = props;
   const [orderType, setOrderType] = React.useState(OrderTypes.PriceAscending);
-  let [localListType, setLocalListType] = useState(props.listType);
-
-  const handleClick = (type: ListTypes) => {
-    onListTypeChange(type);
-    setLocalListType(type);
-  };
 
   const renderBar = () => {
     return (
       <StyledButtonGroup color="primary">
-        {console.log('isToggledProducts', localListType === ListTypes.Products)}
-        <StyledButton isToggled={localListType === ListTypes.Products} onClick={() => handleClick(ListTypes.Products)}>
+        <StyledButton isToggled={props.listType === ListTypes.Products} onClick={() => onListTypeChange(ListTypes.Products)}>
           <Typography variant="button">{translate('MegaMall_DesktopFilter_Products', 'Производи')}</Typography>
         </StyledButton>
-        {console.log('isToggledStores', localListType === ListTypes.Stores)}
-        <StyledButton isToggled={localListType === ListTypes.Stores} onClick={() => handleClick(ListTypes.Stores)}>
+        <StyledButton isToggled={props.listType === ListTypes.Stores} onClick={() => onListTypeChange(ListTypes.Stores)}>
           <Typography variant="button">{translate('MegaMall_DesktopFilter_Shops', 'Продавници')}</Typography>
         </StyledButton>
       </StyledButtonGroup>
