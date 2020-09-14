@@ -77,7 +77,7 @@ const Display = (props: IProps) => {
                     <Link key={product.id} href={generatePath(ROUTES.PRODUCT, { id: product.id })}>
                       <ListItem button disableGutters={true} divider={true}>
                         <StyledBox mt={1} mb={1}>
-                          <ProductItem key={product.id} img={product.imageSource} title={product.name} price={product.price} description={''} logo={''} link={product.link} />
+                          <ProductItem key={product.id} img={product.imageSource || displayData[1].img} title={product.name} price={product.price} description={''} logo={''} link={product.link} />
                         </StyledBox>
                       </ListItem>
                     </Link>
