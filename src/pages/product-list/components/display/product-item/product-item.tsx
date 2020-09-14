@@ -42,12 +42,12 @@ const ProductItem = (props: IProductItem) => {
                 <Typography>
                   <Hidden mdDown>
                     <Box fontFamily="RobotoBold" fontSize="18px">
-                      {props.title.substring(0, 50) + '...'}
+                      {props.title.length > 50 ? props.title.substring(0, 50) + '...' : props.title}
                     </Box>
                   </Hidden>
                   <Hidden mdUp>
                     <Box fontFamily="RobotoRegular" fontSize="14px">
-                      {props.title.substring(0, 50) + '...'}
+                      {props.title.length > 50 ? props.title.substring(0, 50) + '...' : props.title}
                     </Box>
                   </Hidden>
                 </Typography>
@@ -91,12 +91,12 @@ const ProductItem = (props: IProductItem) => {
                 <Typography>
                   <Hidden mdDown>
                     <Box fontFamily="RobotoBold" fontSize="18px">
-                      {props.title.substring(0, 50) + '...'}
+                      {props.title.length > 50 ? props.title.substring(0, 50) + '...' : props.title}
                     </Box>
                   </Hidden>
                   <Hidden mdUp>
                     <Box fontFamily="RobotoRegular" fontSize="14px">
-                      {props.title.substring(0, 50) + '...'}
+                      {props.title.length > 50 ? props.title.substring(0, 50) + '...' : props.title}
                     </Box>
                   </Hidden>
                 </Typography>
