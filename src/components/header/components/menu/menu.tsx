@@ -4,6 +4,7 @@ import { StyledLink } from 'components/styled-link';
 import { Box, Typography, Grid } from '@material-ui/core';
 import { StyledBox } from './menu.styles';
 import { MenuItem } from 'lib/data';
+import { translate } from 'lib/translate';
 
 interface IMenuProps {
   isActive: boolean;
@@ -20,7 +21,7 @@ const HomeCenterMenu = (props: IMenuProps) => {
         <Grid item>
           <StyledBox pt={1} pb={1} isActive={props.isActive} onMouseEnter={props.onShowSubmenuChange} onMouseLeave={props.onHideSubmenuChange}>
             <Typography variant="subtitle2" style={{ fontSize: '16px' }}>
-              <StyledLink href="#">Сите категории</StyledLink>
+              <StyledLink href="#">{translate('MegaMall_Menu_All', 'Сите категории')}</StyledLink>
             </Typography>
           </StyledBox>
         </Grid>
