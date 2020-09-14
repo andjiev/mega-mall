@@ -12,6 +12,7 @@ interface IDisplayHeader {
 }
 
 const DisplayHeader = (props: IDisplayHeader) => {
+  const { onListTypeChange } = props;
   return (
     <>
       <Box>
@@ -28,7 +29,7 @@ const DisplayHeader = (props: IDisplayHeader) => {
               </Box>
             </Hidden>
             <Grid container>
-              <DesktopFilter listType={ListTypes.Products} onListTypeChange={props.onListTypeChange} />
+              <DesktopFilter listType={ListTypes.Products} onListTypeChange={onListTypeChange} />
             </Grid>
           </Grid>
         </Grid>
