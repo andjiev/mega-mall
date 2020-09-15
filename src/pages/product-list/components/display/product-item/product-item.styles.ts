@@ -26,14 +26,15 @@ const StyledLogo = styled.img`
     max-height: 30px;
     width: 100%;
     position: initial;
+    float: right;
   }
 `;
 
 const StyledGrid = styled(Grid)`
-  min-height: 140px;
+  min-height: 170px;
 
   @media (max-width: 768px) {
-    min-height: 170px;
+    min-height: 140px;
   }
 `;
 

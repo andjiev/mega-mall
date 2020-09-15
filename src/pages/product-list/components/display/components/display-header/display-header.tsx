@@ -4,8 +4,15 @@ import { Typography, Box, Grid, Hidden } from '@material-ui/core';
 import { DesktopFilter } from './components/desktop-filter';
 import MobileFilter from './components/mobile-filter/mobile-filter';
 import { translate } from 'lib/translate';
+import DesktopFilterContainer from './components/desktop-filter/desktop-filter';
+import { ListTypes } from 'lib/enums';
 
-const DisplayHeader = () => {
+interface IDisplayHeader {
+  onListTypeChange: (type: ListTypes) => void;
+  listType: ListTypes;
+}
+
+const DisplayHeader = (props: IDisplayHeader) => {
   return (
     <>
       <Box>
@@ -22,7 +29,7 @@ const DisplayHeader = () => {
               </Box>
             </Hidden>
             <Grid container>
-              <DesktopFilter />
+              <DesktopFilter listType={props.listType} onListTypeChange={props.onListTypeChange} />
             </Grid>
           </Grid>
         </Grid>

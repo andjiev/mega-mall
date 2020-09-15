@@ -5,7 +5,7 @@ import { AppDispatch } from './../../index';
 import ApplicationState from '../../store/application-state';
 import { connect } from 'react-redux';
 import DetailedProductView from './components/detailed-view/detailed-product-view';
-import { Box, Grid, List, ListItem, Button, Typography, Link, Container } from '@material-ui/core';
+import { Box, Grid, List, ListItem, Button, Typography, Link, Container, Hidden } from '@material-ui/core';
 import { displayData } from '../product-list/components/display/product-item-list/product-item-list.data';
 import { CardSlider } from './../main/components/card-slider';
 import { cardData } from './../main/components/card-slider/card-slider.data';
@@ -44,11 +44,18 @@ const _DetailedProductPage = (props: DetailedProductProps) => {
         <Box m={5}>
           <CardSlider />
         </Box>
-        <Box m={5}>
+        <Box mt={5} mb={5}>
           <Grid container justify="center">
-            <Grid item xs={8}>
-              <Banner size="l" imagesource="/assets/images/main/Banner2.png" />
-            </Grid>
+            <Hidden mdDown>
+              <Grid item xs={8}>
+                <Banner size="l" imagesource="/assets/images/main/Banner2.png" />
+              </Grid>
+            </Hidden>
+            <Hidden mdUp>
+              <Grid item xs={12}>
+                <Banner size="l" imagesource="/assets/images/main/Banner2.png" />
+              </Grid>
+            </Hidden>
           </Grid>
         </Box>
       </Container>
