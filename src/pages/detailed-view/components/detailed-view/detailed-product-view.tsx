@@ -3,6 +3,7 @@ import { Grid, Typography, Card, CardContent, Button, CardActions, Box, Hidden, 
 import { Detailedproduct } from './detailed-product-view.data';
 import { StyledImage, StyledStickyGridItem, StyledGridContainer, StyledCardContent, StyledBox, StyledLogo } from './detailed-product-view.styles';
 import ProductItemList from '../../../product-list/components/display/product-item-list/product-item-list';
+import { translate } from 'lib/translate';
 
 const DetailedProductView = () => {
   return (
@@ -39,7 +40,7 @@ const DetailedProductView = () => {
                 </Box>
                 <StyledBox>
                   <Typography variant="h3" gutterBottom>
-                    45.000 ден
+                    {'45.000' + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
                   </Typography>
                   {/* <img src="/src/assets/images/product-list/logo-btns/Anhoch.png" height={40}></img> */}
                   <StyledLogo src="/src/assets/images/product-list/logo-btns/Anhoch.png" />

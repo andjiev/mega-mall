@@ -38,4 +38,26 @@ const StyledGrid = styled(Grid)`
   }
 `;
 
-export { StyledImage, StyledLogo, StyledGrid };
+const StyledPriceBox = styled.div`
+  background-image: url('/src/assets/images/common/red-strike.png');
+  background-position: left center;
+  width: 146px;
+  height: 138px;
+  background-size: contain;
+  position: absolute;
+  background-repeat: no-repeat;
+  margin-top: -10px;
+`;
+
+const MobileStyledPriceBox = styled.div`
+  background-image: url('/src/assets/images/common/red-strike.png');
+  background-position: left center;
+  width: 100px;
+  height: 125px;
+  background-size: contain;
+  position: absolute;
+  background-repeat: no-repeat;
+  margin-top: -25px;
+`;
+
+export { StyledImage, StyledLogo, StyledGrid, StyledPriceBox, MobileStyledPriceBox };

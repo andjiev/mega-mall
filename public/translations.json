@@ -449,7 +449,8 @@
       "MegaMall_Header_Fitness_Gloves": "Ракавици",
       "MegaMall_Header_Fitness_Bags": "Торби",
       "MegaMall_Header_Fitness_Balls": "Фитнес топки",
-      "MegaMall_Menu_All": "Сите категории"
+      "MegaMall_Menu_All": "Сите категории",
+      "MegaMall_Product_Price_Currency": "МКД"
     }
   },
   "en-GB": {
@@ -903,7 +904,8 @@
       "MegaMall_Header_Fitness_Gloves": "Gloves",
       "MegaMall_Header_Fitness_Bags": "Bags",
       "MegaMall_Header_Fitness_Balls": "Fitness balls",
-      "MegaMall_Menu_All": "All categories"
+      "MegaMall_Menu_All": "All categories",
+      "MegaMall_Product_Price_Currency": "MKD"
     }
   }
 }

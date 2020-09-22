@@ -4,6 +4,7 @@ import SliderCard from './../../../../components/slider-card/slider-card';
 import Carousel from 'react-multi-carousel';
 import { Box, Grid, Typography, Link, Hidden } from '@material-ui/core';
 import { cardData } from './card-slider.data';
+import { translate } from 'lib/translate';
 
 const CardSlider = () => {
   return (
@@ -81,8 +82,7 @@ const CardSlider = () => {
             <Box key={res.id}>
               <Link>
                 <SliderCard title={res.title} url={res.img}>
-                  {/* TODO: maybe span would be better */}
-                  <Typography variant="h4">{res.price}</Typography>
+                  <Typography variant="h4">{res.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}</Typography>
                 </SliderCard>
               </Link>
             </Box>
