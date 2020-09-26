@@ -1,21 +1,24 @@
 import { AppThunk } from './app-thunk';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { PageOptions } from 'lib/models';
+
 import * as ProductService from 'services/product-service';
 
-export interface LatestProductListStore {
+export interface ProductDetailsStore {
   data: Models.Product.Model[];
 }
 
-export const initialState: LatestProductListStore = {
+export const initialState: ProductDetailsStore = {
   data: []
 };
 
 const slice = createSlice({
-  name: 'latestProductList',
+  name: 'productDetails',
   initialState,
   reducers: {
-    setData: (state: LatestProductListStore, action: PayloadAction<Models.Product.Model[]>) => {
+    setData: (state: ProductDetailsStore, action: PayloadAction<Models.Product.Model[]>) => {
       state.data = action.payload;
+      // TODO: change this
     }
   }
 });
@@ -25,8 +28,8 @@ export const { setData } = slice.actions;
 export const reducer = slice.reducer;
 
 // thunk
-export const getLatestProducts = (): AppThunk => async dispatch => {
-  const result = await ProductService.getLatestProducts();
+export const getProductDetails = (id: string): AppThunk => async (dispatch, store) => {
+  const result = await ProductService.getProductDetails(id);
 
   dispatch(setData(result.data));
 };
