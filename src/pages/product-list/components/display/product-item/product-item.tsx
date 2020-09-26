@@ -122,9 +122,11 @@ const ProductItem = (props: IProductItem) => {
                         </Hidden>
                         <Hidden mdUp>
                           <Grid container item xs={12}>
-                            <Box fontFamily="OswaldMedium" fontSize="18px" mt={5}>
-                              {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
-                            </Box>
+                            <Grid item xs={6}>
+                              <Box fontFamily="OswaldMedium" fontSize="18px" mt={3}>
+                                {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                              </Box>
+                            </Grid>
                           </Grid>
                         </Hidden>
                       </Typography>
@@ -232,9 +234,11 @@ const ProductItem = (props: IProductItem) => {
                         </Hidden>
                         <Hidden mdUp>
                           <Grid container item xs={12}>
-                            <Box fontFamily="OswaldMedium" fontSize="18px" mt={4}>
-                              {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
-                            </Box>
+                            <Grid item xs={6}>
+                              <Box fontFamily="OswaldMedium" fontSize="18px" mt={4}>
+                                {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                              </Box>
+                            </Grid>
                           </Grid>
                         </Hidden>
                       </Typography>

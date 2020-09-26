@@ -62,7 +62,7 @@ const ProductItemList = (props: ShopsListProps) => {
         {currentPost.map(val => (
           <ListItem key={val.id} button component={RouterLink} to={generatePath(ROUTES.PRODUCT, { id: val.id })} disableGutters={true} divider={true}>
             <StyledBox mt={1} mb={1}>
-              <ProductItem key={val.id} title={val.title} price={val.price} discountPrice={val.discountPrice} description={val.description} logo={val.logo} link={val.link} />
+              <ProductItem key={val.id} title={val.title} price={val.price === '' ? '0' : val.price} discountPrice={val.discountPrice} description={val.description} logo={val.logo} link={val.link} />
             </StyledBox>
           </ListItem>
         ))}
