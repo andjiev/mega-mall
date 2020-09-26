@@ -5,18 +5,18 @@ import { PageOptions } from 'lib/models';
 import * as ProductService from 'services/product-service';
 
 export interface ProductDetailsStore {
-  data: Models.Product.Model[];
+  data: Models.Product.Model;
 }
 
 export const initialState: ProductDetailsStore = {
-  data: []
+  data: { id: '', link: '', name: '', price: '', imageSource: '' }
 };
 
 const slice = createSlice({
   name: 'productDetails',
   initialState,
   reducers: {
-    setData: (state: ProductDetailsStore, action: PayloadAction<Models.Product.Model[]>) => {
+    setData: (state: ProductDetailsStore, action: PayloadAction<Models.Product.Model>) => {
       state.data = action.payload;
       // TODO: change this
     }

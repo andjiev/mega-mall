@@ -5,6 +5,5 @@ declare module Models.Product {
     name: string;
     price: string;
     imageSource: string;
-    link: string;
   }
 }

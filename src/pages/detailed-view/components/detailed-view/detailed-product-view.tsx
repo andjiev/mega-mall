@@ -11,12 +11,16 @@ import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 interface IProps {
-  data: Models.Product.Model[];
+  data: Models.Product.Model;
   onInit: (id: string) => void;
 }
 
+interface ParamTypes {
+  id: string;
+}
+
 const DetailedProductView = (props: IProps) => {
-  let { id } = useParams();
+  let { id } = useParams<ParamTypes>();
   useEffect(() => {
     props.onInit(id.toString());
   }, []);
@@ -27,11 +31,9 @@ const DetailedProductView = (props: IProps) => {
         <Grid container item xs={12} lg={7} md={7} justify="center">
           <Box mb={3}>
             <Grid item xs={12} md={8} lg={8}>
-              {Detailedproduct.map(val => (
-                <Box key={val.id} m={3}>
-                  <StyledImage key={val.id} src={props.data.imageSource}></StyledImage>
-                </Box>
-              ))}
+              <Box key={props.data.id} m={3}>
+                <StyledImage src={props.data.imageSource}></StyledImage>
+              </Box>
             </Grid>
           </Box>
         </Grid>
