@@ -50,7 +50,7 @@ const ProductGrid = (props: IProps) => {
                   <Grid item key={res.id} xs={12} md={3}>
                     <Link href={res.link}>
                       <Card key={res.id} title={res.name} url={res.imageSource} size="small">
-                        <span>{res.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}</span>
+                        <span>{res.price === '' ? '0' : res.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}</span>
                       </Card>
                     </Link>
                   </Grid>
