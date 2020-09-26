@@ -35,7 +35,7 @@ const SubMenu = (props: ISubMenuProps) => {
     <>
       <StyledSubMenu boxShadow={3} onMouseEnter={() => props.onSubmenuChange(true)} onMouseLeave={() => props.onSubmenuChange(false)}>
         <Grid container spacing={2}>
-          <Grid item sm={4} md={3} lg={2} spacing={0}>
+          <Grid item sm={4} md={3} lg={2}>
             <StyledTabs value={categoryId} orientation="vertical">
               {props.menuItems.map((item, index) => {
                 return (
