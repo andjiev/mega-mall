@@ -93,7 +93,7 @@ const Display = (props: IProps) => {
                             price={product.price === '' ? '0' : product.price}
                             discountPrice={product.discountPrice}
                             description={''}
-                            logo={product.storeLogo || displayData[1].logo}
+                            logo={displayData[1].logo}
                             link={product.link}
                           />
                         </StyledBox>
@@ -120,7 +120,53 @@ const Display = (props: IProps) => {
           </Box>
         </Box>
       ) : (
-        <>Loading data...</>
+        <Box p={3}>
+          <Box>
+            <DisplayHeader onListTypeChange={listTypeChange} listType={listType} />
+          </Box>
+          <Box mt={3}>
+            {listType === ListTypes.Products ? (
+              <List component={'ul'}>
+                {displayData.map(product => {
+                  console.log('PRODUCT', product.logo);
+
+                  return (
+                    <Link className={classes.root} key={product.id} href={generatePath(ROUTES.PRODUCT, { id: product.id })}>
+                      <ListItem button disableGutters={true} divider={true}>
+                        <StyledBox mt={1} mb={1}>
+                          <ProductItem
+                            key={product.id}
+                            img={product.img || displayData[1].img}
+                            title={product.title}
+                            price={product.price === '' ? '0' : product.price}
+                            discountPrice={product.discountPrice}
+                            description={''}
+                            logo={product.logo || displayData[1].logo}
+                            link={product.link}
+                          />
+                        </StyledBox>
+                      </ListItem>
+                    </Link>
+                  );
+                })}
+              </List>
+            ) : (
+              <>
+                <Grid container spacing={3}>
+                  {currentPost.map(val => (
+                    <Grid item key={val.id} xs={12} sm={6} md={6} lg={2} xl={2}>
+                      <SubcategoryCard url={val.url} title={val.title} link={val.link}></SubcategoryCard>
+                    </Grid>
+                  ))}
+                </Grid>
+                <StyledPagination count={pages} page={currentPage} onChange={paginate} />
+              </>
+            )}
+          </Box>
+          <Box>
+            <StyledPagination count={props.count} page={props.options.page} onChange={(_, value: number) => props.onOptionsChange({ ...props.options, page: value })} />
+          </Box>
+        </Box>
       )}
     </>
   );
