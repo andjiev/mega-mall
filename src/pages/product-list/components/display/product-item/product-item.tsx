@@ -10,7 +10,7 @@ export interface IProductItem {
   link?: string;
   title: string;
   price: string;
-  discountPrice?: any;
+  discountPrice?: string;
   description: string;
   logo: string;
 }
