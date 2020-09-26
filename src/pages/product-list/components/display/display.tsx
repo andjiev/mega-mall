@@ -93,7 +93,7 @@ const Display = (props: IProps) => {
                             price={product.price === '' ? '0' : product.price}
                             discountPrice={product.discountPrice}
                             description={''}
-                            logo={''}
+                            logo={product.storeLogo || displayData[1].logo}
                             link={product.link}
                           />
                         </StyledBox>
