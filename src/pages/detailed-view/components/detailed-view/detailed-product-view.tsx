@@ -57,8 +57,8 @@ const DetailedProductView = (props: IProps) => {
                   <Typography variant="h3" gutterBottom>
                     {props.data.price}
                   </Typography>
-                  {/* <img src="/src/assets/images/product-list/logo-btns/Anhoch.png" height={40}></img> */}
                   <StyledLogo src="/src/assets/images/product-list/logo-btns/Anhoch.png" />
+                  {/* TODO: add logo of company here as btn */}
                 </StyledBox>
               </StyledCardContent>
             </Card>
