@@ -42,8 +42,7 @@ const DetailedProductView = () => {
                   <Typography variant="h3" gutterBottom>
                     {'45.000' + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
                   </Typography>
-                  {/* <img src="/src/assets/images/product-list/logo-btns/Anhoch.png" height={40}></img> */}
-                  <StyledLogo src="/src/assets/images/product-list/logo-btns/Anhoch.png" />
+                  <StyledLogo src="/assets/images/product-list/logo-btns/Anhoch.png" />
                 </StyledBox>
               </StyledCardContent>
             </Card>

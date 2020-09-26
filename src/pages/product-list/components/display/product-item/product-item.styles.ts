@@ -39,7 +39,7 @@ const StyledGrid = styled(Grid)`
 `;
 
 const StyledPriceBox = styled.div`
-  background-image: url('/src/assets/images/common/red-strike.png');
+  background-image: url('/assets/images/common/red-strike.png');
   background-position: left center;
   width: 146px;
   height: 138px;
@@ -50,7 +50,7 @@ const StyledPriceBox = styled.div`
 `;
 
 const MobileStyledPriceBox = styled.div`
-  background-image: url('/src/assets/images/common/red-strike.png');
+  background-image: url('/assets/images/common/red-strike.png');
   background-position: left center;
   width: 100px;
   height: 125px;
