@@ -12,7 +12,7 @@ export interface IProductItem {
   price: string;
   discountPrice?: string;
   description: string;
-  logo: any;
+  logo: string;
 }
 
 const ProductItem = (props: IProductItem) => {
