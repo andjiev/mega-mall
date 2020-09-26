@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Grid, Hidden } from '@material-ui/core';
+import { Typography, Grid, Hidden, createStyles, makeStyles, Theme } from '@material-ui/core';
 import { Box } from '@material-ui/core';
-import { StyledImage, StyledLogo, StyledGrid, StyledPriceBox, MobileStyledPriceBox } from './product-item.styles';
+import { StyledImage, StyledLogo, StyledGrid, StyledPriceBox, MobileStyledPriceBox, StyledTextBox } from './product-item.styles';
 import { getTranslations } from 'services/translation-service';
 import { translate } from 'lib/translate';
 
@@ -42,55 +42,51 @@ const ProductItem = (props: IProductItem) => {
           <Grid item xs={8}>
             <Grid container>
               <Grid item xs={12}>
-                <Typography>
-                  <Hidden mdDown>
-                    <Box fontFamily="RobotoBold" fontSize="18px">
-                      {props.title.length > 100 ? props.title.substring(0, 100) + '...' : props.title}
-                    </Box>
-                  </Hidden>
-                  <Hidden mdUp>
-                    <Box fontFamily="RobotoRegular" fontSize="14px">
-                      {props.title.length > 100 ? props.title.substring(0, 100) + '...' : props.title}
-                    </Box>
-                  </Hidden>
-                </Typography>
+                <Hidden mdDown>
+                  <StyledTextBox fontFamily="RobotoBold" fontSize="18px" color="#000000">
+                    {props.title.length > 100 ? props.title.substring(0, 100) + '...' : props.title}
+                  </StyledTextBox>
+                </Hidden>
+                <Hidden mdUp>
+                  <Box fontFamily="RobotoRegular" fontSize="14px" color="#000000">
+                    {props.title.length > 100 ? props.title.substring(0, 100) + '...' : props.title}
+                  </Box>
+                </Hidden>
               </Grid>
-              <Grid container xs={12}>
+              <Grid container item xs={12}>
                 {props.discountPrice ? (
                   <>
                     <Grid item xs={12}>
-                      <Typography variant="h4">
-                        <Hidden mdDown>
-                          <Grid container item xs={12}>
-                            <Grid item xs={2}>
-                              <StyledPriceBox />
-                              <Box fontFamily="OswaldMedium" fontSize="24px" mt={5}>
-                                {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
-                              </Box>
-                            </Grid>
-                            <Grid item xs={2}>
-                              <Box fontFamily="OswaldMedium" fontSize="24px" mt={5}>
-                                {props.discountPrice + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
-                              </Box>
-                            </Grid>
+                      <Hidden mdDown>
+                        <Grid container item xs={12}>
+                          <Grid item xs={2}>
+                            <StyledPriceBox />
+                            <Box fontFamily="OswaldMedium" fontSize="24px" color="#000000" mt={5}>
+                              {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                            </Box>
                           </Grid>
-                        </Hidden>
-                        <Hidden mdUp>
-                          <Grid container item xs={12}>
-                            <Grid item xs={6}>
-                              <MobileStyledPriceBox />
-                              <Box fontFamily="OswaldMedium" fontSize="18px" mt={3}>
-                                {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
-                              </Box>
-                            </Grid>
-                            <Grid item xs={6}>
-                              <Box fontFamily="OswaldMedium" fontSize="18px" mt={3}>
-                                {props.discountPrice + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
-                              </Box>
-                            </Grid>
+                          <Grid item xs={2}>
+                            <Box fontFamily="OswaldMedium" fontSize="24px" color="#000000" mt={5}>
+                              {props.discountPrice + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                            </Box>
                           </Grid>
-                        </Hidden>
-                      </Typography>
+                        </Grid>
+                      </Hidden>
+                      <Hidden mdUp>
+                        <Grid container item xs={12}>
+                          <Grid item xs={6}>
+                            <MobileStyledPriceBox />
+                            <Box fontFamily="OswaldMedium" fontSize="18px" color="#000000" mt={3}>
+                              {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                            </Box>
+                          </Grid>
+                          <Grid item xs={6}>
+                            <Box fontFamily="OswaldMedium" fontSize="18px" color="#000000" mt={3}>
+                              {props.discountPrice + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                            </Box>
+                          </Grid>
+                        </Grid>
+                      </Hidden>
                     </Grid>
                     <Grid item xs={12}>
                       <Hidden mdDown>
@@ -110,26 +106,24 @@ const ProductItem = (props: IProductItem) => {
                 ) : (
                   <>
                     <Grid item xs={6}>
-                      <Typography variant="h4">
-                        <Hidden mdDown>
-                          <Grid container item xs={12}>
-                            <Grid item xs={6}>
-                              <Box fontFamily="OswaldMedium" fontSize="24px" mt={5}>
-                                {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
-                              </Box>
-                            </Grid>
+                      <Hidden mdDown>
+                        <Grid container item xs={12}>
+                          <Grid item xs={6}>
+                            <Box fontFamily="OswaldMedium" fontSize="24px" color="#000000" mt={5}>
+                              {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                            </Box>
                           </Grid>
-                        </Hidden>
-                        <Hidden mdUp>
-                          <Grid container item xs={12}>
-                            <Grid item xs={6}>
-                              <Box fontFamily="OswaldMedium" fontSize="18px" mt={3}>
-                                {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
-                              </Box>
-                            </Grid>
+                        </Grid>
+                      </Hidden>
+                      <Hidden mdUp>
+                        <Grid container item xs={12}>
+                          <Grid item xs={6}>
+                            <Box fontFamily="OswaldMedium" fontSize="18px" color="#000000" mt={3}>
+                              {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                            </Box>
                           </Grid>
-                        </Hidden>
-                      </Typography>
+                        </Grid>
+                      </Hidden>
                     </Grid>
                     <Grid item xs={6}>
                       <Hidden mdDown>
@@ -154,55 +148,51 @@ const ProductItem = (props: IProductItem) => {
           <Grid item xs={12}>
             <Grid container>
               <Grid item xs={12}>
-                <Typography>
-                  <Hidden mdDown>
-                    <Box fontFamily="RobotoBold" fontSize="18px">
-                      {props.title.length > 100 ? props.title.substring(0, 100) + '...' : props.title}
-                    </Box>
-                  </Hidden>
-                  <Hidden mdUp>
-                    <Box fontFamily="RobotoRegular" fontSize="14px">
-                      {props.title.length > 100 ? props.title.substring(0, 100) + '...' : props.title}
-                    </Box>
-                  </Hidden>
-                </Typography>
+                <Hidden mdDown>
+                  <Box fontFamily="RobotoBold" fontSize="18px">
+                    {props.title.length > 100 ? props.title.substring(0, 100) + '...' : props.title}
+                  </Box>
+                </Hidden>
+                <Hidden mdUp>
+                  <Box fontFamily="RobotoRegular" fontSize="14px">
+                    {props.title.length > 100 ? props.title.substring(0, 100) + '...' : props.title}
+                  </Box>
+                </Hidden>
               </Grid>
               <Grid container xs={12}>
                 {props.discountPrice ? (
                   <>
                     <Grid item xs={12}>
-                      <Typography variant="h4">
-                        <Hidden mdDown>
-                          <Grid container item xs={12}>
-                            <Grid item xs={2}>
-                              <StyledPriceBox />
-                              <Box fontFamily="OswaldMedium" fontSize="24px" mt={5}>
-                                {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
-                              </Box>
-                            </Grid>
-                            <Grid item xs={2}>
-                              <Box fontFamily="OswaldMedium" fontSize="24px" mt={5}>
-                                {props.discountPrice + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
-                              </Box>
-                            </Grid>
+                      <Hidden mdDown>
+                        <Grid container item xs={12}>
+                          <Grid item xs={2}>
+                            <StyledPriceBox />
+                            <Box fontFamily="OswaldMedium" fontSize="24px" mt={5}>
+                              {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                            </Box>
                           </Grid>
-                        </Hidden>
-                        <Hidden mdUp>
-                          <Grid container item xs={12}>
-                            <Grid item xs={4}>
-                              <MobileStyledPriceBox />
-                              <Box fontFamily="OswaldMedium" fontSize="18px" mt={3}>
-                                {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
-                              </Box>
-                            </Grid>
-                            <Grid item xs={4}>
-                              <Box fontFamily="OswaldMedium" fontSize="18px" mt={3}>
-                                {props.discountPrice + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
-                              </Box>
-                            </Grid>
+                          <Grid item xs={2}>
+                            <Box fontFamily="OswaldMedium" fontSize="24px" mt={5}>
+                              {props.discountPrice + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                            </Box>
                           </Grid>
-                        </Hidden>
-                      </Typography>
+                        </Grid>
+                      </Hidden>
+                      <Hidden mdUp>
+                        <Grid container item xs={12}>
+                          <Grid item xs={4}>
+                            <MobileStyledPriceBox />
+                            <Box fontFamily="OswaldMedium" fontSize="18px" mt={3}>
+                              {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                            </Box>
+                          </Grid>
+                          <Grid item xs={4}>
+                            <Box fontFamily="OswaldMedium" fontSize="18px" mt={3}>
+                              {props.discountPrice + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                            </Box>
+                          </Grid>
+                        </Grid>
+                      </Hidden>
                     </Grid>
                     <Grid item xs={12}>
                       <Hidden mdDown>
@@ -222,26 +212,24 @@ const ProductItem = (props: IProductItem) => {
                 ) : (
                   <>
                     <Grid item xs={6}>
-                      <Typography variant="h4">
-                        <Hidden mdDown>
-                          <Grid container item xs={12}>
-                            <Grid item xs={6}>
-                              <Box fontFamily="OswaldMedium" fontSize="24px" mt={5}>
-                                {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
-                              </Box>
-                            </Grid>
+                      <Hidden mdDown>
+                        <Grid container item xs={12}>
+                          <Grid item xs={6}>
+                            <Box fontFamily="OswaldMedium" fontSize="24px" mt={5}>
+                              {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                            </Box>
                           </Grid>
-                        </Hidden>
-                        <Hidden mdUp>
-                          <Grid container item xs={12}>
-                            <Grid item xs={6}>
-                              <Box fontFamily="OswaldMedium" fontSize="18px" mt={4}>
-                                {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
-                              </Box>
-                            </Grid>
+                        </Grid>
+                      </Hidden>
+                      <Hidden mdUp>
+                        <Grid container item xs={12}>
+                          <Grid item xs={6}>
+                            <Box fontFamily="OswaldMedium" fontSize="18px" mt={4}>
+                              {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                            </Box>
                           </Grid>
-                        </Hidden>
-                      </Typography>
+                        </Grid>
+                      </Hidden>
                     </Grid>
                     <Grid item xs={6}>
                       <Hidden mdDown>

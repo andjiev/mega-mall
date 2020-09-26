@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { AppDispatch } from 'index';
 import ApplicationState from 'store/application-state';
 
-import { Box, ListItem, List, Link, Grid } from '@material-ui/core';
+import { Box, ListItem, List, Link, Grid, createStyles, makeStyles, Theme } from '@material-ui/core';
 import DisplayHeader from './components/display-header/display-header';
 
 import { ProductItem } from './product-item';
@@ -26,7 +26,15 @@ interface IProps {
   onInit: () => void;
   onOptionsChange: (options: PageOptions) => void;
 }
-
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      '&:hover': {
+        textDecoration: 'none'
+      }
+    }
+  })
+);
 const Display = (props: IProps) => {
   const [listType, setListType] = useState(ListTypes.Products);
   const [currentPage, setCurrentPage] = useState(1);
@@ -35,6 +43,7 @@ const Display = (props: IProps) => {
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
   const currentPost = shopsData.slice(indexOfFirstPost, indexOfLastPost);
+  const classes = useStyles();
 
   const listTypeChange = (type: ListTypes) => {
     setListType(type);
@@ -74,7 +83,7 @@ const Display = (props: IProps) => {
               <List component={'ul'}>
                 {props.data.map(product => {
                   return (
-                    <Link key={product.id} href={generatePath(ROUTES.PRODUCT, { id: product.id })}>
+                    <Link className={classes.root} key={product.id} href={generatePath(ROUTES.PRODUCT, { id: product.id })}>
                       <ListItem button disableGutters={true} divider={true}>
                         <StyledBox mt={1} mb={1}>
                           <ProductItem

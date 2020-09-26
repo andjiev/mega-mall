@@ -22,12 +22,12 @@ export const LanguagePicker = (props: ILanguagePickerProps) => {
     <>
       <Box>
         {languages.map((lang, index) => (
-          <>
+          <span key={index}>
             <StyledBox key={index} onClick={() => props.onLanguageChange(lang.name)}>
               <Typography variant={props.size == 'large' ? 'subtitle1' : 'subtitle2'}>{lang.name}</Typography>
             </StyledBox>
             {languages.length - 1 !== index && ' | '}
-          </>
+          </span>
         ))}
       </Box>
     </>

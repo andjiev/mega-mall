@@ -60,4 +60,8 @@ const MobileStyledPriceBox = styled.div`
   margin-top: -25px;
 `;
 
-export { StyledImage, StyledLogo, StyledGrid, StyledPriceBox, MobileStyledPriceBox };
+const StyledTextBox = styled(Box)`
+  text-decoration: none;
+`;
+
+export { StyledImage, StyledLogo, StyledGrid, StyledPriceBox, MobileStyledPriceBox, StyledTextBox };

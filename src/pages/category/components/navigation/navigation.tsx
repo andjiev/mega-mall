@@ -4,6 +4,7 @@ import { StyledNavigation, StyledButton } from './navigation.styles';
 import { Box, List, ListItem, Typography, Checkbox, Grid, FormControlLabel } from '@material-ui/core';
 import { INavItem, navigationData } from './navigation.data';
 import { translate } from 'lib/translate';
+import { generateUniqId } from 'utils/helpers/general-helper';
 
 interface NavigationProps {}
 
@@ -16,19 +17,21 @@ const Navigation = (props: NavigationProps) => {
 
   const renderItem = (item: INavItem) => {
     return (
-      <>
+      <div key={generateUniqId()}>
         <Box mt={1}>
           <Typography variant="h6">{item.header.title}</Typography>
         </Box>
         <Box>
-          {item.links.map(val => (
-            <Grid container alignContent="center" alignItems="center" key={val.title}>
-              <Checkbox size="small" color="default" key={val.id} onChange={handleChange} inputProps={{ 'aria-label': 'checkbox with default color' }} />
-              <Typography key={val.title}>{val.title}</Typography>
-            </Grid>
-          ))}
+          {item.links.map(val => {
+            return (
+              <Grid container alignContent="center" alignItems="center" key={val.title}>
+                <Checkbox size="small" color="default" key={val.id} onChange={handleChange} inputProps={{ 'aria-label': 'checkbox with default color' }} />
+                <Typography key={val.title}>{val.title}</Typography>
+              </Grid>
+            );
+          })}
         </Box>
-      </>
+      </div>
     );
   };
   return (
@@ -47,7 +50,7 @@ const Navigation = (props: NavigationProps) => {
           </List>
 
           <Grid container>
-            <Grid item alignContent="space-between">
+            <Grid container item alignContent="space-between">
               <Grid item>{navigationData.map(val => renderItem(val))}</Grid>
             </Grid>
 

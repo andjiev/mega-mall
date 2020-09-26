@@ -4,6 +4,10 @@ import { Pagination } from '@material-ui/lab';
 
 const StyledBox = styled(Box)`
   width: 100%;
+
+  *:hover {
+    text-decoration: none;
+  }
 `;
 
 const StyledPagination = styled(Pagination)`
