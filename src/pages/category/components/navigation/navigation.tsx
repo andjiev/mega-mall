@@ -1,58 +1,47 @@
 import React from 'react';
 
-import { StyledNavigation, StyledButton } from './navigation.styles';
-import { Box, List, ListItem, Typography, Checkbox, Grid, FormControlLabel } from '@material-ui/core';
-import { INavItem, navigationData } from './navigation.data';
-import { translate } from 'lib/translate';
+import { StyledNavigation } from './navigation.styles';
+import { Box, Link, List, ListItem, Typography } from '@material-ui/core';
+import { MenuItem } from 'lib/data';
 
-interface NavigationProps {}
+interface IProps {
+  categoryItem: MenuItem;
+}
 
-const Navigation = (props: NavigationProps) => {
-  const [checked, setChecked] = React.useState(false);
+const Navigation = (props: IProps) => {
+  const renderList = (item: MenuItem, level = 1): JSX.Element => {
+    const variant = level == 1 ? 'h6' : 'body2';
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(event.target.checked);
-  };
-
-  const renderItem = (item: INavItem) => {
     return (
       <>
-        <Box mt={1}>
-          <Typography variant="h6">{item.header.title}</Typography>
-        </Box>
-        <Box>
-          {item.links.map(val => (
-            <Grid container alignContent="center" alignItems="center" key={val.title}>
-              <Checkbox size="small" color="default" key={val.id} onChange={handleChange} inputProps={{ 'aria-label': 'checkbox with default color' }} />
-              <Typography key={val.title}>{val.title}</Typography>
-            </Grid>
-          ))}
-        </Box>
+        <List disablePadding>
+          <Link href={item.link} color="inherit">
+            <Typography variant={variant}>{item.title}</Typography>
+          </Link>
+        </List>
+
+        {item.children && item.children.length > 0 && (
+          <Box mt={1}>
+            {item.children.slice(0, 5).map(child => (
+              <ListItem key={child.id}>{renderList(child, 2)}</ListItem>
+            ))}
+          </Box>
+        )}
       </>
     );
   };
+
   return (
     <>
       <StyledNavigation>
-        <Box p={3} pt={2}>
+        <Box p={3} pt={1}>
           <List>
-            <Typography variant="h6">{translate('MegaMall_Navigation_Technolopgy', 'Технологија')}</Typography>
-            <List>{translate('MegaMall_Navigation_Computers', 'Компјутери и опрема')}</List>
-            <ListItem>{translate('MegaMall_Navigation_PC', 'Персонални компјутери')}</ListItem>
-            <ListItem>{translate('MegaMall_Navigation_Laptop', 'Преносни компјутери')}</ListItem>
-            <ListItem>{translate('MegaMall_Navigation_Equipment', 'Опрема за компјутери')}</ListItem>
-            <ListItem>{translate('MegaMall_Navigation_Mice', 'Глувчиња')}</ListItem>
-            <ListItem>{translate('MegaMall_Navigation_Keyboards', 'Тастатури')}</ListItem>
-            <List>{translate('MegaMall_Navigation_Mobile', 'Мобилни телефони')}</List>
+            {props.categoryItem.children &&
+              props.categoryItem.children
+                .filter(x => x.children && x.children.length > 0)
+                .slice(0, 3)
+                .map(child => <List key={child.id}>{renderList(child)}</List>)}
           </List>
-
-          <Grid container>
-            <Grid item alignContent="space-between">
-              <Grid item>{navigationData.map(val => renderItem(val))}</Grid>
-            </Grid>
-
-            <StyledButton variant="outlined">{translate('MegaMall_Navigation_Show', 'види ги сите')}</StyledButton>
-          </Grid>
         </Box>
       </StyledNavigation>
     </>

@@ -35,12 +35,12 @@ const SubMenu = (props: ISubMenuProps) => {
     <>
       <StyledSubMenu boxShadow={3} onMouseEnter={() => props.onSubmenuChange(true)} onMouseLeave={() => props.onSubmenuChange(false)}>
         <Grid container spacing={2}>
-          <Grid item sm={4} md={3} lg={2} spacing={0}>
+          <Grid item sm={4} md={3} lg={2}>
             <StyledTabs value={categoryId} orientation="vertical">
               {props.menuItems.map((item, index) => {
                 return (
                   <StyledTab
-                    key={index}
+                    key={item.id}
                     value={item.id}
                     displayBorder={index < props.menuItems.length - 1}
                     isActive={item.id === categoryId}
@@ -55,6 +55,7 @@ const SubMenu = (props: ISubMenuProps) => {
                       </Box>
                     }
                     onMouseEnter={() => onCategoryChange(item.id)}
+                    onClick={() => (window.location.href = item.link)}
                   />
                 );
               })}
@@ -64,27 +65,32 @@ const SubMenu = (props: ISubMenuProps) => {
             {subCategories.length > 0 && (
               <Box pl={2} pr={2}>
                 <Grid container spacing={3}>
-                  {subCategories.slice(0, 3).map(subItem => {
-                    return (
-                      <Grid key={subItem.id} item xs={4}>
-                        <List>
-                          <ListItem disableGutters>
-                            <StyledListItemText primary={subItem.title}></StyledListItemText>
-                          </ListItem>
-                          {subItem.children &&
-                            subItem.children.slice(0, 6).map(item => {
-                              return (
-                                <ListItem key={item.id} disableGutters>
-                                  <Link href={item.link}>
-                                    <Typography variant="subtitle2">{item.title}</Typography>
-                                  </Link>
-                                </ListItem>
-                              );
-                            })}
-                        </List>
-                      </Grid>
-                    );
-                  })}
+                  {subCategories
+                    .filter(x => x.children && x.children.length > 0)
+                    .slice(0, 3)
+                    .map(subItem => {
+                      return (
+                        <Grid key={subItem.id} item xs={4}>
+                          <List>
+                            <ListItem disableGutters>
+                              <Link href={subItem.link}>
+                                <StyledListItemText primary={subItem.title}></StyledListItemText>
+                              </Link>
+                            </ListItem>
+                            {subItem.children &&
+                              subItem.children.slice(0, 6).map(item => {
+                                return (
+                                  <ListItem key={item.id} disableGutters>
+                                    <Link href={item.link}>
+                                      <Typography variant="subtitle2">{item.title}</Typography>
+                                    </Link>
+                                  </ListItem>
+                                );
+                              })}
+                          </List>
+                        </Grid>
+                      );
+                    })}
                 </Grid>
               </Box>
             )}

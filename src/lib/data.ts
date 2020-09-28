@@ -115,31 +115,31 @@ const menuItems = (): MenuItem[] => [
   {
     id: 18,
     title: translate('MegaMall_Header_Navigation', 'Навигациски уреди'),
-    link: `/categories/technology/Navigation`,
+    link: `/categories/technology/navigation`,
     parentId: 1
   },
   {
     id: 19,
     title: translate('MegaMall_Header_MakeUP', 'MAKE UP'),
-    link: `/categories/beauty/MakeUP`,
+    link: `/categories/beauty/make-up`,
     parentId: 4
   },
   {
     id: 20,
     title: translate('MegaMall_Header_Accessorice', 'Аксесоари'),
-    link: `/categories/beauty/Accessorice`,
+    link: `/categories/beauty/accessorice`,
     parentId: 4
   },
   {
     id: 21,
     title: translate('MegaMall_Header_Hair', 'Коса'),
-    link: `/categories/beauty/Hair`,
+    link: `/categories/beauty/hair`,
     parentId: 4
   },
   {
     id: 22,
     title: translate('MegaMall_Header_Skincare', 'Нега на кожа'),
-    link: `/categories/beauty/Skincare`,
+    link: `/categories/beauty/skin-care`,
     parentId: 4
   },
   {
@@ -301,7 +301,7 @@ const menuItems = (): MenuItem[] => [
   {
     id: 49,
     title: translate('MegaMall_Header_Bikes', 'Велосипеди'),
-    link: `/categories/sport/Bikes`,
+    link: `/categories/sport/bikes`,
     parentId: 2
   },
   {
