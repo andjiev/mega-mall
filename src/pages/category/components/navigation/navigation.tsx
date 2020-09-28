@@ -20,7 +20,7 @@ const Navigation = (props: IProps) => {
           </Link>
         </List>
 
-        {level <= 2 && item.children && item.children.length > 0 && (
+        {level < 2 && item.children && item.children.length > 0 && (
           <Box mt={1}>
             {item.children.slice(0, 5).map(child => (
               <ListItem key={child.id}>{renderList(child, level + 1)}</ListItem>
