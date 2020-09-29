@@ -4,6 +4,9 @@ import { Box, Grid, CardContent } from '@material-ui/core';
 
 const StyledImage = styled.img`
   width: 100%;
+  min-width: 450px;
+  max-width: 450px;
+  height: 100%;
 `;
 
 const StyledGridContainer = styled(Grid)`

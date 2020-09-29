@@ -8,4 +8,8 @@ async function getLatestProducts(): Promise<DataServiceResponse<Models.Product.M
   return http.get(`api/products/latest`);
 }
 
-export { getProducts, getLatestProducts };
+async function getProductDetails(id: string): Promise<DataServiceResponse<Models.Product.Model>> {
+  return http.get(`api/products/${id}`);
+}
+
+export { getProducts, getLatestProducts, getProductDetails };
