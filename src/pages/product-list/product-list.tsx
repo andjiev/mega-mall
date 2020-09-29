@@ -6,14 +6,14 @@ import ApplicationState from '../../store/application-state';
 import { BreadCrumbs } from 'components/breadcrumbs';
 import { Grid, Box, Hidden } from '@material-ui/core';
 import { DisplayContainer } from './components/display';
-import Navigation from 'pages/category/components/navigation/navigation';
+import { Navigation } from './components/navigation';
 
 interface IProps extends RouteComponentProps {}
 
 const ProductList = (props: IProps) => {
   return (
     <>
-      <BreadCrumbs />
+      <BreadCrumbs breadCrumbs={[]} />
       <Box>
         <Grid container>
           <Hidden xsDown>

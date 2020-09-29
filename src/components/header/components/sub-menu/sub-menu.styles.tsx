@@ -48,11 +48,9 @@ const StyledTab = styled(props => {
   max-width: 100%;
   color: ${(props: IStyledTab) => (props.isActive ? props.theme.palette.primary.main : 'inherit')};
   font-weight: ${(props: IStyledTab) => (props.isActive ? '700' : 'inherit')};
-  transform: ${(props: IStyledTab) => (props.isActive ? 'scale(1.1)' : 'inherit')};
   transition: transform 0.8s;
 
   &:hover {
-    transform: scale(1.1);
     color: ${(props: IStyledTab) => props.theme.palette.primary.main};
     font-weight: 700;
   }
