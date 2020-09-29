@@ -8,21 +8,16 @@ import { AppDispatch } from 'index';
 import { getProductDetails } from 'store/product-details-store';
 import ApplicationState from 'store/application-state';
 import { connect } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { RouteComponentProps, withRouter } from 'react-router';
 
-interface IProps {
+interface IProps extends RouteComponentProps<{ id: string }> {
   data: Models.Product.Model;
   onInit: (id: string) => void;
 }
 
-interface ParamTypes {
-  id: string;
-}
-
 const DetailedProductView = (props: IProps) => {
-  let { id } = useParams<ParamTypes>();
   useEffect(() => {
-    props.onInit(id.toString());
+    props.onInit(props.match.params.id);
   }, []);
 
   return (
@@ -86,6 +81,6 @@ const mapStateToProps = (state: ApplicationState) => {
     data: state.productDetails.data
   };
 };
-const DisplayContainer = connect(mapStateToProps, mapDispatchToProps)(DetailedProductView);
+const DisplayContainer = connect(mapStateToProps, mapDispatchToProps)(withRouter(DetailedProductView));
 
 export default DisplayContainer;

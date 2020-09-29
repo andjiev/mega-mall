@@ -9,7 +9,7 @@ async function getLatestProducts(): Promise<DataServiceResponse<Models.Product.M
 }
 
 async function getProductDetails(id: string): Promise<DataServiceResponse<Models.Product.Model>> {
-  return http.get(`api/products/product_details?id=${id}`);
+  return http.get(`api/products/${id}`);
 }
 
 export { getProducts, getLatestProducts, getProductDetails };

@@ -1,6 +1,5 @@
 import { AppThunk } from './app-thunk';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { PageOptions } from 'lib/models';
 
 import * as ProductService from 'services/product-service';
 
