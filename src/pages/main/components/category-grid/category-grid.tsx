@@ -17,7 +17,6 @@ const CategoryGrid = () => {
           <Hidden xsDown>
             <Grid container item xs={6} justify="flex-end" alignItems="flex-end">
               <Box component="span">
-                {' '}
                 <Typography variant="body2">
                   {/* TODO here prikazi gi site needs to be #355C7C this color */}
                   {translate('MegaMall_Categorygrid_Show', 'прикажи ги сите >')}

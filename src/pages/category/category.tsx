@@ -12,6 +12,7 @@ import { Display } from './components/display';
 import { MenuItem } from 'lib/data';
 import { ROUTES } from 'consts';
 import { BreadCrumb } from 'lib/models';
+import { translate } from 'lib/translate';
 
 interface CategoryPageProps extends RouteComponentProps<{ type: string }> {
   menuItems: MenuItem[];
@@ -27,7 +28,7 @@ const _CategoryPage = (props: CategoryPageProps) => {
 
       if (categoryItem) {
         const breadCrumbs: BreadCrumb[] = [
-          { key: ROUTES.MAIN, value: 'Почетна' }, // TODO: add translation
+          { key: ROUTES.MAIN, value: translate('MegaMall_Breadcrumbs_Home', 'Почетна') },
           { key: categoryItem.link, value: categoryItem.title }
         ];
 

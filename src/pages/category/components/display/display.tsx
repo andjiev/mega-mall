@@ -16,13 +16,11 @@ const Display = (props: IProps) => {
           <Typography variant="h5">{props.categoryItem.title}</Typography>
         </Box>
         <Box mt={3}>
-          <Grid container justify="space-between" spacing={2}>
+          <Grid container justify="space-between" spacing={3}>
             {props.categoryItem.children &&
               props.categoryItem.children.map(child => (
                 <Grid item key={child.id} xs={12} sm={6} md={6} lg={3}>
-                  <Box p={1}>
-                    <SubcategoryCard title={child.title} path={child.link}></SubcategoryCard>
-                  </Box>
+                  <SubcategoryCard title={child.title} path={child.link}></SubcategoryCard>
                 </Grid>
               ))}
           </Grid>
