@@ -13,7 +13,7 @@ interface IProps extends RouteComponentProps {}
 const ProductList = (props: IProps) => {
   return (
     <>
-      <BreadCrumbs />
+      <BreadCrumbs breadCrumbs={[]} />
       <Box>
         <Grid container>
           <Hidden xsDown>

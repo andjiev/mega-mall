@@ -10,17 +10,30 @@ import { Grid, Box, Hidden } from '@material-ui/core';
 import { Navigation } from './components/navigation';
 import { Display } from './components/display';
 import { MenuItem } from 'lib/data';
+import { ROUTES } from 'consts';
+import { BreadCrumb } from 'lib/models';
 
 interface CategoryPageProps extends RouteComponentProps<{ type: string }> {
   menuItems: MenuItem[];
 }
 
 const _CategoryPage = (props: CategoryPageProps) => {
-  let [categoryItem, setCategoryItem] = useState<MenuItem | undefined>(undefined);
+  const [categoryItem, setCategoryItem] = useState<MenuItem | undefined>(undefined);
+  const [breadCrumbs, setBreadCrumbs] = useState<BreadCrumb[]>([]);
 
   useEffect(() => {
     if (props.menuItems.length > 0) {
-      setCategoryItem(props.menuItems.find(x => x.link === props.location.pathname));
+      const categoryItem = props.menuItems.find(x => x.link === props.location.pathname);
+
+      if (categoryItem) {
+        const breadCrumbs: BreadCrumb[] = [
+          { key: ROUTES.MAIN, value: 'Почетна' }, // TODO: add translation
+          { key: categoryItem.link, value: categoryItem.title }
+        ];
+
+        setCategoryItem(categoryItem);
+        setBreadCrumbs(breadCrumbs);
+      }
     }
   }, []);
 
@@ -28,7 +41,7 @@ const _CategoryPage = (props: CategoryPageProps) => {
     <>
       {categoryItem && (
         <>
-          <BreadCrumbs />
+          <BreadCrumbs breadCrumbs={breadCrumbs} />
           <Box>
             <Grid container>
               <Hidden xsDown>
