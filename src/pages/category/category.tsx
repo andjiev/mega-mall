@@ -51,7 +51,9 @@ const _CategoryPage = (props: CategoryPageProps) => {
                 </Grid>
               </Hidden>
               <Grid item xs={12} md={8} lg={9} xl={10}>
-                <Display categoryItem={categoryItem} />
+                <Box pb={2}>
+                  <Display categoryItem={categoryItem} />
+                </Box>
               </Grid>
             </Grid>
           </Box>
