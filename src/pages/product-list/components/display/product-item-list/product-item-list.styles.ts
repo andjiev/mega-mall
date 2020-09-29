@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Button } from '@material-ui/core';
+import { Button, Box } from '@material-ui/core';
 
 const StyledButton = styled(Button)`
   display: block;
@@ -8,5 +8,10 @@ const StyledButton = styled(Button)`
   background-color: #193364;
   color: white;
 `;
+const StyledHeaderBox = styled(Box)`
+  border-bottom: 1px solid #d3d3d3;
+  padding-bottom: 2rem;
+  font-weight: bold;
+`;
 
-export { StyledButton };
+export { StyledButton, StyledHeaderBox };
