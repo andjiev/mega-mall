@@ -16,8 +16,6 @@ const slice = createSlice({
   reducers: {
     setData: (state: LatestProductListStore, action: PayloadAction<Models.Product.Model[]>) => {
       state.data = action.payload;
-
-      // TODO: change this
     }
   }
 });

@@ -19,7 +19,6 @@ interface IProps {
   open: boolean;
   menuItems: MenuItem[];
 
-  navigateTo: (url: string) => void;
   onClose: () => void;
 }
 
@@ -107,13 +106,7 @@ const MobileMenu = (props: IProps) => {
           return (
             <StyledListItem key={item.id} button>
               <Box pl={2} pr={2}>
-                <ListItemText
-                  primary={<Typography variant="subtitle1">{item.title}</Typography>}
-                  onClick={() => {
-                    onClose();
-                    props.navigateTo(item.link);
-                  }}
-                />
+                <ListItemText primary={<Typography variant="subtitle1">{item.title}</Typography>} onClick={() => (window.location.href = item.link)} />
                 {item.children && item.children.length > 0 && (
                   <ListItemSecondaryAction onClick={() => handleItemClick(item)}>
                     <IconButton>
@@ -135,11 +128,7 @@ const MobileMenu = (props: IProps) => {
   );
 };
 
-const mapDispatchToProps = (dispatch: AppDispatch) => ({
-  navigateTo: (url: string) => {
-    dispatch(push(url));
-  }
-});
+const mapDispatchToProps = (dispatch: AppDispatch) => ({});
 
 const mapStateToProps = (state: ApplicationState) => {
   return {

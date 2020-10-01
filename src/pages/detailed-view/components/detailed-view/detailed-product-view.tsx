@@ -1,22 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Grid, Typography, Card, CardContent, Button, CardActions, Box, Hidden, List, ListItem } from '@material-ui/core';
 import { Detailedproduct } from './detailed-product-view.data';
 import { StyledImage, StyledStickyGridItem, StyledGridContainer, StyledCardContent, StyledBox, StyledLogo } from './detailed-product-view.styles';
 import ProductItemList from '../../../product-list/components/display/product-item-list/product-item-list';
 import { translate } from 'lib/translate';
 
-const DetailedProductView = () => {
+import { AppDispatch } from 'index';
+import { getProductDetails } from 'store/product-details-store';
+import ApplicationState from 'store/application-state';
+import { connect } from 'react-redux';
+import { RouteComponentProps, withRouter } from 'react-router';
+
+interface IProps extends RouteComponentProps<{ id: string }> {
+  data: Models.Product.Model;
+  onInit: (id: string) => void;
+}
+
+const DetailedProductView = (props: IProps) => {
+  useEffect(() => {
+    props.onInit(props.match.params.id);
+  }, []);
+
   return (
     <>
       <StyledGridContainer container spacing={5}>
         <Grid container item xs={12} lg={7} md={7} justify="center">
           <Box mb={3}>
             <Grid item xs={12} md={8} lg={8}>
-              {Detailedproduct.map(val => (
-                <Box key={val.id} m={3}>
-                  <StyledImage key={val.id} src={val.url}></StyledImage>
-                </Box>
-              ))}
+              <Box key={props.data.id} m={3}>
+                <StyledImage src={props.data.imageSource}></StyledImage>
+              </Box>
             </Grid>
           </Box>
         </Grid>
@@ -27,22 +40,21 @@ const DetailedProductView = () => {
               <StyledCardContent>
                 <Box pb={1}>
                   <Typography variant="h4" gutterBottom>
-                    1Notebook Apple MacBook Air i5 2.9Ghz/8GB/256GB SSD/IntelHD6000/13.3 LED Retina MREC2
+                    {props.data.name}
                   </Typography>
                 </Box>
                 <Box pb={2}>
                   <Hidden mdDown>
-                    <Typography variant="body1" noWrap paragraph={true}>
-                      Retina display 13.3-inch (diagonal) LED-backlit display with IPS technology; 2560-by-1600 native resolution at 227 pixels per inch with support for millions of colors
-                    </Typography>
+                    <Typography variant="body1" noWrap paragraph={true}></Typography>
                   </Hidden>
                   <hr></hr>
                 </Box>
                 <StyledBox>
                   <Typography variant="h3" gutterBottom>
-                    {'45.000' + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                    {props.data.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
                   </Typography>
-                  <StyledLogo src="/assets/images/product-list/logo-btns/Anhoch.png" />
+                  <StyledLogo src="/src/assets/images/product-list/logo-btns/Anhoch.png" />
+                  {/* TODO: add logo of company here as btn */}
                 </StyledBox>
               </StyledCardContent>
             </Card>
@@ -59,4 +71,17 @@ const DetailedProductView = () => {
   );
 };
 
-export default DetailedProductView;
+const mapDispatchToProps = (dispatch: AppDispatch) => ({
+  onInit: (id: string) => {
+    dispatch(getProductDetails(id));
+  }
+});
+
+const mapStateToProps = (state: ApplicationState) => {
+  return {
+    data: state.productDetails.data
+  };
+};
+const DisplayContainer = connect(mapStateToProps, mapDispatchToProps)(withRouter(DetailedProductView));
+
+export default DisplayContainer;

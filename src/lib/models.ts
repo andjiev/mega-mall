@@ -27,3 +27,8 @@ export interface PageOptions {
   page: number;
   size: number;
 }
+
+export interface BreadCrumb {
+  key: string;
+  value: string;
+}

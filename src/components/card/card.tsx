@@ -77,7 +77,6 @@ const _Card = (props: CardProps) => {
                   <Hidden lgUp>
                     <Box color="white" component="span">
                       <Typography variant="body2">
-                        {' '}
                         {translate('MegaMall_Card_Show', 'прикажи ги сите >')} {' >'}
                       </Typography>
                     </Box>
