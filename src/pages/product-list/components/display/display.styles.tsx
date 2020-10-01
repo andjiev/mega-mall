@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { Box } from '@material-ui/core';
+import { Box, Link } from '@material-ui/core';
 import { Pagination } from '@material-ui/lab';
 
 const StyledBox = styled(Box)`
   width: 100%;
 
-  *:hover {
+  &:hover {
     text-decoration: none;
   }
 `;
@@ -16,4 +16,10 @@ const StyledPagination = styled(Pagination)`
   }
 `;
 
-export { StyledBox, StyledPagination };
+const StyledLink = styled(Link)`
+  &:hover {
+    text-decoration: none;
+  }
+`;
+
+export { StyledBox, StyledPagination, StyledLink };

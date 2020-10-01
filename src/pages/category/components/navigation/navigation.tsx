@@ -17,7 +17,7 @@ const Navigation = (props: NavigationProps) => {
 
   const renderItem = (item: INavItem) => {
     return (
-      <div key={generateUniqId()}>
+      <Box key={generateUniqId()}>
         <Box mt={1}>
           <Typography variant="h6">{item.header.title}</Typography>
         </Box>
@@ -31,7 +31,7 @@ const Navigation = (props: NavigationProps) => {
             );
           })}
         </Box>
-      </div>
+      </Box>
     );
   };
   return (

@@ -10,7 +10,7 @@ import DisplayHeader from './components/display-header/display-header';
 import { ProductItem } from './product-item';
 import { generatePath } from 'react-router';
 import { ROUTES } from 'consts';
-import { StyledBox, StyledPagination } from './display.styles';
+import { StyledBox, StyledLink, StyledPagination } from './display.styles';
 import { getProducts, changePageOptions } from 'store/product-list-store';
 import { PageOptions } from 'lib/models';
 import { displayData } from './product-item-list/product-item-list.data';
@@ -26,15 +26,7 @@ interface IProps {
   onInit: () => void;
   onOptionsChange: (options: PageOptions) => void;
 }
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      '&:hover': {
-        textDecoration: 'none'
-      }
-    }
-  })
-);
+
 const Display = (props: IProps) => {
   const [listType, setListType] = useState(ListTypes.Products);
   const [currentPage, setCurrentPage] = useState(1);
@@ -43,7 +35,6 @@ const Display = (props: IProps) => {
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
   const currentPost = shopsData.slice(indexOfFirstPost, indexOfLastPost);
-  const classes = useStyles();
 
   const listTypeChange = (type: ListTypes) => {
     setListType(type);
@@ -83,7 +74,7 @@ const Display = (props: IProps) => {
               <List component={'ul'}>
                 {props.data.map(product => {
                   return (
-                    <Link className={classes.root} key={product.id} href={generatePath(ROUTES.PRODUCT, { id: product.id })}>
+                    <StyledLink key={product.id} href={generatePath(ROUTES.PRODUCT, { id: product.id })}>
                       <ListItem button disableGutters={true} divider={true}>
                         <StyledBox mt={1} mb={1}>
                           <ProductItem
@@ -98,7 +89,7 @@ const Display = (props: IProps) => {
                           />
                         </StyledBox>
                       </ListItem>
-                    </Link>
+                    </StyledLink>
                   );
                 })}
               </List>
