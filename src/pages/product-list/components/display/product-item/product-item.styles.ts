@@ -25,7 +25,6 @@ const StyledLogo = styled.img`
     max-width: 98px;
     max-height: 30px;
     width: 100%;
-    position: initial;
     float: right;
   }
 `;
@@ -57,7 +56,7 @@ const MobileStyledPriceBox = styled.div`
   background-size: contain;
   position: absolute;
   background-repeat: no-repeat;
-  margin-top: -25px;
+  margin-top: -10px;
 `;
 
 const StyledTextBox = styled(Box)`
