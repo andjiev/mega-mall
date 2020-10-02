@@ -46,6 +46,7 @@ const StyledCardMedia = styled(CardMedia)`
 
 const StyledGrid = styled(Grid)`
   height: 100%;
+  background: rgba(0, 0, 0, 0.3);
 `;
 
 //Medium cards styles
