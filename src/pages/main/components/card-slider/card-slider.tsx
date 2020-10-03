@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import SliderCard from './../../../../components/slider-card/slider-card';
 import Carousel from 'react-multi-carousel';
@@ -7,6 +7,11 @@ import { cardData } from './card-slider.data';
 import { translate } from 'lib/translate';
 
 const CardSlider = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
   return (
     <>
       <Box>
@@ -78,15 +83,16 @@ const CardSlider = () => {
           }}
         >
           {/* TODO: Add destination product url to the interface*/}
-          {cardData.map(res => (
-            <Box key={res.id}>
-              <Link>
-                <SliderCard title={res.title} url={res.img}>
-                  <Typography variant="h4">{res.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}</Typography>
-                </SliderCard>
-              </Link>
-            </Box>
-          ))}
+          {isMounted &&
+            cardData.map(res => (
+              <Box key={res.id}>
+                <Link>
+                  <SliderCard title={res.title} url={res.img}>
+                    <Typography variant="h4">{res.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}</Typography>
+                  </SliderCard>
+                </Link>
+              </Box>
+            ))}
         </Carousel>
       </Box>
     </>
