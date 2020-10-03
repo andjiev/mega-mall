@@ -7,7 +7,8 @@ interface IBox {
 }
 const StyledImage = styled(Box)`
   background-image: url(${(props: IBox) => props.src});
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
   width: 100%;
   height: 60vh;
 
@@ -32,6 +33,7 @@ const StyledContainer = styled(Container)`
 
 const StyledGrid = styled(Grid)`
   height: 100%;
+  background: rgba(0, 0, 0, 0.3);
 `;
 
 const StyledTypography = styled(Typography)`
