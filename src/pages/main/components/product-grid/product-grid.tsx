@@ -6,6 +6,8 @@ import { AppDispatch } from 'index';
 import { getLatestProducts } from 'store/latest-products-store';
 import ApplicationState from 'store/application-state';
 import { connect } from 'react-redux';
+import { translate } from 'lib/translate';
+import { displayData } from 'pages/product-list/components/display/product-item-list/product-item-list.data';
 
 interface IProps {
   data: Models.Product.Model[];
@@ -48,8 +50,8 @@ const ProductGrid = (props: IProps) => {
                 index < 8 ? (
                   <Grid item key={res.id} xs={12} md={3}>
                     <Link href={res.link}>
-                      <Card key={res.id} title={res.name} url={res.imageSource} size="small">
-                        <span>{res.price}</span>
+                      <Card key={res.id} title={res.name.substring(0, 30)} url={res.imageSource || displayData[2].img} size="small">
+                        <Box component="span">{res.price === '' ? '0 ' + translate('MegaMall_Product_Price_Currency', 'МКД') : res.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}</Box>
                       </Card>
                     </Link>
                   </Grid>
@@ -61,12 +63,11 @@ const ProductGrid = (props: IProps) => {
           </Box>
         </>
       ) : (
-        <>Loading data..</>
+        <>Loading data...</>
       )}
     </>
   );
 };
-
 const mapDispatchToProps = (dispatch: AppDispatch) => ({
   onInit: () => {
     dispatch(getLatestProducts());

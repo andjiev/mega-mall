@@ -25,7 +25,6 @@ const StyledLogo = styled.img`
     max-width: 98px;
     max-height: 30px;
     width: 100%;
-    position: initial;
     float: right;
   }
 `;
@@ -38,4 +37,30 @@ const StyledGrid = styled(Grid)`
   }
 `;
 
-export { StyledImage, StyledLogo, StyledGrid };
+const StyledPriceBox = styled.div`
+  background-image: url('/assets/images/common/red-strike.png');
+  background-position: left center;
+  width: 146px;
+  height: 138px;
+  background-size: contain;
+  position: absolute;
+  background-repeat: no-repeat;
+  margin-top: -10px;
+`;
+
+const MobileStyledPriceBox = styled.div`
+  background-image: url('/assets/images/common/red-strike.png');
+  background-position: left center;
+  width: 100px;
+  height: 125px;
+  background-size: contain;
+  position: absolute;
+  background-repeat: no-repeat;
+  margin-top: -10px;
+`;
+
+const StyledTextBox = styled(Box)`
+  text-decoration: none;
+`;
+
+export { StyledImage, StyledLogo, StyledGrid, StyledPriceBox, MobileStyledPriceBox, StyledTextBox };

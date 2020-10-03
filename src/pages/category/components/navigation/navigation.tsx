@@ -1,8 +1,7 @@
 import React from 'react';
-
-import { StyledNavigation } from './navigation.styles';
-import { Box, Link, List, ListItem, Typography } from '@material-ui/core';
 import { MenuItem } from 'lib/data';
+import { Box, Link, List, ListItem, Typography } from '@material-ui/core';
+import { StyledNavigation } from 'pages/product-list/components/navigation/navigation.styles';
 
 interface IProps {
   categoryItem: MenuItem;
