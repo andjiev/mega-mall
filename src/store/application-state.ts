@@ -13,6 +13,6 @@ export default interface ApplicationState {
   shared: SharedStore.SharedStore;
   header: HeaderStore.HeaderStore;
   productList: ProductListStore.ProductListStore;
-  mainData: MainStore.MainStore;
+  main: MainStore.MainStore;
   productDetails: ProductDetailsStore.ProductDetailsStore;
 }

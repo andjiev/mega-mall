@@ -76,7 +76,7 @@ const mapDispatchToProps = (dispatch: AppDispatch) => ({
 
 const mapStateToProps = (state: ApplicationState) => {
   return {
-    data: state.mainData.latestData
+    data: state.main.latestData
   };
 };
 

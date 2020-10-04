@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import SliderCard from './../../../../components/slider-card/slider-card';
 import Carousel from 'react-multi-carousel';
 import { Box, Grid, Typography, Link, Hidden } from '@material-ui/core';
-import { cardData } from './card-slider.data';
 import { translate } from 'lib/translate';
 import { AppDispatch } from 'index';
 import ApplicationState from 'store/application-state';
@@ -17,10 +16,8 @@ interface ICardSlider {
 }
 
 const CardSlider = (props: ICardSlider) => {
-  const [isMounted, setIsMounted] = useState(false);
-
+  const defaultImage = './../../../../assets/images/product-list/applie_laptop.jpg';
   useEffect(() => {
-    setIsMounted(true);
     props.onInit();
   }, []);
 
@@ -95,11 +92,11 @@ const CardSlider = (props: ICardSlider) => {
           }}
         >
           {/* TODO: Add destination product url to the interface*/}
-          {isMounted && props.data ? (
+          {props.data ? (
             props.data.map(res => (
               <Box key={res.id}>
                 <Link href={res.link}>
-                  <SliderCard title={res.name.length > 25 ? res.name.substring(0, 25) + '...' : res.name} url={res.imageSource || cardData[1].img}>
+                  <SliderCard title={res.name.length > 25 ? res.name.substring(0, 25) + '...' : res.name} url={res.imageSource || defaultImage}>
                     <Typography variant="h4">{res.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}</Typography>
                   </SliderCard>
                 </Link>
@@ -122,7 +119,7 @@ const mapDispatchToProps = (dispatch: AppDispatch) => ({
 
 const mapStateToProps = (state: ApplicationState) => {
   return {
-    data: state.mainData.mostViewedData
+    data: state.main.mostViewedData
   };
 };
 
