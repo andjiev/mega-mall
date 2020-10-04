@@ -8,7 +8,6 @@ import DetailedProductView from './components/detailed-view/detailed-product-vie
 import { Box, Grid, List, ListItem, Button, Typography, Link, Container, Hidden } from '@material-ui/core';
 import { displayData } from '../product-list/components/display/product-item-list/product-item-list.data';
 import { CardSlider } from './../main/components/card-slider';
-import { cardData } from './../main/components/card-slider/card-slider.data';
 import { Banner } from '../../components/banner';
 
 interface DetailedProductProps extends RouteComponentProps {}
