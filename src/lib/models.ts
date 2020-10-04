@@ -26,6 +26,7 @@ export interface DataServiceRequestConfig {
 export interface PageOptions {
   page: number;
   size: number;
+  order: number;
 }
 
 export interface BreadCrumb {

@@ -15,7 +15,8 @@ export const initialState: ProductListStore = {
   count: 0,
   options: {
     page: 0,
-    size: 10
+    size: 10,
+    order: 3
   }
 };
 
@@ -40,7 +41,7 @@ export const reducer = slice.reducer;
 
 // thunk
 export const getProducts = (): AppThunk => async (dispatch, store) => {
-  const result = await ProductService.getProducts(store().productList.options.page, store().productList.options.size);
+  const result = await ProductService.getProducts(store().productList.options.page, store().productList.options.size, store().productList.options.order);
 
   dispatch(setData(result.data));
 };
