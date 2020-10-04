@@ -3,7 +3,7 @@ import { Box, Grid, Typography, Link, Hidden } from '@material-ui/core';
 import Card from './../../../../components/card/card';
 import { cards } from './product-grid.data';
 import { AppDispatch } from 'index';
-import { getLatestProducts } from 'store/latest-products-store';
+import { getLatestProducts } from 'store/main-store';
 import ApplicationState from 'store/application-state';
 import { connect } from 'react-redux';
 import { translate } from 'lib/translate';
@@ -76,7 +76,7 @@ const mapDispatchToProps = (dispatch: AppDispatch) => ({
 
 const mapStateToProps = (state: ApplicationState) => {
   return {
-    data: state.latestProductList.data
+    data: state.main.latestData
   };
 };
 
