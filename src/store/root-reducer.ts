@@ -10,7 +10,7 @@ const reducers = {
   shared: SharedStore.reducer,
   header: HeaderStore.reducer,
   productList: ProductListStore.reducer,
-  mainData: MainStore.reducer,
+  main: MainStore.reducer,
   productDetails: ProductDetailsStore.reducer
 };
 
