@@ -7,7 +7,7 @@ const cards = [
     link1: translate('MegaMall_CategotyGrid_Computers', 'КОМПЈУТЕРИ'),
     link2: translate('MegaMall_CategotyGrid_Computer_Equipment', 'КОМПЈУТЕРСКА ОПРЕМА'),
     link3: translate('MegaMall_CategotyGrid_Mobile', 'МОБИЛНИ ТЕЛЕФОНИ'),
-    url: '/assets/images/main/category-card-images/technology.jpg'
+    url: '/assets/images/main/category-grid/technology.png'
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const cards = [
     link1: translate('MegaMall_CategotyGrid_Male', 'МАШКА ОБЛЕКА'),
     link2: translate('MegaMall_CategotyGrid_Female', 'ЖЕНСКА ОБЛЕКА'),
     link3: translate('MegaMall_CategotyGrid_Shoes', 'ОБУВКИ'),
-    url: '/assets/images/main/category-card-images/fashion.jpg'
+    url: '/assets/images/main/category-grid/fashion.png'
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ const cards = [
     link1: translate('MegaMall_CategotyGrid_Cosmetics', 'КОЗМЕТИКА'),
     link2: translate('MegaMall_CategotyGrid_Perfumes', 'ПАРФЕМИ'),
     link3: translate('MegaMall_CategotyGrid_Care', 'НЕГА'),
-    url: '/assets/images/main/category-card-images/health-and-beauty.jpg'
+    url: '/assets/images/main/category-grid/health-and-beauty.png'
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ const cards = [
     link1: translate('MegaMall_CategotyGrid_Equipment', 'СПОРТСКА ОПРЕМА'),
     link2: translate('MegaMall_CategotyGrid_Clothes', 'СПОРТСКА ОБЛЕКА'),
     link3: translate('MegaMall_CategotyGrid_Fitness', 'ФИТНЕС'),
-    url: '/assets/images/main/category-card-images/sport.jpg'
+    url: '/assets/images/main/category-grid/sport.png'
   },
   {
     id: 5,
@@ -39,7 +39,7 @@ const cards = [
     link1: translate('MegaMall_CategotyGrid_House_Equipment', 'АПАРАТИ ЗА ДОМАЌИНСТВО'),
     link2: translate('MegaMall_CategotyGrid_White', 'БЕЛА ТЕХНИКА'),
     link3: translate('MegaMall_CategotyGrid_Garden', 'ДОМ И ГРАДИНА'),
-    url: '/assets/images/main/category-card-images/household.jpg'
+    url: '/assets/images/main/category-grid/household.png'
   },
   {
     id: 6,
@@ -47,7 +47,7 @@ const cards = [
     link1: translate('MegaMall_CategotyGrid_Food', 'ХРАНА И ПИЈАЛОЦИ'),
     link2: translate('MegaMall_CategotyGrid_Education', 'ЕДУКАЦИЈА'),
     link3: translate('MegaMall_CategotyGrid_Events', 'КУЛТУРА И НАСТАНИ'),
-    url: '/assets/images/main/category-card-images/services.jpg'
+    url: '/assets/images/main/category-grid/services.png'
   }
 ];
 
