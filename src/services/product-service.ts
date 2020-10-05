@@ -12,5 +12,7 @@ async function getLatestProducts(): Promise<DataServiceResponse<Models.Product.M
 async function getProductDetails(id: string): Promise<DataServiceResponse<Models.Product.Model>> {
   return http.get(`api/products/${id}`);
 }
-
-export { getProducts, getLatestProducts, getProductDetails };
+async function getMostPopularProducts(): Promise<DataServiceResponse<Models.Product.Model[]>> {
+  return http.get(`api/products/popular`);
+}
+export { getProducts, getLatestProducts, getProductDetails, getMostPopularProducts };
