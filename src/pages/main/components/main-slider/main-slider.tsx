@@ -1,75 +1,58 @@
 import React from 'react';
 
-import { StyledImage, StyledButton, StyledTypography, StyledOverlay } from './main-slider.styles';
+import { StyledImage, StyledButton, StyledOverlay } from './main-slider.styles';
 import { Box, Grid, Typography, makeStyles, Theme, createStyles, Hidden, Container } from '@material-ui/core';
 import { Carousel } from 'react-responsive-carousel';
 import { ISliderItem, sliderItems } from './main-slider.data';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    carouselTitle: {
-      fontSize: '48px',
-      color: '#ffffff',
-      fontFamily: 'OswaldBold',
-      whiteSpace: 'pre-line',
-
-      [theme.breakpoints.down('md')]: {
-        fontSize: '36px'
-      }
-    },
-    carouselSubtitle: {
-      fontSize: '16px',
-      color: '#ffffff',
-      fontFamily: 'RobotoRegular',
-      whiteSpace: 'pre-line',
-
-      [theme.breakpoints.down('md')]: {
-        fontSize: '14px'
-      }
-    },
-    carouselButton: {
-      fontSize: '14px',
-      color: '#ffffff',
-      fontFamily: 'RobotoRegular'
-    }
-  })
-);
-
 const MainSlider = () => {
-  const classes = useStyles();
   const renderItem = (item: ISliderItem) => {
     return (
       <StyledImage src={item.imageSrc}>
         <StyledOverlay />
         <Container>
-          <Grid container item xs={6}>
-            <Box mt={5} zIndex={1}>
-              <Grid item xs={12}>
-                <Box color="white" textAlign="left" mt={2} mb={2}>
-                  <Hidden xsDown>
+          <Hidden mdDown>
+            <Grid container item xs={6}>
+              <Box color="white" textAlign="left" zIndex={1} mt={5}>
+                <Grid item xs={12}>
+                  <Box mt={2} mb={2}>
                     <Typography variant="h1">{item.title}</Typography>
-                  </Hidden>
-                  <Hidden smUp>
+                  </Box>
+                </Grid>
+                <Grid item xs={12}>
+                  <Box mt={2} mb={2}>
+                    <Typography variant="body1">{item.subTitle}</Typography>
+                  </Box>
+                </Grid>
+                <Grid item xs={12}>
+                  <StyledButton variant="contained" color="secondary" size="large">
+                    <Typography variant="button">{item.buttonText}</Typography>
+                  </StyledButton>
+                </Grid>
+              </Box>
+            </Grid>
+          </Hidden>
+          <Hidden mdUp>
+            <Grid container>
+              <Box color="white" textAlign="left" zIndex={1} mt={3}>
+                <Grid item xs={12}>
+                  <Box mt={2} mb={2}>
                     <Typography variant="h3">{item.title}</Typography>
-                  </Hidden>
-                </Box>
-              </Grid>
-              <Grid item xs={12}>
-                <Box color="white" textAlign="left" mt={2} mb={2}>
-                  <Typography variant="body1" className={classes.carouselSubtitle}>
-                    {item.subTitle}
-                  </Typography>
-                </Box>
-              </Grid>
-              <Grid item xs={12}>
-                <StyledButton variant="contained" color="secondary" size="large">
-                  <Typography variant="button" className={classes.carouselButton}>
-                    {item.buttonText}
-                  </Typography>
-                </StyledButton>
-              </Grid>
-            </Box>
-          </Grid>
+                  </Box>
+                </Grid>
+                <Grid item xs={12}>
+                  <Box mt={2} mb={2}>
+                    <Typography variant="body2">{item.subTitle}</Typography>
+                  </Box>
+                </Grid>
+                <Grid item xs={12}>
+                  <StyledButton variant="contained" color="secondary" size="large">
+                    <Typography variant="button">{item.buttonText}</Typography>
+                  </StyledButton>
+                </Grid>
+              </Box>
+            </Grid>
+          </Hidden>
         </Container>
       </StyledImage>
     );

@@ -15,7 +15,7 @@ const theme = createMuiTheme({
     fontWeightRegular: 400,
     fontWeightMedium: 500,
     fontWeightBold: 700,
-    // fontFamily: ['OswaldRegular', 'sans-serif'].join(','),
+
     h1: {
       fontFamily: ['OswaldBold', 'sans-serif'].join(','),
       fontWeight: 700,

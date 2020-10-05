@@ -15,7 +15,7 @@ const StyledImage = styled(Box)`
   background-position: center;
 
   ${props => props.theme.breakpoints.down('sm')} {
-    height: 45vh;
+    min-height: 334px;
   }
 `;
 
@@ -29,13 +29,6 @@ const StyledButton = styled(Button)`
   }
 `;
 
-const StyledTypography = styled(Typography)`
-  white-space: pre-line;
-  @media (max-width: 768px) {
-    font-size: 36px;
-  }
-`;
-
 const StyledOverlay = styled(Box)`
   position: absolute;
   width: 100%;
@@ -45,4 +38,4 @@ const StyledOverlay = styled(Box)`
   background-color: rgba(0, 0, 0, 0.3);
 `;
 
-export { StyledImage, StyledButton, StyledTypography, StyledOverlay };
+export { StyledImage, StyledButton, StyledOverlay };
