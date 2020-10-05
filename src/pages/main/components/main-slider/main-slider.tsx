@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StyledImage, StyledButton, StyledTypography, StyledOverlay } from './main-slider.style';
+import { StyledImage, StyledButton, StyledTypography, StyledOverlay } from './main-slider.styles';
 import { Box, Grid, Typography, makeStyles, Theme, createStyles, Hidden, Container } from '@material-ui/core';
 import { Carousel } from 'react-responsive-carousel';
 import { ISliderItem, sliderItems } from './main-slider.data';
