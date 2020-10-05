@@ -7,8 +7,8 @@ import { connect } from 'react-redux';
 import DetailedProductView from './components/detailed-view/detailed-product-view';
 import { Box, Grid, List, ListItem, Button, Typography, Link, Container, Hidden } from '@material-ui/core';
 import { displayData } from '../product-list/components/display/product-item-list/product-item-list.data';
-import { CardSlider } from './../main/components/card-slider';
 import { Banner } from '../../components/banner';
+import CardSliderContainer from 'pages/main/components/card-slider/card-slider';
 
 interface DetailedProductProps extends RouteComponentProps {}
 
@@ -41,7 +41,7 @@ const _DetailedProductPage = (props: DetailedProductProps) => {
           <DetailedProductView />
         </Box>
         <Box m={5}>
-          <CardSlider />
+          <CardSliderContainer />
         </Box>
         <Box mt={5} mb={5}>
           <Grid container justify="center">
