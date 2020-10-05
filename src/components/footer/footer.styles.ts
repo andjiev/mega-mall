@@ -18,7 +18,8 @@ const StyledFooter = styled(Box)`
 `;
 
 const StyledDivider = styled(Divider)`
-  height: 2px;
+  height: 1px;
+  background-color: #ffffff;
 `;
 
 const StyledImage = styled.img`
