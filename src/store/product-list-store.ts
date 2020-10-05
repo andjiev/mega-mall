@@ -1,3 +1,4 @@
+import { OrderTypes } from 'lib/enums';
 import { AppThunk } from './app-thunk';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PageOptions } from 'lib/models';
@@ -16,7 +17,7 @@ export const initialState: ProductListStore = {
   options: {
     page: 0,
     size: 10,
-    order: 3
+    order: OrderTypes.Latest
   }
 };
 

@@ -1,3 +1,4 @@
+import { OrderTypes } from 'lib/enums';
 export interface DataServiceResponse<T> {
   data: T;
   status: number;
@@ -26,7 +27,7 @@ export interface DataServiceRequestConfig {
 export interface PageOptions {
   page: number;
   size: number;
-  order: number;
+  order: OrderTypes;
 }
 
 export interface BreadCrumb {

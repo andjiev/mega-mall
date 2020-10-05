@@ -1,8 +1,9 @@
+import { OrderTypes } from 'lib/enums';
 import http from './http-service';
 import { DataServiceResponse } from 'lib/models';
 
-async function getProducts(page: number, size: number, order: number): Promise<DataServiceResponse<Models.Product.Model[]>> {
-  return http.get(`api/products?page=${page}&take=${size}`);
+async function getProducts(page: number, size: number, order: OrderTypes): Promise<DataServiceResponse<Models.Product.Model[]>> {
+  return http.get(`https://localhost:5001/api/products?page=${page}&take=${size}&order=${order}`);
 }
 async function getLatestProducts(): Promise<DataServiceResponse<Models.Product.Model[]>> {
   return http.get(`api/products/latest`);
@@ -12,8 +13,4 @@ async function getProductDetails(id: string): Promise<DataServiceResponse<Models
   return http.get(`api/products/${id}`);
 }
 
-async function getMostPopularProducts(): Promise<DataServiceResponse<Models.Product.Model[]>> {
-  return http.get(`api/products/popular`);
-}
-
-export { getProducts, getLatestProducts, getProductDetails, getMostPopularProducts };
+export { getProducts, getLatestProducts, getProductDetails };
