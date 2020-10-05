@@ -1,7 +1,7 @@
 const Detailedproduct = [
   {
     id: 1,
-    url: '/src/assets/images/product-list/primer.jpg'
+    url: '/assets/images/product-list/primer.jpg'
   }
 ];
 

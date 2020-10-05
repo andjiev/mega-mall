@@ -8,11 +8,10 @@ import { Container, Box, Grid, Hidden } from '@material-ui/core';
 
 import { MainSlider } from './components/main-slider';
 import { CategoryGrid } from './components/category-grid';
-import { CardSlider } from './components/card-slider';
 import { Banner } from '../../components/banner';
-import { ProductGrid } from './components/product-grid';
 import { GiftCardGrid } from './components/gift-card-grid';
 import LatestProductContainer from './components/product-grid/product-grid';
+import CardSliderContainer from './components/card-slider/card-slider';
 
 interface MainPageProps extends RouteComponentProps {}
 
@@ -26,7 +25,7 @@ const _MainPage = (props: MainPageProps) => {
           <CategoryGrid />
         </Box>
         <Box mt={5}>
-          <CardSlider />
+          <CardSliderContainer />
         </Box>
         <Box mt={5} mb={5}>
           <Grid container justify="center">

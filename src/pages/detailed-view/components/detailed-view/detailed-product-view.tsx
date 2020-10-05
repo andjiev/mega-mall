@@ -3,6 +3,7 @@ import { Grid, Typography, Card, CardContent, Button, CardActions, Box, Hidden, 
 import { Detailedproduct } from './detailed-product-view.data';
 import { StyledImage, StyledStickyGridItem, StyledGridContainer, StyledCardContent, StyledBox, StyledLogo } from './detailed-product-view.styles';
 import ProductItemList from '../../../product-list/components/display/product-item-list/product-item-list';
+import { translate } from 'lib/translate';
 
 import { AppDispatch } from 'index';
 import { getProductDetails } from 'store/product-details-store';
@@ -50,7 +51,7 @@ const DetailedProductView = (props: IProps) => {
                 </Box>
                 <StyledBox>
                   <Typography variant="h3" gutterBottom>
-                    {props.data.price}
+                    {props.data.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
                   </Typography>
                   <StyledLogo src="/src/assets/images/product-list/logo-btns/Anhoch.png" />
                   {/* TODO: add logo of company here as btn */}

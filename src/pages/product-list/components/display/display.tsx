@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 import { AppDispatch } from 'index';
 import ApplicationState from 'store/application-state';
 
-import { Box, ListItem, List, Link, Grid } from '@material-ui/core';
+import { Box, ListItem, List, Link, Grid, createStyles, makeStyles, Theme } from '@material-ui/core';
 import DisplayHeader from './components/display-header/display-header';
 
 import { ProductItem } from './product-item';
 import { generatePath } from 'react-router';
 import { ROUTES } from 'consts';
-import { StyledBox, StyledPagination } from './display.styles';
+import { StyledBox, StyledLink, StyledPagination } from './display.styles';
 import { getProducts, changePageOptions } from 'store/product-list-store';
 import { PageOptions } from 'lib/models';
 import { displayData } from './product-item-list/product-item-list.data';
@@ -74,13 +74,22 @@ const Display = (props: IProps) => {
               <List component={'ul'}>
                 {props.data.map(product => {
                   return (
-                    <Link key={product.id} href={generatePath(ROUTES.PRODUCT, { id: product.id })}>
+                    <StyledLink key={product.id} href={generatePath(ROUTES.PRODUCT, { id: product.id })}>
                       <ListItem button disableGutters={true} divider={true}>
                         <StyledBox mt={1} mb={1}>
-                          <ProductItem key={product.id} img={product.imageSource || displayData[1].img} title={product.name} price={product.price} description={''} logo={''} link={product.link} />
+                          <ProductItem
+                            key={product.id}
+                            img={product.imageSource || displayData[1].img}
+                            title={product.name}
+                            price={product.price === '' ? '0' : product.price}
+                            discountPrice={product.discountPrice}
+                            description={''}
+                            logo={''}
+                            link={product.link}
+                          />
                         </StyledBox>
                       </ListItem>
-                    </Link>
+                    </StyledLink>
                   );
                 })}
               </List>

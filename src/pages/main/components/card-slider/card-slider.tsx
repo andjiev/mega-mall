@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import SliderCard from './../../../../components/slider-card/slider-card';
 import Carousel from 'react-multi-carousel';
 import { Box, Grid, Typography, Link, Hidden } from '@material-ui/core';
-import { cardData } from './card-slider.data';
+import { translate } from 'lib/translate';
+import { AppDispatch } from 'index';
+import ApplicationState from 'store/application-state';
+import { getMostPopularProducts } from 'store/main-store';
+import { connect } from 'react-redux';
+import { ProgressPlugin } from 'webpack';
 
-const CardSlider = () => {
+interface ICardSlider {
+  data: Models.Product.Model[];
+  onInit: () => void;
+}
+
+const CardSlider = (props: ICardSlider) => {
+  const defaultImage = './../../../../assets/images/product-list/applie_laptop.jpg';
+  useEffect(() => {
+    props.onInit();
+  }, []);
+
   return (
     <>
       <Box>
@@ -77,20 +92,36 @@ const CardSlider = () => {
           }}
         >
           {/* TODO: Add destination product url to the interface*/}
-          {cardData.map(res => (
-            <Box key={res.id}>
-              <Link>
-                <SliderCard title={res.title} url={res.img}>
-                  {/* TODO: maybe span would be better */}
-                  <Typography variant="h4">{res.price}</Typography>
-                </SliderCard>
-              </Link>
-            </Box>
-          ))}
+          {props.data ? (
+            props.data.map(res => (
+              <Box key={res.id}>
+                <Link href={res.link}>
+                  <SliderCard title={res.name.length > 25 ? res.name.substring(0, 25) + '...' : res.name} url={res.imageSource || defaultImage}>
+                    <Typography variant="h4">{res.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}</Typography>
+                  </SliderCard>
+                </Link>
+              </Box>
+            ))
+          ) : (
+            <>Loading data...</>
+          )}
         </Carousel>
       </Box>
     </>
   );
 };
 
-export default CardSlider;
+const mapDispatchToProps = (dispatch: AppDispatch) => ({
+  onInit: () => {
+    dispatch(getMostPopularProducts());
+  }
+});
+
+const mapStateToProps = (state: ApplicationState) => {
+  return {
+    data: state.main.mostViewedData
+  };
+};
+
+const CardSliderContainer = connect(mapStateToProps, mapDispatchToProps)(CardSlider);
+export default CardSliderContainer;
