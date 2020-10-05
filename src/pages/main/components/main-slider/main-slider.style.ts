@@ -8,9 +8,11 @@ interface IBox {
 const StyledImage = styled(Box)`
   background-image: url(${(props: IBox) => props.src});
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   width: 100%;
-  height: 60vh;
+  min-height: 330px;
+  height: 100%;
+  background-position: center;
 
   ${props => props.theme.breakpoints.down('sm')} {
     height: 45vh;
@@ -21,19 +23,10 @@ const StyledButton = styled(Button)`
   height: 50px;
   color: white;
   background-color: #193364;
-
+  float: left;
   &:hover {
     background-color: #0d1440;
   }
-`;
-
-const StyledContainer = styled(Container)`
-  text-align: left;
-`;
-
-const StyledGrid = styled(Grid)`
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
 `;
 
 const StyledTypography = styled(Typography)`
@@ -43,4 +36,13 @@ const StyledTypography = styled(Typography)`
   }
 `;
 
-export { StyledGrid, StyledImage, StyledContainer, StyledButton, StyledTypography };
+const StyledOverlay = styled(Box)`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+`;
+
+export { StyledImage, StyledButton, StyledTypography, StyledOverlay };

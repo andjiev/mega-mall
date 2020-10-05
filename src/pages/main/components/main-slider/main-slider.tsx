@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { StyledGrid, StyledImage, StyledContainer, StyledButton, StyledTypography } from './main-slider.style';
-import { Box, Grid, Typography, makeStyles, Theme, createStyles, Hidden } from '@material-ui/core';
+import { StyledImage, StyledButton, StyledTypography, StyledOverlay } from './main-slider.style';
+import { Box, Grid, Typography, makeStyles, Theme, createStyles, Hidden, Container } from '@material-ui/core';
 import { Carousel } from 'react-responsive-carousel';
 import { ISliderItem, sliderItems } from './main-slider.data';
 
@@ -40,38 +40,37 @@ const MainSlider = () => {
   const renderItem = (item: ISliderItem) => {
     return (
       <StyledImage src={item.imageSrc}>
-        <StyledGrid container direction="column" justify="center">
-          <StyledContainer>
-            <Box color="white">
-              <Grid item>
-                <Hidden xsDown>
-                  <Typography variant="h1">{item.title}</Typography>
-                </Hidden>
-                <Hidden smUp>
-                  <Typography variant="h3">{item.title}</Typography>
-                </Hidden>
+        <StyledOverlay />
+        <Container>
+          <Grid container item xs={6}>
+            <Box mt={5} zIndex={1}>
+              <Grid item xs={12}>
+                <Box color="white" textAlign="left" mt={2} mb={2}>
+                  <Hidden xsDown>
+                    <Typography variant="h1">{item.title}</Typography>
+                  </Hidden>
+                  <Hidden smUp>
+                    <Typography variant="h3">{item.title}</Typography>
+                  </Hidden>
+                </Box>
               </Grid>
-              <Box mt={2}>
-                <Grid item>
-                  <Box component="span">
-                    <Typography variant="body1" className={classes.carouselSubtitle}>
-                      {item.subTitle}
-                    </Typography>
-                  </Box>
-                </Grid>
-              </Box>
-            </Box>
-            <Grid item>
-              <Box mt={3}>
+              <Grid item xs={12}>
+                <Box color="white" textAlign="left" mt={2} mb={2}>
+                  <Typography variant="body1" className={classes.carouselSubtitle}>
+                    {item.subTitle}
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid item xs={12}>
                 <StyledButton variant="contained" color="secondary" size="large">
                   <Typography variant="button" className={classes.carouselButton}>
                     {item.buttonText}
                   </Typography>
                 </StyledButton>
-              </Box>
-            </Grid>
-          </StyledContainer>
-        </StyledGrid>
+              </Grid>
+            </Box>
+          </Grid>
+        </Container>
       </StyledImage>
     );
   };
