@@ -39,7 +39,6 @@ const Footer = () => {
       </Box>
     );
   };
-  //TODO add fonts and sizes. . .
   return (
     <>
       <StyledFooter pt={3} pb={2}>

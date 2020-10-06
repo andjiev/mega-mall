@@ -1,83 +1,65 @@
 import React from 'react';
 
-import { StyledGrid, StyledImage, StyledContainer, StyledButton, StyledTypography } from './main-slider.style';
-import { Box, Grid, Typography, makeStyles, Theme, createStyles, Hidden } from '@material-ui/core';
+import { StyledImage, StyledButton, StyledOverlay } from './main-slider.styles';
+import { Box, Grid, Typography, Hidden, Container } from '@material-ui/core';
 import { Carousel } from 'react-responsive-carousel';
 import { ISliderItem, sliderItems } from './main-slider.data';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    carouselTitle: {
-      fontSize: '48px',
-      color: '#ffffff',
-      fontFamily: 'OswaldBold',
-      whiteSpace: 'pre-line',
-
-      [theme.breakpoints.down('md')]: {
-        fontSize: '36px'
-      }
-    },
-    carouselSubtitle: {
-      fontSize: '16px',
-      color: '#ffffff',
-      fontFamily: 'RobotoRegular',
-      whiteSpace: 'pre-line',
-
-      [theme.breakpoints.down('md')]: {
-        fontSize: '14px'
-      }
-    },
-    carouselButton: {
-      fontSize: '14px',
-      color: '#ffffff',
-      fontFamily: 'RobotoRegular'
-    }
-  })
-);
-
 const MainSlider = () => {
-  const classes = useStyles();
   const renderItem = (item: ISliderItem) => {
     return (
       <StyledImage src={item.imageSrc}>
-        <StyledGrid container direction="column" justify="center">
-          <StyledContainer>
-            <Box color="white">
-              <Grid item>
-                <Hidden xsDown>
-                  <Typography variant="h1">{item.title}</Typography>
-                </Hidden>
-                <Hidden smUp>
-                  <Typography variant="h3">{item.title}</Typography>
-                </Hidden>
-              </Grid>
-              <Box mt={2}>
-                <Grid item>
-                  <Box component="span">
-                    <Typography variant="body1" className={classes.carouselSubtitle}>
-                      {item.subTitle}
-                    </Typography>
+        <StyledOverlay />
+        <Container>
+          <Hidden mdDown>
+            <Grid container item xs={6}>
+              <Box color="white" textAlign="left" zIndex={1} mt={5}>
+                <Grid item xs={12}>
+                  <Box mt={2} mb={2}>
+                    <Typography variant="h1">{item.title}</Typography>
                   </Box>
                 </Grid>
-              </Box>
-            </Box>
-            <Grid item>
-              <Box mt={3}>
-                <StyledButton variant="contained" color="secondary" size="large">
-                  <Typography variant="button" className={classes.carouselButton}>
-                    {item.buttonText}
-                  </Typography>
-                </StyledButton>
+                <Grid item xs={12}>
+                  <Box mt={2} mb={2}>
+                    <Typography variant="body1">{item.subTitle}</Typography>
+                  </Box>
+                </Grid>
+                <Grid item xs={12}>
+                  <StyledButton variant="contained" color="secondary" size="large">
+                    <Typography variant="button">{item.buttonText}</Typography>
+                  </StyledButton>
+                </Grid>
               </Box>
             </Grid>
-          </StyledContainer>
-        </StyledGrid>
+          </Hidden>
+          <Hidden mdUp>
+            <Grid container>
+              <Box color="white" textAlign="left" zIndex={1} mt={3}>
+                <Grid item xs={12}>
+                  <Box mt={2} mb={2}>
+                    <Typography variant="h3">{item.title}</Typography>
+                  </Box>
+                </Grid>
+                <Grid item xs={12}>
+                  <Box mt={2} mb={2}>
+                    <Typography variant="body2">{item.subTitle}</Typography>
+                  </Box>
+                </Grid>
+                <Grid item xs={12}>
+                  <StyledButton variant="contained" color="secondary" size="large">
+                    <Typography variant="button">{item.buttonText}</Typography>
+                  </StyledButton>
+                </Grid>
+              </Box>
+            </Grid>
+          </Hidden>
+        </Container>
       </StyledImage>
     );
   };
 
   return (
-    <Carousel infiniteLoop autoPlay showArrows={false} showStatus={false} showThumbs={false}>
+    <Carousel infiniteLoop autoPlay showArrows={false} showStatus={false} showThumbs={false} transitionTime={1500} interval={4000} stopOnHover>
       {sliderItems.map((item, index) => {
         return <Box key={index}>{renderItem(item)}</Box>;
       })}

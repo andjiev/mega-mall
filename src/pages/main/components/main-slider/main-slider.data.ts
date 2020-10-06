@@ -11,19 +11,19 @@ const sliderItems: ISliderItem[] = [
     title: translate('MegaMall_Mainslider_title1', 'ПОДАРИ\nОБУВКИ НА ПРИЈАТЕЛ'),
     subTitle: translate('MegaMall_Mainslider_subtitle1', 'Ако патиките се ваши омилени обувки, значи дека на прво место ви е удобноста.'),
     buttonText: translate('MegaMall_Mainslider_button1', 'Подари веднаш'),
-    imageSrc: '/assets/images/main/Main-slider.jpg'
+    imageSrc: '/assets/images/main/main-slider/hantersBanner1.png'
   },
   {
     title: translate('MegaMall_Mainslider_title2', 'ПОДАРИ\nОБУВКИ НА ПРИЈАТЕЛ'),
     subTitle: translate('MegaMall_Mainslider_subtitle2', 'Ако патиките се ваши омилени обувки, значи дека на прво место ви е удобноста.'),
     buttonText: translate('MegaMall_Mainslider_button1', 'Подари веднаш'),
-    imageSrc: '/assets/images/main/Main-slider.jpg'
+    imageSrc: '/assets/images/main/main-slider/hantersBanner2.png'
   },
   {
     title: translate('MegaMall_Mainslider_title3', 'ПОДАРИ\nОБУВКИ НА ПРИЈАТЕЛ'),
     subTitle: translate('MegaMall_Mainslider_subtitle3', 'Ако патиките се ваши омилени обувки, значи дека на прво место ви е удобноста.'),
     buttonText: translate('MegaMall_Mainslider_button1', 'Подари веднаш'),
-    imageSrc: '/assets/images/main/Main-slider.jpg'
+    imageSrc: '/assets/images/main/main-slider/v-tacbaner.png'
   }
 ];
 

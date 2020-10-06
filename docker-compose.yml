@@ -38,7 +38,7 @@ services:
 
   mega-mall-api:
     container_name: mega-mall-api
-    image: docker.pkg.github.com/andjiev/mega-mall-server/mega-mall-api:1.3
+    image: docker.pkg.github.com/andjiev/mega-mall-server/mega-mall-api:1.5
     restart: always
     environment:
       - 'ASPNETCORE_ENVIRONMENT=Development'

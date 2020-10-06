@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+/* eslint-disable no-debugger */
+import React, { useEffect, useState } from 'react';
 
 import { Grid, ButtonGroup, FormControl, Hidden, Typography } from '@material-ui/core';
 import { StyledButton, StyledSelect, StyledButtonGroup } from './desktop-filter.styles';
@@ -7,17 +8,33 @@ import { getTextForOrderType } from './desktop-filter.utils';
 import { translate } from 'lib/translate';
 import { AppDispatch } from 'index';
 import ApplicationState from 'store/application-state';
+import { getProducts, changePageOptions } from 'store/product-list-store';
+import { PageOptions } from 'lib/models';
 import { connect } from 'react-redux';
 import { listenerCount } from 'process';
 
 interface IProps {
   listType: ListTypes;
+  options: PageOptions;
   onListTypeChange: (type: ListTypes) => void;
+  onOptionsChange: (options: PageOptions) => void;
 }
 
 const DesktopFilter = (props: IProps) => {
-  const { onListTypeChange } = props;
-  const [orderType, setOrderType] = React.useState(OrderTypes.PriceAscending);
+  const { onListTypeChange, onOptionsChange } = props;
+  let [orderType, setOrderType] = React.useState(OrderTypes.Latest);
+
+  const handleChange = () => {
+    onOptionsChange({ ...props.options, order: orderType });
+  };
+
+  const changeOrderType = (event: React.ChangeEvent<{ value: string }>) => {
+    setOrderType(+event.target.value);
+  };
+
+  useEffect(() => {
+    handleChange();
+  }, [orderType]);
 
   const renderBar = () => {
     return (
@@ -43,7 +60,7 @@ const DesktopFilter = (props: IProps) => {
                 disableUnderline
                 value={orderType}
                 onChange={(event: React.ChangeEvent<{ value: string }>) => {
-                  setOrderType(+event.target.value);
+                  changeOrderType(event);
                 }}
               >
                 {Object.keys(OrderTypes)
@@ -71,4 +88,18 @@ const DesktopFilter = (props: IProps) => {
   );
 };
 
-export default DesktopFilter;
+const mapDispatchToProps = (dispatch: AppDispatch) => ({
+  onOptionsChange: (options: PageOptions) => {
+    dispatch(changePageOptions(options));
+  }
+});
+
+const mapStateToProps = (state: ApplicationState) => {
+  return {
+    options: state.productList.options
+  };
+};
+
+const DisplayContainer = connect(mapStateToProps, mapDispatchToProps)(DesktopFilter);
+
+export default DisplayContainer;
