@@ -41,11 +41,9 @@ const Header = (props: IHeaderProps) => {
         </Hidden>
         <Grid container spacing={2}>
           <Hidden xsDown>
-            <Grid item sm={2}>
+            <Grid item sm={2} md={1}>
               <StyledLink href={'/'}>
-                <Box mb={3}>
-                  <MainLogo />
-                </Box>
+                <MainLogo />
               </StyledLink>
             </Grid>
           </Hidden>
