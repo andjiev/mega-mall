@@ -7,12 +7,17 @@ import { ListTypes } from 'lib/enums';
 
 interface IDisplayHeader {
   title: string;
+  page: number;
+  count: number;
   listType: ListTypes;
 
   onListTypeChange: (type: ListTypes) => void;
 }
 
 const DisplayHeader = (props: IDisplayHeader) => {
+  const from = props.page * 10 + 1;
+  const to = from + 9 < props.count ? from + 9 : props.count;
+
   return (
     <>
       <Box>
@@ -25,7 +30,7 @@ const DisplayHeader = (props: IDisplayHeader) => {
           <Grid item xs={12} md={5}>
             <Box mt={2}>
               <Typography color="textSecondary" variant="body2">
-                1-10 од 1000 производи
+                {`${from}-${to} од ${props.count} производи`}
               </Typography>
             </Box>
           </Grid>

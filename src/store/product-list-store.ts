@@ -28,8 +28,9 @@ const slice = createSlice({
   reducers: {
     setData: (state: ProductListStore, action: PayloadAction<Models.Product.Model[]>) => {
       state.data = action.payload;
-      // TODO: change this
-      state.count = 1000;
+    },
+    setCount: (state: ProductListStore, action: PayloadAction<number>) => {
+      state.count = action.payload;
     },
     setOptions: (state: ProductListStore, action: PayloadAction<PageOptions>) => {
       state.options = action.payload;
@@ -37,7 +38,7 @@ const slice = createSlice({
   }
 });
 
-export const { setData, setOptions } = slice.actions;
+export const { setData, setCount, setOptions } = slice.actions;
 
 export const reducer = slice.reducer;
 
@@ -48,7 +49,9 @@ export const getProducts = (filter: string | null): AppThunk => async (dispatch,
   if (filter) {
     dispatch(setOptions({ ...store().productList.options, filter }));
   }
-  dispatch(setData(result.data));
+
+  dispatch(setData(result.data.list));
+  dispatch(setCount(result.data.count));
 };
 
 export const changePageOptions = (options: PageOptions): AppThunk => async (dispatch, store) => {

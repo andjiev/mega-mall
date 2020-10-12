@@ -62,7 +62,7 @@ const Display = (props: IProps) => {
 
   const onPageChange = (page: number) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    props.onOptionsChange({ ...props.options, page });
+    props.onOptionsChange({ ...props.options, page: page - 1 });
   };
 
   useEffect(() => {
@@ -74,7 +74,7 @@ const Display = (props: IProps) => {
       {props.data && props.data.length ? (
         <Box p={3}>
           <Box>
-            <DisplayHeader title={props.subCategoryItem.title} onListTypeChange={listTypeChange} listType={listType} />
+            <DisplayHeader title={props.subCategoryItem.title} page={props.options.page} count={props.count} onListTypeChange={listTypeChange} listType={listType} />
           </Box>
           <Box mt={2}>
             {listType === ListTypes.Products ? (
@@ -103,7 +103,7 @@ const Display = (props: IProps) => {
                   })}
                 </List>
                 <Box mt={2}>
-                  <StyledPagination count={props.count} page={props.options.page} onChange={(_, value: number) => onPageChange(value)} />
+                  <StyledPagination count={Math.ceil(props.count / 10)} page={props.options.page + 1} onChange={(_, value: number) => onPageChange(value)} />
                 </Box>
               </>
             ) : (
