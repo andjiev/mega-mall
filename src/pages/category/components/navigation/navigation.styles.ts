@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Box, Button } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 
 const StyledNavigation = styled(Box)`
   background-color: #edeef0;
@@ -13,4 +13,4 @@ const StyledNavigation = styled(Box)`
   }
 `;
 
-export { StyledNavigation, StyledButton };
+export { StyledNavigation };
