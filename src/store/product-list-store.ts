@@ -17,7 +17,8 @@ export const initialState: ProductListStore = {
   options: {
     page: 0,
     size: 10,
-    order: OrderTypes.Latest
+    order: OrderTypes.Latest,
+    filter: ''
   }
 };
 
@@ -41,9 +42,12 @@ export const { setData, setOptions } = slice.actions;
 export const reducer = slice.reducer;
 
 // thunk
-export const getProducts = (): AppThunk => async (dispatch, store) => {
-  const result = await ProductService.getProducts(store().productList.options.page, store().productList.options.size, store().productList.options.order);
+export const getProducts = (filter: string | null): AppThunk => async (dispatch, store) => {
+  const result = await ProductService.getProducts(store().productList.options.page, store().productList.options.size, store().productList.options.order, filter ? filter : store().productList.options.filter);
 
+  if (filter) {
+    dispatch(setOptions({ ...store().productList.options, filter }));
+  }
   dispatch(setData(result.data));
 };
 
@@ -51,5 +55,5 @@ export const changePageOptions = (options: PageOptions): AppThunk => async (disp
   // TODO: add loading
   dispatch(setOptions(options));
 
-  dispatch(getProducts());
+  dispatch(getProducts(null));
 };

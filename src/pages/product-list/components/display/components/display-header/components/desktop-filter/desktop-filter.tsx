@@ -1,17 +1,15 @@
-/* eslint-disable no-debugger */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
-import { Grid, ButtonGroup, FormControl, Hidden, Typography } from '@material-ui/core';
+import { Grid, FormControl, Hidden, Typography } from '@material-ui/core';
 import { StyledButton, StyledSelect, StyledButtonGroup } from './desktop-filter.styles';
 import { OrderTypes, ListTypes } from 'lib/enums';
 import { getTextForOrderType } from './desktop-filter.utils';
 import { translate } from 'lib/translate';
 import { AppDispatch } from 'index';
 import ApplicationState from 'store/application-state';
-import { getProducts, changePageOptions } from 'store/product-list-store';
+import { changePageOptions } from 'store/product-list-store';
 import { PageOptions } from 'lib/models';
 import { connect } from 'react-redux';
-import { listenerCount } from 'process';
 
 interface IProps {
   listType: ListTypes;
@@ -21,28 +19,20 @@ interface IProps {
 }
 
 const DesktopFilter = (props: IProps) => {
-  const { onListTypeChange, onOptionsChange } = props;
-  let [orderType, setOrderType] = React.useState(OrderTypes.Latest);
-
-  const handleChange = () => {
-    onOptionsChange({ ...props.options, order: orderType });
-  };
+  let [orderType, setOrderType] = useState(OrderTypes.Latest);
 
   const changeOrderType = (event: React.ChangeEvent<{ value: string }>) => {
     setOrderType(+event.target.value);
+    props.onOptionsChange({ ...props.options, order: +event.target.value });
   };
-
-  useEffect(() => {
-    handleChange();
-  }, [orderType]);
 
   const renderBar = () => {
     return (
       <StyledButtonGroup color="primary">
-        <StyledButton isToggled={props.listType === ListTypes.Products} onClick={() => onListTypeChange(ListTypes.Products)}>
+        <StyledButton isToggled={props.listType === ListTypes.Products} onClick={() => props.onListTypeChange(ListTypes.Products)}>
           <Typography variant="button">{translate('MegaMall_DesktopFilter_Products', 'Производи')}</Typography>
         </StyledButton>
-        <StyledButton isToggled={props.listType === ListTypes.Stores} onClick={() => onListTypeChange(ListTypes.Stores)}>
+        <StyledButton isToggled={props.listType === ListTypes.Stores} onClick={() => props.onListTypeChange(ListTypes.Stores)}>
           <Typography variant="button">{translate('MegaMall_DesktopFilter_Shops', 'Продавници')}</Typography>
         </StyledButton>
       </StyledButtonGroup>
@@ -52,7 +42,7 @@ const DesktopFilter = (props: IProps) => {
   return (
     <>
       <Hidden xsDown>
-        <Grid container justify="flex-end" alignItems="flex-end" alignContent="flex-end" spacing={1}>
+        <Grid container justify="flex-end" alignItems="flex-end" alignContent="flex-end" spacing={2}>
           <Grid item>{renderBar()}</Grid>
           <Grid item>
             <FormControl>
