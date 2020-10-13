@@ -46,9 +46,9 @@ const SubMenu = (props: ISubMenuProps) => {
                     isActive={item.id === categoryId}
                     label={
                       <Box pt={1} pb={1}>
-                        <Grid container spacing={2} alignItems="center">
+                        <Grid container spacing={2} alignItems="flex-start">
                           <Grid item>
-                            <StyledIcons src={item.imageSrc} />
+                            <StyledIcons src={item.thumbnailSrc} />
                           </Grid>
                           <Grid item>{item.title}</Grid>
                         </Grid>

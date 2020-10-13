@@ -174,12 +174,12 @@ const menuItems = (): MenuItem[] => [
     link: `/categories/beauty/lotion`,
     parentId: 4
   },
-  {
-    id: 27,
-    title: translate('MegaMall_Header_Breastfeeding', 'Доење'),
-    link: `/categories/beauty/breastfeeding`,
-    parentId: 4
-  },
+  // {
+  //   id: 27,
+  //   title: translate('MegaMall_Header_Breastfeeding', 'Доење'),
+  //   link: `/categories/beauty/breastfeeding`,
+  //   parentId: 4
+  // },
   {
     id: 28,
     title: translate('MegaMall_Header_Male_clothes', 'Машка облека'),
