@@ -4,6 +4,7 @@ interface MenuItem {
   id: number;
   title: string;
   link: string;
+  thumbnailSrc?: string;
   imageSrc?: string;
   parentId?: number;
   children?: MenuItem[];
@@ -14,37 +15,44 @@ const menuItems = (): MenuItem[] => [
     id: 1,
     title: translate('MegaMall_Header_Technology', 'ТЕХНОЛОГИЈА'),
     link: `/categories/technology`,
-    imageSrc: '/assets/images/header/icons/tehnologija.svg'
+    thumbnailSrc: '/assets/images/header/icons/tehnologija.svg',
+    imageSrc: '/assets/images/main/category-grid/technology.png'
   },
-  {
-    id: 2,
-    title: translate('MegaMall_Header_Sport', 'СПОРТ'),
-    link: `/categories/sport`,
-    imageSrc: '/assets/images/header/icons/sport.svg'
-  },
+
   {
     id: 3,
     title: translate('MegaMall_Header_Fashion', 'МОДА'),
     link: `/categories/fashion`,
-    imageSrc: '/assets/images/header/icons/moda.svg'
+    thumbnailSrc: '/assets/images/header/icons/moda.svg',
+    imageSrc: '/assets/images/main/category-grid/fashion.png'
   },
   {
     id: 4,
     title: translate('MegaMall_Header_Health', 'УБАВИНА И ЗДРАВЈЕ'),
     link: `/categories/beauty`,
-    imageSrc: '/assets/images/header/icons/ubavina.svg'
+    thumbnailSrc: '/assets/images/header/icons/ubavina.svg',
+    imageSrc: '/assets/images/main/category-grid/health-and-beauty.png'
+  },
+  {
+    id: 2,
+    title: translate('MegaMall_Header_Sport', 'СПОРТ'),
+    link: `/categories/sport`,
+    thumbnailSrc: '/assets/images/header/icons/sport.svg',
+    imageSrc: '/assets/images/main/category-grid/sport.png'
   },
   {
     id: 5,
     title: translate('MegaMall_Header_Household', 'ДОМАЌИНСТВО'),
     link: `/categories/home`,
-    imageSrc: '/assets/images/header/icons/domakinstvo.svg'
+    thumbnailSrc: '/assets/images/header/icons/domakinstvo.svg',
+    imageSrc: '/assets/images/main/category-grid/household.png'
   },
   {
     id: 6,
     title: translate('MegaMall_Header_Services', 'УСЛУГИ'),
     link: `/categories/services`,
-    imageSrc: '/assets/images/header/icons/uslugi.svg'
+    thumbnailSrc: '/assets/images/header/icons/uslugi.svg',
+    imageSrc: '/assets/images/main/category-grid/services.png'
   },
   {
     id: 7,
@@ -120,7 +128,7 @@ const menuItems = (): MenuItem[] => [
   },
   {
     id: 19,
-    title: translate('MegaMall_Header_makeup', 'MAKE UP'),
+    title: translate('MegaMall_Header_MakeUP', 'MAKE UP'),
     link: `/categories/beauty/make-up`,
     parentId: 4
   },
@@ -132,13 +140,13 @@ const menuItems = (): MenuItem[] => [
   },
   {
     id: 21,
-    title: translate('MegaMall_Header_hair', 'Коса'),
+    title: translate('MegaMall_Header_Hair', 'Коса'),
     link: `/categories/beauty/hair`,
     parentId: 4
   },
   {
     id: 22,
-    title: translate('MegaMall_Header_skincare', 'Нега на кожа'),
+    title: translate('MegaMall_Header_Skincare', 'Нега на кожа'),
     link: `/categories/beauty/skin-care`,
     parentId: 4
   },
@@ -174,37 +182,37 @@ const menuItems = (): MenuItem[] => [
   },
   {
     id: 28,
-    title: translate('MegaMall_Header_Male-clothes', 'Машка облека'),
+    title: translate('MegaMall_Header_Male_clothes', 'Машка облека'),
     link: `/categories/fashion/male-clothes`,
     parentId: 3
   },
   {
     id: 29,
-    title: translate('MegaMall_Header_Male-shoes', 'Машки обувки'),
+    title: translate('MegaMall_Header_Male_shoes', 'Машки обувки'),
     link: `/categories/fashion/male-shoes`,
     parentId: 3
   },
   {
     id: 30,
-    title: translate('MegaMall_Header_Male-accessories', 'Машки додатоци'),
+    title: translate('MegaMall_Header_Male_accessories', 'Машки додатоци'),
     link: `/categories/fashion/male-accessories`,
     parentId: 3
   },
   {
     id: 31,
-    title: translate('MegaMall_Header_Female-clothes', 'Женска облека'),
+    title: translate('MegaMall_Header_Female_clothes', 'Женска облека'),
     link: `/categories/fashion/female-clothes`,
     parentId: 3
   },
   {
     id: 32,
-    title: translate('MegaMall_Header_Female-shoes', 'Женски обувки'),
+    title: translate('MegaMall_Header_Female_shoes', 'Женски обувки'),
     link: `/categories/fashion/female-shoes`,
     parentId: 3
   },
   {
     id: 33,
-    title: translate('MegaMall_Header_Female-accessories', 'Женски додатоци'),
+    title: translate('MegaMall_Header_Female_accessories', 'Женски додатоци'),
     link: `/categories/fashion/female-accessories`,
     parentId: 3
   },
@@ -505,7 +513,7 @@ const menuItems = (): MenuItem[] => [
   {
     id: 83,
     title: translate('MegaMall_Header_Tablet_Equipment', 'Опрема'),
-    link: `/categories/technology/tablets/tablet_equipment`,
+    link: `/categories/technology/tablets/tablet-equipment`,
     parentId: 13
   },
   {
@@ -768,7 +776,7 @@ const menuItems = (): MenuItem[] => [
   },
   {
     id: 127,
-    title: translate('MegaMall_Header_skincaree', 'Нега на кожа'),
+    title: translate('MegaMall_Header_Skincare', 'Нега на кожа'),
     link: `/categories/beauty/skincare/skincare`,
     parentId: 22
   },

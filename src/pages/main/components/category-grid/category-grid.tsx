@@ -5,8 +5,16 @@ import Card from './../../../../components/card/card';
 import { StyledLink } from 'components/styled-link';
 import { cards } from './category-grid.data';
 import { translate } from 'lib/translate';
+import { MenuItem } from 'lib/data';
+import { connect } from 'react-redux';
+import ApplicationState from 'store/application-state';
+import { AppDispatch } from 'index';
 
-const CategoryGrid = () => {
+interface ICategoryGrid {
+  menuItems: MenuItem[];
+}
+
+const CategoryGrid = (props: ICategoryGrid) => {
   return (
     <>
       <Box>
@@ -39,30 +47,21 @@ const CategoryGrid = () => {
       </Box>
       <Box mt={3}>
         <Grid container spacing={3}>
-          {cards.map(value => (
-            <Grid item key={value.id} xs={12} md={6} lg={4}>
-              <Card key={value.id} title={value.title} url={value.url} size="large">
-                <Box>
-                  <Typography variant="subtitle1">
-                    <StyledLink placeToRender="card" href={'#'}>
-                      {value.link1}
-                    </StyledLink>
-                  </Typography>
-                </Box>
-                <Box mt={2}>
-                  <Typography variant="subtitle1">
-                    <StyledLink placeToRender="card" href={'#'}>
-                      {value.link2}
-                    </StyledLink>
-                  </Typography>
-                </Box>
-                <Box mt={2}>
-                  <Typography variant="subtitle1">
-                    <StyledLink placeToRender="card" href={'#'}>
-                      {value.link3}
-                    </StyledLink>
-                  </Typography>
-                </Box>
+          {props.menuItems.slice(0, 6).map(item => (
+            <Grid item key={item.id} xs={12} md={6} lg={4}>
+              <Card key={item.id} title={item.title} url={item.imageSrc} size="large">
+                {item.children &&
+                  item.children.slice(0, 3).map((child, index) => {
+                    return (
+                      <Box key={index} mt={index > 0 ? 2 : 0}>
+                        <Typography variant="subtitle1">
+                          <StyledLink placeToRender="card" href={child.link}>
+                            {child.title}
+                          </StyledLink>
+                        </Typography>
+                      </Box>
+                    );
+                  })}
               </Card>
             </Grid>
           ))}
@@ -72,4 +71,14 @@ const CategoryGrid = () => {
   );
 };
 
-export default CategoryGrid;
+const mapDisptachToProps = (disptach: AppDispatch) => ({});
+
+const mapStateToProps = (state: ApplicationState) => {
+  return {
+    menuItems: state.shared.menuItems
+  };
+};
+
+const CategoryGridContainer = connect(() => mapStateToProps, mapDisptachToProps)(CategoryGrid);
+
+export default CategoryGridContainer;
