@@ -17,8 +17,12 @@ const findParent = (menuItems: MenuItem[], parentId: number): MenuItem | undefin
   return flattenMenu(menuItems).find(x => x.id === parentId);
 };
 
+const findElement = (menuItems: MenuItem[], link: string): MenuItem | undefined => {
+  return flattenMenu(menuItems).find(x => x.link === link);
+};
+
 const findRootElements = (menuItems: MenuItem[]): MenuItem[] => {
   return flattenMenu(menuItems).filter(x => !x.parentId);
 };
 
-export { findParent, findRootElements };
+export { findParent, findElement, findRootElements };

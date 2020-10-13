@@ -28,6 +28,7 @@ export interface PageOptions {
   page: number;
   size: number;
   order: OrderTypes;
+  filter: string;
 }
 
 export interface BreadCrumb {

@@ -17,7 +17,8 @@ export const initialState: ProductListStore = {
   options: {
     page: 0,
     size: 10,
-    order: OrderTypes.Latest
+    order: OrderTypes.Latest,
+    filter: ''
   }
 };
 
@@ -27,8 +28,9 @@ const slice = createSlice({
   reducers: {
     setData: (state: ProductListStore, action: PayloadAction<Models.Product.Model[]>) => {
       state.data = action.payload;
-      // TODO: change this
-      state.count = 1000;
+    },
+    setCount: (state: ProductListStore, action: PayloadAction<number>) => {
+      state.count = action.payload;
     },
     setOptions: (state: ProductListStore, action: PayloadAction<PageOptions>) => {
       state.options = action.payload;
@@ -36,20 +38,25 @@ const slice = createSlice({
   }
 });
 
-export const { setData, setOptions } = slice.actions;
+export const { setData, setCount, setOptions } = slice.actions;
 
 export const reducer = slice.reducer;
 
 // thunk
-export const getProducts = (): AppThunk => async (dispatch, store) => {
-  const result = await ProductService.getProducts(store().productList.options.page, store().productList.options.size, store().productList.options.order);
+export const getProducts = (filter: string | null): AppThunk => async (dispatch, store) => {
+  const result = await ProductService.getProducts(store().productList.options.page, store().productList.options.size, store().productList.options.order, filter ? filter : store().productList.options.filter);
 
-  dispatch(setData(result.data));
+  if (filter) {
+    dispatch(setOptions({ ...store().productList.options, filter }));
+  }
+
+  dispatch(setData(result.data.list));
+  dispatch(setCount(result.data.count));
 };
 
 export const changePageOptions = (options: PageOptions): AppThunk => async (dispatch, store) => {
   // TODO: add loading
   dispatch(setOptions(options));
 
-  dispatch(getProducts());
+  dispatch(getProducts(null));
 };
