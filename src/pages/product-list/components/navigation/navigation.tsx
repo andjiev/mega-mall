@@ -1,58 +1,48 @@
 import React from 'react';
+import { MenuItem } from 'lib/data';
+import { Box, Link, List, ListItem, Typography } from '@material-ui/core';
+import { StyledNavigation, StyledTypography } from 'pages/product-list/components/navigation/navigation.styles';
 
-import { StyledNavigation, StyledButton } from './navigation.styles';
-import { Box, List, ListItem, Typography, Checkbox, Grid } from '@material-ui/core';
-import { INavItem, navigationData } from './navigation.data';
-import { translate } from 'lib/translate';
+interface IProps {
+  categoryItem: MenuItem;
+  subCategoryItem?: MenuItem;
+}
 
-interface NavigationProps {}
-
-const Navigation = (props: NavigationProps) => {
-  const [checked, setChecked] = React.useState(false);
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(event.target.checked);
-  };
-
-  const renderItem = (item: INavItem) => {
+const Navigation = (props: IProps) => {
+  const renderItem = (item: MenuItem): JSX.Element => {
     return (
       <>
-        <Box mt={1}>
-          <Typography variant="h6">{item.header.title}</Typography>
-        </Box>
-        <Box>
-          {item.links.map(val => (
-            <Grid container alignContent="center" alignItems="center" key={val.title}>
-              <Checkbox size="small" color="default" key={val.id} onChange={handleChange} inputProps={{ 'aria-label': 'checkbox with default color' }} />
-              <Typography key={val.title}>{val.title}</Typography>
-            </Grid>
-          ))}
-        </Box>
+        <ListItem>
+          <Link href={item.link} color="inherit">
+            <StyledTypography variant="body2" isSelected={props.subCategoryItem && item.id === props.subCategoryItem.id}>
+              {item.title}
+            </StyledTypography>
+          </Link>
+        </ListItem>
       </>
     );
   };
+
   return (
     <>
       <StyledNavigation>
-        <Box p={3} pt={2}>
+        <Box p={3} pt={1}>
           <List>
-            <Typography variant="h6">{translate('MegaMall_Navigation_Technolopgy', 'Технологија')}</Typography>
-            <List>{translate('MegaMall_Navigation_Computers', 'Компјутери и опрема')}</List>
-            <ListItem>{translate('MegaMall_Navigation_PC', 'Персонални компјутери')}</ListItem>
-            <ListItem>{translate('MegaMall_Navigation_Laptop', 'Преносни компјутери')}</ListItem>
-            <ListItem>{translate('MegaMall_Navigation_Equipment', 'Опрема за компјутери')}</ListItem>
-            <ListItem>{translate('MegaMall_Navigation_Mice', 'Глувчиња')}</ListItem>
-            <ListItem>{translate('MegaMall_Navigation_Keyboards', 'Тастатури')}</ListItem>
-            <List>{translate('MegaMall_Navigation_Mobile', 'Мобилни телефони')}</List>
+            <List disablePadding>
+              <Link href={props.categoryItem.link} color="inherit">
+                <Typography variant="h6">{props.categoryItem.title}</Typography>
+              </Link>
+            </List>
+            {props.categoryItem.children && (
+              <Box mt={1}>
+                {props.categoryItem.children.map(child => (
+                  <List key={child.id} disablePadding>
+                    {renderItem(child)}
+                  </List>
+                ))}
+              </Box>
+            )}
           </List>
-
-          <Grid container>
-            <Grid item alignContent="space-between">
-              <Grid item>{navigationData.map(val => renderItem(val))}</Grid>
-            </Grid>
-
-            <StyledButton variant="outlined">{translate('MegaMall_Navigation_Show', 'види ги сите')}</StyledButton>
-          </Grid>
         </Box>
       </StyledNavigation>
     </>

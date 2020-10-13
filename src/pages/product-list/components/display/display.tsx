@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { AppDispatch } from 'index';
 import ApplicationState from 'store/application-state';
 
-import { Box, ListItem, List, Link, Grid, createStyles, makeStyles, Theme } from '@material-ui/core';
+import { Box, ListItem, List, Link, Grid, createStyles, makeStyles, Theme, Divider } from '@material-ui/core';
 import DisplayHeader from './components/display-header/display-header';
 
 import { ProductItem } from './product-item';
@@ -17,13 +17,15 @@ import { displayData } from './product-item-list/product-item-list.data';
 import { ListTypes } from 'lib/enums';
 import { shopsData } from './shops-list/shops-list.data';
 import { SubcategoryCard } from 'pages/category/components/subcategory-card';
+import { MenuItem } from 'lib/data';
 
 interface IProps {
   data: Models.Product.Model[];
   count: number;
   options: PageOptions;
+  subCategoryItem: MenuItem;
 
-  onInit: () => void;
+  onInit: (filter: string) => void;
   onOptionsChange: (options: PageOptions) => void;
 }
 
@@ -36,6 +38,10 @@ const Display = (props: IProps) => {
   const indexOfFirstPost = indexOfLastPost - postPerPage;
   const currentPost = shopsData.slice(indexOfFirstPost, indexOfLastPost);
 
+  useEffect(() => {
+    props.onInit(props.subCategoryItem.title);
+  }, []);
+
   const listTypeChange = (type: ListTypes) => {
     setListType(type);
   };
@@ -43,10 +49,6 @@ const Display = (props: IProps) => {
   const paginate = (event: React.ChangeEvent<unknown>, value: number) => {
     setCurrentPage(value);
   };
-
-  useEffect(() => {
-    props.onInit();
-  }, []);
 
   const calculatePages = () => {
     if (shopsData) {
@@ -58,6 +60,11 @@ const Display = (props: IProps) => {
     }
   };
 
+  const onPageChange = (page: number) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    props.onOptionsChange({ ...props.options, page: page - 1 });
+  };
+
   useEffect(() => {
     calculatePages();
   }, []);
@@ -67,32 +74,38 @@ const Display = (props: IProps) => {
       {props.data && props.data.length ? (
         <Box p={3}>
           <Box>
-            <DisplayHeader onListTypeChange={listTypeChange} listType={listType} />
+            <DisplayHeader title={props.subCategoryItem.title} page={props.options.page} count={props.count} onListTypeChange={listTypeChange} listType={listType} />
           </Box>
-          <Box mt={3}>
+          <Box mt={2}>
             {listType === ListTypes.Products ? (
-              <List component={'ul'}>
-                {props.data.map(product => {
-                  return (
-                    <StyledLink key={product.id} href={generatePath(ROUTES.PRODUCT, { id: product.id })}>
-                      <ListItem button disableGutters={true} divider={true}>
-                        <StyledBox mt={1} mb={1}>
-                          <ProductItem
-                            key={product.id}
-                            img={product.imageSource || displayData[1].img}
-                            title={product.name}
-                            price={product.price === '' ? '0' : product.price}
-                            discountPrice={product.discountPrice}
-                            description={''}
-                            logo={''}
-                            link={product.link}
-                          />
-                        </StyledBox>
-                      </ListItem>
-                    </StyledLink>
-                  );
-                })}
-              </List>
+              <>
+                <List component={'ul'}>
+                  {props.data.map((product, index) => {
+                    return (
+                      <StyledLink key={product.id} href={generatePath(ROUTES.PRODUCT, { id: product.id })}>
+                        {index === 0 && <Divider />}
+                        <ListItem button disableGutters={true} divider={true}>
+                          <StyledBox mt={1} mb={1}>
+                            <ProductItem
+                              key={product.id}
+                              img={product.imageSource || displayData[1].img}
+                              title={product.name}
+                              price={product.price === '' ? '0' : product.price}
+                              discountPrice={product.discountPrice}
+                              description={''}
+                              logo={''}
+                              link={product.link}
+                            />
+                          </StyledBox>
+                        </ListItem>
+                      </StyledLink>
+                    );
+                  })}
+                </List>
+                <Box mt={2}>
+                  <StyledPagination count={Math.ceil(props.count / 10)} page={props.options.page + 1} onChange={(_, value: number) => onPageChange(value)} />
+                </Box>
+              </>
             ) : (
               <>
                 <Grid container spacing={3}>
@@ -102,12 +115,11 @@ const Display = (props: IProps) => {
                     </Grid>
                   ))}
                 </Grid>
-                <StyledPagination count={pages} page={currentPage} onChange={paginate} />
+                <Box mt={2}>
+                  <StyledPagination count={pages} page={currentPage} onChange={paginate} />
+                </Box>
               </>
             )}
-          </Box>
-          <Box>
-            <StyledPagination count={props.count} page={props.options.page} onChange={(_, value: number) => props.onOptionsChange({ ...props.options, page: value })} />
           </Box>
         </Box>
       ) : (
@@ -118,8 +130,8 @@ const Display = (props: IProps) => {
 };
 
 const mapDispatchToProps = (dispatch: AppDispatch) => ({
-  onInit: () => {
-    dispatch(getProducts());
+  onInit: (filter: string) => {
+    dispatch(getProducts(filter));
   },
   onOptionsChange: (options: PageOptions) => {
     dispatch(changePageOptions(options));
