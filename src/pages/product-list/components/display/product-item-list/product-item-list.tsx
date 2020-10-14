@@ -15,6 +15,7 @@ import { translate } from 'lib/translate';
 
 interface ShopsListProps {
   isPaging: 'prodList' | 'detailList';
+  data: Models.Product.Model[];
 }
 
 const ProductItemList = (props: ShopsListProps) => {
@@ -22,7 +23,7 @@ const ProductItemList = (props: ShopsListProps) => {
   const [orderType, setOrderType] = React.useState(OrderTypes.PriceAscending);
 
   //this is for the list post per page and page number
-  const [posts, setPosts] = useState(displayData);
+  const [posts, setPosts] = useState(props.data);
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(10);
   const indexOfLastPost = currentPage * postPerPage;
@@ -106,7 +107,7 @@ const ProductItemList = (props: ShopsListProps) => {
           {currentPost.map(val => (
             <ListItem key={val.id} button component={RouterLink} to={generatePath(ROUTES.PRODUCT, { id: val.id })} disableGutters={true} divider={true}>
               <StyledBox mt={1} mb={1}>
-                <ProductItem key={val.id} title={val.title} price={val.price} discountPrice={val.discountPrice} description={val.description} logo={val.logo} link={val.link} />
+                <ProductItem key={val.id} title={val.name} price={val.price} discountPrice={val.discountPrice} description={' '} logo={' '} link={val.link} />
               </StyledBox>
             </ListItem>
           ))}

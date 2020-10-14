@@ -11,8 +11,8 @@ export interface IProductItem {
   title: string;
   price: string;
   discountPrice?: string;
-  description: string;
-  logo: string;
+  description?: string;
+  logo?: string;
 }
 
 const ProductItem = (props: IProductItem) => {

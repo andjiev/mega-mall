@@ -6,7 +6,7 @@ import ProductItemList from '../../../product-list/components/display/product-it
 import { translate } from 'lib/translate';
 
 import { AppDispatch } from 'index';
-import { getProductDetails } from 'store/product-details-store';
+import { getProductDetails, getSimilarProducts } from 'store/product-details-store';
 import ApplicationState from 'store/application-state';
 import { connect } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router';
@@ -14,6 +14,7 @@ import { RouteComponentProps, withRouter } from 'react-router';
 interface IProps extends RouteComponentProps<{ id: string }> {
   data: Models.Product.Model;
   onInit: (id: string) => void;
+  similarData: Models.Product.Model[];
 }
 
 const DetailedProductView = (props: IProps) => {
@@ -63,7 +64,7 @@ const DetailedProductView = (props: IProps) => {
         <Grid item xs={12} md={7} lg={7}>
           <Box>{/* TODO add FILTER COMPONENT FOR DETAILED VIEW */}</Box>
           <Box>
-            <ProductItemList isPaging="detailList" />
+            <ProductItemList data={props.similarData} isPaging="detailList" />
           </Box>
         </Grid>
       </StyledGridContainer>
@@ -74,12 +75,14 @@ const DetailedProductView = (props: IProps) => {
 const mapDispatchToProps = (dispatch: AppDispatch) => ({
   onInit: (id: string) => {
     dispatch(getProductDetails(id));
+    dispatch(getSimilarProducts());
   }
 });
 
 const mapStateToProps = (state: ApplicationState) => {
   return {
-    data: state.productDetails.data
+    data: state.productDetails.data,
+    similarData: state.productDetails.similarData
   };
 };
 const DisplayContainer = connect(mapStateToProps, mapDispatchToProps)(withRouter(DetailedProductView));
