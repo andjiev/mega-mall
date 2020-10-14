@@ -5,9 +5,17 @@ import { Container, Grid, Box, Typography, ListItem, Hidden } from '@material-ui
 import { StyledLink } from 'components/styled-link';
 import { footerItems, IFooterItem } from './footer.data';
 import { translate } from 'lib/translate';
+import { connect } from 'react-redux';
+import { AppDispatch } from 'index';
+import ApplicationState from 'store/application-state';
+import { MenuItem, menuItems } from 'lib/data';
 
-const Footer = () => {
-  const renderItem = (item: IFooterItem) => {
+interface IFooter {
+  menuItems: MenuItem[];
+}
+
+const Footer = (props: IFooter) => {
+  const renderFooterItem = (item: IFooterItem) => {
     return (
       <Box>
         <StyledList>
@@ -39,6 +47,45 @@ const Footer = () => {
       </Box>
     );
   };
+
+  const renderMenuItem = (item: MenuItem) => {
+    return (
+      <Box>
+        <StyledList>
+          {item.title && item.link && (
+            <StyledLink placeToRender="footer" href={item.link}>
+              {item.title}
+            </StyledLink>
+          )}
+          {item.children &&
+            item.children.slice(0, 3).map((child, index) => {
+              return (
+                <Box key={index} mt={2} fontFamily="RobotoThin" fontWeight="300" fontSize="14px">
+                  <StyledLink placeToRender="footer-link" href={child.link}>
+                    {child.title}
+                  </StyledLink>
+                </Box>
+              );
+            })}
+        </StyledList>
+      </Box>
+    );
+  };
+
+  const renderMobileMenuItem = (item: MenuItem) => {
+    return (
+      <Box>
+        <StyledList>
+          {item.title && item.link && (
+            <StyledLink placeToRender="footer" href={item.link}>
+              {item.title}
+            </StyledLink>
+          )}
+        </StyledList>
+      </Box>
+    );
+  };
+
   return (
     <>
       <StyledFooter pt={3} pb={2}>
@@ -53,8 +100,22 @@ const Footer = () => {
                       {prev}
                       {!(index % 2) && (
                         <Grid item>
-                          {renderItem(arr[index])}
-                          <Box mt={2}>{renderItem(arr[index + 1])}</Box>
+                          {renderFooterItem(arr[index])}
+                          <Box mt={2}>{renderFooterItem(arr[index + 1])}</Box>
+                        </Grid>
+                      )}
+                    </>
+                  );
+                }, null)}
+                {props.menuItems.reduce((prev: JSX.Element | null, _, index: number, arr: MenuItem[]) => {
+                  return (
+                    <>
+                      {prev}
+                      {!(index % 2) && (
+                        <Grid item>
+                          {renderMenuItem(arr[index])}
+                          <Box mt={2}>{renderMenuItem(arr[index + 1])}</Box>
+                          {}
                         </Grid>
                       )}
                     </>
@@ -70,13 +131,13 @@ const Footer = () => {
               <StyledImage src={footerItems[0].header.src}></StyledImage>
               <Box mt={2}>
                 <Grid container>
-                  {footerItems.slice(2).map((item, index) => {
+                  {props.menuItems.slice(0, 6).map((item, index) => {
                     return (
                       <Grid key={index} item xs={6}>
                         <Box mt={1} mb={1}>
                           <Typography variant="h6">
-                            <StyledLink placeToRender="footer" href={item.header.link}>
-                              {item.header.title}
+                            <StyledLink placeToRender="footer" href={item.link}>
+                              {item.title}
                             </StyledLink>
                           </Typography>
                         </Box>
@@ -85,7 +146,7 @@ const Footer = () => {
                   })}
                 </Grid>
               </Box>
-              <Box mt={2}>{renderItem(footerItems[1])}</Box>
+              <Box mt={2}>{renderFooterItem(footerItems[1])}</Box>
               <Box>
                 <Grid container justify="center" alignItems="center">
                   <Typography variant="h6">
@@ -111,4 +172,14 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+const mapDisptachToProps = (disptach: AppDispatch) => ({});
+
+const mapStateToProps = (state: ApplicationState) => {
+  return {
+    menuItems: state.shared.menuItems
+  };
+};
+
+const FooterContainer = connect(() => mapStateToProps, mapDisptachToProps)(Footer);
+
+export default FooterContainer;

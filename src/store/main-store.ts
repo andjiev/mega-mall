@@ -19,23 +19,23 @@ const slice = createSlice({
     setMostViewedData: (state: MainStore, action: PayloadAction<Models.Product.Model[]>) => {
       state.mostViewedData = action.payload;
     },
-    setPopularData: (state: MainStore, action: PayloadAction<Models.Product.Model[]>) => {
+    setLatestData: (state: MainStore, action: PayloadAction<Models.Product.Model[]>) => {
       state.latestData = action.payload;
     }
   }
 });
 
-export const { setMostViewedData, setPopularData } = slice.actions;
+export const { setMostViewedData, setLatestData } = slice.actions;
 
 export const reducer = slice.reducer;
 
 // thunk
 export const getLatestProducts = (): AppThunk => async dispatch => {
   const result = await ProductService.getLatestProducts();
-  dispatch(setMostViewedData(result.data.list));
+  dispatch(setLatestData(result.data.list));
 };
 
 export const getMostPopularProducts = (): AppThunk => async dispatch => {
   const result = await ProductService.getMostPopularProducts();
-  dispatch(setPopularData(result.data.list));
+  dispatch(setMostViewedData(result.data.list));
 };

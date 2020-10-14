@@ -24,16 +24,16 @@ const DetailedProductView = (props: IProps) => {
   return (
     <>
       <StyledGridContainer container spacing={5}>
-        <Grid container item xs={12} lg={7} md={7} justify="center">
+        <Grid container item xs={12} md={7} justify="center">
           <Box mb={3}>
-            <Grid item xs={12} md={8} lg={8}>
+            <Grid item xs={12} md={8}>
               <Box key={props.data.id} m={3}>
                 <StyledImage src={props.data.imageSource}></StyledImage>
               </Box>
             </Grid>
           </Box>
         </Grid>
-        <StyledStickyGridItem item xs={12} sm={12} md={5} lg={5}>
+        <StyledStickyGridItem item xs={12} md={5}>
           {/* TODO because of the wrapper in detailed-product.tsx we gave container and it pushes this card a little from the sides */}
           <Box mb={3}>
             <Card raised={true}>
