@@ -23,7 +23,7 @@ const DetailedProductView = (props: IProps) => {
 
   return (
     <>
-      <StyledGridContainer container spacing={5}>
+      <StyledGridContainer container spacing={1}>
         <Grid container item xs={12} md={7} justify="center">
           <Box mb={3}>
             <Grid item xs={12} md={8}>
