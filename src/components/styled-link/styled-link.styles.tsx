@@ -20,7 +20,7 @@ const StyledHoverLink = styled(props => {
   padding-bottom: ${(props: IStyledHoverLink) => (props.placeToRender === 'card' ? '5px' : '0px')};
   font-family: ${(props: IStyledHoverLink) => (props.placeToRender === 'footer' ? 'OswaldRegular, sans-serif' : '')};
   transition: 0.3s;
-
+  text-transform: ${(props: IStyledHoverLink) => (props.placeToRender === 'card' ? 'uppercase' : '')};
   &:hover {
     color: ${(props: IStyledHoverLink) =>
       props.placeToRender === 'card'

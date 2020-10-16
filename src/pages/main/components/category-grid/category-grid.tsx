@@ -49,7 +49,7 @@ const CategoryGrid = (props: ICategoryGrid) => {
         <Grid container spacing={3}>
           {props.menuItems.slice(0, 6).map(item => (
             <Grid item key={item.id} xs={12} md={6} lg={4}>
-              <Card key={item.id} title={item.title} url={item.imageSrc} size="large">
+              <Card title={item.title} url={item.imageSrc} size="large">
                 {item.children &&
                   item.children.slice(0, 3).map((child, index) => {
                     return (
