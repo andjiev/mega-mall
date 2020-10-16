@@ -182,46 +182,48 @@ const menuItems = (): MenuItem[] => [
   },
   {
     id: 29,
-    title: translate('MegaMall_Header_Male_shoes', 'Машки обувки'),
-    link: `/categories/fashion/male-shoes`,
-    parentId: 3
-  },
-  {
-    id: 30,
-    title: translate('MegaMall_Header_Male_accessories', 'Машки додатоци'),
-    link: `/categories/fashion/male-accessories`,
-    parentId: 3
-  },
-  {
-    id: 31,
     title: translate('MegaMall_Header_Female_clothes', 'Женска облека'),
     link: `/categories/fashion/female-clothes`,
     parentId: 3
   },
   {
+    id: 30,
+    title: translate('MegaMall_Header_Кids_clothes', 'Детска облека'),
+    link: `/categories/fashion/kids-clothes`,
+    parentId: 3
+  },
+  {
+    id: 31,
+    title: translate('MegaMall_Header_Male_shoes', 'Машки обувки'),
+    link: `/categories/fashion/male-shoes`,
+    parentId: 3
+  },
+  {
     id: 32,
+    title: translate('MegaMall_Header_Male_accessories', 'Машки додатоци'),
+    link: `/categories/fashion/male-accessories`,
+    parentId: 3
+  },
+
+  {
+    id: 33,
     title: translate('MegaMall_Header_Female_shoes', 'Женски обувки'),
     link: `/categories/fashion/female-shoes`,
     parentId: 3
   },
   {
-    id: 33,
+    id: 34,
     title: translate('MegaMall_Header_Female_accessories', 'Женски додатоци'),
     link: `/categories/fashion/female-accessories`,
     parentId: 3
   },
   {
-    id: 34,
+    id: 35,
     title: translate('MegaMall_Header_Кids_shoes', 'Детски обувки'),
     link: `/categories/fashion/kids-shoes`,
     parentId: 3
   },
-  {
-    id: 35,
-    title: translate('MegaMall_Header_Кids_clothes', 'Детска облека'),
-    link: `/categories/fashion/kids-clothes`,
-    parentId: 3
-  },
+
   {
     id: 36,
     title: translate('MegaMall_Header_Food', 'Храна'),
