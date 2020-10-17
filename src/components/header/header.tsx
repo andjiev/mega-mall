@@ -41,13 +41,13 @@ const Header = (props: IHeaderProps) => {
         </Hidden>
         <Grid container spacing={2}>
           <Hidden xsDown>
-            <Grid item sm={1}>
+            <Grid item sm={2} md={1}>
               <StyledLink href={'/'}>
                 <MainLogo />
               </StyledLink>
             </Grid>
           </Hidden>
-          <Grid item sm={11} xs={12}>
+          <Grid item sm={10} xs={12}>
             <Hidden smUp>
               <Box mb={2}>
                 <SearchBarContainer />

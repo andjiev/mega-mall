@@ -9,6 +9,7 @@ import ApplicationState from 'store/application-state';
 import { getMostPopularProducts } from 'store/main-store';
 import { connect } from 'react-redux';
 import { ProgressPlugin } from 'webpack';
+import { formatPrice } from 'utils/helpers/price-formatter';
 
 interface ICardSlider {
   data: Models.Product.Model[];
@@ -97,7 +98,7 @@ const CardSlider = (props: ICardSlider) => {
               <Box key={res.id}>
                 <Link href={res.link}>
                   <SliderCard title={res.name.length > 25 ? res.name.substring(0, 25) + '...' : res.name} url={res.imageSource || defaultImage}>
-                    <Typography variant="h4">{res.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}</Typography>
+                    <Typography variant="h4">{formatPrice(res.price) + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}</Typography>
                   </SliderCard>
                 </Link>
               </Box>

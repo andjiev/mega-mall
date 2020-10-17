@@ -10,6 +10,7 @@ import { getProductDetails } from 'store/product-details-store';
 import ApplicationState from 'store/application-state';
 import { connect } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router';
+import { formatPrice } from 'utils/helpers/price-formatter';
 
 interface IProps extends RouteComponentProps<{ id: string }> {
   data: Models.Product.Model;
@@ -23,17 +24,17 @@ const DetailedProductView = (props: IProps) => {
 
   return (
     <>
-      <StyledGridContainer container spacing={5}>
-        <Grid container item xs={12} lg={7} md={7} justify="center">
+      <StyledGridContainer container spacing={1}>
+        <Grid container item xs={12} md={7} justify="center">
           <Box mb={3}>
-            <Grid item xs={12} md={8} lg={8}>
+            <Grid item xs={12} md={8}>
               <Box key={props.data.id} m={3}>
                 <StyledImage src={props.data.imageSource}></StyledImage>
               </Box>
             </Grid>
           </Box>
         </Grid>
-        <StyledStickyGridItem item xs={12} sm={12} md={5} lg={5}>
+        <StyledStickyGridItem item xs={12} md={5}>
           {/* TODO because of the wrapper in detailed-product.tsx we gave container and it pushes this card a little from the sides */}
           <Box mb={3}>
             <Card raised={true}>
@@ -51,7 +52,7 @@ const DetailedProductView = (props: IProps) => {
                 </Box>
                 <StyledBox>
                   <Typography variant="h3" gutterBottom>
-                    {props.data.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                    {formatPrice(props.data.price) + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
                   </Typography>
                   <StyledLogo src="/src/assets/images/product-list/logo-btns/Anhoch.png" />
                   {/* TODO: add logo of company here as btn */}

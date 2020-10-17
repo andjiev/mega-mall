@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import { Box, Grid, CardContent } from '@material-ui/core';
 
 const StyledImage = styled.img`
-  width: 100%;
   min-width: 450px;
-  max-width: 450px;
+  width: 100%;
   height: 100%;
+  @media (max-width: 768px) {
+    min-width: 100%;
+  }
 `;
 
 const StyledGridContainer = styled(Grid)`
