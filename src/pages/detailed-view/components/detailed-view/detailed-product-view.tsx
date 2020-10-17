@@ -10,6 +10,7 @@ import { getProductDetails } from 'store/product-details-store';
 import ApplicationState from 'store/application-state';
 import { connect } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router';
+import { formatPrice } from 'utils/helpers/price-formatter';
 
 interface IProps extends RouteComponentProps<{ id: string }> {
   data: Models.Product.Model;
@@ -51,7 +52,7 @@ const DetailedProductView = (props: IProps) => {
                 </Box>
                 <StyledBox>
                   <Typography variant="h3" gutterBottom>
-                    {props.data.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                    {formatPrice(props.data.price) + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
                   </Typography>
                   <StyledLogo src="/src/assets/images/product-list/logo-btns/Anhoch.png" />
                   {/* TODO: add logo of company here as btn */}

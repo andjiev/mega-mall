@@ -8,6 +8,7 @@ import ApplicationState from 'store/application-state';
 import { connect } from 'react-redux';
 import { translate } from 'lib/translate';
 import { displayData } from 'pages/product-list/components/display/product-item-list/product-item-list.data';
+import { formatPrice } from 'utils/helpers/price-formatter';
 
 interface IProps {
   data: Models.Product.Model[];
@@ -51,7 +52,7 @@ const ProductGrid = (props: IProps) => {
                   <Grid item key={res.id} xs={12} md={3}>
                     <Link href={res.link}>
                       <Card key={res.id} title={res.name.substring(0, 30)} url={res.imageSource || displayData[2].img} size="small">
-                        <Box component="span">{res.price === '' ? '0 ' + translate('MegaMall_Product_Price_Currency', 'МКД') : res.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}</Box>
+                        <Box component="span">{res.price === '' ? '0 ' + translate('MegaMall_Product_Price_Currency', 'МКД') : formatPrice(res.price) + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}</Box>
                       </Card>
                     </Link>
                   </Grid>

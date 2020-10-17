@@ -4,6 +4,7 @@ import { Box } from '@material-ui/core';
 import { StyledImage, StyledLogo, StyledGrid, StyledPriceBox, MobileStyledPriceBox, StyledTextBox } from './product-item.styles';
 import { getTranslations } from 'services/translation-service';
 import { translate } from 'lib/translate';
+import { formatPrice } from 'utils/helpers/price-formatter';
 
 export interface IProductItem {
   img?: string;
@@ -39,7 +40,7 @@ const ProductItem = (props: IProductItem) => {
               <Grid item xs={props.discountPrice ? 2 : 12}>
                 {props.discountPrice && <StyledPriceBox />}
                 <Box fontFamily="OswaldMedium" fontSize="24px" mt={5}>
-                  {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                  {formatPrice(props.price) + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
                 </Box>
               </Grid>
               {props.discountPrice && (
